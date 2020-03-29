@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 5671712}
   - component: {fileID: 5671711}
   m_Layer: 5
-  m_Name: Item Slot 1
+  m_Name: Sniper Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -700,8 +700,14 @@ MonoBehaviour:
   usernameInput: {fileID: 0}
   passwordInput: {fileID: 0}
   blackScreen: {fileID: 0}
+  levelImage: {fileID: 608152672}
+  connectionImage: {fileID: 0}
+  levelBarImage: {fileID: 490782731}
+  dialogBox: {fileID: 0}
   registerButton: {fileID: 0}
   loginButton: {fileID: 0}
+  acceptButton: {fileID: 0}
+  refuseButton: {fileID: 0}
   nicknameText: {fileID: 2091104816}
   pointsText: {fileID: 1830018127}
   coinsText: {fileID: 633142187}
@@ -709,115 +715,10 @@ MonoBehaviour:
   connectionText: {fileID: 0}
   levelBarText: {fileID: 1624420391}
   versionText: {fileID: 0}
-  levelImage: {fileID: 608152672}
-  connectionImage: {fileID: 0}
-  levelBarImage: {fileID: 490782731}
-  logoImage: {fileID: 0}
-  level_1_icon: {fileID: 21300000, guid: 3849105f9f112144ba86f00f9ee191f0, type: 3}
-  level_2_icon: {fileID: 21300000, guid: 1d7c2b746c3a01c4cbf870b1cb882bd1, type: 3}
-  level_3_icon: {fileID: 21300000, guid: ad83b234871869545a73b042eb36a37c, type: 3}
-  level_4_icon: {fileID: 21300000, guid: c0207d6db13641e4a98e15c116ec7ed3, type: 3}
-  level_5_icon: {fileID: 21300000, guid: 66d33adf0bbc8c644af3a3723f77c1e0, type: 3}
-  level_6_icon: {fileID: 21300000, guid: 478b57e4ea325d74aab01ebd805e78e3, type: 3}
-  level_7_icon: {fileID: 21300000, guid: c3ca424208a904d45959b6b93c1ed28a, type: 3}
-  level_8_icon: {fileID: 21300000, guid: 621ad1629651f54458d8b1c61a6daef4, type: 3}
-  level_9_icon: {fileID: 21300000, guid: 9c5d63a8d68dd494fbddc354510ee945, type: 3}
-  level_10_icon: {fileID: 21300000, guid: de4f9e224a4c47243adf77cb9a66808e, type: 3}
-  level_11_icon: {fileID: 21300000, guid: 630d21c759b48b44f9fdafc5099e15c3, type: 3}
-  level_12_icon: {fileID: 21300000, guid: 1616d880644fbff49a36a097db6e98f5, type: 3}
-  level_13_icon: {fileID: 21300000, guid: 59f85dbd5c2fa78478885b2ceb19198e, type: 3}
-  level_14_icon: {fileID: 21300000, guid: 2a0ccf840afe2f247b5678ccba32a1a8, type: 3}
-  level_15_icon: {fileID: 21300000, guid: f8c24a15491e1a743bcddcffb16af919, type: 3}
-  level_16_icon: {fileID: 21300000, guid: 413fd0543a07ca847ae07ae143a9c2d0, type: 3}
-  level_17_icon: {fileID: 21300000, guid: 30846ee74ec4ea3469edf646a8d04112, type: 3}
-  level_18_icon: {fileID: 21300000, guid: 4bd9685ed1afbfc4dad6b7cec420176a, type: 3}
-  level_19_icon: {fileID: 21300000, guid: 4bd14228a3c280d4e8c7cf3556af17e2, type: 3}
-  level_20_icon: {fileID: 21300000, guid: 64c44ac676298b44ca8f4e2c19ba243f, type: 3}
-  level_21_icon: {fileID: 21300000, guid: dc39b9c3d42eece4e92b22edf9d87fc2, type: 3}
-  level_22_icon: {fileID: 21300000, guid: a780c60cd41016b43afe1d9dad37ac83, type: 3}
-  level_23_icon: {fileID: 21300000, guid: 58a1accf5eda1244a81dbf23bd5346c7, type: 3}
-  level_24_icon: {fileID: 21300000, guid: 70a248afbff71f14dbc551650c77889d, type: 3}
-  level_25_icon: {fileID: 21300000, guid: dd1441d6d6b2f1d41b414f648c7b36cd, type: 3}
-  level_26_icon: {fileID: 21300000, guid: 377b47ca967161f409278141e6f6ab53, type: 3}
-  level_27_icon: {fileID: 21300000, guid: a6c4374b0137a2043958593c382bdd76, type: 3}
-  level_28_icon: {fileID: 21300000, guid: 6aebc786d7d6880409026add361e00d3, type: 3}
-  level_29_icon: {fileID: 21300000, guid: da8414cb6a45382488f78edea6010892, type: 3}
-  level_30_icon: {fileID: 21300000, guid: 49bf0d5520c5b864f914645bbd435cff, type: 3}
-  level_31_icon: {fileID: 21300000, guid: 49bae5a6915dda34596e537efe395ffc, type: 3}
-  level_32_icon: {fileID: 21300000, guid: e882aad18ade9f644828d7ae9702e36c, type: 3}
-  level_33_icon: {fileID: 21300000, guid: 3ba1c37a17faefc489bb918103e41daa, type: 3}
-  level_34_icon: {fileID: 21300000, guid: 5eab0e6a1fdce574683014bcb65e26c9, type: 3}
-  level_35_icon: {fileID: 21300000, guid: fa6bf07952a3aa647b99a60b4f86699e, type: 3}
-  level_36_icon: {fileID: 21300000, guid: 8ea768d75ef78d347bc2d82b8d90e95e, type: 3}
-  level_37_icon: {fileID: 21300000, guid: f85e4e5476f0a444b960f3f6ebd0116c, type: 3}
-  level_38_icon: {fileID: 21300000, guid: 09b4c6a57ca1ae94ea6464dbf084cc93, type: 3}
-  level_39_icon: {fileID: 21300000, guid: 8829daf725479df419d6a2a65686b64d, type: 3}
-  level_40_icon: {fileID: 21300000, guid: 8b48c2808d9913e42a6af4b9ef2a2ae8, type: 3}
-  level_41_icon: {fileID: 21300000, guid: 4fe7a7207b04cde4eb1f1235577b3719, type: 3}
-  level_42_icon: {fileID: 21300000, guid: eca6bfb70be8e134b9b10179c6a240fd, type: 3}
-  level_43_icon: {fileID: 21300000, guid: 1650d130708ec264885cb77a0dc0fbbe, type: 3}
-  level_44_icon: {fileID: 21300000, guid: 65747d753fd32ba40864a8fad577200a, type: 3}
-  level_45_icon: {fileID: 21300000, guid: 321716555a4fa7843b74707b4bd274d7, type: 3}
-  level_46_icon: {fileID: 21300000, guid: 646e38a58a4ea8846a945524c7b03f92, type: 3}
-  level_47_icon: {fileID: 21300000, guid: 2f54654fbedee9342899cd0710f7c273, type: 3}
-  level_48_icon: {fileID: 21300000, guid: 77748c1583676284da621645f4c6245b, type: 3}
-  level_49_icon: {fileID: 21300000, guid: 72601a8783ee29e44aa36819db860d8f, type: 3}
-  level_50_icon: {fileID: 21300000, guid: 6d33a20f49b92a14080b94e097259cb5, type: 3}
-  level_51_icon: {fileID: 21300000, guid: 4d97f38cbb06a014ab3ae07643402c69, type: 3}
-  level_52_icon: {fileID: 21300000, guid: 3de52dc4e26841c4996b6e41c999e0c5, type: 3}
-  level_53_icon: {fileID: 21300000, guid: 5dffbc3b3b5f6cc46a6eeb5fc6a53493, type: 3}
-  level_54_icon: {fileID: 21300000, guid: 9999ab319865176449938405269d1831, type: 3}
-  level_55_icon: {fileID: 21300000, guid: d976e5d62d8d6ef4590f514ad498ef79, type: 3}
-  level_56_icon: {fileID: 21300000, guid: 45234b9abd25e894ab9108dd7dde9fea, type: 3}
-  level_57_icon: {fileID: 21300000, guid: c8cd748c5cf7d79428d454735b74120c, type: 3}
-  level_58_icon: {fileID: 21300000, guid: 9e7f78ad8a4dfad40b415c97d0f06cda, type: 3}
-  level_59_icon: {fileID: 21300000, guid: 15779e3160bd46d4582b359b4a30cac4, type: 3}
-  level_60_icon: {fileID: 21300000, guid: e593bf76fde79a04094fc0f7a470bd31, type: 3}
-  level_61_icon: {fileID: 21300000, guid: 987db5551b7a1a94b86f81e5b7cedc76, type: 3}
-  level_62_icon: {fileID: 21300000, guid: 42002184573348345acd1d59b3221fdb, type: 3}
-  level_63_icon: {fileID: 21300000, guid: 1e65a9bc740f704469d78d596f5c2031, type: 3}
-  level_64_icon: {fileID: 21300000, guid: 604cd3dfdd5be754693ddd026317d6e0, type: 3}
-  level_65_icon: {fileID: 21300000, guid: f8a7d92580ee9324fb6906ca1035ade0, type: 3}
-  level_66_icon: {fileID: 21300000, guid: 198033e7216223144b12916b521d951d, type: 3}
-  level_67_icon: {fileID: 21300000, guid: 03d51893044daaf4d8631873a28d7eb1, type: 3}
-  level_68_icon: {fileID: 21300000, guid: ac5ce1b3ed8225140a19cfbf91d99d77, type: 3}
-  level_69_icon: {fileID: 21300000, guid: cd0f2142f8998c5479f38a2240f0f84b, type: 3}
-  level_70_icon: {fileID: 21300000, guid: eaf6c2dafc1bded47a21af03590b461c, type: 3}
-  level_71_icon: {fileID: 21300000, guid: 59184ce7e6fd5e242b0907ed86ae7993, type: 3}
-  level_72_icon: {fileID: 21300000, guid: 03d87515ba3dfb54e99aad4a35b60410, type: 3}
-  level_73_icon: {fileID: 21300000, guid: f0c0ffbb52b08694bbaf491ae8cad695, type: 3}
-  level_74_icon: {fileID: 21300000, guid: c7a901792aa90ee4993947fea0e69a91, type: 3}
-  level_75_icon: {fileID: 21300000, guid: 3238818c01852064aad073743b7762ea, type: 3}
-  level_76_icon: {fileID: 21300000, guid: bc54e340453cd294dbb2f5a9cd79d6eb, type: 3}
-  level_77_icon: {fileID: 21300000, guid: 4876f850d1518b34ba313cff179066de, type: 3}
-  level_78_icon: {fileID: 21300000, guid: 56a94039834d0534b85dfe6dd459ac36, type: 3}
-  level_79_icon: {fileID: 21300000, guid: dd6f497f20f3e494395e719f7be35553, type: 3}
-  level_80_icon: {fileID: 21300000, guid: 5b0e80ab6ac43db49ae8653dba183471, type: 3}
-  connectionRBar: {fileID: 0}
-  connectionOBar: {fileID: 0}
+  dialogText: {fileID: 0}
   connectionGBar: {fileID: 0}
-  inv_item1: {fileID: 877619764}
-  inv_item2: {fileID: 1258832941}
-  inv_item3: {fileID: 1409467141}
-  inv_item4: {fileID: 270309514}
-  inv_item5: {fileID: 225122686}
-  inv_item6: {fileID: 1499944290}
-  inv_item7: {fileID: 1581310789}
-  inv_loading_1: {fileID: 849729045}
-  inv_loading_2: {fileID: 371699752}
-  inv_loading_3: {fileID: 146524807}
-  inv_loading_4: {fileID: 1575273439}
-  inv_loading_5: {fileID: 1520238169}
-  inv_loading_6: {fileID: 913590310}
-  inv_loading_7: {fileID: 353416982}
-  loading_icon_1: {fileID: 21300000, guid: deb6800abfb65754b9166097ccb31af4, type: 3}
-  loading_icon_2: {fileID: 21300000, guid: 7a1bdef5d8b9f9244a3f084bafbbbbaf, type: 3}
-  loading_icon_3: {fileID: 21300000, guid: b035dee42799bc24bb725abd095989c3, type: 3}
-  loading_icon_4: {fileID: 21300000, guid: 1024f00632bcccc458676359a7d92ee0, type: 3}
-  loading_icon_5: {fileID: 21300000, guid: d55e0f8ba7c1a19408b3f9cf4df42fe8, type: 3}
-  loading_icon_6: {fileID: 21300000, guid: 997f50e8c89f8784ca56889e1491ffc0, type: 3}
-  loading_icon_7: {fileID: 21300000, guid: 425dcb105966fca4caac01f73930a513, type: 3}
-  loading_icon_8: {fileID: 21300000, guid: 8ca68d3b9539c96409503740578dc3e6, type: 3}
+  connectionOBar: {fileID: 0}
+  connectionRBar: {fileID: 0}
 --- !u!114 &65649549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1427,7 +1328,7 @@ GameObject:
   - component: {fileID: 156024327}
   - component: {fileID: 156024326}
   m_Layer: 5
-  m_Name: Item Slot 4
+  m_Name: Melee Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5745,7 +5646,7 @@ GameObject:
   - component: {fileID: 613649255}
   - component: {fileID: 613649254}
   m_Layer: 5
-  m_Name: Item Slot 3
+  m_Name: Rifle Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6704,10 +6605,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -7518,7 +7419,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1875544837}
   m_HandleRect: {fileID: 1875544836}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 1.0000001
   m_Size: 0.5916344
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -8033,6 +7934,7 @@ GameObject:
   - component: {fileID: 945411278}
   - component: {fileID: 945411280}
   - component: {fileID: 945411279}
+  - component: {fileID: 945411281}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -8066,7 +7968,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8090,7 +7992,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: c172f95ca027749478b577bb69bdbd20, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -8106,6 +8008,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 945411277}
   m_CullTransparentMesh: 0
+--- !u!114 &945411281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945411277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 4
+  m_AspectRatio: 0.001
 --- !u!1 &951925240
 GameObject:
   m_ObjectHideFlags: 0
@@ -9755,7 +9671,7 @@ GameObject:
   - component: {fileID: 1206874937}
   - component: {fileID: 1206874936}
   m_Layer: 5
-  m_Name: Item Slot 5
+  m_Name: Grenade Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10926,7 +10842,7 @@ GameObject:
   - component: {fileID: 1406514746}
   - component: {fileID: 1406514745}
   m_Layer: 5
-  m_Name: Item Slot 7
+  m_Name: Minigun Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14176,7 +14092,7 @@ GameObject:
   - component: {fileID: 1765943836}
   - component: {fileID: 1765943835}
   m_Layer: 5
-  m_Name: Item Slot 2
+  m_Name: Shotgun Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15283,7 +15199,7 @@ GameObject:
   - component: {fileID: 1883290694}
   - component: {fileID: 1883290693}
   m_Layer: 5
-  m_Name: Item Slot 6
+  m_Name: Bazooka Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
