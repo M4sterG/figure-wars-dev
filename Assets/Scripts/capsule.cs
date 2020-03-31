@@ -22,8 +22,9 @@ public class capsule : MonoBehaviour
 	string itemRarity;
 	string itemName;
 	
-	public class PlayerInfo {
-		public int coins, points; 
+	public class PlayerInfo
+	{
+		public int coins, points;
 	}
 	
     async void Start() {
