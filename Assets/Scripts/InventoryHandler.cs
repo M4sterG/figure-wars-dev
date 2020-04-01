@@ -57,7 +57,7 @@ public class InventoryHandler : MonoBehaviour
         itemName.color = itemIdleColour;
     }
 
-    private enum SlotStatus
+    public enum SlotStatus
     {
         Idle,
         Clicked
