@@ -7,42 +7,20 @@ using UnityEngine.UI;
 
 public class InventoryItemSelectHandler : MonoBehaviour
 {
-    private const string WEAPON_CLASS_NAME = "Weapons";
-
-    private const string SETS_CLASS_NAME = "Set";
-
-    private const string PARTS_CLASS_NAME = "Parts";
-
-    private const string ACCESSORIES_CLASS_NAME = "Accessories";
-
-    private const string MISC_CLASS_NAME = "Items";
-
-    public Sprite weaponsIdleImg;
-    public Sprite weaponsHoverImg;
-    public Sprite weaponsClickedImg;
-
-    public Sprite setsIdleImg;
-    public Sprite setsHoverImg;
-    public Sprite setsClickedImg;
     
-    public Sprite partsIdleImg;
-    public Sprite partsHoverImg;
-    public Sprite partsClickedImg;
-
-    public Sprite accIdleImg;
-    public Sprite accHoverImg;
-    public Sprite accClickedImg;
-
-    public Sprite miscIdleImg;
-    public Sprite miscHoverImg;
-    public Sprite miscClickedImg;
     private ObjectStatus status;
 
     public GameObject itemClassUIObject;
+
+    public Sprite idleImg;
+
+    public Sprite hoveringImg;
+
+    public Sprite clickedImg;
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Hi " + itemClassUIObject);
+        
     }
 
     // Update is called once per frame
@@ -51,37 +29,15 @@ public class InventoryItemSelectHandler : MonoBehaviour
         
     }
     
-    private void onInteract(string itemClass, OperationType opType){
-        switch (itemClass)
-        {
-            case WEAPON_CLASS_NAME:
-                setImageByOperationType(opType, weaponsIdleImg, weaponsHoverImg, weaponsClickedImg);
-                return;
-            case SETS_CLASS_NAME:
-                setImageByOperationType(opType, setsIdleImg, setsHoverImg, setsClickedImg);
-                break;
-            case PARTS_CLASS_NAME:
-                setImageByOperationType(opType, partsIdleImg, partsHoverImg, partsClickedImg);
-                break;
-            case ACCESSORIES_CLASS_NAME:
-                setImageByOperationType(opType, accIdleImg, accHoverImg, accClickedImg);
-                break;
-            case MISC_CLASS_NAME:
-                setImageByOperationType(opType, miscIdleImg, miscHoverImg, miscClickedImg);
-                break;
-            default:
-                throw new ArgumentException("Illegal item class name");
-        }
-    }
 
-    private void setImageByOperationType(OperationType opType, Sprite idleImg, Sprite hoverImg, Sprite clickedImg)
+    private void setImageByOperationType(OperationType opType)
     {
         switch (opType)
         {
             case OperationType.Hovering:
                 if (status == ObjectStatus.Idle)
                 {
-                    setImage(itemClassUIObject, hoverImg);
+                    setImage(itemClassUIObject, hoveringImg);
                 }
                 return;
             case OperationType.Clicking:
@@ -97,19 +53,19 @@ public class InventoryItemSelectHandler : MonoBehaviour
         }
     }
 
-    public void OnHover(string itemClass)
+    public void OnHover()
     {
-        onInteract(itemClass, OperationType.Hovering);
+        setImageByOperationType(OperationType.Hovering);
     }
 
-    public void OnClick(string itemClass)
+    public void OnClick()
     {
-        onInteract(itemClass, OperationType.Clicking);
+        setImageByOperationType(OperationType.Clicking);
     }
 
-    public void OnUnhover(string itemClass)
+    public void OnUnhover()
     {
-        onInteract(itemClass, OperationType.Unhovering);
+        setImageByOperationType(OperationType.Unhovering);
     }
 
     
@@ -122,7 +78,7 @@ public class InventoryItemSelectHandler : MonoBehaviour
         }
         catch (NullReferenceException nullEx)
         {     
-            Debug.Log(UIElem + "has no Image componenet");
+            Debug.Log(nullEx.Message);
         }
     }
 
