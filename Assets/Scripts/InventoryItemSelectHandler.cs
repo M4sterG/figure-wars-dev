@@ -15,7 +15,7 @@ public class InventoryItemSelectHandler : MonoBehaviour
 
     private const string ACCESSORIES_CLASS_NAME = "Accessories";
 
-    private const string MISC_CLASS_NAME = "Misc";
+    private const string MISC_CLASS_NAME = "Items";
 
     public Sprite weaponsIdleImg;
     public Sprite weaponsHoverImg;
@@ -58,12 +58,16 @@ public class InventoryItemSelectHandler : MonoBehaviour
                 setImageByOperationType(opType, weaponsIdleImg, weaponsHoverImg, weaponsClickedImg);
                 return;
             case SETS_CLASS_NAME:
+                setImageByOperationType(opType, setsIdleImg, setsHoverImg, setsClickedImg);
                 break;
             case PARTS_CLASS_NAME:
+                setImageByOperationType(opType, partsIdleImg, partsHoverImg, partsClickedImg);
                 break;
             case ACCESSORIES_CLASS_NAME:
+                setImageByOperationType(opType, accIdleImg, accHoverImg, accClickedImg);
                 break;
             case MISC_CLASS_NAME:
+                setImageByOperationType(opType, miscIdleImg, miscHoverImg, miscClickedImg);
                 break;
             default:
                 throw new ArgumentException("Illegal item class name");
@@ -122,14 +126,7 @@ public class InventoryItemSelectHandler : MonoBehaviour
         }
     }
 
-
-    public enum ItemClass
-    {
-        Weapons,
-        Sets,
-        Parts,
-        Misc
-    }
+    
 
     private enum OperationType
     {
