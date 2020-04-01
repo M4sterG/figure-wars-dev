@@ -21,6 +21,7 @@ public class chat : MonoBehaviour {
 	
     void Start()
     {
+	    /*
 		InvokeRepeating("loopChat", 5f, 5f);
 		loadChat("global",1);
 			
@@ -29,7 +30,7 @@ public class chat : MonoBehaviour {
 		
 		globalButton.onClick.AddListener(delegate{switchChat("global");});
 		clanButton.onClick.AddListener(delegate{switchChat("clan");});
-		announcementButton.onClick.AddListener(delegate{switchChat("announcements");});
+		announcementButton.onClick.AddListener(delegate{switchChat("announcements");}); */
     }
 	
 	public class MessageInfo {
