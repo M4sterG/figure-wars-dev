@@ -17,6 +17,8 @@ public class InventoryItemSelectHandler : MonoBehaviour
     public Sprite hoveringImg;
 
     public Sprite clickedImg;
+    private static Color blank = new Color(25, 255, 255, 0);
+    private static Color fullColor = new Color(25, 255, 255, 255);
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +49,7 @@ public class InventoryItemSelectHandler : MonoBehaviour
             case OperationType.Unhovering:
                 if (status == ObjectStatus.Idle)
                 {
-                    setImage(itemClassUIObject, idleImg);
+                    itemClassUIObject.GetComponent<Image>().color = blank;
                 }
                 return;
         }
@@ -70,11 +72,14 @@ public class InventoryItemSelectHandler : MonoBehaviour
 
     
 
-    private void setImage(GameObject UIElem, Sprite img)
+    private void setImage(GameObject UIElem, Sprite newImage)
     {
         try
         {
-            UIElem.GetComponent<Image>().sprite = img;
+            Image img = UIElem.GetComponent<Image>();
+            img.sprite = newImage;
+            img.color = fullColor;
+
         }
         catch (NullReferenceException nullEx)
         {     
