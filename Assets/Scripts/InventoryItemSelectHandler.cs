@@ -42,7 +42,7 @@ public class InventoryItemSelectHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log("Hi " + itemClassUIObject);
     }
 
     // Update is called once per frame
@@ -121,7 +121,7 @@ public class InventoryItemSelectHandler : MonoBehaviour
             UIElem.GetComponent<Image>().sprite = img;
         }
         catch (NullReferenceException nullEx)
-        {
+        {     
             Debug.Log(UIElem + "has no Image componenet");
         }
     }
