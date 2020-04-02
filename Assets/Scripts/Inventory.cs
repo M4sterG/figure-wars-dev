@@ -12,7 +12,7 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         List<Weapon> weapons = WeaponGetter.getWeapons(WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH);
-        Debug.Log(weapons.Count);
+        User.inventory = new Inventory();
     }
 
     // Update is called once per frame

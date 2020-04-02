@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryHandler : MonoBehaviour
+public class InventorySlotHandler : MonoBehaviour
 {
     public Sprite hoverImage;
 
