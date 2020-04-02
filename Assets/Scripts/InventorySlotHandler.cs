@@ -31,6 +31,7 @@ public class InventorySlotHandler : MonoBehaviour
 
     private void loadContext()
     {
+        Debug.Log(User.inventory.getWeapons().Count);
         selectedStatusImage = GetComponent<Image>();
         itemName = slot.GetComponentInChildren<TextMeshProUGUI>();
     }

@@ -7,7 +7,7 @@ using Scripts.Weapons;
 
 namespace Scripts.Classes.Inventory
 {
-    public class InventoryWeaponHolder
+    public class ActualWeapon
     {
         
         public static int MAX_LEVEL = 5;
@@ -32,7 +32,7 @@ namespace Scripts.Classes.Inventory
         private UpgradeStat upgradeStat;
         private int Energy { get; set; }
 
-        public InventoryWeaponHolder(Weapon baseWeapon)
+        public ActualWeapon(Weapon baseWeapon)
         {
             this.baseWeapon = baseWeapon;
             this.actualWeapon = baseWeapon.shallowCopy();
@@ -40,6 +40,7 @@ namespace Scripts.Classes.Inventory
             Level = 0;
             Energy = 0;
         }
+        
         
 
         public void upgrade(int addedEnergy)
