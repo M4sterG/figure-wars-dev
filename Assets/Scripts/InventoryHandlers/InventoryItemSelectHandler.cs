@@ -9,7 +9,6 @@ using UnityEngine.UI;
 public class InventoryItemSelectHandler : MonoBehaviour
 {
     
-
     private ObjectStatus Status
     {
         get
@@ -30,6 +29,7 @@ public class InventoryItemSelectHandler : MonoBehaviour
 
     public GameObject tab;
     public GameObject navBar;
+    public GameObject invScrollView;
 
     // it is assumed the 3 images are different
     public Sprite idleImg;
@@ -106,10 +106,37 @@ public class InventoryItemSelectHandler : MonoBehaviour
         setImageByOperationType(OperationType.Hovering);
     }
 
-    public void OnClick()
+    public void OnClick(string itemClass)
     {
         setImageByOperationType(OperationType.Clicking);
+        GameObject invContent = Instantiate(InventoryPrefabs.InvContentPrefab);
+        clearScrollViewChildren(invContent);
+        switch (itemClass)
+        {
+            case GameManager.TAB_WEAPONS_NAME:
+                User.inventory.getWeapons().ForEach(w => 
+                    WeaponCategoryHandler.addToInvContent(w, InventoryPrefabs.WeaponSlotPrefab, invContent));
+                break;
+            default:
+                break;
+        }
     }
+
+    private void clearScrollViewChildren(GameObject invContent)
+    {
+        foreach (Transform child in invScrollView.transform)
+        {
+            if (!child.name.Contains("Scrollbar"))
+                GameObject.Destroy(child.gameObject);
+        }
+        GameObject slotPrefab = Instantiate(InventoryPrefabs.WeaponSlotPrefab);
+        
+        ScrollRect scrollRect = invScrollView.GetComponent<ScrollRect>();
+        scrollRect.content = invContent.GetComponent<RectTransform>();
+        invContent.transform.SetParent(invScrollView.transform, false);
+    }
+
+    
 
     public void OnUnhover()
     {

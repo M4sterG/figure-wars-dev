@@ -64,8 +64,8 @@ public class WeaponCategoryHandler : MonoBehaviour
             if (!child.name.Contains("Scrollbar"))
             GameObject.Destroy(child.gameObject);
         }
-        GameObject content = Instantiate(inventoryContentPrefab);
-        GameObject slotPrefab = Instantiate(weaponSlotPrfab);
+        GameObject content = Instantiate(InventoryPrefabs.InvContentPrefab);
+        GameObject slotPrefab = Instantiate(InventoryPrefabs.WeaponSlotPrefab);
         
         ScrollRect scrollRect = inventoryScrollView.GetComponent<ScrollRect>();
         scrollRect.content = content.GetComponent<RectTransform>();

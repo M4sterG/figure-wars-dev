@@ -2777,7 +2777,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 29.012482, y: -178}
+  m_AnchoredPosition: {x: 29.012604, y: -178}
   m_SizeDelta: {x: 431.1, y: 79.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &482323681
@@ -9280,6 +9280,21 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 221722144276807799, guid: c42b0bb1f8b1eb04c94c160f4c70db5d,
+        type: 3}
+      propertyPath: invScrollView
+      value: 
+      objectReference: {fileID: 1251491629}
+    - target: {fileID: 741821548685012844, guid: c42b0bb1f8b1eb04c94c160f4c70db5d,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 741821548685012844, guid: c42b0bb1f8b1eb04c94c160f4c70db5d,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Accessories
+      objectReference: {fileID: 0}
     - target: {fileID: 864398102567775840, guid: c42b0bb1f8b1eb04c94c160f4c70db5d,
         type: 3}
       propertyPath: inventoryScrollView
@@ -9576,6 +9591,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7239356264642040817, guid: 495c781e2b6d5f347a1ab455ce42a59b,
         type: 3}
+    - target: {fileID: 7002732144051275100, guid: c42b0bb1f8b1eb04c94c160f4c70db5d,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Items
+      objectReference: {fileID: 0}
     - target: {fileID: 7523828826387044144, guid: c42b0bb1f8b1eb04c94c160f4c70db5d,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -9606,6 +9626,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7527342440136469063, guid: c42b0bb1f8b1eb04c94c160f4c70db5d,
+        type: 3}
+      propertyPath: invScrollView
+      value: 
+      objectReference: {fileID: 1251491629}
     - target: {fileID: 7948132230359470968, guid: c42b0bb1f8b1eb04c94c160f4c70db5d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -9721,9 +9746,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainNavbar
       objectReference: {fileID: 0}
+    - target: {fileID: 8105053322464142369, guid: c42b0bb1f8b1eb04c94c160f4c70db5d,
+        type: 3}
+      propertyPath: invScrollView
+      value: 
+      objectReference: {fileID: 1251491629}
+    - target: {fileID: 8323227484464512780, guid: c42b0bb1f8b1eb04c94c160f4c70db5d,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Parts
+      objectReference: {fileID: 0}
     - target: {fileID: 8418951845917250576, guid: c42b0bb1f8b1eb04c94c160f4c70db5d,
         type: 3}
       propertyPath: inventoryScrollView
+      value: 
+      objectReference: {fileID: 1251491629}
+    - target: {fileID: 8612509623415730568, guid: c42b0bb1f8b1eb04c94c160f4c70db5d,
+        type: 3}
+      propertyPath: invScrollView
+      value: 
+      objectReference: {fileID: 1251491629}
+    - target: {fileID: 8728577325274204986, guid: c42b0bb1f8b1eb04c94c160f4c70db5d,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Set
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852606361946214423, guid: c42b0bb1f8b1eb04c94c160f4c70db5d,
+        type: 3}
+      propertyPath: invScrollView
       value: 
       objectReference: {fileID: 1251491629}
     - target: {fileID: 9107732531991504581, guid: c42b0bb1f8b1eb04c94c160f4c70db5d,
@@ -9755,6 +9805,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141473840059080339, guid: c42b0bb1f8b1eb04c94c160f4c70db5d,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Weapons
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c42b0bb1f8b1eb04c94c160f4c70db5d, type: 3}
@@ -11484,7 +11539,7 @@ PrefabInstance:
     - target: {fileID: 8527309122764287620, guid: 4028da7586b9c7d42873509de7255e5a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 15.082718
+      value: 15.082703
       objectReference: {fileID: 0}
     - target: {fileID: 8527309122764287620, guid: 4028da7586b9c7d42873509de7255e5a,
         type: 3}
