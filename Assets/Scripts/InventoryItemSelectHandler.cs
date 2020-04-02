@@ -11,6 +11,7 @@ public class InventoryItemSelectHandler : MonoBehaviour
     private ObjectStatus status;
 
     public GameObject itemClassUIObject;
+    public GameObject inventoryPanel;
 
     public Sprite idleImg;
 
