@@ -2777,7 +2777,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 29.012238, y: -178}
+  m_AnchoredPosition: {x: 29.012482, y: -178}
   m_SizeDelta: {x: 431.1, y: 79.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &482323681
@@ -3881,6 +3881,7 @@ GameObject:
   - component: {fileID: 797367935}
   - component: {fileID: 797367934}
   - component: {fileID: 797367938}
+  - component: {fileID: 797367939}
   m_Layer: 5
   m_Name: Body
   m_TagString: Untagged
@@ -3988,6 +3989,24 @@ MonoBehaviour:
   weaponInvSlotPrefab: {fileID: 7973004744667452310, guid: 3efe398a5e287ca44b48fbb57bdc8c51,
     type: 3}
   otherInvSlotPrefab: {fileID: 2384935637305325308, guid: 231cd61f7790c7443ab1a1b97a0f1b7d,
+    type: 3}
+--- !u!114 &797367939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797367933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b7a94e643393d04c8a03c8af6c1a3b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invContentPrefab: {fileID: 8527309122764287621, guid: 4028da7586b9c7d42873509de7255e5a,
+    type: 3}
+  weaponSlotPrefab: {fileID: 7973004744667452310, guid: 3efe398a5e287ca44b48fbb57bdc8c51,
+    type: 3}
+  otherSlotPrefab: {fileID: 2384935637305325308, guid: 231cd61f7790c7443ab1a1b97a0f1b7d,
     type: 3}
 --- !u!1 &801249659
 GameObject:
@@ -11383,6 +11402,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7239356265597357830, guid: 495c781e2b6d5f347a1ab455ce42a59b,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 495c781e2b6d5f347a1ab455ce42a59b, type: 3}
 --- !u!1001 &8527309123942057869
@@ -11460,7 +11484,7 @@ PrefabInstance:
     - target: {fileID: 8527309122764287620, guid: 4028da7586b9c7d42873509de7255e5a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 15.082703
+      value: 15.082718
       objectReference: {fileID: 0}
     - target: {fileID: 8527309122764287620, guid: 4028da7586b9c7d42873509de7255e5a,
         type: 3}
