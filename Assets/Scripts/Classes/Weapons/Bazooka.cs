@@ -9,7 +9,7 @@ namespace Scripts.Weapons
     {
         public int BulletSpeed { get; set; }
         public SwapSpeed SwapSpeed { get; set; }
-        public Bazooka()
+        public Bazooka() : base()
         {
             WeaponType = WeaponType.Bazooka;
         }

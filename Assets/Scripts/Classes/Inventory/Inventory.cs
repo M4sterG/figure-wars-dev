@@ -25,6 +25,16 @@ namespace Scripts.Classes.Inventory
             weaponHolders.Add(wep);
         }
 
+        public void addWeapons(List<Weapon> weapons)
+        {
+            weapons.ForEach(w => weaponHolders.Add(new ActualWeapon(w)));
+        }
+
+        public void addWeapons(List<ActualWeapon> weapons)
+        {
+            weapons.ForEach(w => weaponHolders.Add(w));
+        }
+
         public ActualWeapon weaponAt(int i)
         {
             if (!(i >= 0 && i < weaponHolders.Count))

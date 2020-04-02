@@ -23,36 +23,15 @@ public class InventoryHandler : MonoBehaviour
     {
         List<Weapon> weapons = WeaponGetter.getWeapons(WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH);
         // simulates getting weapons from db
-
-        weapons.ForEach(w => addToInventory(w));
-        
+        User.inventory.addWeapons(weapons);
+        ShowAllWeapons();
        // weapons.ForEach(w => addToInventory(w));
     }
 
-    private void addToInventory(Weapon wep)
+    private void ShowAllWeapons()
     {
-        if (User.inventory == null)
-        {
-            throw new ArgumentException("Inventory is null, cannot add weapon");
-        }
-        User.inventory.addActualWeapon(wep);
-        GameObject newSlot = Instantiate(weaponInvSlotPrefab);
-        newSlot.transform.SetParent(inventoryContent.transform, false);
-        GameObject itemIcon = newSlot.transform.Find("ItemIcon").gameObject;
-        GameObject nameText = newSlot.transform.Find("ItemName").gameObject;
-
-        Image image = itemIcon.GetComponent<Image>();
-        Sprite[] icons = Resources.LoadAll<Sprite>(GameManager.WEAPON_ICONS_PATH + wep.IconFile);
-        int offset = wep.IconOffset;
-        if (icons == null || !(offset >= 0 && offset < icons.Length))
-        {
-            image.color = new Color(0, 0,0, 0);
-        }
-        else
-        {
-            image.sprite = icons[offset];
-        }
-        nameText.GetComponent<TextMeshProUGUI>().text = wep.Name;
+        User.inventory.getWeapons().ForEach(w => 
+            WeaponCategoryHandler.addToInvContent(w, weaponInvSlotPrefab, inventoryContent));
     }
 
     // Update is called once per frame

@@ -40,8 +40,18 @@ namespace Scripts.Classes.Inventory
             Level = 0;
             Energy = 0;
         }
-        
-        
+
+        public WeaponType getType()
+        {
+            return baseWeapon.WeaponType;
+        }
+
+        public Weapon getBaseWeapon()
+        {
+            return baseWeapon;
+        }
+
+
 
         public void upgrade(int addedEnergy)
         {
