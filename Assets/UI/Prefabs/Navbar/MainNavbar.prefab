@@ -1041,6 +1041,11 @@ PrefabInstance:
       propertyPath: m_textInfo.characterCount
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2302734321725063697, guid: ba271907190f73d46863dc2e2aeb52cd,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5113327142840669464, guid: ba271907190f73d46863dc2e2aeb52cd,
         type: 3}
       propertyPath: m_Name
@@ -1151,17 +1156,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5113327142840669466, guid: ba271907190f73d46863dc2e2aeb52cd,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -5013088984007986082, guid: e3f5bf3e2a6b3c345848b4a7ada3ff64,
-        type: 3}
-    - target: {fileID: 6863090050664151017, guid: ba271907190f73d46863dc2e2aeb52cd,
-        type: 3}
-      propertyPath: idleImg
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6863090050664151017, guid: ba271907190f73d46863dc2e2aeb52cd,
         type: 3}
       propertyPath: hoveringImg
@@ -1203,6 +1197,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_firstOverflowCharacterIndex
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302734321725063697, guid: ba271907190f73d46863dc2e2aeb52cd,
+        type: 3}
+      propertyPath: m_fontColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302734321725063697, guid: ba271907190f73d46863dc2e2aeb52cd,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4287519573
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302734321725063697, guid: ba271907190f73d46863dc2e2aeb52cd,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5113327142840669464, guid: ba271907190f73d46863dc2e2aeb52cd,
         type: 3}
@@ -1314,21 +1323,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5113327142840669466, guid: ba271907190f73d46863dc2e2aeb52cd,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5113327142840669466, guid: ba271907190f73d46863dc2e2aeb52cd,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6863090050664151017, guid: ba271907190f73d46863dc2e2aeb52cd,
-        type: 3}
-      propertyPath: idleImg
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6863090050664151017, guid: ba271907190f73d46863dc2e2aeb52cd,
         type: 3}
       propertyPath: hoveringImg
@@ -1396,6 +1390,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.characterCount
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302734321725063697, guid: ba271907190f73d46863dc2e2aeb52cd,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5113327142840669464, guid: ba271907190f73d46863dc2e2aeb52cd,
         type: 3}
@@ -1509,21 +1508,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5113327142840669466, guid: ba271907190f73d46863dc2e2aeb52cd,
         type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -5013088984007986082, guid: e3f5bf3e2a6b3c345848b4a7ada3ff64,
-        type: 3}
-    - target: {fileID: 6863090050664151017, guid: ba271907190f73d46863dc2e2aeb52cd,
-        type: 3}
-      propertyPath: idleImg
-      value: 
+      propertyPath: m_Color.r
+      value: 0.8000001
       objectReference: {fileID: 0}
-    - target: {fileID: 6863090050664151017, guid: ba271907190f73d46863dc2e2aeb52cd,
+    - target: {fileID: 5113327142840669466, guid: ba271907190f73d46863dc2e2aeb52cd,
         type: 3}
-      propertyPath: hoveringImg
-      value: 
-      objectReference: {fileID: 21300000, guid: 9f1dbf01c9dd1e34b947c03f0392ef50,
+      propertyPath: m_Color.g
+      value: 0.8000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5113327142840669466, guid: ba271907190f73d46863dc2e2aeb52cd,
         type: 3}
+      propertyPath: m_Color.b
+      value: 0.8000001
+      objectReference: {fileID: 0}
     - target: {fileID: 6863090050664151017, guid: ba271907190f73d46863dc2e2aeb52cd,
         type: 3}
       propertyPath: clickedImg
@@ -1580,6 +1577,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_firstOverflowCharacterIndex
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302734321725063697, guid: ba271907190f73d46863dc2e2aeb52cd,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5113327142840669464, guid: ba271907190f73d46863dc2e2aeb52cd,
         type: 3}
@@ -1691,17 +1693,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5113327142840669466, guid: ba271907190f73d46863dc2e2aeb52cd,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -847399131835946919, guid: e3f5bf3e2a6b3c345848b4a7ada3ff64,
-        type: 3}
-    - target: {fileID: 6863090050664151017, guid: ba271907190f73d46863dc2e2aeb52cd,
-        type: 3}
-      propertyPath: idleImg
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6863090050664151017, guid: ba271907190f73d46863dc2e2aeb52cd,
         type: 3}
       propertyPath: hoveringImg
@@ -1753,6 +1744,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_firstOverflowCharacterIndex
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302734321725063697, guid: ba271907190f73d46863dc2e2aeb52cd,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5113327142840669464, guid: ba271907190f73d46863dc2e2aeb52cd,
         type: 3}
@@ -1863,17 +1859,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5113327142840669466, guid: ba271907190f73d46863dc2e2aeb52cd,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -2866958930705614152, guid: e3f5bf3e2a6b3c345848b4a7ada3ff64,
-        type: 3}
-    - target: {fileID: 6863090050664151017, guid: ba271907190f73d46863dc2e2aeb52cd,
-        type: 3}
-      propertyPath: idleImg
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6863090050664151017, guid: ba271907190f73d46863dc2e2aeb52cd,
         type: 3}

@@ -108,7 +108,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 2
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 1
+    lineCount: 6
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 85598b3990324cf42a4327cb53b8fff0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tab: {fileID: 5113327142840669464}
   navBar: {fileID: 0}
-  idleImg: {fileID: 0}
+  idleImg: {fileID: 21300000, guid: 85598b3990324cf42a4327cb53b8fff0, type: 3}
   hoveringImg: {fileID: 21300000, guid: 9f1dbf01c9dd1e34b947c03f0392ef50, type: 3}
   clickedImg: {fileID: 21300000, guid: f119312706b0b8f4d89eaad786b1c123, type: 3}
 --- !u!114 &-2997614146717607694

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -34,8 +35,11 @@ public class InventoryItemSelectHandler : MonoBehaviour
     public Sprite idleImg;
     public Sprite hoveringImg;
     public Sprite clickedImg;
-    
-    
+
+    private Color selectedColor = Color.yellow;/*new Color(179, 174, 99, 255);*/
+    private Color baseColor = new Color(85/255f, 91/255f, 142/255f);
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,10 +58,16 @@ public class InventoryItemSelectHandler : MonoBehaviour
         {
             if (!child.gameObject.name.Equals(tab.name))
             {
-                GameObject tab = child.gameObject;
-                Image statusImage = tab.GetComponent<Image>();
-                statusImage.color = GameManager.TRANSPARENT;
+                GameObject currTab = child.gameObject;
+                Image statusImage = currTab.GetComponent<Image>();
+                if (statusImage == null)
+                {
+                    continue;
+                }
                 statusImage.sprite = idleImg;
+                statusImage.color = GameManager.TRANSPARENT;
+                TextMeshProUGUI textObj = currTab.GetComponentInChildren<TextMeshProUGUI>();
+                textObj.color = baseColor;
             }
         }
     }
@@ -65,22 +75,27 @@ public class InventoryItemSelectHandler : MonoBehaviour
 
     private void setImageByOperationType(OperationType opType)
     {
+        TextMeshProUGUI textObj = tab.GetComponentInChildren<TextMeshProUGUI>();
         switch (opType)
         {
             case OperationType.Hovering:
                 if (Status == ObjectStatus.Idle)
                 {
                     setImage(tab, hoveringImg);
+                    textObj.color = baseColor;
                 }
                 return;
             case OperationType.Clicking:
                 setImage(tab, clickedImg);
+                textObj.color = selectedColor;
                 setOthersToIdle();
                 return;
             case OperationType.Unhovering:
                 if (Status == ObjectStatus.Idle)
                 {
+                    setImage(tab, idleImg);
                     tab.GetComponent<Image>().color = GameManager.TRANSPARENT;
+                    textObj.color = baseColor;
                 }
                 return;
         }
