@@ -1,7 +1,97 @@
 fileFormatVersion: 2
 guid: 0ce1f996832411d4e9fa59e6265d1b0c
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -1171484511553556559
+    second: icon_weapon_LAUNCHER_03_0
+  - first:
+      213: 2477269046927902858
+    second: icon_weapon_LAUNCHER_03_1
+  - first:
+      213: -8037234406601806301
+    second: icon_weapon_LAUNCHER_03_2
+  - first:
+      213: -8520122336954923158
+    second: icon_weapon_LAUNCHER_03_3
+  - first:
+      213: -8198773186804325304
+    second: icon_weapon_LAUNCHER_03_4
+  - first:
+      213: -6231665274967534001
+    second: icon_weapon_LAUNCHER_03_5
+  - first:
+      213: 2684998132613686387
+    second: icon_weapon_LAUNCHER_03_6
+  - first:
+      213: 1991665809496207863
+    second: icon_weapon_LAUNCHER_03_7
+  - first:
+      213: 4810644284046895304
+    second: icon_weapon_LAUNCHER_03_8
+  - first:
+      213: 3495794321222767344
+    second: icon_weapon_LAUNCHER_03_9
+  - first:
+      213: -6813511853343498146
+    second: icon_weapon_LAUNCHER_03_10
+  - first:
+      213: -4261860983403923518
+    second: icon_weapon_LAUNCHER_03_11
+  - first:
+      213: 884947222609558717
+    second: icon_weapon_LAUNCHER_03_12
+  - first:
+      213: 4343375329060695250
+    second: icon_weapon_LAUNCHER_03_13
+  - first:
+      213: -259058601709307706
+    second: icon_weapon_LAUNCHER_03_14
+  - first:
+      213: -5944145641906420244
+    second: icon_weapon_LAUNCHER_03_15
+  - first:
+      213: 7257450567515316035
+    second: icon_weapon_LAUNCHER_03_16
+  - first:
+      213: 6423775880893683412
+    second: icon_weapon_LAUNCHER_03_17
+  - first:
+      213: -3108963583959429036
+    second: icon_weapon_LAUNCHER_03_18
+  - first:
+      213: 4940127792012456978
+    second: icon_weapon_LAUNCHER_03_19
+  - first:
+      213: 2598169766910590550
+    second: icon_weapon_LAUNCHER_03_20
+  - first:
+      213: -5087584220879062143
+    second: icon_weapon_LAUNCHER_03_21
+  - first:
+      213: 8514416810888798627
+    second: icon_weapon_LAUNCHER_03_22
+  - first:
+      213: 8555353539888087113
+    second: icon_weapon_LAUNCHER_03_23
+  - first:
+      213: 7309818749166806453
+    second: icon_weapon_LAUNCHER_03_24
+  - first:
+      213: 1588404477667841379
+    second: icon_weapon_LAUNCHER_03_25
+  - first:
+      213: 5565713833599529926
+    second: icon_weapon_LAUNCHER_03_26
+  - first:
+      213: 5903752898869576134
+    second: icon_weapon_LAUNCHER_03_27
+  - first:
+      213: 4957476572928730003
+    second: icon_weapon_LAUNCHER_03_28
+  - first:
+      213: -2237197410290069457
+    second: icon_weapon_LAUNCHER_03_29
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -85,11 +175,641 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bf6af42b0d0ebfe0800000000000000
+      internalID: -1171484511553556559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_1
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a884533b217016220800000000000000
+      internalID: 2477269046927902858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_2
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32ea3f9e3e1067090800000000000000
+      internalID: -8037234406601806301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_3
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a674ee640e172c980800000000000000
+      internalID: -8520122336954923158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_4
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 844e78eb93b183e80800000000000000
+      internalID: -8198773186804325304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 344
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f465c6ef27da489a0800000000000000
+      internalID: -6231665274967534001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_6
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 344
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 374a60d6397034520800000000000000
+      internalID: 2684998132613686387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_7
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 344
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f1ff4e5081d3ab10800000000000000
+      internalID: 1991665809496207863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_8
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 344
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c8e06b0d77d2c240800000000000000
+      internalID: 4810644284046895304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_9
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 344
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f29f44e96e838030800000000000000
+      internalID: 3495794321222767344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 260
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e502c84a11b8171a0800000000000000
+      internalID: -6813511853343498146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_11
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 260
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c7bc121404dad4c0800000000000000
+      internalID: -4261860983403923518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_12
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 260
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbc7c907fc6f74c00800000000000000
+      internalID: 884947222609558717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_13
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 260
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dcabde79d4c64c30800000000000000
+      internalID: 4343375329060695250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_14
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 260
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c87b150393a76cf0800000000000000
+      internalID: -259058601709307706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce54bf83807228da0800000000000000
+      internalID: -5944145641906420244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_16
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 176
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34f15bbe6d4a7b460800000000000000
+      internalID: 7257450567515316035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_17
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 176
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d6d3690126d52950800000000000000
+      internalID: 6423775880893683412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_18
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 176
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4501976a71ebad4d0800000000000000
+      internalID: -3108963583959429036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_19
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 176
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 214ffeb8d0cde8440800000000000000
+      internalID: 4940127792012456978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 92
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65e7dd623ad8e0420800000000000000
+      internalID: 2598169766910590550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_21
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 92
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18bfe953b154569b0800000000000000
+      internalID: -5087584220879062143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_22
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 92
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a124aa6af8492670800000000000000
+      internalID: 8514416810888798627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_23
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 92
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94009e067b8bab670800000000000000
+      internalID: 8555353539888087113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_24
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 92
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b5e39c5c61b17560800000000000000
+      internalID: 7309818749166806453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 365180be4752b0610800000000000000
+      internalID: 1588404477667841379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_26
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 8
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c37d254e336d3d40800000000000000
+      internalID: 5565713833599529926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_27
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 8
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c1cdca6bf75ee150800000000000000
+      internalID: 5903752898869576134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_28
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 8
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 393ecbf5dae7cc440800000000000000
+      internalID: 4957476572928730003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_LAUNCHER_03_29
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 8
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f209c3bfec0e3f0e0800000000000000
+      internalID: -2237197410290069457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: faa2e344f3ab20a4b8a0cf62b8afdb8f
     internalID: 0
     vertices: []
     indices: 

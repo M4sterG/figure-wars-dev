@@ -1,7 +1,97 @@
 fileFormatVersion: 2
 guid: 03bdf1e2bba56b44492afa6831fc16aa
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 8737347793784106757
+    second: icon_weapon_KNIFE_04_0
+  - first:
+      213: 8354294224172589749
+    second: icon_weapon_KNIFE_04_1
+  - first:
+      213: -7260342898800592627
+    second: icon_weapon_KNIFE_04_2
+  - first:
+      213: 33722330051728073
+    second: icon_weapon_KNIFE_04_3
+  - first:
+      213: -4961783227204863960
+    second: icon_weapon_KNIFE_04_4
+  - first:
+      213: 5333284937219904099
+    second: icon_weapon_KNIFE_04_5
+  - first:
+      213: -6150643349222271310
+    second: icon_weapon_KNIFE_04_6
+  - first:
+      213: 7373780950411143740
+    second: icon_weapon_KNIFE_04_7
+  - first:
+      213: 4698531617670200510
+    second: icon_weapon_KNIFE_04_8
+  - first:
+      213: -5397832704256212828
+    second: icon_weapon_KNIFE_04_9
+  - first:
+      213: -1765758311211840467
+    second: icon_weapon_KNIFE_04_10
+  - first:
+      213: -424924099090198383
+    second: icon_weapon_KNIFE_04_11
+  - first:
+      213: 5582102240646670520
+    second: icon_weapon_KNIFE_04_12
+  - first:
+      213: -7801538787739726903
+    second: icon_weapon_KNIFE_04_13
+  - first:
+      213: 2100718092991325492
+    second: icon_weapon_KNIFE_04_14
+  - first:
+      213: -5607368775140318560
+    second: icon_weapon_KNIFE_04_15
+  - first:
+      213: 6023423353727516919
+    second: icon_weapon_KNIFE_04_16
+  - first:
+      213: -5008916150161649162
+    second: icon_weapon_KNIFE_04_17
+  - first:
+      213: -2386808912796813109
+    second: icon_weapon_KNIFE_04_18
+  - first:
+      213: -1822972878077386652
+    second: icon_weapon_KNIFE_04_19
+  - first:
+      213: -3407605595030700823
+    second: icon_weapon_KNIFE_04_20
+  - first:
+      213: 6122262071753363631
+    second: icon_weapon_KNIFE_04_21
+  - first:
+      213: 7191145098621426507
+    second: icon_weapon_KNIFE_04_22
+  - first:
+      213: 1848949316926885580
+    second: icon_weapon_KNIFE_04_23
+  - first:
+      213: 929451158167514937
+    second: icon_weapon_KNIFE_04_24
+  - first:
+      213: -6630884536571753961
+    second: icon_weapon_KNIFE_04_25
+  - first:
+      213: -7793968913247179844
+    second: icon_weapon_KNIFE_04_26
+  - first:
+      213: -7752331606737503802
+    second: icon_weapon_KNIFE_04_27
+  - first:
+      213: 6761659703097138300
+    second: icon_weapon_KNIFE_04_28
+  - first:
+      213: 3826950434932025432
+    second: icon_weapon_KNIFE_04_29
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -85,11 +175,641 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50f6b87a68b414970800000000000000
+      internalID: 8737347793784106757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_1
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b2a7ec755a60f370800000000000000
+      internalID: 8354294224172589749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_2
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d09f579b9941e3b90800000000000000
+      internalID: -7260342898800592627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_3
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c25bbfc74ec77000800000000000000
+      internalID: 33722330051728073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_4
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82876f98174342bb0800000000000000
+      internalID: -4961783227204863960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 344
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3621fe8b462a30a40800000000000000
+      internalID: 5333284937219904099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_6
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 344
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b6dc7d167684aaa0800000000000000
+      internalID: -6150643349222271310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_7
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 344
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a6cc8d4bee45660800000000000000
+      internalID: 7373780950411143740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_8
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 344
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebc7c25cc99843140800000000000000
+      internalID: 4698531617670200510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_9
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 344
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a082d121cb0715b0800000000000000
+      internalID: -5397832704256212828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 260
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2c460ddb24ce77e0800000000000000
+      internalID: -1765758311211840467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_11
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 260
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 190d93188cd5a1af0800000000000000
+      internalID: -424924099090198383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_12
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 260
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b828a1a96c977d40800000000000000
+      internalID: 5582102240646670520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_13
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 260
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cb875f8ecd5bb390800000000000000
+      internalID: -7801538787739726903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_14
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 260
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 435ebf9b9ff372d10800000000000000
+      internalID: 2100718092991325492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a2e421eecf9e22b0800000000000000
+      internalID: -5607368775140318560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_16
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 176
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f088b270af779350800000000000000
+      internalID: 6023423353727516919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_17
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 176
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f1d5efbc41cc7ab0800000000000000
+      internalID: -5008916150161649162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_18
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 176
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc8720e80f950eed0800000000000000
+      internalID: -2386808912796813109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_19
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 176
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 460a60f63df73b6e0800000000000000
+      internalID: -1822972878077386652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 92
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ecbf8df3c0c5b0d0800000000000000
+      internalID: -3407605595030700823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_21
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 92
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa0d4b8cae4a6f450800000000000000
+      internalID: 6122262071753363631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_22
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 92
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4b1f9bed541cc360800000000000000
+      internalID: 7191145098621426507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_23
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 92
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccec02b8b99c8a910800000000000000
+      internalID: 1848949316926885580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_24
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 92
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93f66a667e216ec00800000000000000
+      internalID: 929451158167514937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71a820b55ad5af3a0800000000000000
+      internalID: -6630884536571753961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_26
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 8
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbbe67f419246d390800000000000000
+      internalID: -7793968913247179844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_27
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 8
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c9b06f2a7f2a6490800000000000000
+      internalID: -7752331606737503802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_28
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 8
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7c9d27dcad36dd50800000000000000
+      internalID: 6761659703097138300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_KNIFE_04_29
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 8
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 858662ff42f0c1530800000000000000
+      internalID: 3826950434932025432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3bd319b6e8eed094486c9b4694c3c9e7
     internalID: 0
     vertices: []
     indices: 

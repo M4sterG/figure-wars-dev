@@ -1,7 +1,97 @@
 fileFormatVersion: 2
 guid: 5efc27c688617be44b00da4e9b86f723
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7124938273692889416
+    second: icon_weapon_GATLING_02_0
+  - first:
+      213: 2897888392524410275
+    second: icon_weapon_GATLING_02_1
+  - first:
+      213: -5036184093470894705
+    second: icon_weapon_GATLING_02_2
+  - first:
+      213: 8250221955334816066
+    second: icon_weapon_GATLING_02_3
+  - first:
+      213: 4762401637390105132
+    second: icon_weapon_GATLING_02_4
+  - first:
+      213: -3186921780607120731
+    second: icon_weapon_GATLING_02_5
+  - first:
+      213: 6581254559464232946
+    second: icon_weapon_GATLING_02_6
+  - first:
+      213: 8239054412408485633
+    second: icon_weapon_GATLING_02_7
+  - first:
+      213: -7107014120870864300
+    second: icon_weapon_GATLING_02_8
+  - first:
+      213: -5777430321096274295
+    second: icon_weapon_GATLING_02_9
+  - first:
+      213: -493636891888753117
+    second: icon_weapon_GATLING_02_10
+  - first:
+      213: -8337454311149024485
+    second: icon_weapon_GATLING_02_11
+  - first:
+      213: -9174397400752380765
+    second: icon_weapon_GATLING_02_12
+  - first:
+      213: 5122865206985983441
+    second: icon_weapon_GATLING_02_13
+  - first:
+      213: -1486479767136385185
+    second: icon_weapon_GATLING_02_14
+  - first:
+      213: 4772716009330747133
+    second: icon_weapon_GATLING_02_15
+  - first:
+      213: -6171877950902309414
+    second: icon_weapon_GATLING_02_16
+  - first:
+      213: -3701891992504845164
+    second: icon_weapon_GATLING_02_17
+  - first:
+      213: 2730936464435634734
+    second: icon_weapon_GATLING_02_18
+  - first:
+      213: -631741771139179208
+    second: icon_weapon_GATLING_02_19
+  - first:
+      213: 63236873541194797
+    second: icon_weapon_GATLING_02_20
+  - first:
+      213: 1695149569475852634
+    second: icon_weapon_GATLING_02_21
+  - first:
+      213: -7981219635096596419
+    second: icon_weapon_GATLING_02_22
+  - first:
+      213: -1839587452252304264
+    second: icon_weapon_GATLING_02_23
+  - first:
+      213: -6870903179274259564
+    second: icon_weapon_GATLING_02_24
+  - first:
+      213: 5967895146305924492
+    second: icon_weapon_GATLING_02_25
+  - first:
+      213: 7729979671987854850
+    second: icon_weapon_GATLING_02_26
+  - first:
+      213: -2854574385385580404
+    second: icon_weapon_GATLING_02_27
+  - first:
+      213: -8286714310247479992
+    second: icon_weapon_GATLING_02_28
+  - first:
+      213: -4664651668362177461
+    second: icon_weapon_GATLING_02_29
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -85,11 +175,641 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8be43fdb3622f1d90800000000000000
+      internalID: -7124938273692889416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_1
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ad252ba32e573820800000000000000
+      internalID: 2897888392524410275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_2
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f85d135ff31eb1ab0800000000000000
+      internalID: -5036184093470894705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_3
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2414cd5282dae7270800000000000000
+      internalID: 8250221955334816066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_4
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2a30629e03771240800000000000000
+      internalID: 4762401637390105132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 344
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aa05fb8687c5c3d0800000000000000
+      internalID: -3186921780607120731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_6
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 344
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f719412720555b50800000000000000
+      internalID: 6581254559464232946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_7
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 344
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 107f8b0f550075270800000000000000
+      internalID: 8239054412408485633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_8
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 344
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45a9ec7cf40de5d90800000000000000
+      internalID: -7107014120870864300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_9
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 344
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98e4c7cabb172dfa0800000000000000
+      internalID: -5777430321096274295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 260
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32661fabcdf3629f0800000000000000
+      internalID: -493636891888753117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_11
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 260
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1bc9ec4a796b4c80800000000000000
+      internalID: -8337454311149024485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_12
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 260
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a423eb0c2efda080800000000000000
+      internalID: -9174397400752380765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_13
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 260
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d58b9e73c2181740800000000000000
+      internalID: 5122865206985983441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_14
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 260
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f57c70a0786fe5be0800000000000000
+      internalID: -1486479767136385185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df6aafd6ce71c3240800000000000000
+      internalID: 4772716009330747133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_16
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 176
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adde66324b5195aa0800000000000000
+      internalID: -6171877950902309414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_17
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 176
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49cb2e5a8dc30acc0800000000000000
+      internalID: -3701891992504845164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_18
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 176
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e22e8dace3c36e520800000000000000
+      internalID: 2730936464435634734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_19
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 176
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83d197dc43a9b37f0800000000000000
+      internalID: -631741771139179208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 92
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d241128f999a0e000800000000000000
+      internalID: 63236873541194797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_21
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 92
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a59b3c95d81668710800000000000000
+      internalID: 1695149569475852634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_22
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 92
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d30d1b737030d3190800000000000000
+      internalID: -7981219635096596419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_23
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 92
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87c4c3f65f87876e0800000000000000
+      internalID: -1839587452252304264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_24
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 92
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 493714946f5a5a0a0800000000000000
+      internalID: -6870903179274259564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8da75c240932d250800000000000000
+      internalID: 5967895146305924492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_26
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 8
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20e93d57e87664b60800000000000000
+      internalID: 7729979671987854850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_27
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 8
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c88d92e78b38268d0800000000000000
+      internalID: -2854574385385580404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_28
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 8
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8458d8e5d3daffc80800000000000000
+      internalID: -8286714310247479992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_GATLING_02_29
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 8
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b44d652a504d34fb0800000000000000
+      internalID: -4664651668362177461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: aebfd2e0fab710d4c9be3350c5c62e2a
     internalID: 0
     vertices: []
     indices: 

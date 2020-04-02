@@ -1,7 +1,22 @@
 fileFormatVersion: 2
 guid: a9ce0c5d83f0362448355f400de817d4
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7099378957359475718
+    second: icon_weapon_RIFLE_05_0
+  - first:
+      213: -2809027513274426967
+    second: icon_weapon_RIFLE_05_1
+  - first:
+      213: -6899825586344403331
+    second: icon_weapon_RIFLE_05_2
+  - first:
+      213: -8666684255293310758
+    second: icon_weapon_RIFLE_05_3
+  - first:
+      213: 3450384101731473805
+    second: icon_weapon_RIFLE_05_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -85,11 +100,116 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: icon_weapon_RIFLE_05_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af394b0d370f97d90800000000000000
+      internalID: -7099378957359475718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_RIFLE_05_1
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a99afa0c545409d0800000000000000
+      internalID: -2809027513274426967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_RIFLE_05_2
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7e5ac1af25ee30a0800000000000000
+      internalID: -6899825586344403331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_RIFLE_05_3
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad875ce7690c9b780800000000000000
+      internalID: -8666684255293310758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_RIFLE_05_4
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d891c524f0a32ef20800000000000000
+      internalID: 3450384101731473805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: aec74254f8a4e5740b32bb46000eab52
     internalID: 0
     vertices: []
     indices: 

@@ -50,6 +50,27 @@ TextureImporter:
   - first:
       213: 5993295032926885465
     second: inven_01_15
+  - first:
+      213: -1671813352591893705
+    second: inven_01_16
+  - first:
+      213: 2863175240767887252
+    second: inven_01_17
+  - first:
+      213: -2807336933451324020
+    second: inven_01_18
+  - first:
+      213: -7967668269704952630
+    second: inven_01_19
+  - first:
+      213: 7289574963567949242
+    second: inven_01_20
+  - first:
+      213: -7386872659725509827
+    second: inven_01_21
+  - first:
+      213: 327999061385699872
+    second: inven_01_22
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -411,8 +432,8 @@ TextureImporter:
       name: inven_01_13
       rect:
         serializedVersion: 2
-        x: 994
-        y: 1
+        x: 995
+        y: 0
         width: 29
         height: 417
       alignment: 0
@@ -445,6 +466,174 @@ TextureImporter:
       bones: []
       spriteID: 392c885f36dfabfb0800000000000000
       internalID: -4631110661034163565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inven_01_15
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 4
+        width: 31
+        height: 416
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95658bf14167c2350800000000000000
+      internalID: 5993295032926885465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inven_01_16
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 241
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b510c0d968cc8e0800000000000000
+      internalID: -1671813352591893705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inven_01_17
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 243
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 497d9a336ba0cb720800000000000000
+      internalID: 2863175240767887252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inven_01_18
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 242
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c85acc4dee55a09d0800000000000000
+      internalID: -2807336933451324020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inven_01_19
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 242
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac4c5185ce72d6190800000000000000
+      internalID: -7967668269704952630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inven_01_20
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 243
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab57c0bbec5c92560800000000000000
+      internalID: 7289574963567949242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inven_01_21
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 22
+        width: 22
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3b140c047e8c7990800000000000000
+      internalID: -7386872659725509827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inven_01_22
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 21
+        width: 22
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0226e8498694d8400800000000000000
+      internalID: 327999061385699872
       vertices: []
       indices: 
       edges: []

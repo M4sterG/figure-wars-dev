@@ -330,11 +330,20 @@ namespace Scripts.Classes.Main
             wep.AmmoClip = primWep.wi_bullet_capacity;
             wep.TotalAmmo = primWep.wi_bullet_total;
             wep.ChangeTime = primWep.wi_change_time;
+            int iconDDSExtension = 4;
             foreach (var icon in  primIcons)
             {
                 if (icon.ii_id == info.ii_icon)
                 {
-                    wep.IconFile = icon.ii_filename;
+                    string fileName = icon.ii_filename;
+                    // back is an extra word in the filename
+                    // in old CGD files
+                    int indexOfBack = fileName.IndexOf("back");
+                    fileName = fileName.Remove(indexOfBack, 4);
+                    fileName = fileName.Substring(0, fileName.Length - 4);
+                    //fileName += ".dds";
+                    wep.IconFile = fileName;
+                    wep.IconOffset = icon.ii_offset;
                     break;
                 }
             }
