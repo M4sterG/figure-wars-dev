@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Scripts.Classes.Inventory;
 using Scripts.Classes.Main;
 using Scripts.Weapons;
@@ -22,7 +23,10 @@ public class InventoryHandler : MonoBehaviour
     {
         List<Weapon> weapons = WeaponGetter.getWeapons(WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH);
         // simulates getting weapons from db
+
         weapons.ForEach(w => addToInventory(w));
+        
+       // weapons.ForEach(w => addToInventory(w));
     }
 
     private void addToInventory(Weapon wep)
