@@ -12,6 +12,7 @@ namespace Scripts.Classes.Main
         public string MeshPath { get; set; }
         public ItemType ItemType { get; set; }
         public string IconFile { get; set; }
+        public int IconOffset { get; set; }
 
         public virtual string ToUniquePropertyList()
         {

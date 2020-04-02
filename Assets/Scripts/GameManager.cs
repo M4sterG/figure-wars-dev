@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    public const string ITEM_ICONS_PATH = "Game/Items/";
+    public const string WEAPON_ICONS_PATH = "Game/Icons/Weapon/";
     void Start()
     {
         
