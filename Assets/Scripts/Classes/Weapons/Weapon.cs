@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Scripts.Classes.Main;
 
@@ -22,17 +23,19 @@ namespace Scripts.Weapons
 //        public int ChangeSkip { get; set; } always 500
 //        public int ChangeDelay { get; set; } always 0
         public WeaponType WeaponType { get; set; }
-        public Weapon(int id, WeaponType weaponType, string name, string desc)
+        public Weapon(int id, WeaponType weaponType, string name, string desc) : this()
         {
             Id = id;
             Name = name;
             Description = desc;
             WeaponType = weaponType;
+            
         }
         public Weapon()
-        {        
+        {
+            this.ItemType = ItemType.Weapon;
         }
-        public Weapon(int abilityA, int abilityB, int abilityC, int abilityD)
+        public Weapon(int abilityA, int abilityB, int abilityC, int abilityD) : this()
         {
         }
 

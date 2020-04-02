@@ -10,7 +10,7 @@ namespace Scripts.Weapons
     {
         private const int MAX_BOUNCE_COUNT = 2;
         public SwapSpeed SwapSpeed { get; set; }
-        public Grenade()
+        public Grenade() 
         {
             WeaponType = WeaponType.Grenade;
         }

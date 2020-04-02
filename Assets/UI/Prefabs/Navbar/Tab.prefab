@@ -243,7 +243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 683c724c8056c9445808958a17358fe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemClassUIObject: {fileID: 5113327142840669464}
+  tab: {fileID: 5113327142840669464}
+  navBar: {fileID: 0}
   idleImg: {fileID: 0}
   hoveringImg: {fileID: 21300000, guid: 9f1dbf01c9dd1e34b947c03f0392ef50, type: 3}
   clickedImg: {fileID: 21300000, guid: f119312706b0b8f4d89eaad786b1c123, type: 3}

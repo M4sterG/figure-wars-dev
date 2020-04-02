@@ -17,7 +17,7 @@ namespace Scripts.Weapons
         }
         public int ZoomSpeed { get; set; }  
         public ZoomType Zoom { get; set; }
-        public Sniper()
+        public Sniper() : base()
         {
             WeaponType = WeaponType.Sniper;
         }

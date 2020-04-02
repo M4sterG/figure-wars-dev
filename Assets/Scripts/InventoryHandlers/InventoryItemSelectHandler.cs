@@ -8,18 +8,34 @@ using UnityEngine.UI;
 public class InventoryItemSelectHandler : MonoBehaviour
 {
     
-    private ObjectStatus status;
 
-    public GameObject itemClassUIObject;
-    public GameObject inventoryPanel;
+    private ObjectStatus Status
+    {
+        get
+        {
+            Sprite sprite = tab.GetComponent<Image>().sprite;
+            if (sprite == null)
+            {
+                return ObjectStatus.Idle;
+            }
+            string imgName = sprite.name;
+            if (imgName != null && imgName.Equals(clickedImg.name))
+            {
+                return ObjectStatus.Clicked;
+            }
+            return ObjectStatus.Idle;
+        }
+    }
 
+    public GameObject tab;
+    public GameObject navBar;
+
+    // it is assumed the 3 images are different
     public Sprite idleImg;
-
     public Sprite hoveringImg;
-
     public Sprite clickedImg;
-    private static Color blank = new Color(25, 255, 255, 0);
-    private static Color fullColor = new Color(25, 255, 255, 255);
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +47,20 @@ public class InventoryItemSelectHandler : MonoBehaviour
     {
         
     }
+
+    private void setOthersToIdle()
+    {
+        foreach (Transform child in navBar.transform)
+        {
+            if (!child.gameObject.name.Equals(tab.name))
+            {
+                GameObject tab = child.gameObject;
+                Image statusImage = tab.GetComponent<Image>();
+                statusImage.color = GameManager.TRANSPARENT;
+                statusImage.sprite = idleImg;
+            }
+        }
+    }
     
 
     private void setImageByOperationType(OperationType opType)
@@ -38,19 +68,19 @@ public class InventoryItemSelectHandler : MonoBehaviour
         switch (opType)
         {
             case OperationType.Hovering:
-                if (status == ObjectStatus.Idle)
+                if (Status == ObjectStatus.Idle)
                 {
-                    setImage(itemClassUIObject, hoveringImg);
+                    setImage(tab, hoveringImg);
                 }
                 return;
             case OperationType.Clicking:
-                setImage(itemClassUIObject, clickedImg);
-                status = ObjectStatus.Clicked;
+                setImage(tab, clickedImg);
+                setOthersToIdle();
                 return;
             case OperationType.Unhovering:
-                if (status == ObjectStatus.Idle)
+                if (Status == ObjectStatus.Idle)
                 {
-                    itemClassUIObject.GetComponent<Image>().color = blank;
+                    tab.GetComponent<Image>().color = GameManager.TRANSPARENT;
                 }
                 return;
         }
@@ -79,8 +109,7 @@ public class InventoryItemSelectHandler : MonoBehaviour
         {
             Image img = UIElem.GetComponent<Image>();
             img.sprite = newImage;
-            img.color = fullColor;
-
+            img.color = GameManager.FULL_COLOR;
         }
         catch (NullReferenceException nullEx)
         {     

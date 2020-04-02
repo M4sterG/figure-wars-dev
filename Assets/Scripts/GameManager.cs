@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public const string BAZOOKA_NAME = "Bazooka";
     public const string GRENADE_NAME = "Grenade";
     public static Color TRANSPARENT = new Color(0, 0,0, 0);
+    public static Color FULL_COLOR = new Color(25, 255, 255, 255);
     void Start()
     {
         
