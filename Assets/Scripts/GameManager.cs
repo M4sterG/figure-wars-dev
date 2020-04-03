@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     public const string TAB_PARTS_NAME = "Parts";
     public const string TAB_ACCESORIES_NAME = "Accessories";
     public const string TAB_MISC_NAME = "Items";
+    
+    public enum SlotStatus {Idle, Clicked}
     void Start()
     {
         
