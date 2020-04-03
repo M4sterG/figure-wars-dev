@@ -15,12 +15,16 @@ public class GameManager : MonoBehaviour
     public const string GRENADE_NAME = "Grenade";
     public static Color TRANSPARENT = new Color(0, 0,0, 0);
     public static Color FULL_COLOR = new Color(25, 255, 255, 255);
+
+    public const int MAX_UPGRADE_LEVEL = 5;
     
     public const string TAB_WEAPONS_NAME = "Weapons";
     public const string TAB_SET_NAME = "Set";
     public const string TAB_PARTS_NAME = "Parts";
     public const string TAB_ACCESORIES_NAME = "Accessories";
     public const string TAB_MISC_NAME = "Items";
+    
+    public enum SlotStatus {Idle, Clicked}
     void Start()
     {
         
