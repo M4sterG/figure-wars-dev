@@ -27,7 +27,7 @@ namespace frame8.ScrollRectItemsAdapter.Classic.Examples
 		protected override void Start()
 		{
 			base.Start();
-			List<Weapon> weapons = WeaponGetter.getWeapons(/*WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH*/);
+			List<Weapon> weapons = WeaponGetter.getWeapons(WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH);
 			// simulates getting weapons from db
 			User.inventory.addWeapons(weapons);
 			Data = User.inventory.getWeapons();
@@ -46,7 +46,11 @@ namespace frame8.ScrollRectItemsAdapter.Classic.Examples
 		{
 			ActualWeapon model = Data[vh.ItemIndex];
 			Sprite[] icons = Resources.LoadAll<Sprite>(GameManager.WEAPON_ICONS_PATH + model.getBaseWeapon().IconFile);
-			vh.itemIcon.sprite = icons[model.IconOffset];
+			if (icons != null && (model.IconOffset >= 0 && model.IconOffset < icons.Length))
+			{
+				vh.itemIcon.sprite = icons[model.IconOffset];
+			}
+
 			vh.itemName.text = model.getName();
 			
 			// set viewholder
