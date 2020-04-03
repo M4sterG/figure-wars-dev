@@ -21,17 +21,15 @@ public class InventoryHandler : MonoBehaviour
     public GameObject otherInvSlotPrefab;
     void Start()
     {
-        List<Weapon> weapons = WeaponGetter.getWeapons(WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH);
-        // simulates getting weapons from db
-        User.inventory.addWeapons(weapons);
-        ShowAllWeapons();
+       
+       /* ShowAllWeapons();
        // weapons.ForEach(w => addToInventory(w));
     }
 
     private void ShowAllWeapons()
     {
         User.inventory.getWeapons().ForEach(w => 
-            WeaponCategoryHandler.addToInvContent(w, weaponInvSlotPrefab, inventoryContent));
+            WeaponCategoryHandler.addToInvContent(w, weaponInvSlotPrefab, inventoryContent));*/
     }
 
     // Update is called once per frame

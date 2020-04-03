@@ -12,7 +12,7 @@ namespace frame8.ScrollRectItemsAdapter.Classic.Examples.Common
 		public Button addOneTailButton, removeOneTailButton, addOneHeadButton, removeOneHeadButton;
 		public Toggle freezeContentEndEdge;
 
-		public int SetCountValue { get { return 1000; } }
-		public int ScrollToValue { get { return 0; } }
+		public int SetCountValue { get { return int.Parse(countText.text); } }
+		public int ScrollToValue { get { return int.Parse(scrollToText.text); } }
 	}	
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using frame8.ScrollRectItemsAdapter.Classic.Examples.Common;
 using Scripts.Classes.Inventory;
 using Scripts.Classes.Main;
+using Scripts.Weapons;
 using TMPro;
 
 namespace frame8.ScrollRectItemsAdapter.Classic.Examples
@@ -13,7 +14,6 @@ namespace frame8.ScrollRectItemsAdapter.Classic.Examples
 		public RectTransform itemPrefab;
 		private const string WEAPON_INFO_MOCK_PATH = "Assets/Resources/CGD/mock_weapon_info.json";
 		private const string ITEM_WEAPON_INFO_MOCK_PATH = "Assets/Resources/CGD/mock_item_weapon_info.json";
-
 		public List<ActualWeapon> Data { get; private set; }
 
 
@@ -27,11 +27,11 @@ namespace frame8.ScrollRectItemsAdapter.Classic.Examples
 		protected override void Start()
 		{
 			base.Start();
-			User.inventory.addWeapons(WeaponGetter.getWeapons());
+			List<Weapon> weapons = WeaponGetter.getWeapons(/*WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH*/);
+			// simulates getting weapons from db
+			User.inventory.addWeapons(weapons);
 			Data = User.inventory.getWeapons();
 			ResetItems(Data.Count);
-
-			
 		}
 		
 		protected override InvSlotViewHolder CreateViewsHolder(int itemIndex)
@@ -47,7 +47,7 @@ namespace frame8.ScrollRectItemsAdapter.Classic.Examples
 			ActualWeapon model = Data[vh.ItemIndex];
 			Sprite[] icons = Resources.LoadAll<Sprite>(GameManager.WEAPON_ICONS_PATH + model.getBaseWeapon().IconFile);
 			vh.itemIcon.sprite = icons[model.IconOffset];
-			//vh.itemName.text = model.getName();
+			vh.itemName.text = model.getName();
 			
 			// set viewholder
 
