@@ -26,14 +26,8 @@ namespace frame8.ScrollRectItemsAdapter.Classic.Examples
 		{
 			base.Start();
 
-			ChangeModelsAndReset(demoUI.SetCountValue);
-
-			demoUI.setCountButton.onClick.AddListener(OnItemCountChangeRequested);
-			demoUI.scrollToButton.onClick.AddListener(OnScrollToRequested);
-			demoUI.addOneTailButton.onClick.AddListener(() => OnAddItemRequested(true));
-			demoUI.addOneHeadButton.onClick.AddListener(() => OnAddItemRequested(false));
-			demoUI.removeOneTailButton.onClick.AddListener(() => OnRemoveItemRequested(true));
-			demoUI.removeOneHeadButton.onClick.AddListener(() => OnRemoveItemRequested(false));
+			ChangeModelsAndReset(1000);
+			
 		}
 		
 		protected override CellViewsHolder CreateViewsHolder(int itemIndex)
@@ -53,33 +47,9 @@ namespace frame8.ScrollRectItemsAdapter.Classic.Examples
 		#endregion
 
 		#region events from DrawerCommandPanel
-		void OnAddItemRequested(bool atEnd)
-		{
-			int index = atEnd ? Data.Count : 0;
-			Data.Insert(index, CreateNewModel());
-			InsertItems(index, 1, demoUI.freezeContentEndEdge.isOn);
-		}
-		void OnRemoveItemRequested(bool fromEnd)
-		{
-			if (Data.Count == 0)
-				return;
 
-			int index = fromEnd ? Data.Count - 1 : 0;
-
-			Data.RemoveAt(index);
-			RemoveItems(index, 1, demoUI.freezeContentEndEdge.isOn);
-		}
-		void OnItemCountChangeRequested() { ChangeModelsAndReset(demoUI.SetCountValue); }
-		void OnScrollToRequested()
-		{
-			if (demoUI.ScrollToValue >= Data.Count)
-				return;
-
-			demoUI.scrollToButton.interactable = false;
-			bool started = SmoothScrollTo(demoUI.ScrollToValue, .75f, .5f, .5f, () => demoUI.scrollToButton.interactable = true);
-			if (!started)
-				demoUI.scrollToButton.interactable = true;
-		}
+		
+		
 		#endregion
 
 		void ChangeModelsAndReset(int newCount)

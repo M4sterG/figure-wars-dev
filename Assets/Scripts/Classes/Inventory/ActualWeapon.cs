@@ -41,6 +41,21 @@ namespace Scripts.Classes.Inventory
             Energy = 0;
         }
 
+        public string getName()
+        {
+            return baseWeapon.Name;
+        }
+
+        public string IconFile
+        {
+            get => baseWeapon.IconFile;
+        }
+
+        public int IconOffset
+        {
+            get => baseWeapon.IconOffset;
+        }
+
         public WeaponType getType()
         {
             return baseWeapon.WeaponType;
