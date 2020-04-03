@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public const string GRENADE_NAME = "Grenade";
     public static Color TRANSPARENT = new Color(0, 0,0, 0);
     public static Color FULL_COLOR = new Color(25, 255, 255, 255);
+
+    public const int MAX_UPGRADE_LEVEL = 5;
     
     public const string TAB_WEAPONS_NAME = "Weapons";
     public const string TAB_SET_NAME = "Set";
