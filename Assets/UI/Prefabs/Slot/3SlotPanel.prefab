@@ -109,6 +109,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7689081794017531510}
     m_Modifications:
+    - target: {fileID: 1571783250942826162, guid: 9c2939ebba6305641bd5c3c5d727da66,
+        type: 3}
+      propertyPath: basicIcon
+      value: 
+      objectReference: {fileID: 469200343876715087, guid: f54b578959ccef14c9d8afc7f4de6ecd,
+        type: 3}
+    - target: {fileID: 1571783250942826162, guid: 9c2939ebba6305641bd5c3c5d727da66,
+        type: 3}
+      propertyPath: thisPanel
+      value: 
+      objectReference: {fileID: 7689081793620829330}
     - target: {fileID: 1627603184463296905, guid: 9c2939ebba6305641bd5c3c5d727da66,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -247,7 +258,7 @@ PrefabInstance:
     - target: {fileID: 6878000544752211505, guid: 9c2939ebba6305641bd5c3c5d727da66,
         type: 3}
       propertyPath: m_Name
-      value: ItemEquipSlot (1)
+      value: BazookaPanel
       objectReference: {fileID: 0}
     - target: {fileID: 6878000544752211506, guid: 9c2939ebba6305641bd5c3c5d727da66,
         type: 3}
@@ -307,7 +318,7 @@ PrefabInstance:
     - target: {fileID: 6878000544752211506, guid: 9c2939ebba6305641bd5c3c5d727da66,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 53.996254
       objectReference: {fileID: 0}
     - target: {fileID: 6878000544752211506, guid: 9c2939ebba6305641bd5c3c5d727da66,
         type: 3}
@@ -429,6 +440,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7689081794017531510}
     m_Modifications:
+    - target: {fileID: 1571783250942826162, guid: 9c2939ebba6305641bd5c3c5d727da66,
+        type: 3}
+      propertyPath: basicIcon
+      value: 
+      objectReference: {fileID: 588826529730579940, guid: 36b6389ea0da9dc478730d535f3d525d,
+        type: 3}
+    - target: {fileID: 1571783250942826162, guid: 9c2939ebba6305641bd5c3c5d727da66,
+        type: 3}
+      propertyPath: thisPanel
+      value: 
+      objectReference: {fileID: 7689081793620829330}
     - target: {fileID: 1627603184463296905, guid: 9c2939ebba6305641bd5c3c5d727da66,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -567,7 +589,7 @@ PrefabInstance:
     - target: {fileID: 6878000544752211505, guid: 9c2939ebba6305641bd5c3c5d727da66,
         type: 3}
       propertyPath: m_Name
-      value: ItemEquipSlot (2)
+      value: GrenadePanel
       objectReference: {fileID: 0}
     - target: {fileID: 6878000544752211506, guid: 9c2939ebba6305641bd5c3c5d727da66,
         type: 3}
@@ -627,7 +649,7 @@ PrefabInstance:
     - target: {fileID: 6878000544752211506, guid: 9c2939ebba6305641bd5c3c5d727da66,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 53.996254
       objectReference: {fileID: 0}
     - target: {fileID: 6878000544752211506, guid: 9c2939ebba6305641bd5c3c5d727da66,
         type: 3}
@@ -749,6 +771,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7689081794017531510}
     m_Modifications:
+    - target: {fileID: 1571783250942826162, guid: 9c2939ebba6305641bd5c3c5d727da66,
+        type: 3}
+      propertyPath: basicIcon
+      value: 
+      objectReference: {fileID: 3298155923753173277, guid: a874156ab3cfb304bbaff45d6862b145,
+        type: 3}
+    - target: {fileID: 1571783250942826162, guid: 9c2939ebba6305641bd5c3c5d727da66,
+        type: 3}
+      propertyPath: thisPanel
+      value: 
+      objectReference: {fileID: 7689081793620829330}
     - target: {fileID: 1627603184463296905, guid: 9c2939ebba6305641bd5c3c5d727da66,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -887,7 +920,7 @@ PrefabInstance:
     - target: {fileID: 6878000544752211505, guid: 9c2939ebba6305641bd5c3c5d727da66,
         type: 3}
       propertyPath: m_Name
-      value: ItemEquipSlot
+      value: GatlingPanel
       objectReference: {fileID: 0}
     - target: {fileID: 6878000544752211506, guid: 9c2939ebba6305641bd5c3c5d727da66,
         type: 3}
@@ -947,7 +980,7 @@ PrefabInstance:
     - target: {fileID: 6878000544752211506, guid: 9c2939ebba6305641bd5c3c5d727da66,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 53.996254
       objectReference: {fileID: 0}
     - target: {fileID: 6878000544752211506, guid: 9c2939ebba6305641bd5c3c5d727da66,
         type: 3}

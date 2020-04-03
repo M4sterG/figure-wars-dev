@@ -16,7 +16,9 @@ public class ItemEquipHandler : MonoBehaviour
     public GameObject upgradesBar;
     public GameObject basicPanel;
 
-    public string categoryName;
+    public GameObject otherPanel;
+    public GameObject thisPanel;
+
 
     public Sprite basicIcon;
 
@@ -50,13 +52,13 @@ public class ItemEquipHandler : MonoBehaviour
         }
         if (taps > 1)
         {
-            OnUnequip(categoryName);
+            OnUnequip();
         }
     }
 
     public void OnUnhover()
     {
-        if (status == GameManager.SlotStatus.Idle)
+        if (status == GameManager.SlotStatus.Idle && !isBasic)
         {
             statusImg.sprite = idleImg;
         }
@@ -64,17 +66,43 @@ public class ItemEquipHandler : MonoBehaviour
 
     public void OnClick()
     {
-        statusImg.sprite = clickedImg;
-        status = GameManager.SlotStatus.Clicked;
+        if (!isBasic)
+        {
+            statusImg.sprite = clickedImg;
+            status = GameManager.SlotStatus.Clicked;
+            setOthersToIdle();
+        }
     }
 
-    public void OnUnequip(string itemClass)
+    private void setOthersToIdle()
     {
-        iconImg.sprite = basicIcon;
-        upgradesBar.SetActive(false);
-        basicPanel.SetActive(true);
-        statusImg.sprite = idleImg;
-        isBasic = true;
+        idlePanel(thisPanel);
+        idlePanel(otherPanel);
+    }
+
+    private void idlePanel(GameObject panel)
+    {
+        foreach (Transform child in panel.transform)
+        {
+            GameObject otherSlot = child.gameObject;
+            if (!otherSlot.name.Equals(this.name))
+                // reference equality needed
+            {
+                otherSlot.GetComponent<Image>().sprite = idleImg;
+            }
+        }
+    }
+
+    public void OnUnequip()
+    {
+        if (!isBasic)
+        {
+            iconImg.sprite = basicIcon;
+            upgradesBar.SetActive(false);
+            basicPanel.SetActive(true);
+            statusImg.sprite = idleImg;
+            isBasic = true;
+        }
     }
 
     
