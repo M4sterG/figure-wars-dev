@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Scripts.InventoryHandlers;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 
 public class InventorySlotHandler : MonoBehaviour
@@ -17,52 +19,68 @@ public class InventorySlotHandler : MonoBehaviour
     private Image selectedStatusImage;
     private TextMeshProUGUI itemName;
     private static Color itemIdleColour = new Color32(122, 121, 149, 255);
-    private SlotStatus status = SlotStatus.Idle;
+    private int invIndex;
+
+    private int SlotIndex
+    {
+        get => invIndex - InventoryGrid.getHead();
+    }
     public void OnSlotClicked()
     {
         loadContext();
-        if (status == SlotStatus.Idle)
+        if (InventoryGrid.getStatus(invIndex) == GameManager.SlotStatus.Idle)
         {
             selectedStatusImage.sprite = clickedImage;
             itemName.color = Color.white;
-            status = SlotStatus.Clicked;
+            InventoryGrid.setStatus(invIndex, GameManager.SlotStatus.Clicked);
+            InventoryGrid.clearStatuses(invIndex, SlotIndex);
+            
         }
     }
 
     private void loadContext()
     {
-        Debug.Log(User.inventory.getWeapons().Count);
+        Transform invContentTransform = slot.transform.parent;
+        int index = 0;
+        foreach (Transform child in invContentTransform)
+        {
+            if (child.gameObject.name.Equals(this.name))
+            {
+                invIndex = InventoryGrid.getHead() + index;
+                break;
+            }
+            else
+            {
+                index++;
+            }
+        }
         selectedStatusImage = GetComponent<Image>();
         itemName = slot.GetComponentInChildren<TextMeshProUGUI>();
     }
 
     public void OnHover()
     {
-        if (status != SlotStatus.Idle)
+        loadContext();
+        if (InventoryGrid.getStatus(invIndex) != GameManager.SlotStatus.Idle)
         {
             return;
         }
-        loadContext();
         selectedStatusImage.sprite = hoverImage;
         itemName.color = Color.white;
     }
 
     public void onUnhover()
     {
-        if (status != SlotStatus.Idle)
+        loadContext();
+        if (InventoryGrid.getStatus(invIndex) != GameManager.SlotStatus.Idle)
         {
             return;
         }
-        loadContext();
         selectedStatusImage.sprite = idleImage;
         itemName.color = itemIdleColour;
     }
 
-    private enum SlotStatus
-    {
-        Idle,
-        Clicked
-    }
+
 
     // Start is called before the first frame update
     void Start()

@@ -20,16 +20,36 @@ namespace Scripts.InventoryHandlers
 		public static InventoryGrid instance;
 		public GameObject inventoryContent;
 		public static List<Item> itemList = new List<Item>();
+		private static Dictionary<int, GameManager.SlotStatus> statusMap
+			= new Dictionary<int, GameManager.SlotStatus>();
 		private static int head = 0;
 		private static int tail = 0;
 
-		private static bool lastRowDown = false;
+		public Sprite idleImage;
+		public Sprite clickedImage;
 
 		private static int DataLength
 		{
 			get => ItemList.Count;
 		}
-		
+
+		public static int getHead()
+		{
+			return head;
+		}
+
+		public static Sprite IdleImage
+		{
+			get => instance.idleImage;
+		}
+
+		public static Sprite ClickedImage
+		{
+			get => instance.clickedImage;
+			
+		}
+
+
 		private const int rowSize = 4;
 		private const int viewable = 8;
 		
@@ -59,7 +79,7 @@ namespace Scripts.InventoryHandlers
 				tail = viewable - 1;
 				for (int i = 0; i < viewable; i++)
 				{
-					setUpObject(SlotArray[i], itemList.ElementAt(head + i));
+					setUpObject(SlotArray[i], itemList.ElementAt(head + i), head + i);
 					SlotArray[i].SetActive(true);
 				}
 			}
@@ -84,7 +104,7 @@ namespace Scripts.InventoryHandlers
 
 			for (int i = 0; head + i <= tail; i++)
 			{
-				setUpObject(SlotArray[i], itemList.ElementAt(head + i));
+				setUpObject(SlotArray[i], itemList.ElementAt(head + i), head + i);
 				SlotArray[i].SetActive(true);
 				if (i + head == tail)
 				{
@@ -106,7 +126,7 @@ namespace Scripts.InventoryHandlers
 			for (int i = 0; i + head <= tail; i++)
 			{
 				
-				setUpObject(SlotArray[i], itemList.ElementAt(head + i));
+				setUpObject(SlotArray[i], itemList.ElementAt(head + i), head + i);
 				SlotArray[i].SetActive(true);
 				if (i + head == tail)
 				{
@@ -122,7 +142,7 @@ namespace Scripts.InventoryHandlers
 			itemName = slot.transform.Find("Itemname").gameObject.GetComponent<TextMeshProUGUI>();
 		}
 
-		private static void setUpObject(GameObject slot, Item item)
+		private static void setUpObject(GameObject slot, Item item, int index)
 		{
 			Image iconImg, statusImg;
 			TextMeshProUGUI itemName;
@@ -132,8 +152,37 @@ namespace Scripts.InventoryHandlers
 				statusImg = slot.transform.GetComponent<Image>();
 				itemName = slot.transform.Find("ItemName").gameObject.GetComponent<TextMeshProUGUI>();
 				itemName.text = item.Name;
+				if (statusMap[index] == GameManager.SlotStatus.Clicked)
+				{
+					statusImg.sprite = ClickedImage;
+				}
+				else
+				{
+					statusImg.sprite = IdleImage;
+				}
 				setIcon(iconImg, item);
 			}
+		}
+		
+
+		public static void clearStatuses(int except, int localIndex)
+		{
+			for (int i = 0; i < viewable; i++)
+			{
+				if (i != localIndex)
+				{
+					SlotArray[i].GetComponent<Image>().sprite = IdleImage;
+				}
+			}
+			for (int i = 0; i < DataLength; i++)
+			{
+				if (statusMap[i] == GameManager.SlotStatus.Clicked && i != except)
+				{
+					statusMap[i] = GameManager.SlotStatus.Idle;
+					return;
+				}
+			}
+			
 		}
 
 		private static void setIcon(Image image, Item item)
@@ -156,7 +205,7 @@ namespace Scripts.InventoryHandlers
 			tail = length;
 			for (int i = 0; i < length; i++)
 			{
-				setUpObject(SlotArray[i], itemList.ElementAt(i));
+				setUpObject(SlotArray[i], itemList.ElementAt(i), i);
 				SlotArray[i].SetActive(true);
 			}
 		}
@@ -198,10 +247,44 @@ namespace Scripts.InventoryHandlers
 		void Awake()
 		{
 			instance = this;
-			List<Weapon> weps = WeaponGetter.getWeapons(WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH).Take(16).ToList();
+			List<Weapon> weps = WeaponGetter.getWeapons(WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH);
 			User.inventory.addWeapons(weps);
 			ItemList = toItemList(User.inventory.getWeapons());
+			defineStatusMap();
 			show();
+		}
+
+		private static void defineStatusMap()
+		{
+			statusMap.Clear();
+			for (int i = 0; i < DataLength; i++)
+			{
+				
+				statusMap.Add(i, GameManager.SlotStatus.Idle);
+			}
+		}
+
+		private static bool checkIndex(int index)
+		{
+			bool good = index >= 0 && index < statusMap.Count;
+			if (!good)
+			{
+				throw new ArgumentException("Illegal index");
+			}
+
+			return true;
+		}
+
+		public static void setStatus(int index, GameManager.SlotStatus status)
+		{
+			checkIndex(index);
+			statusMap[index] = status;
+		}
+
+		public static GameManager.SlotStatus getStatus(int index)
+		{
+			checkIndex(index);
+			return statusMap[index];
 		}
 
 
