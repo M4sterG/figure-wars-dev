@@ -40,9 +40,46 @@ namespace Scripts.InventoryHandlers
 			{
 				tail = viewable - 1;
 				for (int i = 0; i < viewable; i++)
-				{ 
+				{
+					setUpObject(SlotArray[i], itemList.ElementAt(head + i));
 					SlotArray[i].SetActive(true);
 				}
+			}
+		}
+
+		private static void getSlotChildren(GameObject slot, Image iconImg, Image statusImg, TextMeshProUGUI itemName)
+		{
+			iconImg = slot.transform.Find("ItemIcon").gameObject.GetComponent<Image>();
+			statusImg = slot.transform.GetComponent<Image>();
+			itemName = slot.transform.Find("Itemname").gameObject.GetComponent<TextMeshProUGUI>();
+
+		}
+
+		private static void setUpObject(GameObject slot, Item item)
+		{
+			Image iconImg, statusImg;
+			TextMeshProUGUI itemName;
+			if (item.GetType() == typeof(ActualWeapon))
+			{
+				iconImg = slot.transform.Find("ItemIcon").gameObject.GetComponent<Image>();
+				statusImg = slot.transform.GetComponent<Image>();
+				itemName = slot.transform.Find("ItemName").gameObject.GetComponent<TextMeshProUGUI>();
+				itemName.text = item.Name;
+				setIcon(iconImg, item);
+			}
+		}
+
+		private static void setIcon(Image image, Item item)
+		{
+			Sprite[] icons = Resources.LoadAll<Sprite>(GameManager.WEAPON_ICONS_PATH + item.IconFile);
+			int offset = item.IconOffset;
+			if (icons == null || !(offset >= 0 && offset < icons.Length))
+			{
+				image.color = GameManager.TRANSPARENT;
+			}
+			else
+			{
+				image.sprite = icons[offset];
 			}
 		}
 
@@ -52,6 +89,7 @@ namespace Scripts.InventoryHandlers
 			tail = length;
 			for (int i = 0; i < length; i++)
 			{
+				setUpObject(SlotArray[i], itemList.ElementAt(i));
 				SlotArray[i].SetActive(true);
 			}
 		}
@@ -75,6 +113,12 @@ namespace Scripts.InventoryHandlers
 				}
 				return slots;
 			}
+		}
+
+		public static List<T> toSpecificList<T>(List<Item> data, T reference) where T : Item
+		{
+			// data must have actual type T
+			return data.Select(it => (T) it).ToList();
 		}
 
 		public static List<Item> toItemList<T>(List<T> data) where T : Item

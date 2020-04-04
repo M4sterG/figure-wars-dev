@@ -7,7 +7,7 @@ namespace Scripts.Classes.Parts
     {
         public HashSet<PartSlot> PartEquip { get; set; }
         public HashSet<Character> CharacterEquip { get; set; }
-        public string IconFile { get; set; }
+  
     }
 
     public enum PartSlot

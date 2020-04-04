@@ -31,30 +31,26 @@ namespace Scripts.Classes.Inventory
         }
         private UpgradeStat upgradeStat;
         private int Energy { get; set; }
+        
 
         public ActualWeapon(Weapon baseWeapon)
         {
             this.baseWeapon = baseWeapon;
-            this.actualWeapon = baseWeapon.shallowCopy();
+            setFromBase(baseWeapon);
             CurrentUpgradeRate = upgradeLevelChances[1];
             Level = 0;
             Energy = 0;
         }
 
-        public string getName()
+        private void setFromBase(Weapon baseWeapon)
         {
-            return baseWeapon.Name;
+            this.Name = baseWeapon.Name;
+            this.actualWeapon = baseWeapon.shallowCopy();
+            this.IconFile = baseWeapon.IconFile;
+            this.IconOffset = baseWeapon.IconOffset;
         }
-
-        public string IconFile
-        {
-            get => baseWeapon.IconFile;
-        }
-
-        public int IconOffset
-        {
-            get => baseWeapon.IconOffset;
-        }
+        
+        
 
         public WeaponType getType()
         {
