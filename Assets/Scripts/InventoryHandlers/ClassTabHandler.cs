@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Scripts.Classes.Inventory;
+using Scripts.Classes.Main;
+using Scripts.InventoryHandlers;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryItemSelectHandler : MonoBehaviour
+public class ClassTabHandler : MonoBehaviour
 {
     
     private ObjectStatus Status
@@ -109,33 +112,33 @@ public class InventoryItemSelectHandler : MonoBehaviour
     public void OnClick(string itemClass)
     {
         setImageByOperationType(OperationType.Clicking);
-        GameObject invContent = Instantiate(InventoryPrefabs.InvContentPrefab);
-        clearScrollViewChildren(invContent);
+        List<Item> itemList;
         switch (itemClass)
         {
             case GameManager.TAB_WEAPONS_NAME:
-                User.inventory.getWeapons().ForEach(w => 
-                    WeaponCategoryHandler.addToInvContent(w, InventoryPrefabs.WeaponSlotPrefab, invContent));
+                itemList = InventoryHandler.toItemList(User.inventory.getWeapons());
+                InventoryHandler.ShowNewList(itemList);
                 break;
-            default:
+            case GameManager.TAB_SET_NAME:
+                itemList = InventoryHandler.toItemList(User.inventory.getParts());
+                InventoryHandler.ShowNewList(itemList);
                 break;
+            case GameManager.TAB_PARTS_NAME:
+                itemList = InventoryHandler.toItemList(User.inventory.getParts());
+                InventoryHandler.ShowNewList(itemList);
+                break;
+            case GameManager.TAB_ACCESORIES_NAME:
+                itemList = InventoryHandler.toItemList(User.inventory.getParts());
+                InventoryHandler.ShowNewList(itemList);
+                break;
+            case GameManager.TAB_MISC_NAME:
+                itemList = InventoryHandler.toItemList(User.inventory.getMisc());
+                InventoryHandler.ShowNewList(itemList);
+                break;
+            
         }
     }
-
-    private void clearScrollViewChildren(GameObject invContent)
-    {
-        foreach (Transform child in invScrollView.transform)
-        {
-            if (!child.name.Contains("Scrollbar"))
-                GameObject.Destroy(child.gameObject);
-        }
-        GameObject slotPrefab = Instantiate(InventoryPrefabs.WeaponSlotPrefab);
-        
-        ScrollRect scrollRect = invScrollView.GetComponent<ScrollRect>();
-        scrollRect.content = invContent.GetComponent<RectTransform>();
-        invContent.transform.SetParent(invScrollView.transform, false);
-    }
-
+    
     
 
     public void OnUnhover()

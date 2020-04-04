@@ -12,8 +12,23 @@ namespace Scripts.Classes.Inventory
         private readonly int id;
         private readonly int userId;
         private List<ActualWeapon> weaponHolders = new List<ActualWeapon>();
-        private List<Part> parts;
-        private List<Item> miscItems;
+        private List<Part> parts = new List<Part>();
+        private List<Item> miscItems = new List<Item>();
+
+        public List<Part> getParts()
+        {
+            return parts;
+        }
+
+        public List<Item> getMisc()
+        {
+            return miscItems;
+        }
+
+        public void addParts(List<Part> data)
+        {
+            data.ForEach(p => parts.Add(p));
+        }
 
         public void addActualWeapon(Weapon wep)
         {
