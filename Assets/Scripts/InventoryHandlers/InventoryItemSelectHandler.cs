@@ -127,6 +127,10 @@ public class InventoryItemSelectHandler : MonoBehaviour
                 itemList = InventoryHandler.toItemList(User.inventory.getParts());
                 InventoryHandler.ShowNewList(itemList);
                 break;
+            case GameManager.TAB_ACCESORIES_NAME:
+                itemList = InventoryHandler.toItemList(User.inventory.getParts());
+                InventoryHandler.ShowNewList(itemList);
+                break;
             case GameManager.TAB_MISC_NAME:
                 itemList = InventoryHandler.toItemList(User.inventory.getMisc());
                 InventoryHandler.ShowNewList(itemList);

@@ -6,6 +6,7 @@ using System.Linq;
 using frame8.ScrollRectItemsAdapter.Classic.Examples.Common;
 using Scripts.Classes.Inventory;
 using Scripts.Classes.Main;
+using Scripts.Classes.Parts;
 using Scripts.Weapons;
 using TMPro;
 using UnityEditor;
@@ -63,7 +64,9 @@ namespace Scripts.InventoryHandlers
 		{
 			instance = this;
 			List<Weapon> weps = WeaponGetter.getWeapons(/*WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH*/);
+			List<Part> parts = PartGetter.getParts().Take(13).ToList();
 			User.inventory.addWeapons(weps);
+			User.inventory.addParts(parts);
 			ItemList = toItemList(User.inventory.getWeapons());
 			defineStatusMap();
 			show();
@@ -163,13 +166,7 @@ namespace Scripts.InventoryHandlers
 				}
 			}
 		}
-
-		private static void getSlotChildren(GameObject slot, Image iconImg, Image statusImg, TextMeshProUGUI itemName)
-		{
-			iconImg = slot.transform.Find("ItemIcon").gameObject.GetComponent<Image>();
-			statusImg = slot.transform.GetComponent<Image>();
-			itemName = slot.transform.Find("Itemname").gameObject.GetComponent<TextMeshProUGUI>();
-		}
+		
 
 		private static void setUpObject(GameObject slot, Item item, int index)
 		{
@@ -184,6 +181,10 @@ namespace Scripts.InventoryHandlers
 				if (item.GetType() != typeof(ActualWeapon))
 				{
 					upgradeIndicator.SetActive(false);
+				}
+				else
+				{
+					upgradeIndicator.SetActive(true);
 				}
 				itemName.text = item.Name;
 				
@@ -231,6 +232,7 @@ namespace Scripts.InventoryHandlers
 			}
 			else
 			{
+				image.color = GameManager.FULL_COLOR;
 				image.sprite = icons[offset];
 			}
 		}

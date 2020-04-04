@@ -25,6 +25,11 @@ namespace Scripts.Classes.Inventory
             return miscItems;
         }
 
+        public void addParts(List<Part> data)
+        {
+            data.ForEach(p => parts.Add(p));
+        }
+
         public void addActualWeapon(Weapon wep)
         {
             weaponHolders.Add(new ActualWeapon(wep));

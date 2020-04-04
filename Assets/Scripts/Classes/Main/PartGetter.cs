@@ -58,6 +58,7 @@ namespace Scripts.Classes.Main
                 if (icon.ii_id == primPart.ii_icon)
                 {
                     part.IconFile = icon.ii_filename;
+                    part.IconOffset = icon.ii_offset;
                 }
             }
         }
