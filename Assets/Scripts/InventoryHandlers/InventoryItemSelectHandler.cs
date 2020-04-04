@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Scripts.Classes.Inventory;
 using Scripts.Classes.Main;
 using Scripts.InventoryHandlers;
 using TMPro;
@@ -115,11 +116,22 @@ public class InventoryItemSelectHandler : MonoBehaviour
         switch (itemClass)
         {
             case GameManager.TAB_WEAPONS_NAME:
-                itemList = InventoryGrid.toItemList(User.inventory.getWeapons());
-                InventoryGrid.ShowNewList(itemList);
+                itemList = InventoryHandler.toItemList(User.inventory.getWeapons());
+                InventoryHandler.ShowNewList(itemList);
                 break;
-            default:
+            case GameManager.TAB_SET_NAME:
+                itemList = InventoryHandler.toItemList(User.inventory.getParts());
+                InventoryHandler.ShowNewList(itemList);
                 break;
+            case GameManager.TAB_PARTS_NAME:
+                itemList = InventoryHandler.toItemList(User.inventory.getParts());
+                InventoryHandler.ShowNewList(itemList);
+                break;
+            case GameManager.TAB_MISC_NAME:
+                itemList = InventoryHandler.toItemList(User.inventory.getMisc());
+                InventoryHandler.ShowNewList(itemList);
+                break;
+            
         }
     }
     

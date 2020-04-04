@@ -23,17 +23,17 @@ public class InventorySlotHandler : MonoBehaviour
 
     private int SlotIndex
     {
-        get => invIndex - InventoryGrid.getHead();
+        get => invIndex - InventoryHandler.getHead();
     }
     public void OnSlotClicked()
     {
         loadContext();
-        if (InventoryGrid.getStatus(invIndex) == GameManager.SlotStatus.Idle)
+        if (InventoryHandler.getStatus(invIndex) == GameManager.SlotStatus.Idle)
         {
             selectedStatusImage.sprite = clickedImage;
             itemName.color = Color.white;
-            InventoryGrid.setStatus(invIndex, GameManager.SlotStatus.Clicked);
-            InventoryGrid.clearStatuses(invIndex, SlotIndex);
+            InventoryHandler.setStatus(invIndex, GameManager.SlotStatus.Clicked);
+            InventoryHandler.clearStatuses(invIndex, SlotIndex);
             
         }
     }
@@ -46,7 +46,7 @@ public class InventorySlotHandler : MonoBehaviour
         {
             if (child.gameObject.name.Equals(this.name))
             {
-                invIndex = InventoryGrid.getHead() + index;
+                invIndex = InventoryHandler.getHead() + index;
                 break;
             }
             else
@@ -61,7 +61,7 @@ public class InventorySlotHandler : MonoBehaviour
     public void OnHover()
     {
         loadContext();
-        if (InventoryGrid.getStatus(invIndex) != GameManager.SlotStatus.Idle)
+        if (InventoryHandler.getStatus(invIndex) != GameManager.SlotStatus.Idle)
         {
             return;
         }
@@ -72,7 +72,7 @@ public class InventorySlotHandler : MonoBehaviour
     public void onUnhover()
     {
         loadContext();
-        if (InventoryGrid.getStatus(invIndex) != GameManager.SlotStatus.Idle)
+        if (InventoryHandler.getStatus(invIndex) != GameManager.SlotStatus.Idle)
         {
             return;
         }

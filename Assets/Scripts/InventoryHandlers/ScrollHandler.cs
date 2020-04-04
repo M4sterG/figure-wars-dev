@@ -8,11 +8,11 @@ public class ScrollHandler : MonoBehaviour
     // Start is called before the first frame update
     public void OnScrollUp()
     {
-        InventoryGrid.ScrollUp();
+        InventoryHandler.ScrollUp();
     }
 
     public void OnScrollDown()
     {
-        InventoryGrid.scrollDown();
+        InventoryHandler.scrollDown();
     }
 }
