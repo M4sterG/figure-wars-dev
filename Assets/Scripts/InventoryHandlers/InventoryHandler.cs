@@ -63,7 +63,7 @@ namespace Scripts.InventoryHandlers
 		void Awake()
 		{
 			instance = this;
-			List<Weapon> weps = WeaponGetter.getWeapons(WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH);
+			List<Weapon> weps = WeaponGetter.getWeapons(/*WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH*/);
 			List<Part> parts = PartGetter.getParts();
 			User.inventory.addWeapons(weps);
 			User.inventory.addParts(parts);
@@ -309,6 +309,7 @@ namespace Scripts.InventoryHandlers
 
 			return true;
 		}
+		
 
 		public static void setStatus(int index, GameManager.SlotStatus status)
 		{
