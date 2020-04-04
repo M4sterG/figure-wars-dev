@@ -1,0 +1,914 @@
+fileFormatVersion: 2
+guid: f4f8dd6b8e93cd44fa65d7dbe983bc8c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6794054406990186354
+    second: icon_costume_HAIR_D_01_0
+  - first:
+      213: 5193987563995673372
+    second: icon_costume_HAIR_D_01_1
+  - first:
+      213: 9181660398909238291
+    second: icon_costume_HAIR_D_01_2
+  - first:
+      213: 8705417445013601842
+    second: icon_costume_HAIR_D_01_3
+  - first:
+      213: -1070955404607343487
+    second: icon_costume_HAIR_D_01_4
+  - first:
+      213: -2196953146200269543
+    second: icon_costume_HAIR_D_01_5
+  - first:
+      213: 6625877066015310299
+    second: icon_costume_HAIR_D_01_6
+  - first:
+      213: 6485363825072774583
+    second: icon_costume_HAIR_D_01_7
+  - first:
+      213: 5266402241115639656
+    second: icon_costume_HAIR_D_01_8
+  - first:
+      213: -6772465404361374805
+    second: icon_costume_HAIR_D_01_9
+  - first:
+      213: 2770616725056309378
+    second: icon_costume_HAIR_D_01_10
+  - first:
+      213: 1101110527816872415
+    second: icon_costume_HAIR_D_01_11
+  - first:
+      213: -1677211924638680045
+    second: icon_costume_HAIR_D_01_12
+  - first:
+      213: -4668334733595099334
+    second: icon_costume_HAIR_D_01_13
+  - first:
+      213: -518942684907862149
+    second: icon_costume_HAIR_D_01_14
+  - first:
+      213: 773821935270318420
+    second: icon_costume_HAIR_D_01_15
+  - first:
+      213: 758280377990435253
+    second: icon_costume_HAIR_D_01_16
+  - first:
+      213: -2218591252194684324
+    second: icon_costume_HAIR_D_01_17
+  - first:
+      213: 1610706329570108887
+    second: icon_costume_HAIR_D_01_18
+  - first:
+      213: 2989314907071008224
+    second: icon_costume_HAIR_D_01_19
+  - first:
+      213: -2331792955938287079
+    second: icon_costume_HAIR_D_01_20
+  - first:
+      213: -5678012487466221263
+    second: icon_costume_HAIR_D_01_21
+  - first:
+      213: 4334206591705545707
+    second: icon_costume_HAIR_D_01_22
+  - first:
+      213: 5653877513673842398
+    second: icon_costume_HAIR_D_01_23
+  - first:
+      213: -4278591372101557436
+    second: icon_costume_HAIR_D_01_24
+  - first:
+      213: 7499484167982254469
+    second: icon_costume_HAIR_D_01_25
+  - first:
+      213: -8149317603776391870
+    second: icon_costume_HAIR_D_01_26
+  - first:
+      213: -4601524707510974997
+    second: icon_costume_HAIR_D_01_27
+  - first:
+      213: -1700615808089153687
+    second: icon_costume_HAIR_D_01_28
+  - first:
+      213: 5211254901654210491
+    second: icon_costume_HAIR_D_01_29
+  - first:
+      213: 3159018295380189580
+    second: icon_costume_HAIR_D_01_0
+  - first:
+      213: -156988869794384199
+    second: icon_costume_HAIR_D_01_1
+  - first:
+      213: 8019935678767075492
+    second: icon_costume_HAIR_D_01_2
+  - first:
+      213: -8937409191141811505
+    second: icon_costume_HAIR_D_01_3
+  - first:
+      213: 3916537941311293010
+    second: icon_costume_HAIR_D_01_4
+  - first:
+      213: 689102188506944403
+    second: icon_costume_HAIR_D_01_5
+  - first:
+      213: 3347015661632964656
+    second: icon_costume_HAIR_D_01_6
+  - first:
+      213: 8019725242295197867
+    second: icon_costume_HAIR_D_01_7
+  - first:
+      213: -734124256077340063
+    second: icon_costume_HAIR_D_01_8
+  - first:
+      213: 1381135530511143893
+    second: icon_costume_HAIR_D_01_9
+  - first:
+      213: -2867940535990806772
+    second: icon_costume_HAIR_D_01_10
+  - first:
+      213: 1737220668182416434
+    second: icon_costume_HAIR_D_01_11
+  - first:
+      213: -2489347673141049584
+    second: icon_costume_HAIR_D_01_12
+  - first:
+      213: 7410620409221143936
+    second: icon_costume_HAIR_D_01_13
+  - first:
+      213: -6557555726974622871
+    second: icon_costume_HAIR_D_01_14
+  - first:
+      213: -1737298077078206122
+    second: icon_costume_HAIR_D_01_15
+  - first:
+      213: -9104272110542414778
+    second: icon_costume_HAIR_D_01_16
+  - first:
+      213: -5961888560032694185
+    second: icon_costume_HAIR_D_01_17
+  - first:
+      213: -205153369178682129
+    second: icon_costume_HAIR_D_01_18
+  - first:
+      213: -6483165860832931155
+    second: icon_costume_HAIR_D_01_19
+  - first:
+      213: 2163453084252665445
+    second: icon_costume_HAIR_D_01_20
+  - first:
+      213: -8206193566293832635
+    second: icon_costume_HAIR_D_01_21
+  - first:
+      213: -1342238467139146779
+    second: icon_costume_HAIR_D_01_22
+  - first:
+      213: -2218091814061509043
+    second: icon_costume_HAIR_D_01_23
+  - first:
+      213: 6730411754042839512
+    second: icon_costume_HAIR_D_01_24
+  - first:
+      213: 4375216864848186611
+    second: icon_costume_HAIR_D_01_25
+  - first:
+      213: -4551157956936832778
+    second: icon_costume_HAIR_D_01_26
+  - first:
+      213: 2989598164122361414
+    second: icon_costume_HAIR_D_01_27
+  - first:
+      213: -6797621125620184804
+    second: icon_costume_HAIR_D_01_28
+  - first:
+      213: -7600253285395593249
+    second: icon_costume_HAIR_D_01_29
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 102
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c81a817076617db20800000000000000
+      internalID: 3159018295380189580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_1
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b63736647342ddf0800000000000000
+      internalID: -156988869794384199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_2
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a0946622098c4f60800000000000000
+      internalID: 8019935678767075492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_3
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fca5ead61b1f7f380800000000000000
+      internalID: -8937409191141811505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_4
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2560335c1865a5630800000000000000
+      internalID: 3916537941311293010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 344
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39396e71ace209900800000000000000
+      internalID: 689102188506944403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_6
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 344
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0384d41d20df27e20800000000000000
+      internalID: 3347015661632964656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_7
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 344
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba02d371e99cb4f60800000000000000
+      internalID: 8019725242295197867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_8
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 344
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 162238fe0eddfc5f0800000000000000
+      internalID: -734124256077340063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_9
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 344
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d399ca8277ca2310800000000000000
+      internalID: 1381135530511143893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 260
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c07135b07470338d0800000000000000
+      internalID: -2867940535990806772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_11
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 260
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23cca775ef8db1810800000000000000
+      internalID: 1737220668182416434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_12
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 260
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0178bfbfa7f047dd0800000000000000
+      internalID: -2489347673141049584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_13
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 260
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08dd2e0cfffc7d660800000000000000
+      internalID: 7410620409221143936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_14
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 260
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96369da4fc1eef4a0800000000000000
+      internalID: -6557555726974622871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 659c8ce7a90e3e7e0800000000000000
+      internalID: -1737298077078206122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_16
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 176
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64c9f9080c027a180800000000000000
+      internalID: -9104272110542414778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_17
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 176
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75049cc21fd134da0800000000000000
+      internalID: -5961888560032694185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_18
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 176
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fec41a10916272df0800000000000000
+      internalID: -205153369178682129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_19
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 176
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da21d15bffa2706a0800000000000000
+      internalID: -6483165860832931155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 92
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5667a1f1e11260e10800000000000000
+      internalID: 2163453084252665445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_21
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 92
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54cc5f20e6ebd1e80800000000000000
+      internalID: -8206193566293832635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_22
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 92
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eb6e42c9396f5de0800000000000000
+      internalID: -1342238467139146779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_23
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 92
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4679af3f31c731e0800000000000000
+      internalID: -2218091814061509043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_24
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 92
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d156dfb4d9376d50800000000000000
+      internalID: 6730411754042839512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fc0394ce84e7bc30800000000000000
+      internalID: 4375216864848186611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_26
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 8
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f8661483f907d0c0800000000000000
+      internalID: -4551157956936832778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_27
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 8
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64e5ca1d0bf2d7920800000000000000
+      internalID: 2989598164122361414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_28
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 8
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c19c7b10a9ff9a1a0800000000000000
+      internalID: -6797621125620184804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_HAIR_D_01_29
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 8
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd70001a7e9768690800000000000000
+      internalID: -7600253285395593249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 346564125b4e31f4887188ff76360887
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

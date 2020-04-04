@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public const string WEAPON_ICONS_PATH = "Game/Icons/Weapon/";
+    public const string OTHERS_ICON_PATH = "Game/Icons/Nonweapons/";
     public const string MELEE_NAME = "Melee";
     public const string RIFLE_NAME = "Rifle";
     public const string SHOTGUN_NAME = "Shotgun";

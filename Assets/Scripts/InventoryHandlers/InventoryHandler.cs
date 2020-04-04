@@ -63,8 +63,8 @@ namespace Scripts.InventoryHandlers
 		void Awake()
 		{
 			instance = this;
-			List<Weapon> weps = WeaponGetter.getWeapons(/*WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH*/);
-			List<Part> parts = PartGetter.getParts().Take(13).ToList();
+			List<Weapon> weps = WeaponGetter.getWeapons(WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH);
+			List<Part> parts = PartGetter.getParts();
 			User.inventory.addWeapons(weps);
 			User.inventory.addParts(parts);
 			ItemList = toItemList(User.inventory.getWeapons());
@@ -178,12 +178,15 @@ namespace Scripts.InventoryHandlers
 				statusImg = slot.transform.GetComponent<Image>();
 				itemName = slot.transform.Find("ItemName").gameObject.GetComponent<TextMeshProUGUI>();
 				upgradeIndicator = slot.transform.Find("LevelIndicator").gameObject;
+				string originIconPath;
 				if (item.GetType() != typeof(ActualWeapon))
 				{
+					originIconPath = GameManager.OTHERS_ICON_PATH;
 					upgradeIndicator.SetActive(false);
 				}
 				else
 				{
+					originIconPath = GameManager.WEAPON_ICONS_PATH;
 					upgradeIndicator.SetActive(true);
 				}
 				itemName.text = item.Name;
@@ -198,7 +201,7 @@ namespace Scripts.InventoryHandlers
 					statusImg.sprite = IdleImage;
 					itemName.color = InventorySlotHandler.itemIdleColour;
 				}
-				setIcon(iconImg, item);
+				setIcon(iconImg, item, originIconPath);
 				
 			
 		}
@@ -225,9 +228,9 @@ namespace Scripts.InventoryHandlers
 			
 		}
 
-		private static void setIcon(Image image, Item item)
+		private static void setIcon(Image image, Item item, string originPath)
 		{
-			Sprite[] icons = Resources.LoadAll<Sprite>(GameManager.WEAPON_ICONS_PATH + item.IconFile);
+			Sprite[] icons = Resources.LoadAll<Sprite>(originPath + item.IconFile);
 			int offset = item.IconOffset;
 			if (icons == null || !(offset >= 0 && offset < icons.Length))
 			{
@@ -261,7 +264,7 @@ namespace Scripts.InventoryHandlers
 		{
 			get
 			{
-				GameObject[] slots = new GameObject[8];
+				GameObject[] slots = new GameObject[viewable];
 				int index = 0;
 				foreach (Transform child in InventoryContent.transform)
 				{
@@ -281,7 +284,6 @@ namespace Scripts.InventoryHandlers
 		public static List<Item> toItemList<T>(List<T> data) where T : Item
 		{
 			return data.Select(it => (Item) it).ToList();
-			show();
 		}
 		
 
