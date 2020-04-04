@@ -7,7 +7,7 @@ using Scripts.Weapons;
 
 namespace Scripts.Classes.Inventory
 {
-    public class ActualWeapon
+    public class ActualWeapon : Item
     {
         
         public static int MAX_LEVEL = 5;

@@ -1,88 +1,99 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Linq;
 using frame8.ScrollRectItemsAdapter.Classic.Examples.Common;
 using Scripts.Classes.Inventory;
 using Scripts.Classes.Main;
 using Scripts.Weapons;
 using TMPro;
+using UnityEditor;
 
-namespace frame8.ScrollRectItemsAdapter.Classic.Examples
+namespace Scripts.InventoryHandlers
 {
-    public class InventoryGrid : ClassicSRIA<InvSlotViewHolder>
+    public class InventoryGrid : MonoBehaviour
 	{
-		public RectTransform itemPrefab;
 		private const string WEAPON_INFO_MOCK_PATH = "Assets/Resources/CGD/mock_weapon_info.json";
 		private const string ITEM_WEAPON_INFO_MOCK_PATH = "Assets/Resources/CGD/mock_item_weapon_info.json";
-		public List<ActualWeapon> Data { get; private set; }
 
-
+		public static InventoryGrid instance;
+		public GameObject inventoryContent;
+		public static List<Item> itemList = new List<Item>();
+		private static int head = 0;
+		private static int tail = 0;
+		private const int viewable = 8;
 		
-		protected override void Awake()
+		// MUST HAVE EXACTLY 8 SLOTS
+		public static GameObject InventoryContent
 		{
-			base.Awake();
-			Data = new List<ActualWeapon>();
+			get => instance.inventoryContent;
 		}
 
-		protected override void Start()
+		private static void show()
 		{
-			base.Start();
-			List<Weapon> weapons = WeaponGetter.getWeapons(WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH);
-			// simulates getting weapons from db
-			User.inventory.addWeapons(weapons);
-			Data = User.inventory.getWeapons();
-			ResetItems(Data.Count);
-		}
-		
-		protected override InvSlotViewHolder CreateViewsHolder(int itemIndex)
-		{
-			var instance = new InvSlotViewHolder();
-			instance.Init(itemPrefab, itemIndex);
-
-			return instance;
-		}
-
-		protected override void UpdateViewsHolder(InvSlotViewHolder vh)
-		{
-			ActualWeapon model = Data[vh.ItemIndex];
-			Sprite[] icons = Resources.LoadAll<Sprite>(GameManager.WEAPON_ICONS_PATH + model.getBaseWeapon().IconFile);
-			if (icons != null && (model.IconOffset >= 0 && model.IconOffset < icons.Length))
+			int dataLength = ItemList.Count;
+			if (dataLength <= viewable)
 			{
-				vh.itemIcon.sprite = icons[model.IconOffset];
+				showViewable(dataLength);
 			}
-
-			vh.itemName.text = model.getName();
-			
-			// set viewholder
-
-		}
-		#region events from DrawerCommandPanel
-
-		
-		
-		#endregion
-
-		
-
+			else
+			{
+				tail = viewable - 1;
+				for (int i = 0; i < viewable; i++)
+				{ 
+					SlotArray[i].SetActive(true);
+				}
+			}
 		}
 
-    
-
-
-	public class InvSlotViewHolder : CAbstractViewsHolder
-	{
-		public Image itemIcon;
-		public TextMeshProUGUI itemName;
-		//public Transform levelIndicator;
-
-
-		public override void CollectViews()
+		private static void showViewable(int length)
 		{
-			base.CollectViews();
-
-			itemIcon = root.Find("ItemIcon").GetComponent<Image>();
-			itemName = root.Find("ItemName").GetComponent<TextMeshProUGUI>();
-			//levelIndicator = root.Find("LevelIndicator").transform;
+			head = 0;
+			tail = length;
+			for (int i = 0; i < length; i++)
+			{
+				SlotArray[i].SetActive(true);
+			}
 		}
+
+		public static List<Item> ItemList
+		{
+			get { return itemList; }
+			set { itemList = value; }
+		}
+
+		public static GameObject[] SlotArray
+		{
+			get
+			{
+				GameObject[] slots = new GameObject[8];
+				int index = 0;
+				foreach (Transform child in InventoryContent.transform)
+				{
+					slots[index] = child.gameObject;
+					index++;
+				}
+				return slots;
+			}
+		}
+
+		public static List<Item> toItemList<T>(List<T> data) where T : Item
+		{
+			return data.Select(it => (Item) it).ToList();
+			show();
+		}
+		
+
+		void Awake()
+		{
+			instance = this;
+			List<Weapon> weps = WeaponGetter.getWeapons(WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH);
+			User.inventory.addWeapons(weps);
+			ItemList = toItemList(User.inventory.getWeapons());
+			show();
+		}
+
+
+
 	}
 }
