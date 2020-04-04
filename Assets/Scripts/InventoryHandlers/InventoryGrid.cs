@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,15 @@ namespace Scripts.InventoryHandlers
 		public static List<Item> itemList = new List<Item>();
 		private static int head = 0;
 		private static int tail = 0;
+
+		private static bool lastRowDown = false;
+
+		private static int DataLength
+		{
+			get => ItemList.Count;
+		}
+		
+		private const int rowSize = 4;
 		private const int viewable = 8;
 		
 		// MUST HAVE EXACTLY 8 SLOTS
@@ -29,12 +39,20 @@ namespace Scripts.InventoryHandlers
 			get => instance.inventoryContent;
 		}
 
+		private static void clearAfter(int index)
+		{
+			for (int i = index + 1; i < viewable; i++)
+			{
+				SlotArray[i].SetActive(false);
+			}
+		}
+
 		private static void show()
 		{
-			int dataLength = ItemList.Count;
-			if (dataLength <= viewable)
+			if (DataLength <= viewable)
 			{
-				showViewable(dataLength);
+				tail = DataLength;
+				showViewable(DataLength);
 			}
 			else
 			{
@@ -47,12 +65,61 @@ namespace Scripts.InventoryHandlers
 			}
 		}
 
+		public static void scrollDown()
+		{
+			if (tail + 1 >= DataLength)
+			{
+				return;
+			}
+
+			head += rowSize;
+			if (tail + rowSize >= DataLength)
+			{
+				tail = DataLength - 1;
+			}
+			else
+			{
+				tail += rowSize;
+			}
+
+			for (int i = 0; head + i <= tail; i++)
+			{
+				setUpObject(SlotArray[i], itemList.ElementAt(head + i));
+				SlotArray[i].SetActive(true);
+				if (i + head == tail)
+				{
+					clearAfter(i);
+				}
+			}
+		}
+
+		public static void ScrollUp()
+		{
+			int rows = viewable / rowSize;
+			if (head - rowSize < 0)
+			{
+				return;
+			}
+			head = head - rowSize;
+			int diff = tail - head;
+			tail = tail/rowSize * rowSize - 1;
+			for (int i = 0; i + head <= tail; i++)
+			{
+				
+				setUpObject(SlotArray[i], itemList.ElementAt(head + i));
+				SlotArray[i].SetActive(true);
+				if (i + head == tail)
+				{
+					clearAfter(i);
+				}
+			}
+		}
+
 		private static void getSlotChildren(GameObject slot, Image iconImg, Image statusImg, TextMeshProUGUI itemName)
 		{
 			iconImg = slot.transform.Find("ItemIcon").gameObject.GetComponent<Image>();
 			statusImg = slot.transform.GetComponent<Image>();
 			itemName = slot.transform.Find("Itemname").gameObject.GetComponent<TextMeshProUGUI>();
-
 		}
 
 		private static void setUpObject(GameObject slot, Item item)
@@ -131,7 +198,7 @@ namespace Scripts.InventoryHandlers
 		void Awake()
 		{
 			instance = this;
-			List<Weapon> weps = WeaponGetter.getWeapons(WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH);
+			List<Weapon> weps = WeaponGetter.getWeapons(WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH).Take(16).ToList();
 			User.inventory.addWeapons(weps);
 			ItemList = toItemList(User.inventory.getWeapons());
 			show();
