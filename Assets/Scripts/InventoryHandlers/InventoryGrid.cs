@@ -58,6 +58,26 @@ namespace Scripts.InventoryHandlers
 		{
 			get => instance.inventoryContent;
 		}
+		
+		void Awake()
+		{
+			instance = this;
+			List<Weapon> weps = WeaponGetter.getWeapons(/*WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH*/);
+			User.inventory.addWeapons(weps);
+			ItemList = toItemList(User.inventory.getWeapons());
+			defineStatusMap();
+			show();
+		}
+
+		public static void ShowNewList(List<Item> data)
+		{
+			ItemList = data;
+			head = 0;
+			tail = 0;
+			defineStatusMap();
+			show();
+		}
+		
 
 		private static void clearAfter(int index)
 		{
@@ -244,15 +264,7 @@ namespace Scripts.InventoryHandlers
 		}
 		
 
-		void Awake()
-		{
-			instance = this;
-			List<Weapon> weps = WeaponGetter.getWeapons(WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH);
-			User.inventory.addWeapons(weps);
-			ItemList = toItemList(User.inventory.getWeapons());
-			defineStatusMap();
-			show();
-		}
+	
 
 		private static void defineStatusMap()
 		{
