@@ -18,7 +18,7 @@ public class InventorySlotHandler : MonoBehaviour
     public GameObject slot;
     private Image selectedStatusImage;
     private TextMeshProUGUI itemName;
-    private static Color itemIdleColour = new Color32(122, 121, 149, 255);
+    public static Color itemIdleColour = new Color32(122, 121, 149, 255);
     private int invIndex;
 
     private int SlotIndex

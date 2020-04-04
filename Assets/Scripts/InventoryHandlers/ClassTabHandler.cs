@@ -9,7 +9,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryItemSelectHandler : MonoBehaviour
+public class ClassTabHandler : MonoBehaviour
 {
     
     private ObjectStatus Status

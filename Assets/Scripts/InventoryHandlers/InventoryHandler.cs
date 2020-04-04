@@ -191,10 +191,12 @@ namespace Scripts.InventoryHandlers
 				if (statusMap[index] == GameManager.SlotStatus.Clicked)
 				{
 					statusImg.sprite = ClickedImage;
+					itemName.color = Color.white;
 				}
 				else
 				{
 					statusImg.sprite = IdleImage;
+					itemName.color = InventorySlotHandler.itemIdleColour;
 				}
 				setIcon(iconImg, item);
 				
@@ -209,6 +211,7 @@ namespace Scripts.InventoryHandlers
 				if (i != localIndex)
 				{
 					SlotArray[i].GetComponent<Image>().sprite = IdleImage;
+					SlotArray[i].GetComponentInChildren<TextMeshProUGUI>().color = InventorySlotHandler.itemIdleColour;
 				}
 			}
 			for (int i = 0; i < DataLength; i++)
