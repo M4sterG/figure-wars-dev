@@ -108,15 +108,15 @@ namespace Scripts.Classes.Main
                             part.PartEquip.Add(PartSlot.Shoes);
                             part.PartEquip.Add(PartSlot.Hands);
                             part.PartEquip.Add(PartSlot.Skirt);
-                            return part;
+                            break;
                         case 13:
                             part.PartEquip.Add(PartSlot.Top);
                             part.PartEquip.Add(PartSlot.Legs);
-                            return part;
+                            break;
                         case 15:
                             part.PartEquip.Add(PartSlot.Legs);
                             part.PartEquip.Add(PartSlot.Shoes);
-                            return part;
+                            break;
                         case 12:
                             part.PartEquip.Add(PartSlot.Hair);
                             part.PartEquip.Add(PartSlot.Face);
@@ -124,8 +124,10 @@ namespace Scripts.Classes.Main
                         default:
                             Console.WriteLine("Name: " + primPart.ii_name + " | Unkown type_inven: " +
                                               primPart.ii_type_inven);
-                            return null;
+                            break;
                     }
+            setPartStats(primPart, part);
+            return part;
         }
         
 

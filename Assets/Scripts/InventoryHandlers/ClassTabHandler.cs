@@ -120,7 +120,8 @@ public class ClassTabHandler : MonoBehaviour
                 InventoryHandler.ShowNewList(itemList);
                 break;
             case GameManager.TAB_SET_NAME:
-                itemList = InventoryHandler.toItemList(User.inventory.getParts());
+                itemList = InventoryHandler.toItemList(User.inventory.getParts()
+                                                        .FindAll(p => p.isSet()));
                 InventoryHandler.ShowNewList(itemList);
                 break;
             case GameManager.TAB_PARTS_NAME:
@@ -128,7 +129,8 @@ public class ClassTabHandler : MonoBehaviour
                 InventoryHandler.ShowNewList(itemList);
                 break;
             case GameManager.TAB_ACCESORIES_NAME:
-                itemList = InventoryHandler.toItemList(User.inventory.getParts());
+                itemList = InventoryHandler.toItemList(User.inventory.getParts()
+                                                            .FindAll(p => p.isAcc()));
                 InventoryHandler.ShowNewList(itemList);
                 break;
             case GameManager.TAB_MISC_NAME:
