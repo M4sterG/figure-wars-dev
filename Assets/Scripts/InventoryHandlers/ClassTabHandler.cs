@@ -11,6 +11,9 @@ using UnityEngine.UI;
 
 public class ClassTabHandler : MonoBehaviour
 {
+
+    public GameObject bottomBar;
+    private const string BAR_NAME = "Bar";
     
     private ObjectStatus Status
     {
@@ -39,7 +42,7 @@ public class ClassTabHandler : MonoBehaviour
     public Sprite hoveringImg;
     public Sprite clickedImg;
 
-    private Color selectedColor = Color.yellow;/*new Color(179, 174, 99, 255);*/
+    private Color selectedColor = Color.yellow;
     private Color baseColor = new Color(85/255f, 91/255f, 142/255f);
 
 
@@ -73,6 +76,20 @@ public class ClassTabHandler : MonoBehaviour
                 textObj.color = baseColor;
             }
         }
+        loadCurrentBottomTab();
+    }
+
+    private void loadCurrentBottomTab()
+    {
+        foreach (Transform child in this.transform.parent)
+        {
+            string barName = child.gameObject.name;
+            if (barName.Contains(BAR_NAME) && !barName.Equals(this.name))
+            {
+                child.gameObject.SetActive(false);
+            }
+        }
+        bottomBar.SetActive(true);
     }
     
 
