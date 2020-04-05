@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 using Scripts.Classes.Main;
 
@@ -111,9 +112,32 @@ namespace Scripts.Weapons
         public int wi_ability_c_max { get; set; }
         public int wi_ability_d_max { get; set; }
         public int wi_weapon_size { get; set; }
-        public PrimitiveWeapon()
+        public PrimitiveWeapon(Byte[] datablock, int[] sizes)
         {
+            PropertyInfo[] listProperties = this.GetType().GetProperties();
 
+            int cursorpos = 0;
+            for (int i = 0; i < listProperties.Length; i++)
+            {
+                Byte[] x = new Byte[sizes[i]];
+                Buffer.BlockCopy(datablock, cursorpos, x, 0, x.Length);
+                if (sizes[i] > 4)
+                {
+                    var value = BitConverter.ToString(x, 0);
+                    listProperties[i].SetValue(this, value);
+                }
+                else if(sizes[i] < 4)
+                {
+                    listProperties[i].SetValue(this, BitConverter.ToBoolean(x, 0));
+                }
+                else
+                {
+                    var value = BitConverter.ToInt32(x, 0);
+                    listProperties[i].SetValue(this, value);
+                }
+                cursorpos += sizes[i];
+            }
         }
+        
     }
 }

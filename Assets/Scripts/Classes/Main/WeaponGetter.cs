@@ -30,9 +30,13 @@ namespace Scripts.Classes.Main
         {
             Console.OutputEncoding = Encoding.Unicode;
             Debug.Log("!!! Debugger looks for the files in: " + Environment.CurrentDirectory);
-    
-            List<PrimitiveWeapon> weapons_mv = new JSONToCSharpParser<PrimitiveWeapon>().parse(weaponsPath);
-            List<PrimitiveIteamWeaponInfo> weaponInfos_mv = new JSONToCSharpParser<PrimitiveIteamWeaponInfo>().parse(weaponInfoPath);
+
+            CgdDataReader<PrimitiveWeapon> PrimitiveWeaponDataList =  new CgdDataReader<PrimitiveWeapon>(weaponsPath);
+            List<PrimitiveWeapon> weapons_mv = PrimitiveWeaponDataList.GetDataList();
+            
+            CgdDataReader<PrimitiveItemWeaponInfo> PrimitiveWeaponInfoDataList = new CgdDataReader<PrimitiveItemWeaponInfo>(weaponInfoPath);
+            List<PrimitiveItemWeaponInfo> weaponInfos_mv = PrimitiveWeaponInfoDataList.GetDataList();
+           
             weapons_mv = weapons_mv.FindAll(w_mv => lastTwoDigitsAreGood(w_mv.wi_id));
             weaponInfos_mv = weaponInfos_mv.FindAll(info_mv => lastTwoDigitsAreGood(info_mv.ii_weaponinfo));
             
@@ -49,12 +53,11 @@ namespace Scripts.Classes.Main
             Debug.Log("!!! Debugger looks for the files in: " + Environment.CurrentDirectory);
             
             
-            
             List<PrimitiveWeapon> weapons_mv = new JSONToCSharpParser<PrimitiveWeapon>().parse(WEAPON_INFO_PATH);
-            List<PrimitiveIteamWeaponInfo> weaponInfos_mv = new JSONToCSharpParser<PrimitiveIteamWeaponInfo>().parse(ITEM_WEAPON_INFO_PATH);
+            List<PrimitiveItemWeaponInfo> weaponInfos_mv = new JSONToCSharpParser<PrimitiveItemWeaponInfo>().parse(ITEM_WEAPON_INFO_PATH);
 
             List<PrimitiveWeapon> weapons_tw = new JSONToCSharpParser<PrimitiveWeapon>().parse(WEAPON_INFO_PATH_TW);
-            List<PrimitiveIteamWeaponInfo> weaponInfos_tw = new JSONToCSharpParser<PrimitiveIteamWeaponInfo>().parse(ITEM_WEAPON_INFO_PATH_TW);
+            List<PrimitiveItemWeaponInfo> weaponInfos_tw = new JSONToCSharpParser<PrimitiveItemWeaponInfo>().parse(ITEM_WEAPON_INFO_PATH_TW);
 
             weapons_mv = weapons_mv.FindAll(w_mv => lastTwoDigitsAreGood(w_mv.wi_id));
             weaponInfos_mv = weaponInfos_mv.FindAll(info_mv => lastTwoDigitsAreGood(info_mv.ii_weaponinfo));
@@ -89,14 +92,14 @@ namespace Scripts.Classes.Main
         
 
         private static void getMVWeapons(List<PrimitiveWeapon> mvWeapons,
-            List<PrimitiveIteamWeaponInfo> infoWeps,
+            List<PrimitiveItemWeaponInfo> infoWeps,
             List<int> missingIDS, List<Weapon> weapons)
         {
             
             foreach (PrimitiveWeapon w_mv in mvWeapons)
                 {
                     bool found = false;
-                    foreach (PrimitiveIteamWeaponInfo info_mv in infoWeps)
+                    foreach (PrimitiveItemWeaponInfo info_mv in infoWeps)
                     {
                         if (info_mv.ii_weaponinfo == w_mv.wi_id)
                         {
@@ -122,14 +125,14 @@ namespace Scripts.Classes.Main
         }
 
         private static void getTWWeaponsAndCompare(List<PrimitiveWeapon> TWWeapons, 
-                                    List<PrimitiveIteamWeaponInfo> infoTW,
+                                    List<PrimitiveItemWeaponInfo> infoTW,
                                     List<Weapon> weapons,
                                     List<int> missingIDS)
         {
            
                 foreach (PrimitiveWeapon w_tw in TWWeapons)
                 {
-                    foreach (PrimitiveIteamWeaponInfo info_tw in infoTW)
+                    foreach (PrimitiveItemWeaponInfo info_tw in infoTW)
                     {
                         if (missingIDS.Contains(w_tw.wi_id))
                         {
@@ -144,8 +147,6 @@ namespace Scripts.Classes.Main
                 }
         }
         
-
-
         private static void ProcessQuery(List<string> queryList, WebClient web)
         {
             for (int i = 0; i < queryList.Count; i++)
@@ -156,7 +157,7 @@ namespace Scripts.Classes.Main
                 System.Threading.Thread.Sleep(50);
             }
         }
-        private static Weapon getActualWeapon(PrimitiveWeapon primWep, PrimitiveIteamWeaponInfo info)
+        private static Weapon getActualWeapon(PrimitiveWeapon primWep, PrimitiveItemWeaponInfo info)
         {
             switch (primWep.wi_weapon_type)
             {
@@ -273,7 +274,7 @@ namespace Scripts.Classes.Main
             return queryList;
         }
 
-        private static Weapon handleCaseGrenade(PrimitiveWeapon primWep, PrimitiveIteamWeaponInfo info)
+        private static Weapon handleCaseGrenade(PrimitiveWeapon primWep, PrimitiveItemWeaponInfo info)
         {
             Weapon wep = new Grenade(primWep.wi_ability_a, primWep.wi_ability_b,
                                         primWep.wi_ability_c, primWep.wi_ability_d);
@@ -281,7 +282,7 @@ namespace Scripts.Classes.Main
             return wep;
         }
 
-        private static Weapon handleCaseBazooka(PrimitiveWeapon primWep, PrimitiveIteamWeaponInfo info)
+        private static Weapon handleCaseBazooka(PrimitiveWeapon primWep, PrimitiveItemWeaponInfo info)
         {
             Weapon wep = new Bazooka(primWep.wi_ability_a, primWep.wi_ability_b,
                                         primWep.wi_ability_c, primWep.wi_ability_d);
@@ -289,7 +290,7 @@ namespace Scripts.Classes.Main
             return wep;
         }
 
-        private static Weapon handleCaseMinigun(PrimitiveWeapon primWep, PrimitiveIteamWeaponInfo info)
+        private static Weapon handleCaseMinigun(PrimitiveWeapon primWep, PrimitiveItemWeaponInfo info)
         {
             Weapon wep = new Minigun(primWep.wi_ability_a, primWep.wi_ability_b,
                                         primWep.wi_ability_c, primWep.wi_ability_d);
@@ -297,7 +298,7 @@ namespace Scripts.Classes.Main
             return wep;
         }
 
-        private static Weapon handleCaseSniper(PrimitiveWeapon primWep, PrimitiveIteamWeaponInfo info)
+        private static Weapon handleCaseSniper(PrimitiveWeapon primWep, PrimitiveItemWeaponInfo info)
         {
             Weapon wep = new Sniper(primWep.wi_ability_a, primWep.wi_ability_b,
                                         primWep.wi_ability_c, primWep.wi_ability_d);
@@ -305,7 +306,7 @@ namespace Scripts.Classes.Main
             return wep;
         }
 
-        private static Weapon handleCaseShotgun(PrimitiveWeapon primWep, PrimitiveIteamWeaponInfo info)
+        private static Weapon handleCaseShotgun(PrimitiveWeapon primWep, PrimitiveItemWeaponInfo info)
         {
             Weapon wep = new Shotgun(primWep.wi_ability_a, primWep.wi_ability_b,
                                         primWep.wi_ability_c, primWep.wi_ability_d);
@@ -313,7 +314,7 @@ namespace Scripts.Classes.Main
             return wep;
         }
 
-        private static Weapon handleCaseRifle(PrimitiveWeapon primWep, PrimitiveIteamWeaponInfo info)
+        private static Weapon handleCaseRifle(PrimitiveWeapon primWep, PrimitiveItemWeaponInfo info)
         {
             Weapon wep = new Rifle( primWep.wi_ability_a, primWep.wi_ability_b, 
                                     primWep.wi_ability_c, primWep.wi_ability_d);
@@ -321,7 +322,7 @@ namespace Scripts.Classes.Main
             return wep;
         }
 
-        private static void setWeaponStats(Weapon wep, PrimitiveWeapon primWep, PrimitiveIteamWeaponInfo info)
+        private static void setWeaponStats(Weapon wep, PrimitiveWeapon primWep, PrimitiveItemWeaponInfo info)
         {
             wep.Id = primWep.wi_id;
             wep.Description = info.ii_desc;
@@ -350,7 +351,7 @@ namespace Scripts.Classes.Main
 
         }
 
-        private static Weapon handleMeleeCase(PrimitiveWeapon primWep, PrimitiveIteamWeaponInfo info)
+        private static Weapon handleMeleeCase(PrimitiveWeapon primWep, PrimitiveItemWeaponInfo info)
         {
             Weapon wep = new Melee(primWep.wi_ability_a, primWep.wi_ability_b,
                                    primWep.wi_ability_c, primWep.wi_ability_d);

@@ -1,6 +1,5 @@
 ﻿namespace Scripts.Classes.Main
 {
-    
     public enum WeaponType
     {
         Melee,
@@ -11,5 +10,4 @@
         Bazooka,
         Grenade
     }
-    
 }

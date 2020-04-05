@@ -63,7 +63,7 @@ namespace Scripts.InventoryHandlers
 		void Awake()
 		{
 			instance = this;
-			List<Weapon> weps = WeaponGetter.getWeapons(/*WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH*/);
+			List<Weapon> weps = WeaponGetter.getWeapons("Assets/Resources/CGD/MV/weaponinfo_descr.json", "Assets/Resources/CGD/MV/itemweaponsinfo_descr.json"/*WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH*/);
 			List<Part> parts = PartGetter.getParts().Take(13).ToList();
 			User.inventory.addWeapons(weps);
 			User.inventory.addParts(parts);
@@ -147,7 +147,6 @@ namespace Scripts.InventoryHandlers
 
 		public static void ScrollUp()
 		{
-			int rows = viewable / rowSize;
 			if (head - rowSize < 0)
 			{
 				return;
@@ -281,7 +280,6 @@ namespace Scripts.InventoryHandlers
 		public static List<Item> toItemList<T>(List<T> data) where T : Item
 		{
 			return data.Select(it => (Item) it).ToList();
-			show();
 		}
 		
 

@@ -1,0 +1,23 @@
+{
+"fieldnames":
+[
+	"ip_id",
+	"ip_infoid",
+	"ip_type",
+	"ip_group",
+	"ip_prob",
+	"ip_itemid",
+	"ip_noticeid"
+],
+"fieldsizes":
+[
+	4,
+	4,
+	4,
+	4,
+	4,
+	4,
+	4
+],
+"binpath":"MV/ENG/itempackageinfo.cdb"
+}
