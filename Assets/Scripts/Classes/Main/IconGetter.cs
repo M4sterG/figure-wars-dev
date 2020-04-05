@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-
-using Scripts.Classes.Icons;
+﻿using Scripts.Classes.Icons;
 using Scripts.Weapons;
-
+using System;
+using System.Collections.Generic;
 
 namespace Scripts.Classes.Main
 {
@@ -23,7 +21,5 @@ namespace Scripts.Classes.Main
             List<PrimitiveIcon> icons = new JSONToCSharpParser<PrimitiveIcon>().parse(iconsPath);
             return icons;
         }
-        
-         
     }
 }

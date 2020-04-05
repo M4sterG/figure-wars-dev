@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Scripts.Classes.Main;
+﻿using Scripts.Classes.Main;
 using Scripts.Classes.Parts;
 using Scripts.Weapons;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Scripts.Classes.Inventory
 {
@@ -64,11 +64,5 @@ namespace Scripts.Classes.Inventory
         {
             return weaponHolders;
         }
-        
-        
-        
-        
-        
-
     }
 }

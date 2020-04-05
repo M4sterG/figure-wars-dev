@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Scripts.Classes.Main;
+﻿using Scripts.Classes.Main;
 
 namespace Scripts.Weapons
 {
     public class Shotgun : Gun
-    {   
+    {
         public SwapSpeed SwapSpeed { get; set; }
+
         public Shotgun()
         {
             WeaponType = WeaponType.Shotgun;
         }
+
         public Shotgun(int power, int firingRate, int accuracy, int reloadSpeed) : this()
         {
             Power = power;  // ability_a in cgd
@@ -19,12 +18,11 @@ namespace Scripts.Weapons
             Accuracy = accuracy;    // ability_c in cgd
             ReloadSpeed = reloadSpeed; // ability_d in cgd
         }
+
         public new string ToUniquePropertyList()
         {
             return "swap_speed";
         }
-
-
 
         public override void setA(int value)
         {

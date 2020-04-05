@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Scripts.Classes.Main;
+﻿using Scripts.Classes.Main;
+using System.Collections.Generic;
 
 namespace Scripts.Classes.Parts
 {
@@ -7,7 +7,6 @@ namespace Scripts.Classes.Parts
     {
         public HashSet<PartSlot> PartEquip { get; set; }
         public HashSet<Character> CharacterEquip { get; set; }
-  
     }
 
     public enum PartSlot

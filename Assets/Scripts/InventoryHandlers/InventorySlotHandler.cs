@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Scripts.InventoryHandlers;
+﻿using Scripts.InventoryHandlers;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 
 public class InventorySlotHandler : MonoBehaviour
@@ -25,6 +21,7 @@ public class InventorySlotHandler : MonoBehaviour
     {
         get => invIndex - InventoryHandler.getHead();
     }
+
     public void OnSlotClicked()
     {
         loadContext();
@@ -34,7 +31,6 @@ public class InventorySlotHandler : MonoBehaviour
             itemName.color = Color.white;
             InventoryHandler.setStatus(invIndex, GameManager.SlotStatus.Clicked);
             InventoryHandler.clearStatuses(invIndex, SlotIndex);
-            
         }
     }
 
@@ -80,18 +76,13 @@ public class InventorySlotHandler : MonoBehaviour
         itemName.color = itemIdleColour;
     }
 
-
-
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
     }
-
 }

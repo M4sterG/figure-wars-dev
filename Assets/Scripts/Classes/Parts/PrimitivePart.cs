@@ -6,6 +6,7 @@
         ///  can be a Part, Accessory or diorama or package of parts
         /// </summary>
         public int ii_id { get; set; }
+
         public string ii_name { get; set; }
         public string ii_name_option { get; set; }
         public string ii_name_time { get; set; }

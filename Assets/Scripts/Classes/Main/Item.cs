@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Scripts.Classes.Main
+﻿namespace Scripts.Classes.Main
 {
     public abstract class Item
     {
@@ -18,6 +14,7 @@ namespace Scripts.Classes.Main
         {
             return "name, description, file_path, type";
         }
+
         public string ToSQLQuery()
         {
             return "INSERT IGNORE INTO items (item_id, " + ToUniquePropertyList() + ") VALUES (" +
@@ -37,5 +34,4 @@ namespace Scripts.Classes.Main
         Convenience,
         Package
     }
-    
 }

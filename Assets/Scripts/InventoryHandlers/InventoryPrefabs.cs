@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -56,7 +55,7 @@ public class InventoryPrefabs : MonoBehaviour
         get => instance.otherSlotPrefab;
     }
 
-    void Awake()
+    private void Awake()
     {
         instance = this;
     }

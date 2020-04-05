@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace Scripts.Weapons
 {
@@ -20,7 +19,6 @@ namespace Scripts.Weapons
 
         private List<T> loadItems(string path)
         {
-
             List<T> objects;
             try
             {

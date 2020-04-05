@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Scripts.Classes.Inventory;
+﻿using Scripts.Classes.Inventory;
 using Scripts.Classes.Main;
 using Scripts.Weapons;
+using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,13 +11,13 @@ public class WeaponCategoryHandler : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject inventoryScrollView;
+
     public GameObject inventoryContentPrefab;
     public GameObject weaponSlotPrfab;
     public GameObject itemSlotPrefab;
 
-    void Start()
+    private void Start()
     {
-        
     }
 
     public void OnClick(string wepType)
@@ -28,24 +27,31 @@ public class WeaponCategoryHandler : MonoBehaviour
             case "All":
                 showAllWeapons();
                 break;
+
             case GameManager.MELEE_NAME:
                 showOnlyCategory(WeaponType.Melee);
                 break;
+
             case GameManager.RIFLE_NAME:
                 showOnlyCategory(WeaponType.Rifle);
                 break;
+
             case GameManager.SHOTGUN_NAME:
                 showOnlyCategory(WeaponType.Shotgun);
                 break;
+
             case GameManager.SNIPER_NAME:
                 showOnlyCategory(WeaponType.Sniper);
                 break;
+
             case GameManager.MINIGUN_NAME:
                 showOnlyCategory(WeaponType.Minigun);
                 break;
+
             case GameManager.BAZOOKA_NAME:
                 showOnlyCategory(WeaponType.Bazooka);
                 break;
+
             case GameManager.GRENADE_NAME:
                 showOnlyCategory(WeaponType.Grenade);
                 break;
@@ -62,15 +68,15 @@ public class WeaponCategoryHandler : MonoBehaviour
         foreach (Transform child in inventoryScrollView.transform)
         {
             if (!child.name.Contains("Scrollbar"))
-            GameObject.Destroy(child.gameObject);
+                GameObject.Destroy(child.gameObject);
         }
         GameObject content = Instantiate(InventoryPrefabs.InvContentPrefab);
         GameObject slotPrefab = Instantiate(InventoryPrefabs.WeaponSlotPrefab);
-        
+
         ScrollRect scrollRect = inventoryScrollView.GetComponent<ScrollRect>();
         scrollRect.content = content.GetComponent<RectTransform>();
         content.transform.SetParent(inventoryScrollView.transform, false);
-        
+
         toAdd.ForEach(w => addToInvContent(w, slotPrefab, content));
     }
 
@@ -78,7 +84,6 @@ public class WeaponCategoryHandler : MonoBehaviour
     {
         List<ActualWeapon> onlySome = User.inventory.getWeapons().FindAll(w => w.getType() == category);
         addWeaponsToContent(onlySome);
-        
     }
 
     public static void addToInvContent(ActualWeapon actualWeapon, GameObject slotPrefab, GameObject contentHolder)
@@ -112,8 +117,7 @@ public class WeaponCategoryHandler : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
     }
 }

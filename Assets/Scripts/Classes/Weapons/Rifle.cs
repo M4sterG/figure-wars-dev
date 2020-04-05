@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Scripts.Classes.Main;
+﻿using Scripts.Classes.Main;
 
 namespace Scripts.Weapons
 {
@@ -11,19 +8,19 @@ namespace Scripts.Weapons
         {
             WeaponType = WeaponType.Rifle;
         }
+
         public Rifle(int power, int firingRate, int accuracy, int reloadSpeed) : this()
         {
-            Power = power;  // ability_c in cgd  
-            FiringRate = firingRate;    // ability_b in cgd  
-            Accuracy = accuracy;    // ability_c in cgd  
-            ReloadSpeed = reloadSpeed;// ability_d in cgd  
+            Power = power;  // ability_c in cgd
+            FiringRate = firingRate;    // ability_b in cgd
+            Accuracy = accuracy;    // ability_c in cgd
+            ReloadSpeed = reloadSpeed;// ability_d in cgd
         }
+
         public new string ToUniquePropertyList()
         {
             return "accuracy";
         }
-
-
 
         public override void setA(int value)
         {

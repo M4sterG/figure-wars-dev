@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Scripts.InventoryHandlers;
+﻿using Scripts.InventoryHandlers;
 using UnityEngine;
 
 public class ScrollHandler : MonoBehaviour

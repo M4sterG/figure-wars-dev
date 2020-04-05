@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Scripts.Classes.Main;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
 
 namespace Scripts.Weapons
 {
-    public class PrimitiveItemWeaponInfo
+    public class PrimitiveItemWeaponInfo 
     {
         public int ii_id { get; set; }
         public string ii_name { get; set; }
@@ -77,21 +78,21 @@ namespace Scripts.Weapons
         public int ii_ei_exp { get; set; }
         public bool ii_evolution_type { get; set; }
 
-        public PrimitiveItemWeaponInfo(Byte[] datablock, int[] sizes)
+        public PrimitiveItemWeaponInfo(CgdDescriptor descr, Byte[] datablock)
         {
             PropertyInfo[] listProperties = this.GetType().GetProperties();
 
             int cursorpos = 0;
             for (int i = 0; i < listProperties.Length; i++)
             {
-                Byte[] x = new Byte[sizes[i]];
+                Byte[] x = new Byte[descr.fieldsizes[i]];
                 Buffer.BlockCopy(datablock, cursorpos, x, 0, x.Length);
-                if (sizes[i] > 4)
+                if (descr.fieldsizes[i] > 4)
                 {
                     var value = Encoding.UTF8.GetString(x, 0, x.Length);
                     listProperties[i].SetValue(this, value);
                 }
-                else if (sizes[i] < 4)
+                else if (descr.fieldsizes[i] < 4)
                 {
                     listProperties[i].SetValue(this, BitConverter.ToBoolean(x, 0));
                 }
@@ -100,8 +101,24 @@ namespace Scripts.Weapons
                     var value = BitConverter.ToInt32(x, 0);
                     listProperties[i].SetValue(this, value);
                 }
-                cursorpos += sizes[i];
+                cursorpos += descr.fieldsizes[i];
             }
+        }
+    }
+
+    public class PrimitiveItemWeaponInfoComparer : IComparer<PrimitiveItemWeaponInfo>
+    {
+        public int Compare(PrimitiveItemWeaponInfo x, PrimitiveItemWeaponInfo y)
+        {
+            if (x.ii_id > y.ii_id)
+            {
+                return 1;
+            }
+            else if (y.ii_id < x.ii_id)
+            {
+                return -1;
+            }
+            else return 0;
         }
     }
 }

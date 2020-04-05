@@ -1,20 +1,20 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
-using System;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 namespace frame8.ScrollRectItemsAdapter.Classic.Util
 {
     /// <summary>
-	/// Utility to expand an item when it's clicked, dispatching the size change request via <see cref="ISizeChangesHandler"/> for increased flexibility. 
+	/// Utility to expand an item when it's clicked, dispatching the size change request via <see cref="ISizeChangesHandler"/> for increased flexibility.
 	/// This is a duplicate of ExpandCollapseOnClick from the Optimized ScrollView Adapter package
 	/// </summary>
     public class CExpandCollapseOnClick : MonoBehaviour
     {
-		/// <summary>
-		/// The button to whose onClock to subscribe. If not specified, will try to GetComponent&lt;Button&gt; from the GO containing this script 
-		/// </summary>
-		[Tooltip("will be taken from this object, if not specified")]
+        /// <summary>
+        /// The button to whose onClock to subscribe. If not specified, will try to GetComponent&lt;Button&gt; from the GO containing this script
+        /// </summary>
+        [Tooltip("will be taken from this object, if not specified")]
         public Button button;
 
         /// <summary>When expanding, the initial size will be <see cref="nonExpandedSize"/> and the target size will be <see cref="nonExpandedSize"/> x <see cref="expandFactor"/>; opposite is true when collapsing</summary>
@@ -32,27 +32,28 @@ namespace frame8.ScrollRectItemsAdapter.Classic.Util
         [HideInInspector]
         public bool expanded;
 
-		public UnityFloatEvent onExpandAmounChanged;
+        public UnityFloatEvent onExpandAmounChanged;
 
-		float startSize;
-        float endSize;
-        float animStart;
+        private float startSize;
+        private float endSize;
+        private float animStart;
+
         //float animEnd;
-        bool animating = false;
-        RectTransform rectTransform;
+        private bool animating = false;
+
+        private RectTransform rectTransform;
 
         public ISizeChangesHandler sizeChangesHandler;
 
-
-        void Awake()
+        private void Awake()
         {
             rectTransform = transform as RectTransform;
 
             if (button == null)
                 button = GetComponent<Button>();
 
-			if (button)
-				button.onClick.AddListener(OnClicked);
+            if (button)
+                button.onClick.AddListener(OnClicked);
         }
 
         public void OnClicked()
@@ -79,28 +80,27 @@ namespace frame8.ScrollRectItemsAdapter.Classic.Util
             }
         }
 
-
-        void Update()
+        private void Update()
         {
             if (animating)
             {
                 float elapsedTime = Time.time - animStart;
                 float t01 = elapsedTime / animDuration;
-				if (t01 >= 1f) // done
-				{
-					t01 = 1f; // fill/clamp animation
-					animating = false;
-				}
-				else
-					t01 = Mathf.Sqrt(t01); // fast-in, slow-out effect
+                if (t01 >= 1f) // done
+                {
+                    t01 = 1f; // fill/clamp animation
+                    animating = false;
+                }
+                else
+                    t01 = Mathf.Sqrt(t01); // fast-in, slow-out effect
 
-				float size = Mathf.Lerp(startSize, endSize, t01);
+                float size = Mathf.Lerp(startSize, endSize, t01);
                 if (sizeChangesHandler == null)
-				{
-					//// debug
-					//rectTransform.SetInsetAndSizeFromParentEdgeWithCurrentAnchors(RectTransform.Edge.Top, rectTransform.GetInsetFromParentTopEdge(rectTransform.parent as RectTransform), size);
-				}
-				else
+                {
+                    //// debug
+                    //rectTransform.SetInsetAndSizeFromParentEdgeWithCurrentAnchors(RectTransform.Edge.Top, rectTransform.GetInsetFromParentTopEdge(rectTransform.parent as RectTransform), size);
+                }
+                else
                 {
                     bool accepted = sizeChangesHandler.HandleSizeChangeRequest(rectTransform, size);
 
@@ -112,13 +112,12 @@ namespace frame8.ScrollRectItemsAdapter.Classic.Util
                     {
                         expanded = !expanded;
                         sizeChangesHandler.OnExpandedStateChanged(rectTransform, expanded);
-					}
-				}
+                    }
+                }
 
-
-				if (onExpandAmounChanged != null)
-					onExpandAmounChanged.Invoke(t01);
-			}
+                if (onExpandAmounChanged != null)
+                    onExpandAmounChanged.Invoke(t01);
+            }
         }
 
         /// <summary>Interface to implement by the class that'll handle the size changes when the animation runs</summary>
@@ -136,7 +135,7 @@ namespace frame8.ScrollRectItemsAdapter.Classic.Util
             void OnExpandedStateChanged(RectTransform rt, bool expanded);
         }
 
-		[Serializable]
-		public class UnityFloatEvent : UnityEvent<float> { }
+        [Serializable]
+        public class UnityFloatEvent : UnityEvent<float> { }
     }
 }

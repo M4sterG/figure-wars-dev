@@ -1,37 +1,37 @@
-﻿using System;
+﻿using Scripts.Classes.Main;
+using Scripts.Weapons;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Scripts.Classes.Main;
-using Scripts.Weapons;
+
 //using Console = Colorful.Console;
 
 namespace Scripts.Classes.Inventory
 {
     public class ActualWeapon : Item
     {
-        
         public static int MAX_LEVEL = 5;
         private static Dictionary<int, int> upgradeLevelChances = createBaseRates();
         private static Dictionary<int, int> energyLevels = createEnergyLevels();
+
         private static HashSet<Tuple<WeaponType, Dictionary<UpgradeStat, int>>> upgradeBonuses
                 = createUpgadeBonuses();
 
-        
         private Random rng = new Random();
-
 
         private readonly Weapon baseWeapon;
         private Weapon actualWeapon;
         private int Level { get; set; }
         private int currUpgradeRate;
+
         private int CurrentUpgradeRate
         {
-            get { return currUpgradeRate;}
+            get { return currUpgradeRate; }
             set { currUpgradeRate = value; }
         }
+
         private UpgradeStat upgradeStat;
         private int Energy { get; set; }
-        
 
         public ActualWeapon(Weapon baseWeapon)
         {
@@ -49,8 +49,6 @@ namespace Scripts.Classes.Inventory
             this.IconFile = baseWeapon.IconFile;
             this.IconOffset = baseWeapon.IconOffset;
         }
-        
-        
 
         public WeaponType getType()
         {
@@ -61,8 +59,6 @@ namespace Scripts.Classes.Inventory
         {
             return baseWeapon;
         }
-
-
 
         public void upgrade(int addedEnergy)
         {
@@ -75,14 +71,14 @@ namespace Scripts.Classes.Inventory
             int remainingEnergy = addedEnergy + Energy - requiredEnergy;
             if (Level == 0 && remainingEnergy >= 0)
             {
-               // make user choose upgrade
-               upgradeStat = UpgradeStat.A;
-               bool succeeded = tryUpgrade(CurrentUpgradeRate);
-               if (!succeeded)
-               {
-                   upgradeStat = UpgradeStat.None;
-               }
-               return;
+                // make user choose upgrade
+                upgradeStat = UpgradeStat.A;
+                bool succeeded = tryUpgrade(CurrentUpgradeRate);
+                if (!succeeded)
+                {
+                    upgradeStat = UpgradeStat.None;
+                }
+                return;
             }
             if (remainingEnergy >= 0)
             {
@@ -134,16 +130,19 @@ namespace Scripts.Classes.Inventory
                     bonuses.TryGetValue(UpgradeStat.A, out offsetA);
                     actualWeapon.setA(actualWeapon.getA() + level * offsetA);
                     break;
+
                 case UpgradeStat.B:
                     int offsetB;
                     bonuses.TryGetValue(UpgradeStat.B, out offsetB);
                     actualWeapon.setB(actualWeapon.getB() + level * offsetB);
                     break;
+
                 case UpgradeStat.C:
                     int offsetC;
                     bonuses.TryGetValue(UpgradeStat.C, out offsetC);
                     actualWeapon.setB(actualWeapon.getB() + level * offsetC);
                     break;
+
                 case UpgradeStat.D:
                     int offsetD;
                     bonuses.TryGetValue(UpgradeStat.D, out offsetD);
@@ -160,26 +159,32 @@ namespace Scripts.Classes.Inventory
                     Tuple<WeaponType, Dictionary<UpgradeStat, int>> tuple1;
                     tuple1 = upgradeBonuses.ElementAt(0);
                     return tuple1.Item2;
+
                 case WeaponType.Rifle:
                     Tuple<WeaponType, Dictionary<UpgradeStat, int>> tuple2;
                     tuple2 = upgradeBonuses.ElementAt(1);
                     return tuple2.Item2;
+
                 case WeaponType.Shotgun:
                     Tuple<WeaponType, Dictionary<UpgradeStat, int>> tuple3;
                     tuple3 = upgradeBonuses.ElementAt(2);
                     return tuple3.Item2;
+
                 case WeaponType.Sniper:
                     Tuple<WeaponType, Dictionary<UpgradeStat, int>> tuple4;
                     tuple4 = upgradeBonuses.ElementAt(3);
                     return tuple4.Item2;
+
                 case WeaponType.Minigun:
                     Tuple<WeaponType, Dictionary<UpgradeStat, int>> tuple5;
                     tuple5 = upgradeBonuses.ElementAt(4);
                     return tuple5.Item2;
+
                 case WeaponType.Bazooka:
                     Tuple<WeaponType, Dictionary<UpgradeStat, int>> tuple6;
                     tuple6 = upgradeBonuses.ElementAt(5);
                     return tuple6.Item2;
+
                 case WeaponType.Grenade:
                     Tuple<WeaponType, Dictionary<UpgradeStat, int>> tuple7;
                     tuple7 = upgradeBonuses.ElementAt(6);
@@ -188,9 +193,7 @@ namespace Scripts.Classes.Inventory
 
             return null;
         }
-            
-        
-        
+
         private static HashSet<Tuple<WeaponType, Dictionary<UpgradeStat, int>>> createUpgadeBonuses()
         {
             var meleeUpgrades = getMeleeUpgrades();
@@ -200,7 +203,7 @@ namespace Scripts.Classes.Inventory
             var minigunUpgrades = getMinigunUpgrades();
             var bazookaUpgrades = getBazookaUpgrades();
             var grenadeUpgrades = getGrenadeUpgrades();
-            HashSet<Tuple<WeaponType, Dictionary<UpgradeStat, int>>> upgrades 
+            HashSet<Tuple<WeaponType, Dictionary<UpgradeStat, int>>> upgrades
                 = new HashSet<Tuple<WeaponType, Dictionary<UpgradeStat, int>>>();
             upgrades.Add(meleeUpgrades);
             upgrades.Add(rifleUpgrades);
@@ -211,7 +214,7 @@ namespace Scripts.Classes.Inventory
             upgrades.Add(grenadeUpgrades);
             return upgrades;
         }
-        
+
         private static Tuple<WeaponType, Dictionary<UpgradeStat, int>> getGrenadeUpgrades()
         {
             Dictionary<UpgradeStat, int> dic = new Dictionary<UpgradeStat, int>();
@@ -220,9 +223,8 @@ namespace Scripts.Classes.Inventory
             dic.Add(UpgradeStat.C, 15);
             dic.Add(UpgradeStat.D, 15);
             return new Tuple<WeaponType, Dictionary<UpgradeStat, int>>(WeaponType.Grenade, dic);
-        } 
+        }
 
-        
         private static Tuple<WeaponType, Dictionary<UpgradeStat, int>> getBazookaUpgrades()
         {
             Dictionary<UpgradeStat, int> dic = new Dictionary<UpgradeStat, int>();
@@ -231,9 +233,8 @@ namespace Scripts.Classes.Inventory
             dic.Add(UpgradeStat.C, 15);
             dic.Add(UpgradeStat.D, 15);
             return new Tuple<WeaponType, Dictionary<UpgradeStat, int>>(WeaponType.Bazooka, dic);
-        } 
+        }
 
-        
         private static Tuple<WeaponType, Dictionary<UpgradeStat, int>> getMinigunUpgrades()
         {
             Dictionary<UpgradeStat, int> dic = new Dictionary<UpgradeStat, int>();
@@ -242,11 +243,8 @@ namespace Scripts.Classes.Inventory
             dic.Add(UpgradeStat.C, 15);
             dic.Add(UpgradeStat.D, 15);
             return new Tuple<WeaponType, Dictionary<UpgradeStat, int>>(WeaponType.Minigun, dic);
-        } 
+        }
 
-        
-        
-        
         private static Tuple<WeaponType, Dictionary<UpgradeStat, int>> getSniperUpgrades()
         {
             Dictionary<UpgradeStat, int> dic = new Dictionary<UpgradeStat, int>();
@@ -255,8 +253,8 @@ namespace Scripts.Classes.Inventory
             dic.Add(UpgradeStat.C, 15);
             dic.Add(UpgradeStat.D, 25);
             return new Tuple<WeaponType, Dictionary<UpgradeStat, int>>(WeaponType.Sniper, dic);
-        } 
-        
+        }
+
         private static Tuple<WeaponType, Dictionary<UpgradeStat, int>> getShotgunUpgrades()
         {
             Dictionary<UpgradeStat, int> dic = new Dictionary<UpgradeStat, int>();
@@ -265,8 +263,8 @@ namespace Scripts.Classes.Inventory
             dic.Add(UpgradeStat.C, 15);
             dic.Add(UpgradeStat.D, 15);
             return new Tuple<WeaponType, Dictionary<UpgradeStat, int>>(WeaponType.Shotgun, dic);
-        } 
-        
+        }
+
         private static Tuple<WeaponType, Dictionary<UpgradeStat, int>> getRifleUpgrades()
         {
             Dictionary<UpgradeStat, int> dic = new Dictionary<UpgradeStat, int>();
@@ -275,7 +273,7 @@ namespace Scripts.Classes.Inventory
             dic.Add(UpgradeStat.C, 4);
             dic.Add(UpgradeStat.D, 15);
             return new Tuple<WeaponType, Dictionary<UpgradeStat, int>>(WeaponType.Rifle, dic);
-        } 
+        }
 
         private static Tuple<WeaponType, Dictionary<UpgradeStat, int>> getMeleeUpgrades()
         {
@@ -285,8 +283,8 @@ namespace Scripts.Classes.Inventory
             dic.Add(UpgradeStat.C, 15);
             dic.Add(UpgradeStat.D, 15);
             return new Tuple<WeaponType, Dictionary<UpgradeStat, int>>(WeaponType.Melee, dic);
-        } 
-        
+        }
+
         private static Dictionary<int, int> createEnergyLevels()
         {
             Dictionary<int, int> dic = new Dictionary<int, int>();
@@ -297,8 +295,7 @@ namespace Scripts.Classes.Inventory
             dic.Add(5, 500);
             return dic;
         }
-        
-        
+
         private static Dictionary<int, int> createBaseRates()
         {
             Dictionary<int, int> dic = new Dictionary<int, int>();
@@ -313,7 +310,7 @@ namespace Scripts.Classes.Inventory
         public enum UpgradeStat
         {
             None,
-            A,B,C,D // which of the stats the weapon is upgraded on
+            A, B, C, D // which of the stats the weapon is upgraded on
         }
     }
 }

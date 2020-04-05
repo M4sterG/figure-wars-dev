@@ -1,15 +1,15 @@
-﻿
+﻿using Scripts.Classes.Main;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
-using Scripts.Classes.Main;
 
 namespace Scripts.Weapons
 {
-    public class PrimitiveWeapon
+    public class PrimitiveWeapon 
     // only used to get the objects from the .cbd JSON file
-    // 
+    //
     {
         public int wi_id { get; set; }
         public WeaponType wi_weapon_type { get; set; }
@@ -112,21 +112,23 @@ namespace Scripts.Weapons
         public int wi_ability_c_max { get; set; }
         public int wi_ability_d_max { get; set; }
         public int wi_weapon_size { get; set; }
-        public PrimitiveWeapon(Byte[] datablock, int[] sizes)
+
+        public PrimitiveWeapon(CgdDescriptor descr, Byte[] datablock)
         {
             PropertyInfo[] listProperties = this.GetType().GetProperties();
 
             int cursorpos = 0;
+           
             for (int i = 0; i < listProperties.Length; i++)
             {
-                Byte[] x = new Byte[sizes[i]];
+                Byte[] x = new Byte[descr.fieldsizes[i]];
                 Buffer.BlockCopy(datablock, cursorpos, x, 0, x.Length);
-                if (sizes[i] > 4)
+                if (descr.fieldsizes[i] > 4)
                 {
-                    var value = BitConverter.ToString(x, 0);
+                    var value = Encoding.UTF8.GetString(x, 0, x.Length);
                     listProperties[i].SetValue(this, value);
                 }
-                else if(sizes[i] < 4)
+                else if (descr.fieldsizes[i] < 4)
                 {
                     listProperties[i].SetValue(this, BitConverter.ToBoolean(x, 0));
                 }
@@ -135,9 +137,25 @@ namespace Scripts.Weapons
                     var value = BitConverter.ToInt32(x, 0);
                     listProperties[i].SetValue(this, value);
                 }
-                cursorpos += sizes[i];
+                cursorpos += descr.fieldsizes[i];
             }
         }
-        
+
+    }
+
+    public class PrimitiveWeaponComparer : IComparer<PrimitiveWeapon>
+    {
+        public int Compare(PrimitiveWeapon x, PrimitiveWeapon y)
+        {
+            if (x.wi_id > y.wi_id)
+            {
+                return 1;
+            }
+            else if (y.wi_id < x.wi_id)
+            {
+                return -1;
+            }
+            else return 0;
+        }
     }
 }

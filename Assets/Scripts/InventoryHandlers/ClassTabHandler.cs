@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Scripts.Classes.Inventory;
-using Scripts.Classes.Main;
+﻿using Scripts.Classes.Main;
 using Scripts.InventoryHandlers;
+using System;
+using System.Collections.Generic;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ClassTabHandler : MonoBehaviour
 {
-    
     private ObjectStatus Status
     {
         get
@@ -36,23 +32,21 @@ public class ClassTabHandler : MonoBehaviour
 
     // it is assumed the 3 images are different
     public Sprite idleImg;
+
     public Sprite hoveringImg;
     public Sprite clickedImg;
 
     private Color selectedColor = Color.yellow;/*new Color(179, 174, 99, 255);*/
-    private Color baseColor = new Color(85/255f, 91/255f, 142/255f);
-
+    private Color baseColor = new Color(85 / 255f, 91 / 255f, 142 / 255f);
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
     }
 
     private void setOthersToIdle()
@@ -74,7 +68,6 @@ public class ClassTabHandler : MonoBehaviour
             }
         }
     }
-    
 
     private void setImageByOperationType(OperationType opType)
     {
@@ -88,11 +81,13 @@ public class ClassTabHandler : MonoBehaviour
                     textObj.color = baseColor;
                 }
                 return;
+
             case OperationType.Clicking:
                 setImage(tab, clickedImg);
                 textObj.color = selectedColor;
                 setOthersToIdle();
                 return;
+
             case OperationType.Unhovering:
                 if (Status == ObjectStatus.Idle)
                 {
@@ -119,34 +114,33 @@ public class ClassTabHandler : MonoBehaviour
                 itemList = InventoryHandler.toItemList(User.inventory.getWeapons());
                 InventoryHandler.ShowNewList(itemList);
                 break;
+
             case GameManager.TAB_SET_NAME:
                 itemList = InventoryHandler.toItemList(User.inventory.getParts());
                 InventoryHandler.ShowNewList(itemList);
                 break;
+
             case GameManager.TAB_PARTS_NAME:
                 itemList = InventoryHandler.toItemList(User.inventory.getParts());
                 InventoryHandler.ShowNewList(itemList);
                 break;
+
             case GameManager.TAB_ACCESORIES_NAME:
                 itemList = InventoryHandler.toItemList(User.inventory.getParts());
                 InventoryHandler.ShowNewList(itemList);
                 break;
+
             case GameManager.TAB_MISC_NAME:
                 itemList = InventoryHandler.toItemList(User.inventory.getMisc());
                 InventoryHandler.ShowNewList(itemList);
                 break;
-            
         }
     }
-    
-    
 
     public void OnUnhover()
     {
         setImageByOperationType(OperationType.Unhovering);
     }
-
-    
 
     private void setImage(GameObject UIElem, Sprite newImage)
     {
@@ -157,12 +151,10 @@ public class ClassTabHandler : MonoBehaviour
             img.color = GameManager.FULL_COLOR;
         }
         catch (NullReferenceException nullEx)
-        {     
+        {
             Debug.Log(nullEx.Message);
         }
     }
-
-    
 
     private enum OperationType
     {
@@ -175,5 +167,4 @@ public class ClassTabHandler : MonoBehaviour
     {
         Idle, Clicked
     }
-    
 }

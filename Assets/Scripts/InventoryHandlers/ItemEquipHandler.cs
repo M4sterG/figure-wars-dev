@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using DefaultNamespace;
+﻿using DefaultNamespace;
 using UnityEngine;
-using UnityEngine.UI;
-using Scripts;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ItemEquipHandler : MonoBehaviour
 {
     // Start is called before the first frame update
     private bool isBasic = false;
+
     public Image statusImg;
     public Image iconImg;
     public GameObject upgradesBar;
@@ -19,16 +16,14 @@ public class ItemEquipHandler : MonoBehaviour
     public GameObject otherPanel;
     public GameObject thisPanel;
 
-
     public Sprite basicIcon;
 
     public Sprite idleImg;
     public Sprite hoverImg;
     public Sprite clickedImg;
 
-   
     private GameManager.SlotStatus status;
-    
+
     public void OnHover()
     {
         if (status == GameManager.SlotStatus.Idle)
@@ -43,7 +38,7 @@ public class ItemEquipHandler : MonoBehaviour
         trigger.AddListener(EventTriggerType.PointerClick, onDoubleClick);
     }
 
-    void onDoubleClick(PointerEventData data)
+    private void onDoubleClick(PointerEventData data)
     {
         int taps = data.clickCount;
         if (taps == 1)
@@ -86,7 +81,7 @@ public class ItemEquipHandler : MonoBehaviour
         {
             GameObject otherSlot = child.gameObject;
             if (!otherSlot.name.Equals(this.name))
-                // reference equality needed
+            // reference equality needed
             {
                 otherSlot.GetComponent<Image>().sprite = idleImg;
             }
@@ -104,6 +99,4 @@ public class ItemEquipHandler : MonoBehaviour
             isBasic = true;
         }
     }
-
-    
 }

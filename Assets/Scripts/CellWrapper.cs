@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CellWrapper<T>
 {
     // Start is called before the first frame update
     private T data;
+
     private Transform objTransform;
 
     public T getValue()
@@ -28,5 +27,4 @@ public class CellWrapper<T>
     {
         return objTransform;
     }
-    
 }

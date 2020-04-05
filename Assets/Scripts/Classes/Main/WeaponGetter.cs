@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net;
-using System.Web;
-using System.Text;
-using System.Drawing;
-using System.Net.WebSockets;
-using Newtonsoft.Json;
-using Scripts.Classes.Icons;
+﻿using Scripts.Classes.Icons;
 using Scripts.Weapons;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Text;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace Scripts.Classes.Main
 {
-
     internal static class WeaponGetter
     {
         private const string WEAPON_INFO_PATH = "Assets/Resources/CGD/MV/weaponinfo.json";
@@ -23,27 +17,32 @@ namespace Scripts.Classes.Main
         private const string ITEM_WEAPON_INFO_PATH_TW = "Assets/Resources/CGD/TW/itemweaponsinfo.json";
         private const string MV_ICONS_PATH = "Assets/Resources/CGD/MV/iconsinfo.json";
         private const string URL = "https://figurewars.000webhostapp.com/api/dbpush.php?key=switnub&query=";
-       // static StyleSheet styleSheet = new StyleSheet(Color.WhiteSmoke);
+
+        // static StyleSheet styleSheet = new StyleSheet(Color.WhiteSmoke);
         private static List<PrimitiveIcon> primIcons = IconGetter.getPrimIcons(MV_ICONS_PATH);
-        
+
         public static List<Weapon> getWeapons(string weaponsPath, string weaponInfoPath)
         {
             Console.OutputEncoding = Encoding.Unicode;
             Debug.Log("!!! Debugger looks for the files in: " + Environment.CurrentDirectory);
 
-            CgdDataReader<PrimitiveWeapon> PrimitiveWeaponDataList =  new CgdDataReader<PrimitiveWeapon>(weaponsPath);
-            List<PrimitiveWeapon> weapons_mv = PrimitiveWeaponDataList.GetDataList();
+            CgdDataReader<PrimitiveWeapon> PrimitiveWeaponDataList = new CgdDataReader<PrimitiveWeapon>(weaponsPath);
+            List<PrimitiveWeapon> unsortedweapons= PrimitiveWeaponDataList.GetDataList();
             
             CgdDataReader<PrimitiveItemWeaponInfo> PrimitiveWeaponInfoDataList = new CgdDataReader<PrimitiveItemWeaponInfo>(weaponInfoPath);
-            List<PrimitiveItemWeaponInfo> weaponInfos_mv = PrimitiveWeaponInfoDataList.GetDataList();
+            List<PrimitiveItemWeaponInfo> unsortedweaponinfo = PrimitiveWeaponInfoDataList.GetDataList();
            
-            weapons_mv = weapons_mv.FindAll(w_mv => lastTwoDigitsAreGood(w_mv.wi_id));
-            weaponInfos_mv = weaponInfos_mv.FindAll(info_mv => lastTwoDigitsAreGood(info_mv.ii_weaponinfo));
-            
+
+
+            unsortedweapons = unsortedweapons.FindAll(w_mv => lastTwoDigitsAreGood(w_mv.wi_id));
+            unsortedweaponinfo = unsortedweaponinfo.FindAll(info_mv => lastTwoDigitsAreGood(info_mv.ii_weaponinfo));
+            SortedSet<PrimitiveWeapon> weapons_mv = new SortedSet<PrimitiveWeapon>(unsortedweapons, new PrimitiveWeaponComparer());
+            SortedSet<PrimitiveItemWeaponInfo> weaponinfo_mv = new SortedSet<PrimitiveItemWeaponInfo>(unsortedweaponinfo, new PrimitiveItemWeaponInfoComparer());
+
             List<int> missingIDS = new List<int>();
-            
+
             List<Weapon> weapons = new List<Weapon>();
-            getMVWeapons(weapons_mv, weaponInfos_mv, missingIDS, weapons);
+            getMVWeapons(weapons_mv.ToList<PrimitiveWeapon>(), weaponinfo_mv.ToList<PrimitiveItemWeaponInfo>(), missingIDS, weapons);
             return weapons;
         }
 
@@ -51,8 +50,7 @@ namespace Scripts.Classes.Main
         {
             Console.OutputEncoding = Encoding.Unicode;
             Debug.Log("!!! Debugger looks for the files in: " + Environment.CurrentDirectory);
-            
-            
+
             List<PrimitiveWeapon> weapons_mv = new JSONToCSharpParser<PrimitiveWeapon>().parse(WEAPON_INFO_PATH);
             List<PrimitiveItemWeaponInfo> weaponInfos_mv = new JSONToCSharpParser<PrimitiveItemWeaponInfo>().parse(ITEM_WEAPON_INFO_PATH);
 
@@ -67,86 +65,76 @@ namespace Scripts.Classes.Main
 
             List<int> missingIDS = new List<int>();
 
-            
             List<Weapon> weapons = new List<Weapon>();
 
             getMVWeapons(weapons_mv, weaponInfos_mv, missingIDS, weapons);
             getTWWeaponsAndCompare(weapons_tw, weaponInfos_tw, weapons, missingIDS);
-            
+
             int missing = missingIDS.Count;
             Console.WriteLine(missing + " items are missing in database");
             Console.WriteLine("Still " + missingIDS.Count + " items are missing in database");
-           
-             //   WebClient web = new WebClient();
-              //  foreach (Weapon wep in weapons)
-              //  {
-               //     ProcessQuery(getWeaponInfo(wep), web);
-                //    System.Threading.Thread.Sleep(50);
-               // }
 
-            
+            //   WebClient web = new WebClient();
+            //  foreach (Weapon wep in weapons)
+            //  {
+            //     ProcessQuery(getWeaponInfo(wep), web);
+            //    System.Threading.Thread.Sleep(50);
+            // }
+
             Console.WriteLine("File in: " + Environment.CurrentDirectory);
             return weapons;
         }
-        
-        
 
         private static void getMVWeapons(List<PrimitiveWeapon> mvWeapons,
             List<PrimitiveItemWeaponInfo> infoWeps,
             List<int> missingIDS, List<Weapon> weapons)
         {
-            
             foreach (PrimitiveWeapon w_mv in mvWeapons)
+            {
+                bool found = false;
+                foreach (PrimitiveItemWeaponInfo info_mv in infoWeps)
                 {
-                    bool found = false;
-                    foreach (PrimitiveItemWeaponInfo info_mv in infoWeps)
+                    if (info_mv.ii_weaponinfo == w_mv.wi_id)
                     {
-                        if (info_mv.ii_weaponinfo == w_mv.wi_id)
-                        {
-                            weapons.Add(getActualWeapon(w_mv, info_mv));
-                            string msg = "id : " + w_mv.wi_id + " | name: " + info_mv.ii_name + " | Type " +
-                                         w_mv.wi_weapon_type.ToString();
-                            Console.WriteLine(msg);
-                            found = true;
-                            break;
-                        }
-                    }
-
-                    if (!found)
-                    {
-                        missingIDS.Add(w_mv.wi_id);
-                        string errorMsg = "Couldn't find match for id: " + w_mv.wi_id;
-                        Console.WriteLine(errorMsg);
-                        
+                        weapons.Add(getActualWeapon(w_mv, info_mv));
+                        string msg = "id : " + w_mv.wi_id + " | name: " + info_mv.ii_name + " | Type " +
+                                     w_mv.wi_weapon_type.ToString();
+                        Console.WriteLine(msg);
+                        found = true;
+                        break;
                     }
                 }
-            
 
+                if (!found)
+                {
+                    missingIDS.Add(w_mv.wi_id);
+                    string errorMsg = "Couldn't find match for id: " + w_mv.wi_id;
+                    Console.WriteLine(errorMsg);
+                }
+            }
         }
 
-        private static void getTWWeaponsAndCompare(List<PrimitiveWeapon> TWWeapons, 
+        private static void getTWWeaponsAndCompare(List<PrimitiveWeapon> TWWeapons,
                                     List<PrimitiveItemWeaponInfo> infoTW,
                                     List<Weapon> weapons,
                                     List<int> missingIDS)
         {
-           
-                foreach (PrimitiveWeapon w_tw in TWWeapons)
+            foreach (PrimitiveWeapon w_tw in TWWeapons)
+            {
+                foreach (PrimitiveItemWeaponInfo info_tw in infoTW)
                 {
-                    foreach (PrimitiveItemWeaponInfo info_tw in infoTW)
+                    if (missingIDS.Contains(w_tw.wi_id))
                     {
-                        if (missingIDS.Contains(w_tw.wi_id))
-                        {
-                            missingIDS.Remove(w_tw.wi_id);
-                            weapons.Add(getActualWeapon(w_tw, info_tw));
-                            String msg = "id : " + w_tw.wi_id + " | name: " + info_tw.ii_name + " | Type " +
-                                         w_tw.wi_weapon_type.ToString();
-                            Console.WriteLine("Found in TW :" + msg);
-                            
-                        }
+                        missingIDS.Remove(w_tw.wi_id);
+                        weapons.Add(getActualWeapon(w_tw, info_tw));
+                        String msg = "id : " + w_tw.wi_id + " | name: " + info_tw.ii_name + " | Type " +
+                                     w_tw.wi_weapon_type.ToString();
+                        Console.WriteLine("Found in TW :" + msg);
                     }
                 }
+            }
         }
-        
+
         private static void ProcessQuery(List<string> queryList, WebClient web)
         {
             for (int i = 0; i < queryList.Count; i++)
@@ -157,6 +145,7 @@ namespace Scripts.Classes.Main
                 System.Threading.Thread.Sleep(50);
             }
         }
+
         private static Weapon getActualWeapon(PrimitiveWeapon primWep, PrimitiveItemWeaponInfo info)
         {
             switch (primWep.wi_weapon_type)
@@ -193,18 +182,25 @@ namespace Scripts.Classes.Main
             {
                 case WeaponType.Melee:
                     return handleCaseMelee(wep);
+
                 case WeaponType.Rifle:
                     return handleCaseRifle(wep);
+
                 case WeaponType.Shotgun:
                     return handleCaseShotgun(wep);
+
                 case WeaponType.Sniper:
                     return handleCaseSniper(wep);
+
                 case WeaponType.Minigun:
                     return handleCaseMinigun(wep);
+
                 case WeaponType.Bazooka:
                     return handleCaseBazooka(wep);
+
                 case WeaponType.Grenade:
                     return handleCaseGrenade(wep);
+
                 default:
                     throw new ArgumentException("Illegal weapon type");
             }
@@ -219,6 +215,7 @@ namespace Scripts.Classes.Main
 
             return queryList;
         }
+
         private static List<string> handleCaseRifle(Weapon wep)
         {
             List<string> queryList = new List<string>();
@@ -228,6 +225,7 @@ namespace Scripts.Classes.Main
 
             return queryList;
         }
+
         private static List<string> handleCaseShotgun(Weapon wep)
         {
             List<string> queryList = new List<string>();
@@ -237,6 +235,7 @@ namespace Scripts.Classes.Main
 
             return queryList;
         }
+
         private static List<string> handleCaseSniper(Weapon wep)
         {
             List<string> queryList = new List<string>();
@@ -246,6 +245,7 @@ namespace Scripts.Classes.Main
 
             return queryList;
         }
+
         private static List<string> handleCaseMinigun(Weapon wep)
         {
             List<string> queryList = new List<string>();
@@ -255,6 +255,7 @@ namespace Scripts.Classes.Main
 
             return queryList;
         }
+
         private static List<string> handleCaseBazooka(Weapon wep)
         {
             List<string> queryList = new List<string>();
@@ -264,6 +265,7 @@ namespace Scripts.Classes.Main
 
             return queryList;
         }
+
         private static List<string> handleCaseGrenade(Weapon wep)
         {
             List<string> queryList = new List<string>();
@@ -316,7 +318,7 @@ namespace Scripts.Classes.Main
 
         private static Weapon handleCaseRifle(PrimitiveWeapon primWep, PrimitiveItemWeaponInfo info)
         {
-            Weapon wep = new Rifle( primWep.wi_ability_a, primWep.wi_ability_b, 
+            Weapon wep = new Rifle(primWep.wi_ability_a, primWep.wi_ability_b,
                                     primWep.wi_ability_c, primWep.wi_ability_d);
             setWeaponStats(wep, primWep, info);
             return wep;
@@ -332,7 +334,7 @@ namespace Scripts.Classes.Main
             wep.TotalAmmo = primWep.wi_bullet_total;
             wep.ChangeTime = primWep.wi_change_time;
             int iconDDSExtension = 4;
-            foreach (var icon in  primIcons)
+            foreach (var icon in primIcons)
             {
                 if (icon.ii_id == info.ii_icon)
                 {
@@ -348,7 +350,6 @@ namespace Scripts.Classes.Main
                     break;
                 }
             }
-
         }
 
         private static Weapon handleMeleeCase(PrimitiveWeapon primWep, PrimitiveItemWeaponInfo info)
@@ -383,8 +384,7 @@ namespace Scripts.Classes.Main
             styleSheet.AddStyle("OK", Color.Green);
             styleSheet.AddStyle("'.*'", Color.LightCoral);
             styleSheet.AddStyle("[0-9]", Color.LightCoral);
-
-        } 
+        }
         */
     }
 }

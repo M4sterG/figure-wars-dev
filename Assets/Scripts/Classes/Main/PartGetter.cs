@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-
-using Microsoft.Win32.SafeHandles;
-using Newtonsoft.Json;
-using Scripts.Classes.Icons;
+﻿using Scripts.Classes.Icons;
 using Scripts.Classes.Inventory;
 using Scripts.Classes.Parts;
 using Scripts.Weapons;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Scripts.Classes.Main
 {
@@ -17,16 +13,14 @@ namespace Scripts.Classes.Main
         private const string PARTS_PATH = "Assets/Resources/CGD/iteminfo.json";
         private const string TW_ICONS_PATH = "Assets/Resources/CGD/MV/iconsinfo.json";
         private static List<PrimitiveIcon> icons = IconGetter.getPrimIcons(TW_ICONS_PATH);
-       
 
         public static List<Part> getParts()
         {
-            
             List<Part> parts = new List<Part>();
             Console.WriteLine("!!! Debugger looks for the files in: " + Environment.CurrentDirectory);
             List<PrimitivePart> allPrimParts = new JSONToCSharpParser<PrimitivePart>().parse(PARTS_PATH);
             List<PrimitivePart> primitiveParts = new List<PrimitivePart>();
-            
+
             var essences = allPrimParts.FindAll(part => part.ii_name_time.Contains("Unlimited"))
                 .GroupBy(part => part.ii_name);
             foreach (var essence in essences)
@@ -43,7 +37,7 @@ namespace Scripts.Classes.Main
                 }
                 Console.WriteLine();
             });
-           Console.WriteLine(parts.Count +" distinct parts were found");
+            Console.WriteLine(parts.Count + " distinct parts were found");
             return parts;
         }
 
@@ -62,8 +56,7 @@ namespace Scripts.Classes.Main
                 }
             }
         }
-        
-        
+
         private static Part handleSimplePart(PrimitivePart primPart, PartSlot slot)
         {
             Part part = new Part();
@@ -84,42 +77,45 @@ namespace Scripts.Classes.Main
             }
 
             Part part = new Part();
-                part.PartEquip = new HashSet<PartSlot>();
-                part.CharacterEquip = new HashSet<Character>();
-                part.Name = primPart.ii_name;
-                part.ItemType = ItemType.Part;
-                
-                    switch (primPart.ii_type_inven)
-                    {
-                        case 9:
-                            // FULL SET
-                            part.PartEquip.Add(PartSlot.Hair);
-                            part.PartEquip.Add(PartSlot.Face);
-                            part.PartEquip.Add(PartSlot.Top);
-                            part.PartEquip.Add(PartSlot.Legs);
-                            part.PartEquip.Add(PartSlot.Shoes);
-                            part.PartEquip.Add(PartSlot.Hands);
-                            part.PartEquip.Add(PartSlot.Skirt);
-                            return part;
-                        case 13:
-                            part.PartEquip.Add(PartSlot.Top);
-                            part.PartEquip.Add(PartSlot.Legs);
-                            return part;
-                        case 15:
-                            part.PartEquip.Add(PartSlot.Legs);
-                            part.PartEquip.Add(PartSlot.Shoes);
-                            return part;
-                        case 12:
-                            part.PartEquip.Add(PartSlot.Hair);
-                            part.PartEquip.Add(PartSlot.Face);
-                            return part;
-                        default:
-                            Console.WriteLine("Name: " + primPart.ii_name + " | Unkown type_inven: " +
-                                              primPart.ii_type_inven);
-                            return null;
-                    }
+            part.PartEquip = new HashSet<PartSlot>();
+            part.CharacterEquip = new HashSet<Character>();
+            part.Name = primPart.ii_name;
+            part.ItemType = ItemType.Part;
+
+            switch (primPart.ii_type_inven)
+            {
+                case 9:
+                    // FULL SET
+                    part.PartEquip.Add(PartSlot.Hair);
+                    part.PartEquip.Add(PartSlot.Face);
+                    part.PartEquip.Add(PartSlot.Top);
+                    part.PartEquip.Add(PartSlot.Legs);
+                    part.PartEquip.Add(PartSlot.Shoes);
+                    part.PartEquip.Add(PartSlot.Hands);
+                    part.PartEquip.Add(PartSlot.Skirt);
+                    return part;
+
+                case 13:
+                    part.PartEquip.Add(PartSlot.Top);
+                    part.PartEquip.Add(PartSlot.Legs);
+                    return part;
+
+                case 15:
+                    part.PartEquip.Add(PartSlot.Legs);
+                    part.PartEquip.Add(PartSlot.Shoes);
+                    return part;
+
+                case 12:
+                    part.PartEquip.Add(PartSlot.Hair);
+                    part.PartEquip.Add(PartSlot.Face);
+                    return part;
+
+                default:
+                    Console.WriteLine("Name: " + primPart.ii_name + " | Unkown type_inven: " +
+                                      primPart.ii_type_inven);
+                    return null;
+            }
         }
-        
 
         private static string setPrint<T>(HashSet<T> vals)
         {
@@ -165,8 +161,6 @@ namespace Scripts.Classes.Main
             }
         }
 
-        
-
         private static void figureOutPart(PrimitivePart primPart, List<Part> parts)
         {
             switch (primPart.ii_type)
@@ -175,52 +169,64 @@ namespace Scripts.Classes.Main
                     // HAIR
                     parts.Add(handleSimplePart(primPart, PartSlot.Hair));
                     break;
-                case 1 :
+
+                case 1:
                     // FACE
                     parts.Add(handleSimplePart(primPart, PartSlot.Face));
                     break;
-                case 2 :
+
+                case 2:
                     // TOP
                     parts.Add(handleSimplePart(primPart, PartSlot.Top));
                     break;
-                case 3 :
+
+                case 3:
                     // LEGS
                     parts.Add(handleSimplePart(primPart, PartSlot.Legs));
                     break;
+
                 case 4:
                     // SKIRT
-                parts.Add(handleSimplePart(primPart, PartSlot.Skirt));
+                    parts.Add(handleSimplePart(primPart, PartSlot.Skirt));
                     break;
-                case 5 :
+
+                case 5:
                     // HANDS
                     parts.Add(handleSimplePart(primPart, PartSlot.Hands));
                     break;
-                case 6 :
+
+                case 6:
                     // SHOES
                     parts.Add(handleSimplePart(primPart, PartSlot.Shoes));
                     break;
-                case 7: 
+
+                case 7:
                     // HEAD ACC
                     parts.Add(handleSimplePart(primPart, PartSlot.HeadAcc));
                     break;
+
                 case 8:
                     // WAIST ACC
                     parts.Add(handleSimplePart(primPart, PartSlot.WaistAcc));
                     break;
+
                 case 9:
                     // BACK ACC
                     parts.Add(handleSimplePart(primPart, PartSlot.BackAcc));
                     break;
+
                 case 21:
                     Console.WriteLine("Unknown type: " + primPart.ii_type
                                                        + " | Name: " + primPart.ii_name);
                     // MISC
                     break;
+
                 case 22:
                     // DIORAMA
                     Console.WriteLine("Diorama type: " + primPart.ii_type
                                                        + " | Name: " + primPart.ii_name);
                     break;
+
                 case 25:
                     // MULTIPLE SLOTS
                     Part part = handleComplexPart(primPart);
@@ -229,12 +235,12 @@ namespace Scripts.Classes.Main
                         parts.Add(part);
                     }
                     break;
+
                 default:
                     Console.WriteLine("Unknown type: " + primPart.ii_type
                                                    + " | Name: " + primPart.ii_name);
                     break;
-
-            }   
+            }
         }
     }
 }

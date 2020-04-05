@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Scripts.Classes.Main;
+﻿using Scripts.Classes.Main;
 
 namespace Scripts.Weapons
 {
@@ -9,22 +6,24 @@ namespace Scripts.Weapons
     {
         public int BulletSpeed { get; set; }
         public SwapSpeed SwapSpeed { get; set; }
+
         public Bazooka() : base()
         {
             WeaponType = WeaponType.Bazooka;
         }
+
         public Bazooka(int power, int firingRate, int blastRadius, int bulletSpeed) : this()
         {
-            Power = power;  // ability_a in cgd  
-            FiringRate = firingRate;    // ability_b in cgd  
-            BlastRadius = blastRadius;  // ability_c in cgd  
-            BulletSpeed = bulletSpeed;  // ability_d in cgd  
+            Power = power;  // ability_a in cgd
+            FiringRate = firingRate;    // ability_b in cgd
+            BlastRadius = blastRadius;  // ability_c in cgd
+            BulletSpeed = bulletSpeed;  // ability_d in cgd
         }
+
         public new string ToUniquePropertyList()
         {
             return "blast_radius, bullet_speed, swap_speed";
         }
-
 
         public override void setA(int value)
         {
@@ -35,7 +34,6 @@ namespace Scripts.Weapons
         {
             return Power;
         }
-        
 
         public override void setB(int value)
         {

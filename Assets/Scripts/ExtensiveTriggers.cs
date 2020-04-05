@@ -1,13 +1,10 @@
-﻿using UnityEngine;
-using UnityEngine.EventSystems;
-
-namespace DefaultNamespace
+﻿namespace DefaultNamespace
 {
     using UnityEngine.EventSystems;
- 
+
     public static class ExtensiveTriggers
     {
-        public static void AddListener (this EventTrigger trigger, EventTriggerType eventType, System.Action<PointerEventData> listener)
+        public static void AddListener(this EventTrigger trigger, EventTriggerType eventType, System.Action<PointerEventData> listener)
         {
             EventTrigger.Entry entry = new EventTrigger.Entry();
             entry.eventID = eventType;
