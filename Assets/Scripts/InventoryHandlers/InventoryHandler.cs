@@ -22,6 +22,7 @@ namespace Scripts.InventoryHandlers
 		public GameObject eqiuppedWeaponsPanel;
 
 		private static TabStatus tab = TabStatus.All;
+		public static InventoryClass activeClass = InventoryClass.Weapons;
 
 		public static InventoryHandler instance;
 		public GameObject inventoryContent;
@@ -377,7 +378,10 @@ namespace Scripts.InventoryHandlers
 		{
 			Image itemIcon = slot.transform.Find("ItemIcon").GetComponent<Image>();
 			GameObject levelIndicator = slot.transform.Find("LevelIndicator").gameObject;
+			GameObject basicPanel = slot.transform.Find("BasicPanel").gameObject;
 			GameManager.setIcon(itemIcon, wep);
+			basicPanel.SetActive(false);
+			levelIndicator.SetActive(true);
 		}
 
 		private static GameObject findWeaponSlot(WeaponType type)
@@ -438,10 +442,20 @@ namespace Scripts.InventoryHandlers
 			tab = TabStatus.PreciseCategory;
 		}
 
+		public static TabStatus getTabStatus()
+		{
+			return tab;
+		}
+
 		
-		private enum TabStatus
+		public enum TabStatus
 		{
 			All, PreciseCategory
+		}
+
+		public enum InventoryClass
+		{
+			Weapons, Set, Parts, Accessories, Items
 		}
 		
 

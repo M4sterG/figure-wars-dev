@@ -56,6 +56,13 @@ namespace Scripts.Classes.Inventory
             weaponHolders = unequippedWeapons;
         }
 
+        public void unequipWeapon(WeaponType type)
+        {
+            ActualWeapon wep = equippedWeapons[type];
+            equippedWeapons[type] = null;
+            weaponHolders.Add(wep);
+        }
+
         public Dictionary<WeaponType, ActualWeapon> getEquippedWeapons()
         {
             return equippedWeapons;
