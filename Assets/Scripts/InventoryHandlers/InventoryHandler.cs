@@ -74,13 +74,25 @@ namespace Scripts.InventoryHandlers
 		void Awake()
 		{
 			instance = this;
-			List<Weapon> weps = WeaponGetter.getWeapons(WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH);
+			List<Weapon> weps = WeaponGetter.getWeapons(/*WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH*/);
 		//	List<Part> parts = PartGetter.getParts();
 			User.inventory.addWeapons(weps);
 		//	User.inventory.addParts(parts);
 			ItemList = toItemList(User.inventory.getWeapons());
 			defineStatusMap();
 			show();
+		}
+
+		void Update()
+		{
+			if (Input.GetAxisRaw("Mouse ScrollWheel") > 0)
+			{ 
+				ScrollUp();
+			}
+			else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0)
+			{
+				scrollDown();
+			}
 		}
 
 		public static void ShowNewList(List<Item> data)
