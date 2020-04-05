@@ -1,7 +1,133 @@
 fileFormatVersion: 2
 guid: 9c5ca24425e370045b1c7ab9be5005a4
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 8665190210258782990
+    second: icon_weapon_SNIPER_03_0
+  - first:
+      213: -5305397710910557431
+    second: icon_weapon_SNIPER_03_1
+  - first:
+      213: -8859728795221968120
+    second: icon_weapon_SNIPER_03_2
+  - first:
+      213: 2180492804955378199
+    second: icon_weapon_SNIPER_03_3
+  - first:
+      213: 3448177954167477669
+    second: icon_weapon_SNIPER_03_4
+  - first:
+      213: 7574061826334546724
+    second: icon_weapon_SNIPER_03_5
+  - first:
+      213: -3800104381434296503
+    second: icon_weapon_SNIPER_03_6
+  - first:
+      213: 2521091067730277582
+    second: icon_weapon_SNIPER_03_7
+  - first:
+      213: 5847437030814589056
+    second: icon_weapon_SNIPER_03_8
+  - first:
+      213: -7676411924267361238
+    second: icon_weapon_SNIPER_03_9
+  - first:
+      213: -1355808839297060851
+    second: icon_weapon_SNIPER_03_10
+  - first:
+      213: 5533432411364484109
+    second: icon_weapon_SNIPER_03_11
+  - first:
+      213: -4971050419900813886
+    second: icon_weapon_SNIPER_03_12
+  - first:
+      213: -2977324561440695409
+    second: icon_weapon_SNIPER_03_13
+  - first:
+      213: 3221867421884971186
+    second: icon_weapon_SNIPER_03_14
+  - first:
+      213: -864644789071970675
+    second: icon_weapon_SNIPER_03_15
+  - first:
+      213: 3194025321347984964
+    second: icon_weapon_SNIPER_03_16
+  - first:
+      213: 7681314712451392602
+    second: icon_weapon_SNIPER_03_17
+  - first:
+      213: -5866663260717640769
+    second: icon_weapon_SNIPER_03_18
+  - first:
+      213: 5723077291057724921
+    second: icon_weapon_SNIPER_03_19
+  - first:
+      213: 5540811477442212859
+    second: icon_weapon_SNIPER_03_0
+  - first:
+      213: 3303042308216072625
+    second: icon_weapon_SNIPER_03_1
+  - first:
+      213: 6804554139936952202
+    second: icon_weapon_SNIPER_03_2
+  - first:
+      213: 4217387543710157650
+    second: icon_weapon_SNIPER_03_3
+  - first:
+      213: 429286416305858468
+    second: icon_weapon_SNIPER_03_4
+  - first:
+      213: 90066913887754681
+    second: icon_weapon_SNIPER_03_5
+  - first:
+      213: 3781553445529752191
+    second: icon_weapon_SNIPER_03_6
+  - first:
+      213: -3155636822897395818
+    second: icon_weapon_SNIPER_03_7
+  - first:
+      213: 15091975495100104
+    second: icon_weapon_SNIPER_03_8
+  - first:
+      213: -6510359355779363158
+    second: icon_weapon_SNIPER_03_9
+  - first:
+      213: 8691726472573122318
+    second: icon_weapon_SNIPER_03_10
+  - first:
+      213: -4860787835499811426
+    second: icon_weapon_SNIPER_03_11
+  - first:
+      213: 5838442515642210609
+    second: icon_weapon_SNIPER_03_12
+  - first:
+      213: 3729448566565921932
+    second: icon_weapon_SNIPER_03_13
+  - first:
+      213: 2564133127425467703
+    second: icon_weapon_SNIPER_03_14
+  - first:
+      213: -7315724121960065904
+    second: icon_weapon_SNIPER_03_15
+  - first:
+      213: -6105097575431733158
+    second: icon_weapon_SNIPER_03_16
+  - first:
+      213: 118891251153359118
+    second: icon_weapon_SNIPER_03_17
+  - first:
+      213: 3824982852727158513
+    second: icon_weapon_SNIPER_03_18
+  - first:
+      213: -1636842755054470477
+    second: icon_weapon_SNIPER_03_19
+  - first:
+      213: -2355075133355898391
+    second: icon_weapon_SNIPER_03_20
+  - first:
+      213: 1367066161725989953
+    second: icon_weapon_SNIPER_03_21
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -85,11 +211,473 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: icon_weapon_SNIPER_03_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf3b958aeaae4ec40800000000000000
+      internalID: 5540811477442212859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_SNIPER_03_1
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b92e43aa73c6dd20800000000000000
+      internalID: 3303042308216072625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_SNIPER_03_2
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8f0bdd20f1ae6e50800000000000000
+      internalID: 6804554139936952202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_SNIPER_03_3
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25b400750ab278a30800000000000000
+      internalID: 4217387543710157650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_SNIPER_03_4
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a7afce98b125f500800000000000000
+      internalID: 429286416305858468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_SNIPER_03_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 344
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b99b48816bff3100800000000000000
+      internalID: 90066913887754681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_SNIPER_03_6
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 344
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7294fbb2d6ca7430800000000000000
+      internalID: 3781553445529752191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_SNIPER_03_7
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 344
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 697fe03670de434d0800000000000000
+      internalID: -3155636822897395818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_SNIPER_03_8
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 344
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c6285e521e953000800000000000000
+      internalID: 15091975495100104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_SNIPER_03_9
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 344
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae41a6c8ae86a5a0800000000000000
+      internalID: -6510359355779363158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_SNIPER_03_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 260
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0774921d273f9870800000000000000
+      internalID: 8691726472573122318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_SNIPER_03_11
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 260
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9d6e7897330b8cb0800000000000000
+      internalID: -4860787835499811426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_SNIPER_03_12
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 260
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 139546ad880560150800000000000000
+      internalID: 5838442515642210609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_SNIPER_03_13
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 260
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c84604a36b9a1c330800000000000000
+      internalID: 3729448566565921932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_SNIPER_03_14
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 260
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 735a1097e71a59320800000000000000
+      internalID: 2564133127425467703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_SNIPER_03_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09450d3eba3597a90800000000000000
+      internalID: -7315724121960065904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_SNIPER_03_16
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 176
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a500b41f916564ba0800000000000000
+      internalID: -6105097575431733158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_SNIPER_03_17
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 176
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e01d5e786f266a100800000000000000
+      internalID: 118891251153359118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_SNIPER_03_18
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 176
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f633c093a1151530800000000000000
+      internalID: 3824982852727158513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_SNIPER_03_19
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 176
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ba7ec7cf24c849e0800000000000000
+      internalID: -1636842755054470477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_SNIPER_03_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 92
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e947f8d4a7115fd0800000000000000
+      internalID: -2355075133355898391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_weapon_SNIPER_03_21
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 92
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 144622a5e6bc8f210800000000000000
+      internalID: 1367066161725989953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: bec2360cff223bf408fdce3d67364169
     internalID: 0
     vertices: []
     indices: 
