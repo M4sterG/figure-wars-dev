@@ -1,0 +1,23 @@
+{
+"fieldnames":
+[
+	"ii_id",
+	"ii_filename",
+	"ii_offset",
+	"ii_width",
+	"ii_height",
+	"ii_filesize",
+	"ii_common"
+],
+"fieldsizes":
+[
+	4,
+	50,
+	4,
+	4,
+	4,
+	4,
+	4
+],
+"binpath":"Assets/Resources/CGD/MV/iconsinfo.cdb"
+}

@@ -1,12 +1,13 @@
-﻿namespace Scripts.Classes.Inventory
+﻿using System;
+
+namespace Scripts.Classes.Inventory
 {
-    public class PrimitivePart
+    public class PrimitivePart : IComparable<PrimitivePart>
     {
         /// <summary>
         ///  can be a Part, Accessory or diorama or package of parts
         /// </summary>
         public int ii_id { get; set; }
-
         public string ii_name { get; set; }
         public string ii_name_option { get; set; }
         public string ii_name_time { get; set; }
@@ -75,5 +76,20 @@
         public bool ii_is_trade { get; set; }
         public int ii_ei_exp { get; set; }
         public bool ii_evolution_type { get; set; }
+
+        public PrimitivePart()
+        {
+
+        }
+
+        public int CompareTo(PrimitivePart x)
+        {
+            if (this.ii_id > x.ii_id)
+                return 1;
+            else if (this.ii_id < x.ii_id)
+                return -1;
+            else
+                return 0;
+        }
     }
 }

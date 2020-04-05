@@ -15,11 +15,11 @@ namespace Scripts.Classes.Main
         private const string ITEM_WEAPON_INFO_PATH = "Assets/Resources/CGD/MV/itemweaponsinfo.json";
         private const string WEAPON_INFO_PATH_TW = "Assets/Resources/CGD/TW/weaponinfo.json";
         private const string ITEM_WEAPON_INFO_PATH_TW = "Assets/Resources/CGD/TW/itemweaponsinfo.json";
-        private const string MV_ICONS_PATH = "Assets/Resources/CGD/MV/iconsinfo.json";
+        private const string MV_ICONS_PATH = "Assets/Resources/CGD/MV/iconsinfo_descr.json";
         private const string URL = "https://figurewars.000webhostapp.com/api/dbpush.php?key=switnub&query=";
 
         // static StyleSheet styleSheet = new StyleSheet(Color.WhiteSmoke);
-        private static List<PrimitiveIcon> primIcons = IconGetter.getPrimIcons(MV_ICONS_PATH);
+        private static List<PrimitiveIcon> primIcons = new SortedSet<PrimitiveIcon>(IconGetter.getPrimIcons(MV_ICONS_PATH)).ToList<PrimitiveIcon>();
 
         public static List<Weapon> getWeapons(string weaponsPath, string weaponInfoPath)
         {
@@ -27,18 +27,17 @@ namespace Scripts.Classes.Main
             Debug.Log("!!! Debugger looks for the files in: " + Environment.CurrentDirectory);
 
             CgdDataReader<PrimitiveWeapon> PrimitiveWeaponDataList = new CgdDataReader<PrimitiveWeapon>(weaponsPath);
-            List<PrimitiveWeapon> unsortedweapons= PrimitiveWeaponDataList.GetDataList();
-            
+            List<PrimitiveWeapon> unsortedweapons = PrimitiveWeaponDataList.GetDataList();
+
             CgdDataReader<PrimitiveItemWeaponInfo> PrimitiveWeaponInfoDataList = new CgdDataReader<PrimitiveItemWeaponInfo>(weaponInfoPath);
             List<PrimitiveItemWeaponInfo> unsortedweaponinfo = PrimitiveWeaponInfoDataList.GetDataList();
-           
-
 
             unsortedweapons = unsortedweapons.FindAll(w_mv => lastTwoDigitsAreGood(w_mv.wi_id));
             unsortedweaponinfo = unsortedweaponinfo.FindAll(info_mv => lastTwoDigitsAreGood(info_mv.ii_weaponinfo));
-            SortedSet<PrimitiveWeapon> weapons_mv = new SortedSet<PrimitiveWeapon>(unsortedweapons, new PrimitiveWeaponComparer());
-            SortedSet<PrimitiveItemWeaponInfo> weaponinfo_mv = new SortedSet<PrimitiveItemWeaponInfo>(unsortedweaponinfo, new PrimitiveItemWeaponInfoComparer());
 
+            SortedSet<PrimitiveWeapon> weapons_mv = new SortedSet<PrimitiveWeapon>(unsortedweapons);
+            SortedSet<PrimitiveItemWeaponInfo> weaponinfo_mv = new SortedSet<PrimitiveItemWeaponInfo>(unsortedweaponinfo);
+            //Debugger.Log(weaponinfo_mv.ToList<PrimitiveItemWeaponInfo>());
             List<int> missingIDS = new List<int>();
 
             List<Weapon> weapons = new List<Weapon>();
@@ -333,7 +332,8 @@ namespace Scripts.Classes.Main
             wep.AmmoClip = primWep.wi_bullet_capacity;
             wep.TotalAmmo = primWep.wi_bullet_total;
             wep.ChangeTime = primWep.wi_change_time;
-            int iconDDSExtension = 4;
+            //int iconDDSExtension = 4;
+
             foreach (var icon in primIcons)
             {
                 if (icon.ii_id == info.ii_icon)
@@ -375,16 +375,16 @@ namespace Scripts.Classes.Main
         }
 
         /*
-        public static void consoleFormat(StyleSheet styleSheet)
-        {
-            styleSheet.AddStyle("INSERT", Color.Magenta);
-            styleSheet.AddStyle("INTO", Color.Magenta);
-            styleSheet.AddStyle("IGNORE", Color.Magenta);
-            styleSheet.AddStyle("VALUES", Color.Magenta);
-            styleSheet.AddStyle("OK", Color.Green);
-            styleSheet.AddStyle("'.*'", Color.LightCoral);
-            styleSheet.AddStyle("[0-9]", Color.LightCoral);
-        }
-        */
+		public static void consoleFormat(StyleSheet styleSheet)
+		{
+			styleSheet.AddStyle("INSERT", Color.Magenta);
+			styleSheet.AddStyle("INTO", Color.Magenta);
+			styleSheet.AddStyle("IGNORE", Color.Magenta);
+			styleSheet.AddStyle("VALUES", Color.Magenta);
+			styleSheet.AddStyle("OK", Color.Green);
+			styleSheet.AddStyle("'.*'", Color.LightCoral);
+			styleSheet.AddStyle("[0-9]", Color.LightCoral);
+		}
+		*/
     }
 }

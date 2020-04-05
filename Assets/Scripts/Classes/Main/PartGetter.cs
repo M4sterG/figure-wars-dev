@@ -11,7 +11,7 @@ namespace Scripts.Classes.Main
     internal class PartGetter
     {
         private const string PARTS_PATH = "Assets/Resources/CGD/iteminfo.json";
-        private const string TW_ICONS_PATH = "Assets/Resources/CGD/MV/iconsinfo.json";
+        private const string TW_ICONS_PATH = "Assets/Resources/CGD/MV/iconsinfo_descr.json";
         private static List<PrimitiveIcon> icons = IconGetter.getPrimIcons(TW_ICONS_PATH);
 
         public static List<Part> getParts()

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Scripts.Weapons
 {
-    public class PrimitiveWeapon 
+    public class PrimitiveWeapon : IComparable
     // only used to get the objects from the .cbd JSON file
     //
     {
@@ -118,7 +118,7 @@ namespace Scripts.Weapons
             PropertyInfo[] listProperties = this.GetType().GetProperties();
 
             int cursorpos = 0;
-           
+
             for (int i = 0; i < listProperties.Length; i++)
             {
                 Byte[] x = new Byte[descr.fieldsizes[i]];
@@ -141,21 +141,22 @@ namespace Scripts.Weapons
             }
         }
 
-    }
-
-    public class PrimitiveWeaponComparer : IComparer<PrimitiveWeapon>
-    {
-        public int Compare(PrimitiveWeapon x, PrimitiveWeapon y)
+        public PrimitiveWeapon()
         {
-            if (x.wi_id > y.wi_id)
-            {
-                return 1;
-            }
-            else if (y.wi_id < x.wi_id)
-            {
-                return -1;
-            }
-            else return 0;
+
         }
+        public int CompareTo(object x)
+        {
+            if (x == null) 
+                return 1;
+            var otherNode = x as PrimitiveWeapon;
+            if (this.wi_id > otherNode.wi_id)
+                return 1;
+            else if (this.wi_id < otherNode.wi_id)
+                return -1;
+            else
+                return 0;
+        }
+
     }
 }

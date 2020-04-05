@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Scripts.Weapons
 {
-    public class PrimitiveItemWeaponInfo 
+    public class PrimitiveItemWeaponInfo : IComparable<PrimitiveItemWeaponInfo>
     {
         public int ii_id { get; set; }
         public string ii_name { get; set; }
@@ -104,21 +104,20 @@ namespace Scripts.Weapons
                 cursorpos += descr.fieldsizes[i];
             }
         }
-    }
 
-    public class PrimitiveItemWeaponInfoComparer : IComparer<PrimitiveItemWeaponInfo>
-    {
-        public int Compare(PrimitiveItemWeaponInfo x, PrimitiveItemWeaponInfo y)
+        public PrimitiveItemWeaponInfo()
         {
-            if (x.ii_id > y.ii_id)
-            {
+
+        }
+
+        public int CompareTo(PrimitiveItemWeaponInfo x)
+        {
+            if (this.ii_id > x.ii_id)
                 return 1;
-            }
-            else if (y.ii_id < x.ii_id)
-            {
+            else if (this.ii_id < x.ii_id)
                 return -1;
-            }
-            else return 0;
+            else
+                return 0;
         }
     }
 }
