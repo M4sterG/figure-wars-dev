@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Scripts.Classes.Inventory;
+using Scripts.Classes.Main;
+using Scripts.Weapons;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,6 +34,17 @@ public class GameManager : MonoBehaviour
     public const string HEAD_ACC_NAME = "HeadAcc";
     public const string BACK_ACC_NAME = "BackAcc";
     public const string WAIST_ACC_NAME = "WaistAcc";
+
+    public static Dictionary<WeaponType, string> weaponTypeNames = new Dictionary<WeaponType, string>
+    {
+        {WeaponType.Melee, MELEE_NAME},
+        {WeaponType.Rifle, RIFLE_NAME},
+        {WeaponType.Shotgun, SHOTGUN_NAME},
+        {WeaponType.Sniper, SNIPER_NAME},
+        {WeaponType.Minigun, MINIGUN_NAME},
+        {WeaponType.Bazooka, BAZOOKA_NAME},
+        {WeaponType.Grenade, GRENADE_NAME}
+    };
     
     public static Color TRANSPARENT = new Color(0, 0,0, 0);
     public static Color FULL_COLOR = new Color(25, 255, 255, 255);
@@ -46,6 +61,33 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         
+    }
+
+    public static void setIcon(Image iconImg, Item item)
+    {
+        switch (item.ItemType)
+        {
+            case ItemType.Weapon:
+                setImageIcon(WEAPON_ICONS_PATH, iconImg, item);
+                break;
+            default:
+                break;
+        }
+    }
+
+    private static void setImageIcon(string originPath, Image image, Item item)
+    {
+        Sprite[] icons = Resources.LoadAll<Sprite>(WEAPON_ICONS_PATH + item.IconFile);
+        int offset = item.IconOffset;
+        if (icons == null || !(offset >= 0 && offset < icons.Length))
+        {
+            image.color = GameManager.TRANSPARENT;
+        }
+        else
+        {
+            image.color = GameManager.FULL_COLOR;
+            image.sprite = icons[offset];
+        }
     }
 
     // Update is called once per frame

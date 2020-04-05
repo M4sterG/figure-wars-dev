@@ -17,6 +17,9 @@ namespace Scripts.InventoryHandlers
 	{
 		private const string WEAPON_INFO_MOCK_PATH = "Assets/Resources/CGD/mock_weapon_info.json";
 		private const string ITEM_WEAPON_INFO_MOCK_PATH = "Assets/Resources/CGD/mock_item_weapon_info.json";
+		private const string FOUR_SLOT_PANNEL_NAME = "4SlotPanel";
+		private const string THREE_SLOT_PANNEL_NAME = "3SlotPanel";
+		public GameObject eqiuppedWeaponsPanel;
 
 		private static TabStatus tab = TabStatus.All;
 
@@ -34,6 +37,11 @@ namespace Scripts.InventoryHandlers
 		private static int DataLength
 		{
 			get => ItemList.Count;
+		}
+
+		public static GameObject EquippedWeaponsPanel
+		{
+			get => instance.eqiuppedWeaponsPanel;
 		}
 
 		public static int getHead()
@@ -318,7 +326,7 @@ namespace Scripts.InventoryHandlers
 		}
 		
 
-		public static void setStatus(int index, GameManager.SlotStatus status)
+		public static void setSlotStatus(int index, GameManager.SlotStatus status)
 		{
 			checkIndex(index);
 			statusMap[index] = status;
@@ -348,6 +356,52 @@ namespace Scripts.InventoryHandlers
 
 			List<Item> newList = refreshList(type, toEquip);
 			ShowNewList(newList);
+			showInSlot(type, toEquip);
+		}
+
+		private static void showInSlot(ItemType type, Item toEquip)
+		{
+			switch (type)
+			{
+				case ItemType.Weapon:
+					ActualWeapon wep = toEquip as ActualWeapon;
+					GameObject wepSlot = findWeaponSlot(wep.WeaponType);
+					setWeaponSlot(wepSlot, wep);
+					break;
+				default:
+					break;
+			}
+		}
+
+		private static void setWeaponSlot(GameObject slot, ActualWeapon wep)
+		{
+			Image itemIcon = slot.transform.Find("ItemIcon").GetComponent<Image>();
+			GameObject levelIndicator = slot.transform.Find("LevelIndicator").gameObject;
+			GameManager.setIcon(itemIcon, wep);
+		}
+
+		private static GameObject findWeaponSlot(WeaponType type)
+		{
+			Transform fourSlot = EquippedWeaponsPanel.transform.Find(FOUR_SLOT_PANNEL_NAME);
+			Transform threeSlot = EquippedWeaponsPanel.transform.Find(THREE_SLOT_PANNEL_NAME);
+			foreach (Transform child in fourSlot)
+			{
+				GameObject slot = child.gameObject;
+				if (slot.name.Contains(GameManager.weaponTypeNames[type]))
+				{
+					return slot;
+				}
+			}
+
+			foreach (Transform child in threeSlot)
+			{
+				GameObject slot = child.gameObject;
+				if (slot.name.Contains(GameManager.weaponTypeNames[type]))
+				{
+					return slot;
+				}
+			}
+			return null;
 		}
 
 		private static List<Item> refreshList(ItemType itemType, Item toEquip)

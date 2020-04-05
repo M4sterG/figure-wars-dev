@@ -35,7 +35,7 @@ public class InventorySlotHandler : MonoBehaviour
         {
             selectedStatusImage.sprite = clickedImage;
             itemName.color = Color.white;
-            InventoryHandler.setStatus(invIndex, GameManager.SlotStatus.Clicked);
+            InventoryHandler.setSlotStatus(invIndex, GameManager.SlotStatus.Clicked);
             InventoryHandler.clearStatuses(invIndex, SlotIndex);
             
         }
