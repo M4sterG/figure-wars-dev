@@ -74,10 +74,10 @@ namespace Scripts.InventoryHandlers
 		void Awake()
 		{
 			instance = this;
-			List<Weapon> weps = WeaponGetter.getWeapons(/*WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH*/);
-		//	List<Part> parts = PartGetter.getParts();
+			List<Weapon> weps = WeaponGetter.getWeapons(WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH);
+			List<Part> parts = PartGetter.getParts();
 			User.inventory.addWeapons(weps);
-		//	User.inventory.addParts(parts);
+			User.inventory.addParts(parts);
 			ItemList = toItemList(User.inventory.getWeapons());
 			defineStatusMap();
 			show();
