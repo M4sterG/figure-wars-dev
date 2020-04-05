@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
+using Scripts.Classes.Main;
 using Scripts.InventoryHandlers;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 
@@ -32,7 +35,7 @@ public class InventorySlotHandler : MonoBehaviour
         {
             selectedStatusImage.sprite = clickedImage;
             itemName.color = Color.white;
-            InventoryHandler.setStatus(invIndex, GameManager.SlotStatus.Clicked);
+            InventoryHandler.setSlotStatus(invIndex, GameManager.SlotStatus.Clicked);
             InventoryHandler.clearStatuses(invIndex, SlotIndex);
             
         }
@@ -85,7 +88,27 @@ public class InventorySlotHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        EventTrigger trigger = GetComponent<EventTrigger>();
+        trigger.AddListener(EventTriggerType.PointerClick, OnClicks);
+    }
+
+    private void OnClicks(PointerEventData data)
+    {
+        int taps = data.clickCount;
+        if (taps == 1)
+        {
+            OnSlotClicked();
+        }
+        if (taps > 1)
+        {
+            OnEquip();
+        }
+    }
+
+    private void OnEquip()
+    {
+        loadContext();
+        InventoryHandler.EquipItem(invIndex);
     }
 
     // Update is called once per frame

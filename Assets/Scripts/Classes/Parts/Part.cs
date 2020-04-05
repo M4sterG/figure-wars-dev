@@ -6,10 +6,22 @@ namespace Scripts.Classes.Parts
     public class Part : Item
     {
         public HashSet<PartSlot> PartEquip { get; set; }
-        public HashSet<Character> CharacterEquip { get; set; }
-  
-    }
 
+        public bool isAcc()
+        {
+            return PartEquip.Contains(PartSlot.HeadAcc) || PartEquip.Contains(PartSlot.BackAcc)
+                                                        || PartEquip.Contains(PartSlot.WaistAcc);
+        }
+
+        public bool isSet()
+        {
+            return PartEquip.Contains(PartSlot.Top) && PartEquip.Count > 1;
+        }
+        
+        public HashSet<Character> CharacterEquip { get; set; }
+    }
+    
+   
     public enum PartSlot
     {
         HeadAcc,
@@ -44,4 +56,6 @@ namespace Scripts.Classes.Parts
         RunSpeed1,
         NoOption
     }
+
+   
 }

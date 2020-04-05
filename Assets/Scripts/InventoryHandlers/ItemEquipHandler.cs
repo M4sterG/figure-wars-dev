@@ -5,12 +5,18 @@ using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.UI;
 using Scripts;
+using Scripts.Classes.Inventory;
+using Scripts.Classes.Main;
+using Scripts.InventoryHandlers;
 using UnityEngine.EventSystems;
 
 public class ItemEquipHandler : MonoBehaviour
 {
     // Start is called before the first frame update
-    private bool isBasic = false;
+    private bool IsBasic
+    {
+        get { return this.basicPanel.activeSelf; }
+    }
     public Image statusImg;
     public Image iconImg;
     public GameObject upgradesBar;
@@ -40,17 +46,17 @@ public class ItemEquipHandler : MonoBehaviour
     private void Start()
     {
         EventTrigger trigger = GetComponent<EventTrigger>();
-        trigger.AddListener(EventTriggerType.PointerClick, onDoubleClick);
+        trigger.AddListener(EventTriggerType.PointerClick, OnClicks);
     }
 
-    void onDoubleClick(PointerEventData data)
+    void OnClicks(PointerEventData data)
     {
         int taps = data.clickCount;
         if (taps == 1)
         {
             OnClick();
         }
-        if (taps > 1)
+        if (taps > 1 && !IsBasic)
         {
             OnUnequip();
         }
@@ -58,7 +64,7 @@ public class ItemEquipHandler : MonoBehaviour
 
     public void OnUnhover()
     {
-        if (status == GameManager.SlotStatus.Idle && !isBasic)
+        if (status == GameManager.SlotStatus.Idle && !IsBasic)
         {
             statusImg.sprite = idleImg;
         }
@@ -66,12 +72,11 @@ public class ItemEquipHandler : MonoBehaviour
 
     public void OnClick()
     {
-        if (!isBasic)
-        {
+       
             statusImg.sprite = clickedImg;
             status = GameManager.SlotStatus.Clicked;
             setOthersToIdle();
-        }
+        
     }
 
     private void setOthersToIdle()
@@ -95,14 +100,44 @@ public class ItemEquipHandler : MonoBehaviour
 
     public void OnUnequip()
     {
-        if (!isBasic)
+        iconImg.sprite = basicIcon;
+        upgradesBar.SetActive(false);
+        basicPanel.SetActive(true);
+        statusImg.sprite = idleImg;
+        switch (InventoryHandler.activeClass)
         {
-            iconImg.sprite = basicIcon;
-            upgradesBar.SetActive(false);
-            basicPanel.SetActive(true);
-            statusImg.sprite = idleImg;
-            isBasic = true;
+            case InventoryHandler.InventoryClass.Weapons:
+                addWeaponBackToInv();
+                break;
+            default:
+                break;
         }
+    }
+
+    private void addWeaponBackToInv()
+    {
+        
+        foreach (KeyValuePair<WeaponType, string> pair in GameManager.weaponTypeNames)
+        {
+            WeaponType type;
+            if (this.name.Contains(pair.Value))
+            {
+                type = pair.Key;
+                User.inventory.unequipWeapon(type);
+                if (InventoryHandler.getTabStatus() == InventoryHandler.TabStatus.All)
+                {
+                    InventoryHandler.ShowNewList(InventoryHandler.toItemList(User.inventory.getWeapons()));
+                }
+                else
+                {
+                    List<ActualWeapon> weapons = User.inventory.getWeapons()
+                        .FindAll(w => w.WeaponType == type);
+                    InventoryHandler.ShowNewList(InventoryHandler.toItemList(weapons));
+                }
+                break;
+            }
+        }
+        
     }
 
     

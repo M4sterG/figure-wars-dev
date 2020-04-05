@@ -31,6 +31,11 @@ namespace Scripts.Classes.Inventory
         }
         private UpgradeStat upgradeStat;
         private int Energy { get; set; }
+
+        public WeaponType WeaponType
+        {
+            get => baseWeapon.WeaponType;
+        }
         
 
         public ActualWeapon(Weapon baseWeapon)
@@ -315,5 +320,7 @@ namespace Scripts.Classes.Inventory
             None,
             A,B,C,D // which of the stats the weapon is upgraded on
         }
+
+       
     }
 }

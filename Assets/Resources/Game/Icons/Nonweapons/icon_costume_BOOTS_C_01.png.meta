@@ -1,0 +1,872 @@
+fileFormatVersion: 2
+guid: 78ebbd00a0460074a88c924c7a681c52
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1730800514270806729
+    second: icon_costume_BOOTS_C_01_0
+  - first:
+      213: -8132038937410075260
+    second: icon_costume_BOOTS_C_01_1
+  - first:
+      213: -1157452777595695556
+    second: icon_costume_BOOTS_C_01_2
+  - first:
+      213: -4130958765986098298
+    second: icon_costume_BOOTS_C_01_3
+  - first:
+      213: 4506392370314992536
+    second: icon_costume_BOOTS_C_01_4
+  - first:
+      213: -3348748102966620854
+    second: icon_costume_BOOTS_C_01_5
+  - first:
+      213: 361545740702762227
+    second: icon_costume_BOOTS_C_01_6
+  - first:
+      213: -8191620014375490203
+    second: icon_costume_BOOTS_C_01_7
+  - first:
+      213: 804930037888903110
+    second: icon_costume_BOOTS_C_01_8
+  - first:
+      213: -2021856627596189933
+    second: icon_costume_BOOTS_C_01_9
+  - first:
+      213: -5485436500734625900
+    second: icon_costume_BOOTS_C_01_10
+  - first:
+      213: -110217255999758083
+    second: icon_costume_BOOTS_C_01_11
+  - first:
+      213: 2678253823441652625
+    second: icon_costume_BOOTS_C_01_12
+  - first:
+      213: 4043639708438936144
+    second: icon_costume_BOOTS_C_01_13
+  - first:
+      213: 7024663670015885424
+    second: icon_costume_BOOTS_C_01_14
+  - first:
+      213: 7478748533059065675
+    second: icon_costume_BOOTS_C_01_15
+  - first:
+      213: -3475226167568157165
+    second: icon_costume_BOOTS_C_01_16
+  - first:
+      213: 5694532291479502252
+    second: icon_costume_BOOTS_C_01_17
+  - first:
+      213: -2916864807413732045
+    second: icon_costume_BOOTS_C_01_18
+  - first:
+      213: 1224861163083347753
+    second: icon_costume_BOOTS_C_01_19
+  - first:
+      213: 7074873473247326735
+    second: icon_costume_BOOTS_C_01_20
+  - first:
+      213: 8841758744329030422
+    second: icon_costume_BOOTS_C_01_21
+  - first:
+      213: -6221551834455341508
+    second: icon_costume_BOOTS_C_01_22
+  - first:
+      213: -8196015346358871197
+    second: icon_costume_BOOTS_C_01_23
+  - first:
+      213: -4954995526720221773
+    second: icon_costume_BOOTS_C_01_24
+  - first:
+      213: 8957432042079128298
+    second: icon_costume_BOOTS_C_01_25
+  - first:
+      213: 8341000291821034493
+    second: icon_costume_BOOTS_C_01_26
+  - first:
+      213: 8687269600148769946
+    second: icon_costume_BOOTS_C_01_27
+  - first:
+      213: -6702757708698535971
+    second: icon_costume_BOOTS_C_01_28
+  - first:
+      213: 942605482354204072
+    second: icon_costume_BOOTS_C_01_29
+  - first:
+      213: -8587312073133007794
+    second: icon_costume_BOOTS_C_01_30
+  - first:
+      213: -7975931787786749964
+    second: icon_costume_BOOTS_C_01_31
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 102
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 430
+        width: 56
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c2cc26c5e9050810800000000000000
+      internalID: 1730800514270806729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_1
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 430
+        width: 82
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 485070cfba1352f80800000000000000
+      internalID: -8132038937410075260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_2
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 434
+        width: 97
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3e8e1bc4d6efefe0800000000000000
+      internalID: -1157452777595695556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_3
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 431
+        width: 43
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 683dc9b93e2eba6c0800000000000000
+      internalID: -4130958765986098298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_4
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 435
+        width: 52
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89bd7232cfbe98e30800000000000000
+      internalID: 4506392370314992536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_5
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 482
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4d4960c75bd681d0800000000000000
+      internalID: -3348748102966620854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_6
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 430
+        width: 55
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f4c4a48fe7740500800000000000000
+      internalID: 361545740702762227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_7
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 473
+        width: 32
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56d2b2c7ff4815e80800000000000000
+      internalID: -8191620014375490203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_8
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 351
+        width: 85
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c7e861da9fab2b00800000000000000
+      internalID: 804930037888903110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_9
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 346
+        width: 43
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31f1c550c1ce0f3e0800000000000000
+      internalID: -2021856627596189933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_10
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 350
+        width: 35
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49730cfc090dfd3b0800000000000000
+      internalID: -5485436500734625900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_11
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 344
+        width: 56
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df024085dfd687ef0800000000000000
+      internalID: -110217255999758083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_12
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 346
+        width: 82
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19b429499a11b2520800000000000000
+      internalID: 2678253823441652625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_13
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 350
+        width: 94
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05aba2504e4ed1830800000000000000
+      internalID: 4043639708438936144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 262
+        width: 53
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07083edb36e9c7160800000000000000
+      internalID: 7024663670015885424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_15
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 266
+        width: 35
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b47957daa2ad9c760800000000000000
+      internalID: 7478748533059065675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_16
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 178
+        width: 42
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31635ff863485cfc0800000000000000
+      internalID: -3475226167568157165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_17
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 182
+        width: 35
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cad70abb2fa070f40800000000000000
+      internalID: 5694532291479502252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_18
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 176
+        width: 63
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33d244079e63587d0800000000000000
+      internalID: -2916864807413732045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_19
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 177
+        width: 64
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92731ccfcb49ff010800000000000000
+      internalID: 1224861163083347753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_20
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 183
+        width: 95
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f02bdbb80fffe2260800000000000000
+      internalID: 7074873473247326735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_21
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 183
+        width: 95
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61b8f697bbc34ba70800000000000000
+      internalID: 8841758744329030422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_22
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 176
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c360c9bd19b98a9a0800000000000000
+      internalID: -6221551834455341508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_23
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 96
+        width: 89
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b11a28777e14e80800000000000000
+      internalID: -8196015346358871197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_24
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 96
+        width: 89
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bd013632d15c3bb0800000000000000
+      internalID: -4954995526720221773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_25
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 94
+        width: 72
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aea04d7dbf03f4c70800000000000000
+      internalID: 8957432042079128298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_26
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 94
+        width: 73
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfb1c69a29f21c370800000000000000
+      internalID: 8341000291821034493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_27
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 10
+        width: 49
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9ccae89ca16f8870800000000000000
+      internalID: 8687269600148769946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_28
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 8
+        width: 49
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd7338d60650bf2a0800000000000000
+      internalID: -6702757708698535971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_29
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 11
+        width: 77
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8adde0b21bec41d00800000000000000
+      internalID: 942605482354204072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_30
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 11
+        width: 80
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4cdb71ca2db3d880800000000000000
+      internalID: -8587312073133007794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_BOOTS_C_01_31
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 10
+        width: 45
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f7793c1c4ccf4190800000000000000
+      internalID: -7975931787786749964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 1fb9147bb0f8fd94281c1d9102cd3036
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
