@@ -25,11 +25,13 @@ public class ItemSubCategoryHandler : MonoBehaviour
         
     }
 
-    public void OnClick(string wepType)
+    public void OnClick(string subcategory)
     {
-        switch (wepType)
+        bool isAllCategory = false;
+        switch (subcategory)
         {
             case GameManager.ALL_WEAPONS_NAME:
+                isAllCategory = true;
                 showAllWeapons();
                 break;
             case GameManager.MELEE_NAME:
@@ -54,6 +56,7 @@ public class ItemSubCategoryHandler : MonoBehaviour
                 showOnlyCategory(WeaponType.Grenade);
                 break;
             case GameManager.ALL_PARTS_NAME:
+                isAllCategory = true;
                 showAllParts();
                 break;
             case GameManager.HAIR_NAME:
@@ -78,6 +81,7 @@ public class ItemSubCategoryHandler : MonoBehaviour
                 showPartsOfCategory(PartSlot.Shoes);
                 break;
             case GameManager.ALL_ACC_NAME:
+                isAllCategory = true;
                 showAllAcc();
                 break;
             case GameManager.HEAD_ACC_NAME:
@@ -90,13 +94,24 @@ public class ItemSubCategoryHandler : MonoBehaviour
                 showPartsOfCategory(PartSlot.WaistAcc);
                 break;
             case GameManager.ALL_MISC_NAME:
+                isAllCategory = true;
                 InventoryHandler.ShowNewList(User.inventory.getMisc());
                 break;
             case GameManager.ALL_SETS_NAME:
+                isAllCategory = true;
                 showAllSets();
                 break;
-
         }
+
+        if (isAllCategory)
+        {
+            InventoryHandler.setAllStatus();
+        }
+        else
+        {
+            InventoryHandler.setPreciseStatus();
+        }
+        
     }
 
     private void showAllSets()

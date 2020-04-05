@@ -14,6 +14,52 @@ namespace Scripts.Classes.Inventory
         private List<ActualWeapon> weaponHolders = new List<ActualWeapon>();
         private List<Part> parts = new List<Part>();
         private List<Item> miscItems = new List<Item>();
+        private Dictionary<WeaponType, ActualWeapon> equippedWeapons = new Dictionary<WeaponType, ActualWeapon>
+        {
+            {WeaponType.Melee, null},
+            {WeaponType.Rifle, null},
+            {WeaponType.Shotgun, null},
+            {WeaponType.Sniper, null},
+            {WeaponType.Minigun, null},
+            {WeaponType.Bazooka, null},
+            {WeaponType.Grenade, null}
+        };
+        
+        private Dictionary<WeaponType, string> basics = new Dictionary<WeaponType, string>
+        {
+            {WeaponType.Melee, "Folding Shovel"},
+            {WeaponType.Rifle, "Cricket"},
+            {WeaponType.Shotgun, "Zolo"},
+            {WeaponType.Sniper, "Jam"},
+            {WeaponType.Minigun, "Microgun"},
+            {WeaponType.Bazooka, "Sting Ray"},
+            {WeaponType.Grenade, "Hot Dog"}
+        };
+
+        public void setWeaponList(List<ActualWeapon> weapons)
+        {
+            if (weapons != null)
+            {
+                weaponHolders = weapons;
+            }
+        }
+
+        public void equipWeapon(WeaponType type, ActualWeapon weapon)
+        {
+            ActualWeapon prevEquipped = equippedWeapons[type];
+            if (prevEquipped != null && !prevEquipped.Name.Equals(basics[type]))
+            {
+                weaponHolders.Add(prevEquipped);
+            }
+            equippedWeapons[type] = weapon;
+            List<ActualWeapon> unequippedWeapons = weaponHolders.FindAll(w => w != weapon);
+            weaponHolders = unequippedWeapons;
+        }
+
+        public Dictionary<WeaponType, ActualWeapon> getEquippedWeapons()
+        {
+            return equippedWeapons;
+        }
 
         public List<Part> getParts()
         {

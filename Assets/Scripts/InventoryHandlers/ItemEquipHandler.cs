@@ -40,10 +40,10 @@ public class ItemEquipHandler : MonoBehaviour
     private void Start()
     {
         EventTrigger trigger = GetComponent<EventTrigger>();
-        trigger.AddListener(EventTriggerType.PointerClick, onDoubleClick);
+        trigger.AddListener(EventTriggerType.PointerClick, OnClicks);
     }
 
-    void onDoubleClick(PointerEventData data)
+    void OnClicks(PointerEventData data)
     {
         int taps = data.clickCount;
         if (taps == 1)

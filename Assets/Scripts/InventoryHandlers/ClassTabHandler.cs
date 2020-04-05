@@ -156,6 +156,7 @@ public class ClassTabHandler : MonoBehaviour
                 break;
             
         }
+        InventoryHandler.setAllStatus();
     }
     
     

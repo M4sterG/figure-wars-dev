@@ -18,6 +18,8 @@ namespace Scripts.InventoryHandlers
 		private const string WEAPON_INFO_MOCK_PATH = "Assets/Resources/CGD/mock_weapon_info.json";
 		private const string ITEM_WEAPON_INFO_MOCK_PATH = "Assets/Resources/CGD/mock_item_weapon_info.json";
 
+		private static TabStatus tab = TabStatus.All;
+
 		public static InventoryHandler instance;
 		public GameObject inventoryContent;
 		public static List<Item> itemList = new List<Item>();
@@ -63,10 +65,10 @@ namespace Scripts.InventoryHandlers
 		void Awake()
 		{
 			instance = this;
-			List<Weapon> weps = WeaponGetter.getWeapons(/*WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH*/);
-			List<Part> parts = PartGetter.getParts();
+			List<Weapon> weps = WeaponGetter.getWeapons(WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH);
+		//	List<Part> parts = PartGetter.getParts();
 			User.inventory.addWeapons(weps);
-			User.inventory.addParts(parts);
+		//	User.inventory.addParts(parts);
 			ItemList = toItemList(User.inventory.getWeapons());
 			defineStatusMap();
 			show();
@@ -74,7 +76,12 @@ namespace Scripts.InventoryHandlers
 
 		public static void ShowNewList(List<Item> data)
 		{
-			ItemList = data;
+			ItemList = data.OrderBy(it => it.ItemType).ToList();
+			if (data.Count > 0 && data.ElementAt(0).GetType() == typeof(ActualWeapon))
+			{
+				// if it's a list weapons, show it in order of weapon types
+				ItemList = data.OrderBy(it => ((ActualWeapon) it).WeaponType).ToList();
+			}
 			head = 0;
 			tail = 0;
 			defineStatusMap();
@@ -323,7 +330,66 @@ namespace Scripts.InventoryHandlers
 			return statusMap[index];
 		}
 
+		// ITEM AT INDEX MUST BE REQUIRED TYPE
+		public static void EquipItem(int index)
+		{
+			checkIndex(index);
+			Item toEquip = itemList.ElementAt(index);
+			ItemType type = toEquip.ItemType;
+			switch (type)
+			{
+				case ItemType.Weapon:
+					ActualWeapon weapon = itemList.ElementAt(index) as ActualWeapon;
+					User.inventory.equipWeapon(weapon.getType(), weapon);
+					break;
+				default:
+					break;
+			}
 
+			List<Item> newList = refreshList(type, toEquip);
+			ShowNewList(newList);
+		}
+
+		private static List<Item> refreshList(ItemType itemType, Item toEquip)
+		{
+			List<Item> newList;
+			switch (itemType)
+			{
+				case ItemType.Weapon:
+					ActualWeapon wep = toEquip as ActualWeapon;
+					var newWeps = User.inventory.getWeapons()
+						.FindAll(w =>
+						{
+							if (tab == TabStatus.All)
+							{
+								return w != toEquip;
+							}
+							return w.WeaponType == wep.WeaponType && w != toEquip;
+						});
+					return toItemList(newWeps);
+				default:
+					break;
+			}
+
+			return null;
+		}
+
+		public static void setAllStatus()
+		{
+			tab = TabStatus.All;
+		}
+
+		public static void setPreciseStatus()
+		{
+			tab = TabStatus.PreciseCategory;
+		}
+
+		
+		private enum TabStatus
+		{
+			All, PreciseCategory
+		}
+		
 
 	}
 }
