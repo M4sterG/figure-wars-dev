@@ -39,6 +39,11 @@ namespace Scripts.Classes.Inventory
 
         private Dictionary<PartSlot, Part> equippedParts = getEmptyEquippedParts();
 
+        public Dictionary<PartSlot, Part> getEquippedParts()
+        {
+            return equippedParts;
+        }
+
         private static Dictionary<PartSlot, Part> getEmptyEquippedParts()
         {
             Dictionary<PartSlot, Part> dictionary = new Dictionary<PartSlot, Part>();
@@ -68,6 +73,13 @@ namespace Scripts.Classes.Inventory
             List<ActualWeapon> unequippedWeapons = weaponHolders.FindAll(w => w != weapon);
             weaponHolders = unequippedWeapons;
         }
+        
+        public void unequipWeapon(WeaponType type)
+        {
+            ActualWeapon wep = equippedWeapons[type];
+            equippedWeapons[type] = null;
+            weaponHolders.Add(wep);
+        }
 
         public void equipPart(Part part)
         {
@@ -84,14 +96,18 @@ namespace Scripts.Classes.Inventory
             List<Part> unequippedParts = parts.FindAll(p => p != part);
             parts = unequippedParts;
         }
-        
 
-        public void unequipWeapon(WeaponType type)
+        public void unequipPart(PartSlot slot)
         {
-            ActualWeapon wep = equippedWeapons[type];
-            equippedWeapons[type] = null;
-            weaponHolders.Add(wep);
+            Part toUnequip = equippedParts[slot];
+            foreach (PartSlot equipped in toUnequip.PartEquip)
+            {
+                equippedParts[equipped] = null;
+            }
+            parts.Add(toUnequip);
         }
+
+     
 
         public Dictionary<WeaponType, ActualWeapon> getEquippedWeapons()
         {

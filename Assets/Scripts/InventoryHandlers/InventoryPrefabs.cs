@@ -15,6 +15,12 @@ public class InventoryPrefabs : MonoBehaviour
     public GameObject upgrade3Prefab;
     public GameObject upgrade4Prefab;
     public GameObject upgrade5Prefab;
+    public Sprite blankIcon;
+
+    public static Sprite BlankIcon
+    {
+        get => instance.blankIcon;
+    }
 
     public static GameObject InvContentPrefab
     {

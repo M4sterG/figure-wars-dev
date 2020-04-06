@@ -38,6 +38,7 @@ namespace Scripts.InventoryHandlers
 			= new Dictionary<int, GameManager.SlotStatus>();
 		private static int head = 0;
 		private static int tail = 0;
+		public static Dictionary<GameObject, Sprite> basicPartIcons = new Dictionary<GameObject, Sprite>();
 
 		public Sprite idleImage;
 		public Sprite clickedImage;
@@ -70,7 +71,6 @@ namespace Scripts.InventoryHandlers
 		public static Sprite ClickedImage
 		{
 			get => instance.clickedImage;
-			
 		}
 
 
@@ -88,11 +88,30 @@ namespace Scripts.InventoryHandlers
 			instance = this;
 			List<Weapon> weps = WeaponGetter.getWeapons(WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH);
 			List<Part> parts = MockData.fiveEachType(PartGetter.getParts());
+			initBasicPartIcons();
 			User.inventory.addWeapons(weps);
 			User.inventory.addParts(parts);
 			ItemList = toItemList(User.inventory.getWeapons());
 			defineStatusMap();
 			show();
+		}
+
+		private static void initBasicPartIcons()
+		{
+			GameObject sixSlot = EquippedPartsPanel.transform.Find(SIX_SLOT_PANNEL_NAME).gameObject;
+			GameObject fiveSlot = EquippedPartsPanel.transform.Find(FIVE_SLOT_PANNEL_NAME).gameObject;
+			initIconsFromPanel(sixSlot);
+			initIconsFromPanel(fiveSlot);
+		}
+
+		private static void initIconsFromPanel(GameObject panel)
+		{
+			// PANEL MUST BE FROM THE EQUIPPED PARTS PANEL
+			foreach (Transform child in panel.transform)
+			{
+				Sprite basicIcon = child.Find("ItemIcon").GetComponent<Image>().sprite;
+				basicPartIcons.Add(child.gameObject, basicIcon);
+			}
 		}
 
 		void Update()
@@ -419,9 +438,39 @@ namespace Scripts.InventoryHandlers
 					Part part = toEquip as Part;
 					GameObject partSlot = findPartSlot(part);
 					setPartSlot(partSlot, part);
+					setUnderslots(part);
 					break;
 				default:
 					throw new ArgumentException("Not implemented yet");
+			}
+		}
+
+		private static void setUnderslots(Part part)
+		{
+			foreach (PartSlot slot in part.PartEquip)
+			{
+				GameObject sixSlot = EquippedPartsPanel.transform.Find(SIX_SLOT_PANNEL_NAME).gameObject;
+				GameObject fiveSlot = EquippedPartsPanel.transform.Find(FIVE_SLOT_PANNEL_NAME).gameObject;
+				foreach (Transform child in sixSlot.transform)
+				{
+					if (child.name.Contains(GameManager.partTypeNames[slot]) && slot != part.DominantElement)
+					{
+						Image icon = child.Find("ItemIcon").GetComponent<Image>();
+						icon.sprite = InventoryPrefabs.BlankIcon;
+						TextMeshProUGUI basicText = child.Find("BasicPanel").GetComponentInChildren<TextMeshProUGUI>();
+						basicText.text = "SET";
+					}
+				}
+				foreach (Transform child in fiveSlot.transform)
+				{
+					if (child.name.Contains(GameManager.partTypeNames[slot]) && slot != part.DominantElement)
+					{
+						Image icon = child.Find("ItemIcon").GetComponent<Image>();
+						icon.sprite = InventoryPrefabs.BlankIcon;
+						TextMeshProUGUI basicText = child.Find("BasicPanel").GetComponentInChildren<TextMeshProUGUI>();
+						basicText.text = "SET";
+					}
+				}
 			}
 		}
 
