@@ -58,6 +58,16 @@ namespace Scripts.InventoryHandlers
 			get => instance.equippedPartsPanel;
 		}
 
+		private static GameObject PartsSixSlot
+		{
+			get => instance.equippedPartsPanel.transform.Find(SIX_SLOT_PANNEL_NAME).gameObject;
+		}
+		
+		private static GameObject PartsFiveSlot
+		{
+			get => instance.equippedPartsPanel.transform.Find(FIVE_SLOT_PANNEL_NAME).gameObject;
+		}
+
 		public static int getHead()
 		{
 			return head;
@@ -188,6 +198,7 @@ namespace Scripts.InventoryHandlers
 				}
 			}
 		}
+		
 
 		public static void scrollDown()
 		{
@@ -412,6 +423,7 @@ namespace Scripts.InventoryHandlers
 					break;
 				case ItemType.Part:
 					User.inventory.equipPart(itemList.ElementAt(index) as Part);
+					cleanUnusedPartSlots();
 					break;
 			}
 
@@ -455,23 +467,67 @@ namespace Scripts.InventoryHandlers
 				{
 					if (child.name.Contains(GameManager.partTypeNames[slot]) && slot != part.DominantElement)
 					{
-						Image icon = child.Find("ItemIcon").GetComponent<Image>();
-						icon.sprite = InventoryPrefabs.BlankIcon;
-						TextMeshProUGUI basicText = child.Find("BasicPanel").GetComponentInChildren<TextMeshProUGUI>();
-						basicText.text = "SET";
+						setPartSlotToPredefined(child.gameObject, false);
 					}
 				}
 				foreach (Transform child in fiveSlot.transform)
 				{
 					if (child.name.Contains(GameManager.partTypeNames[slot]) && slot != part.DominantElement)
 					{
-						Image icon = child.Find("ItemIcon").GetComponent<Image>();
-						icon.sprite = InventoryPrefabs.BlankIcon;
-						TextMeshProUGUI basicText = child.Find("BasicPanel").GetComponentInChildren<TextMeshProUGUI>();
-						basicText.text = "SET";
+						setPartSlotToPredefined(child.gameObject, false);
 					}
 				}
 			}
+		}
+		
+		private static void cleanUnusedPartSlots()
+		{
+			foreach (var pair in User.inventory.getEquippedParts())
+			{
+				if (pair.Value == null)
+				{
+					setPartSlotToPredefined(getPartSlot(pair.Key), true);
+				}
+			}   
+		}
+		
+		private static GameObject getPartSlot(PartSlot slot)
+		{
+			foreach (Transform child in PartsSixSlot.transform)
+			{
+				if (child.gameObject.name.Contains(GameManager.partTypeNames[slot]))
+				{
+					return child.gameObject;
+				}
+			}   
+			foreach (Transform child in PartsFiveSlot.transform)
+			{
+				if (child.gameObject.name.Contains(GameManager.partTypeNames[slot]))
+				{
+					return child.gameObject;
+				}
+			}
+
+			return null;
+		}
+		
+		public static void setPartSlotToPredefined(GameObject obj, bool isBasic)
+		{
+			Image icon = obj.transform.Find("ItemIcon").GetComponent<Image>();
+			GameObject basicPanel = obj.transform.Find("BasicPanel").gameObject;
+			string status = "";
+			if (isBasic)
+			{
+				status = "BASIC";
+				icon.sprite = InventoryHandler.basicPartIcons[obj];
+			}
+			else
+			{
+				status = "SET";
+				icon.sprite = InventoryPrefabs.BlankIcon;
+			}
+			basicPanel.GetComponentInChildren<TextMeshProUGUI>().text = status;
+			basicPanel.transform.gameObject.SetActive(true);
 		}
 
 		private static void setPartSlot(GameObject slot, Part part)

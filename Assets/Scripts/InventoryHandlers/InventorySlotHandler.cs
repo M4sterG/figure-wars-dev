@@ -110,6 +110,8 @@ public class InventorySlotHandler : MonoBehaviour
         loadContext();
         InventoryHandler.EquipItem(invIndex);
     }
+    
+    
 
     // Update is called once per frame
     void Update()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Scripts.Classes.Main;
 using Scripts.Classes.Parts;
+using Scripts.InventoryHandlers;
 using Scripts.Weapons;
 using UnityEngine;
 
@@ -88,11 +89,17 @@ namespace Scripts.Classes.Inventory
                 Part previous = equippedParts[slot];
                 if (previous != null)
                 {
-                    parts.Add(previous);   
+                    parts.Add(previous);
+                    foreach (var oldSlot in previous.PartEquip)
+                    {
+                       // if (!part.PartEquip.Contains(oldSlot))
+                       // {
+                            equippedParts[oldSlot] = null;
+                      //  }
+                    }
                 }
                 equippedParts[slot] = part;
             }
-
             List<Part> unequippedParts = parts.FindAll(p => p != part);
             parts = unequippedParts;
         }
@@ -105,6 +112,8 @@ namespace Scripts.Classes.Inventory
                 equippedParts[equipped] = null;
             }
             parts.Add(toUnequip);
+            
+            
         }
 
      

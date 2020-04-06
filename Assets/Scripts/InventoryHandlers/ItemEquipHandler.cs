@@ -151,7 +151,6 @@ public class ItemEquipHandler : MonoBehaviour
                 break;
             }
         }
-        
     }
 
     private void setUnderslotsToBasic(Part part)
@@ -168,11 +167,8 @@ public class ItemEquipHandler : MonoBehaviour
                 GameObject childObj = child.gameObject;
                 if (childObj.name.Contains(GameManager.partTypeNames[slot]))
                 {
-                    Image icon = childObj.transform.Find("ItemIcon").GetComponent<Image>();
-                    icon.sprite = InventoryHandler.basicPartIcons[childObj];
-                    TextMeshProUGUI basicPanel = childObj.transform.Find("BasicPanel")
-                        .gameObject.GetComponentInChildren<TextMeshProUGUI>();
-                    basicPanel.text = "BASIC";
+                    //set to basic
+                   InventoryHandler.setPartSlotToPredefined(childObj, true);
                 }
             }   
         }
@@ -183,15 +179,18 @@ public class ItemEquipHandler : MonoBehaviour
                 GameObject childObj = child.gameObject;
                 if (childObj.name.Contains(GameManager.partTypeNames[slot]))
                 {
-                    Image icon = childObj.transform.Find("ItemIcon").GetComponent<Image>();
-                    icon.sprite = InventoryHandler.basicPartIcons[childObj];
-                    TextMeshProUGUI basicPanel = childObj.transform.Find("BasicPanel")
-                        .gameObject.GetComponentInChildren<TextMeshProUGUI>();
-                    basicPanel.text = "BASIC";
+                    // set to basic
+                   InventoryHandler.setPartSlotToPredefined(childObj, true);
                 }
             }   
         }
     }
+
+   
+
+    
+
+    
 
     private void setOtherSlotToBasic(GameObject slot)
     {
