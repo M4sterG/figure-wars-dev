@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.UI;
@@ -35,15 +36,17 @@ public class ItemEquipHandler : MonoBehaviour
     public Sprite clickedImg;
 
 
-    private GameManager.SlotStatus status = GameManager.SlotStatus.Idle;
-    
-    public void OnHover()
+    private GameManager.SlotStatus getStatus()
     {
-        if (status == GameManager.SlotStatus.Idle)
+        if (statusImg.sprite.name.Equals(clickedImg.name))
         {
-            statusImg.sprite = hoverImg;
+            return GameManager.SlotStatus.Clicked;
         }
+
+        return GameManager.SlotStatus.Idle;
     }
+    
+    
 
     private void Start()
     {
@@ -64,9 +67,17 @@ public class ItemEquipHandler : MonoBehaviour
         }
     }
 
+    public void OnHover()
+    {
+        if (getStatus() == GameManager.SlotStatus.Idle)
+        {
+            statusImg.sprite = hoverImg;
+        }
+    }
+
     public void OnUnhover()
     {
-        if (status == GameManager.SlotStatus.Idle && !IsBasic)
+        if (getStatus() == GameManager.SlotStatus.Idle)
         {
             statusImg.sprite = idleImg;
         }
@@ -75,7 +86,6 @@ public class ItemEquipHandler : MonoBehaviour
     public void OnClick()
     {
         statusImg.sprite = clickedImg;
-        status = GameManager.SlotStatus.Clicked;
         setOthersToIdle();
         
     }
