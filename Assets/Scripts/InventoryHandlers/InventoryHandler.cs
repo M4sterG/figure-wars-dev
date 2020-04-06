@@ -19,7 +19,13 @@ namespace Scripts.InventoryHandlers
 		private const string ITEM_WEAPON_INFO_MOCK_PATH = "Assets/Resources/CGD/mock_item_weapon_info.json";
 		private const string FOUR_SLOT_PANNEL_NAME = "4SlotPanel";
 		private const string THREE_SLOT_PANNEL_NAME = "3SlotPanel";
+		private const string FIVE_SLOT_PANNEL_NAME = "5SlotPanel";
+		private const string SIX_SLOT_PANNEL_NAME = "6SlotPanel";
+		
 		public GameObject eqiuppedWeaponsPanel;
+
+        public GameObject equippedPartsPanel;
+		
 
 		private static TabStatus tab = TabStatus.All;
 		public static InventoryClass activeClass = InventoryClass.Weapons;
@@ -41,6 +47,11 @@ namespace Scripts.InventoryHandlers
 		}
 
 		public static GameObject EquippedWeaponsPanel
+		{
+			get => instance.eqiuppedWeaponsPanel;
+		}
+
+		public static GameObject EquippedPartsPanel
 		{
 			get => instance.eqiuppedWeaponsPanel;
 		}
