@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Scripts.Classes.Main;
 
 namespace Scripts.Classes.Parts
@@ -16,6 +17,29 @@ namespace Scripts.Classes.Parts
         public bool isSet()
         {
             return PartEquip.Contains(PartSlot.Top) && PartEquip.Count > 1;
+        }
+
+        public PartSlot DominantElement
+        {
+            get
+            {
+                if (isSet())
+                {
+                    return PartSlot.Top;
+                }
+
+                if (isAcc())
+                {
+                    return PartEquip.ElementAt(0);
+                }
+
+                if (PartEquip.Count > 1 && PartEquip.Contains(PartSlot.Legs))
+                {
+                    return PartSlot.Legs;
+                }
+
+                return PartEquip.ElementAt(0);
+            }
         }
         
         public HashSet<Character> CharacterEquip { get; set; }
