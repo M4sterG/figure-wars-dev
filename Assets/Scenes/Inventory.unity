@@ -11975,11 +11975,6 @@ PrefabInstance:
       propertyPath: associatedPanel
       value: 
       objectReference: {fileID: 1497249398}
-    - target: {fileID: 8612509623415730568, guid: c42b0bb1f8b1eb04c94c160f4c70db5d,
-        type: 3}
-      propertyPath: bottomBar
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8652748379785568590, guid: c42b0bb1f8b1eb04c94c160f4c70db5d,
         type: 3}
       propertyPath: m_textInfo.characterCount
