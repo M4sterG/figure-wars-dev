@@ -8,7 +8,8 @@ using Scripts.InventoryHandlers;
 using Scripts.Weapons;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 
 public class ItemSubCategoryHandler : MonoBehaviour
 {
@@ -17,6 +18,21 @@ public class ItemSubCategoryHandler : MonoBehaviour
     public GameObject inventoryContentPrefab;
     public GameObject weaponSlotPrfab;
     public GameObject itemSlotPrefab;
+    
+
+    public Sprite clickedImg;
+    public Sprite idleImg;
+    public Sprite hoveringImg;
+
+    public Image statusImg;
+    public TextMeshProUGUI text;
+    
+    public static Color idleColor = new Color(73/255f, 101/255f,182/255f);
+
+    private bool IsIdle
+    {
+        get { return !this.GetComponent<Image>().sprite.name.Equals(clickedImg.name); }
+    }
 
     
 
@@ -25,9 +41,53 @@ public class ItemSubCategoryHandler : MonoBehaviour
         
     }
 
+    public void OnUnhover()
+    {
+        if (IsIdle)
+        {
+            statusImg.sprite = idleImg;
+            text.color = idleColor;
+        }
+    }
+
+    private void setOthersToIdle()
+    {
+        foreach (Transform child in this.transform.parent)
+        {
+            if (!child.gameObject.name.Equals(this.gameObject.name))
+            {
+                setToIdle(child.gameObject);
+            }
+        }
+    }
+
+    private void setToIdle(GameObject subClassTab)
+    {
+        Image img = subClassTab.GetComponent<Image>();
+        img.sprite = idleImg;
+        TextMeshProUGUI text = subClassTab.GetComponentInChildren<TextMeshProUGUI>();
+        text.color = idleColor;
+    }
+
+    public void OnHover()
+    {
+        if (IsIdle)
+        {
+            statusImg.sprite = hoveringImg;
+        }
+    }
+
     public void OnClick(string subcategory)
     {
+        if (!IsIdle)
+        {
+            return; 
+        }
+
+        statusImg.sprite = clickedImg;
+        text.color = Color.yellow;
         bool isAllCategory = false;
+        setOthersToIdle();
         switch (subcategory)
         {
             case GameManager.ALL_WEAPONS_NAME:
@@ -102,7 +162,7 @@ public class ItemSubCategoryHandler : MonoBehaviour
                 showAllSets();
                 break;
         }
-
+        
         if (isAllCategory)
         {
             InventoryHandler.setAllStatus();
