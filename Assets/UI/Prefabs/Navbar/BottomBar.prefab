@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8654771467782749452}
   - component: {fileID: 1160559348082321905}
   m_Layer: 5
-  m_Name: BottomTabs
+  m_Name: BottomBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -248,6 +248,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2747982911088171230, guid: 57f0508652641b34aada6ab235f82691,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2747982911088171230, guid: 57f0508652641b34aada6ab235f82691,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57f0508652641b34aada6ab235f82691, type: 3}
 --- !u!224 &1413493897336174648 stripped
@@ -373,10 +383,20 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 125647844709894270, guid: 57f0508652641b34aada6ab235f82691,
+    - target: {fileID: 225379391782357661, guid: 57f0508652641b34aada6ab235f82691,
         type: 3}
-      propertyPath: m_Text
-      value: All
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2747982911088171230, guid: 57f0508652641b34aada6ab235f82691,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2747982911088171230, guid: 57f0508652641b34aada6ab235f82691,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57f0508652641b34aada6ab235f82691, type: 3}
@@ -503,10 +523,15 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 125647844709894270, guid: 57f0508652641b34aada6ab235f82691,
+    - target: {fileID: 2747982911088171230, guid: 57f0508652641b34aada6ab235f82691,
         type: 3}
-      propertyPath: m_Text
-      value: Shotgun
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2747982911088171230, guid: 57f0508652641b34aada6ab235f82691,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57f0508652641b34aada6ab235f82691, type: 3}
@@ -633,10 +658,15 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 125647844709894270, guid: 57f0508652641b34aada6ab235f82691,
+    - target: {fileID: 2747982911088171230, guid: 57f0508652641b34aada6ab235f82691,
         type: 3}
-      propertyPath: m_Text
-      value: Sniper
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2747982911088171230, guid: 57f0508652641b34aada6ab235f82691,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57f0508652641b34aada6ab235f82691, type: 3}
@@ -763,10 +793,15 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 125647844709894270, guid: 57f0508652641b34aada6ab235f82691,
+    - target: {fileID: 2747982911088171230, guid: 57f0508652641b34aada6ab235f82691,
         type: 3}
-      propertyPath: m_Text
-      value: Bazooka
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2747982911088171230, guid: 57f0508652641b34aada6ab235f82691,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57f0508652641b34aada6ab235f82691, type: 3}
@@ -893,10 +928,15 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 125647844709894270, guid: 57f0508652641b34aada6ab235f82691,
+    - target: {fileID: 2747982911088171230, guid: 57f0508652641b34aada6ab235f82691,
         type: 3}
-      propertyPath: m_Text
-      value: Grenade
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2747982911088171230, guid: 57f0508652641b34aada6ab235f82691,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57f0508652641b34aada6ab235f82691, type: 3}
@@ -1023,10 +1063,15 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 125647844709894270, guid: 57f0508652641b34aada6ab235f82691,
+    - target: {fileID: 2747982911088171230, guid: 57f0508652641b34aada6ab235f82691,
         type: 3}
-      propertyPath: m_Text
-      value: Gatling
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2747982911088171230, guid: 57f0508652641b34aada6ab235f82691,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57f0508652641b34aada6ab235f82691, type: 3}
@@ -1153,10 +1198,15 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 125647844709894270, guid: 57f0508652641b34aada6ab235f82691,
+    - target: {fileID: 2747982911088171230, guid: 57f0508652641b34aada6ab235f82691,
         type: 3}
-      propertyPath: m_Text
-      value: Rifle
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2747982911088171230, guid: 57f0508652641b34aada6ab235f82691,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57f0508652641b34aada6ab235f82691, type: 3}

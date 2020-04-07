@@ -146,10 +146,25 @@ public class ClassTabHandler : MonoBehaviour
         setImageByOperationType(OperationType.Hovering);
     }
 
+    private void setBottombarToIdle()
+    {
+        // when switching class tabs the bottom navbar
+        // shouldn't have anything highlighted
+        foreach (Transform child in bottomBar.transform)
+        {
+            GameObject obj = child.gameObject;
+            Image statusImg = obj.GetComponent<Image>();
+            statusImg.sprite = InventoryPrefabs.BlankIcon;
+            TextMeshProUGUI text = obj.GetComponentInChildren<TextMeshProUGUI>();
+            text.color = ItemSubCategoryHandler.idleColor;
+        }
+    }
+
     public void OnClick(string itemClass)
     {
         setImageByOperationType(OperationType.Clicking);
         List<Item> itemList;
+        setBottombarToIdle();
         switch (itemClass)
         {
             case GameManager.TAB_WEAPONS_NAME:
