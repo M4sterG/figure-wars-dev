@@ -104,7 +104,7 @@ public class ClassTabHandler : MonoBehaviour
         foreach (Transform child in this.transform.parent)
         {
             string barName = child.gameObject.name;
-            if (barName.Contains(BAR_NAME) && !barName.Equals(this.name))
+            if (barName.Contains(BAR_NAME) && !barName.Equals(bottomBar.name))
             {
                 child.gameObject.SetActive(false);
             }
