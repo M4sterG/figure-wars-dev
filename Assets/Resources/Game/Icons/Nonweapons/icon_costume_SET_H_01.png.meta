@@ -1,7 +1,13 @@
 fileFormatVersion: 2
-guid: c7c9dccf74408a4419b432e29c38bd76
+guid: e088de80f8c3e45418ad66f7b7830d3f
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 427318555069627504
+    second: icon_costume_SET_H_01_0
+  - first:
+      213: -4363710549934662339
+    second: icon_costume_SET_H_01_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -85,11 +91,53 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: icon_costume_SET_H_01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07cbbd836f32ee500800000000000000
+      internalID: 427318555069627504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_costume_SET_H_01_1
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 428
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3d1580ff5cf073c0800000000000000
+      internalID: -4363710549934662339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 338c6a599366f8142b92a4e86039def4
     internalID: 0
     vertices: []
     indices: 

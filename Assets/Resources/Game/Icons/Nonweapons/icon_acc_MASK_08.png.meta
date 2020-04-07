@@ -1,7 +1,130 @@
 fileFormatVersion: 2
 guid: 2bf726baf05ea6a48b4a2e387a55faa7
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -3420884835513336936
+    second: icon_acc_MASK_08_0
+  - first:
+      213: -5018226258027769608
+    second: icon_acc_MASK_08_1
+  - first:
+      213: -4418668293827645230
+    second: icon_acc_MASK_08_2
+  - first:
+      213: -5554243359360159461
+    second: icon_acc_MASK_08_3
+  - first:
+      213: -5563737508705192597
+    second: icon_acc_MASK_08_4
+  - first:
+      213: -9211908452619176923
+    second: icon_acc_MASK_08_5
+  - first:
+      213: -3384231161756175331
+    second: icon_acc_MASK_08_6
+  - first:
+      213: 6647536921257370377
+    second: icon_acc_MASK_08_7
+  - first:
+      213: -6113977023079135072
+    second: icon_acc_MASK_08_8
+  - first:
+      213: -3665372569654401874
+    second: icon_acc_MASK_08_9
+  - first:
+      213: -9211996918796425025
+    second: icon_acc_MASK_08_10
+  - first:
+      213: 2078382950648764463
+    second: icon_acc_MASK_08_11
+  - first:
+      213: -193597150427971391
+    second: icon_acc_MASK_08_12
+  - first:
+      213: 1838224338608325025
+    second: icon_acc_MASK_08_13
+  - first:
+      213: -8829549562816533199
+    second: icon_acc_MASK_08_14
+  - first:
+      213: -6021669546355268361
+    second: icon_acc_MASK_08_15
+  - first:
+      213: 7648213018897933633
+    second: icon_acc_MASK_08_16
+  - first:
+      213: -5144986292587482950
+    second: icon_acc_MASK_08_17
+  - first:
+      213: -1676831669509600076
+    second: icon_acc_MASK_08_18
+  - first:
+      213: 7833853773485735638
+    second: icon_acc_MASK_08_19
+  - first:
+      213: -7224350627570002592
+    second: icon_acc_MASK_08_20
+  - first:
+      213: -6234131826708841820
+    second: icon_acc_MASK_08_21
+  - first:
+      213: -1665407846461650912
+    second: icon_acc_MASK_08_22
+  - first:
+      213: 5275240642373729122
+    second: icon_acc_MASK_08_23
+  - first:
+      213: -4182992246705493066
+    second: icon_acc_MASK_08_24
+  - first:
+      213: -314259218278707304
+    second: icon_acc_MASK_08_25
+  - first:
+      213: -3034657431011124474
+    second: icon_acc_MASK_08_26
+  - first:
+      213: -6595559605926967216
+    second: icon_acc_MASK_08_27
+  - first:
+      213: 1699181061331336453
+    second: icon_acc_MASK_08_28
+  - first:
+      213: 6727990803826983944
+    second: icon_acc_MASK_08_29
+  - first:
+      213: -3768543590130047953
+    second: icon_acc_MASK_08_30
+  - first:
+      213: 8294142505059522633
+    second: icon_acc_MASK_08_31
+  - first:
+      213: -8538521649579763102
+    second: icon_acc_MASK_08_32
+  - first:
+      213: -6119806121092036658
+    second: icon_acc_MASK_08_33
+  - first:
+      213: 255801607869528374
+    second: icon_acc_MASK_08_34
+  - first:
+      213: -2008142145119060480
+    second: icon_acc_MASK_08_35
+  - first:
+      213: -784031195154310921
+    second: icon_acc_MASK_08_36
+  - first:
+      213: -8399256515442576997
+    second: icon_acc_MASK_08_37
+  - first:
+      213: 5733839487147022671
+    second: icon_acc_MASK_08_38
+  - first:
+      213: 8918503893204128062
+    second: icon_acc_MASK_08_39
+  - first:
+      213: -5484611309145602086
+    second: icon_acc_MASK_08_40
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -85,11 +208,872 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_0
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 436
+        width: 45
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89bf4b1ed539680d0800000000000000
+      internalID: -3420884835513336936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_1
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 436
+        width: 48
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f097b75ecdab5ab0800000000000000
+      internalID: -5018226258027769608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_2
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 448
+        width: 47
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d03f1e099cbda2c0800000000000000
+      internalID: -4418668293827645230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_3
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 448
+        width: 93
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b11f341a71d5be2b0800000000000000
+      internalID: -5554243359360159461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_4
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 448
+        width: 47
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b653c1ab632a9c2b0800000000000000
+      internalID: -5563737508705192597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_5
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 492
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5243732b11ab82080800000000000000
+      internalID: -9211908452619176923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_6
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 432
+        width: 95
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1437b550bbc801d0800000000000000
+      internalID: -3384231161756175331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_7
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 440
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 903e6d61c9bc04c50800000000000000
+      internalID: 6647536921257370377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_8
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 440
+        width: 44
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a8c77e6a4ac62ba0800000000000000
+      internalID: -6113977023079135072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_9
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 365
+        width: 79
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea4e940611bf12dc0800000000000000
+      internalID: -3665372569654401874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_10
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 365
+        width: 79
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb8652f0c99682080800000000000000
+      internalID: -9211996918796425025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_11
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 365
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f28d5a82846e7dc10800000000000000
+      internalID: 2078382950648764463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_12
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 365
+        width: 39
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c0863bda64305df0800000000000000
+      internalID: -193597150427971391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_13
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 365
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a10a30fb4fa28910800000000000000
+      internalID: 1838224338608325025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_14
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 365
+        width: 39
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13d6d9d1473277580800000000000000
+      internalID: -8829549562816533199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_15
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 349
+        width: 26
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f4e4b6a37bbe6ca0800000000000000
+      internalID: -6021669546355268361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_16
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 349
+        width: 25
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 145ededf739e32a60800000000000000
+      internalID: 7648213018897933633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_17
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 265
+        width: 26
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab0b118e9365998b0800000000000000
+      internalID: -5144986292587482950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_18
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 265
+        width: 25
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bc41c61b72bab8e0800000000000000
+      internalID: -1676831669509600076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_19
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 264
+        width: 82
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6de78fe508077bc60800000000000000
+      internalID: 7833853773485735638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_20
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 264
+        width: 82
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 065d1d66163fdbb90800000000000000
+      internalID: -7224350627570002592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_21
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 284
+        width: 94
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aaff0a222aeb79a0800000000000000
+      internalID: -6234131826708841820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_22
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 284
+        width: 93
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0284189236843e8e0800000000000000
+      internalID: -1665407846461650912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_23
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 178
+        width: 63
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26bb3613a6b653940800000000000000
+      internalID: 5275240642373729122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_24
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 176
+        width: 63
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bbe7ecc6b603f5c0800000000000000
+      internalID: -4182992246705493066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_25
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 180
+        width: 80
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89f0b1fe7e683abf0800000000000000
+      internalID: -314259218278707304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_26
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 180
+        width: 80
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60b1591152bb2e5d0800000000000000
+      internalID: -3034657431011124474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_27
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 200
+        width: 96
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 058cec1bb7dd774a0800000000000000
+      internalID: -6595559605926967216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_28
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 116
+        width: 96
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50db9b13c24b49710800000000000000
+      internalID: 1699181061331336453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_29
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 120
+        width: 89
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 804c33a5dff9e5d50800000000000000
+      internalID: 6727990803826983944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_30
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 120
+        width: 89
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2429b5429173bbc0800000000000000
+      internalID: -3768543590130047953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_31
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 100
+        width: 29
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9489a820aa6ba1370800000000000000
+      internalID: 8294142505059522633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_32
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 100
+        width: 25
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26ad0d97cc3118980800000000000000
+      internalID: -8538521649579763102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_33
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 100
+        width: 29
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec74c0ac1c4121ba0800000000000000
+      internalID: -6119806121092036658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_34
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 100
+        width: 25
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6397902053acc8300800000000000000
+      internalID: 255801607869528374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_35
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 14
+        width: 94
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00effadcb55a124e0800000000000000
+      internalID: -2008142145119060480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_36
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 14
+        width: 94
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f8900038cf8e15f0800000000000000
+      internalID: -784031195154310921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_37
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 12
+        width: 91
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b91f8ab43b8df6b80800000000000000
+      internalID: -8399256515442576997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_38
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 0
+        width: 95
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f49918662a0b29f40800000000000000
+      internalID: 5733839487147022671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_39
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 21
+        width: 44
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e31de52e904e4cb70800000000000000
+      internalID: 8918503893204128062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_acc_MASK_08_40
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 21
+        width: 44
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad74943b21fb2e3b0800000000000000
+      internalID: -5484611309145602086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 26f10578f4dbb354ebca58c9eed26fff
     internalID: 0
     vertices: []
     indices: 

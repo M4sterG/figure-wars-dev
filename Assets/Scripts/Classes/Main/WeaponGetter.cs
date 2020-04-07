@@ -331,20 +331,43 @@ namespace Scripts.Classes.Main
             wep.TotalAmmo = primWep.wi_bullet_total;
             wep.ChangeTime = primWep.wi_change_time;
             int iconDDSExtension = 4;
+            bool found = false;
             foreach (var icon in  primIcons)
             {
-                if (icon.ii_id == info.ii_icon)
+                bool firstCond = icon.ii_id == info.ii_icon;
+                if (firstCond)
                 {
+                    found = true;
                     string fileName = icon.ii_filename;
                     // back is an extra word in the filename
                     // in old CGD files
-                    int indexOfBack = fileName.IndexOf("back");
-                    fileName = fileName.Remove(indexOfBack, 4);
+                    int backIndex = fileName.IndexOf("back");
+                    fileName = fileName.Remove(backIndex, 4);
+                    
+
                     fileName = fileName.Substring(0, fileName.Length - 4);
                     //fileName += ".dds";
                     wep.IconFile = fileName;
                     wep.IconOffset = icon.ii_offset;
                     break;
+                }
+            }
+
+            if (!found)
+            {
+                foreach (var icon in  primIcons)
+                {
+                    
+                    if (icon.ii_id == (info.ii_id / 10) * 10)
+                    {
+                        found = true;
+                        string fileName = icon.ii_filename;
+                        fileName = fileName.Substring(0, fileName.Length - 4);
+
+                        wep.IconFile = fileName;
+                        wep.IconOffset = icon.ii_offset;
+                        break;
+                    }
                 }
             }
 

@@ -14,6 +14,7 @@ public class ClassTabHandler : MonoBehaviour
 
     public GameObject bottomBar;
     private const string BAR_NAME = "Bar";
+    public GameObject associatedPanel;
     
     private ObjectStatus Status
     {
@@ -77,6 +78,25 @@ public class ClassTabHandler : MonoBehaviour
             }
         }
         loadCurrentBottomTab();
+        showEquippedTab();
+    }
+
+    private void showEquippedTab()
+    {
+        if (associatedPanel == null)
+        {
+            return;
+        }
+
+        foreach (Transform child in associatedPanel.transform.parent)
+        {
+            GameObject childObj = child.gameObject;
+            if (!childObj.name.Equals(associatedPanel.name))
+            {
+                childObj.SetActive(false);
+            }
+        }
+        associatedPanel.SetActive(true);
     }
 
     private void loadCurrentBottomTab()
@@ -135,24 +155,29 @@ public class ClassTabHandler : MonoBehaviour
             case GameManager.TAB_WEAPONS_NAME:
                 itemList = InventoryHandler.toItemList(User.inventory.getWeapons());
                 InventoryHandler.ShowNewList(itemList);
+                InventoryHandler.activeClass = InventoryHandler.InventoryClass.Weapons;
                 break;
             case GameManager.TAB_SET_NAME:
                 itemList = InventoryHandler.toItemList(User.inventory.getParts()
                                                         .FindAll(p => p.isSet()));
                 InventoryHandler.ShowNewList(itemList);
+                InventoryHandler.activeClass = InventoryHandler.InventoryClass.Set;
                 break;
             case GameManager.TAB_PARTS_NAME:
                 itemList = InventoryHandler.toItemList(User.inventory.getParts());
                 InventoryHandler.ShowNewList(itemList);
+                InventoryHandler.activeClass = InventoryHandler.InventoryClass.Parts;
                 break;
             case GameManager.TAB_ACCESORIES_NAME:
                 itemList = InventoryHandler.toItemList(User.inventory.getParts()
                                                             .FindAll(p => p.isAcc()));
                 InventoryHandler.ShowNewList(itemList);
+                InventoryHandler.activeClass = InventoryHandler.InventoryClass.Accessories;
                 break;
             case GameManager.TAB_MISC_NAME:
                 itemList = InventoryHandler.toItemList(User.inventory.getMisc());
                 InventoryHandler.ShowNewList(itemList);
+                InventoryHandler.activeClass = InventoryHandler.InventoryClass.Items;
                 break;
             
         }

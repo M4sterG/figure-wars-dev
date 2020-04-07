@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Linq;
+using DefaultNamespace;
 using frame8.ScrollRectItemsAdapter.Classic.Examples.Common;
 using Scripts.Classes.Inventory;
 using Scripts.Classes.Main;
@@ -19,7 +20,13 @@ namespace Scripts.InventoryHandlers
 		private const string ITEM_WEAPON_INFO_MOCK_PATH = "Assets/Resources/CGD/mock_item_weapon_info.json";
 		private const string FOUR_SLOT_PANNEL_NAME = "4SlotPanel";
 		private const string THREE_SLOT_PANNEL_NAME = "3SlotPanel";
+		private const string FIVE_SLOT_PANNEL_NAME = "5SlotPanel";
+		private const string SIX_SLOT_PANNEL_NAME = "6SlotPanel";
+		
 		public GameObject eqiuppedWeaponsPanel;
+
+        public GameObject equippedPartsPanel;
+		
 
 		private static TabStatus tab = TabStatus.All;
 		public static InventoryClass activeClass = InventoryClass.Weapons;
@@ -31,6 +38,7 @@ namespace Scripts.InventoryHandlers
 			= new Dictionary<int, GameManager.SlotStatus>();
 		private static int head = 0;
 		private static int tail = 0;
+		public static Dictionary<GameObject, Sprite> basicPartIcons = new Dictionary<GameObject, Sprite>();
 
 		public Sprite idleImage;
 		public Sprite clickedImage;
@@ -43,6 +51,21 @@ namespace Scripts.InventoryHandlers
 		public static GameObject EquippedWeaponsPanel
 		{
 			get => instance.eqiuppedWeaponsPanel;
+		}
+
+		public static GameObject EquippedPartsPanel
+		{
+			get => instance.equippedPartsPanel;
+		}
+
+		private static GameObject PartsSixSlot
+		{
+			get => instance.equippedPartsPanel.transform.Find(SIX_SLOT_PANNEL_NAME).gameObject;
+		}
+		
+		private static GameObject PartsFiveSlot
+		{
+			get => instance.equippedPartsPanel.transform.Find(FIVE_SLOT_PANNEL_NAME).gameObject;
 		}
 
 		public static int getHead()
@@ -58,7 +81,6 @@ namespace Scripts.InventoryHandlers
 		public static Sprite ClickedImage
 		{
 			get => instance.clickedImage;
-			
 		}
 
 
@@ -74,13 +96,32 @@ namespace Scripts.InventoryHandlers
 		void Awake()
 		{
 			instance = this;
-			List<Weapon> weps = WeaponGetter.getWeapons(/*WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH*/);
-		//	List<Part> parts = PartGetter.getParts();
+			List<Weapon> weps = WeaponGetter.getWeapons(WEAPON_INFO_MOCK_PATH, ITEM_WEAPON_INFO_MOCK_PATH);
+			List<Part> parts = MockData.fiveEachType(PartGetter.getParts());
+			initBasicPartIcons();
 			User.inventory.addWeapons(weps);
-		//	User.inventory.addParts(parts);
+			User.inventory.addParts(parts);
 			ItemList = toItemList(User.inventory.getWeapons());
 			defineStatusMap();
 			show();
+		}
+
+		private static void initBasicPartIcons()
+		{
+			GameObject sixSlot = EquippedPartsPanel.transform.Find(SIX_SLOT_PANNEL_NAME).gameObject;
+			GameObject fiveSlot = EquippedPartsPanel.transform.Find(FIVE_SLOT_PANNEL_NAME).gameObject;
+			initIconsFromPanel(sixSlot);
+			initIconsFromPanel(fiveSlot);
+		}
+
+		private static void initIconsFromPanel(GameObject panel)
+		{
+			// PANEL MUST BE FROM THE EQUIPPED PARTS PANEL
+			foreach (Transform child in panel.transform)
+			{
+				Sprite basicIcon = child.Find("ItemIcon").GetComponent<Image>().sprite;
+				basicPartIcons.Add(child.gameObject, basicIcon);
+			}
 		}
 
 		void Update()
@@ -98,16 +139,29 @@ namespace Scripts.InventoryHandlers
 		public static void ShowNewList(List<Item> data)
 		{
 			ItemList = data.OrderBy(it => it.ItemType).ToList();
-			if (data.Count > 0 && data.ElementAt(0).GetType() == typeof(ActualWeapon))
-			{
-				// if it's a list weapons, show it in order of weapon types
-				ItemList = data.OrderBy(it => ((ActualWeapon) it).WeaponType).ToList();
-			}
+			
 			head = 0;
 			tail = 0;
 			defineStatusMap();
 			clearGrid();
 			show();
+		}
+
+		private static void orderList(List<Item> data)
+		{
+			if (data.Count > 0 && data.ElementAt(0).GetType() == typeof(ActualWeapon))
+			{
+				// if it's a list weapons, show it in order of weapon types
+				ItemList = data.OrderBy(it => ((ActualWeapon) it).WeaponType).ToList();
+				return;
+			}
+
+			if (data.Count > 0 && data.ElementAt(0).GetType() == typeof(Part))
+			{
+				ItemList = data.OrderBy(it => ((Part) it).DominantElement).ToList();
+				return;
+			}
+			
 		}
 
 		private static void clearGrid()
@@ -144,6 +198,7 @@ namespace Scripts.InventoryHandlers
 				}
 			}
 		}
+		
 
 		public static void scrollDown()
 		{
@@ -363,7 +418,12 @@ namespace Scripts.InventoryHandlers
 					ActualWeapon weapon = itemList.ElementAt(index) as ActualWeapon;
 					User.inventory.equipWeapon(weapon.getType(), weapon);
 					break;
-				default:
+				case ItemType.Accessory:
+					User.inventory.equipPart(itemList.ElementAt(index) as Part);
+					break;
+				case ItemType.Part:
+					User.inventory.equipPart(itemList.ElementAt(index) as Part);
+					cleanUnusedPartSlots();
 					break;
 			}
 
@@ -381,9 +441,133 @@ namespace Scripts.InventoryHandlers
 					GameObject wepSlot = findWeaponSlot(wep.WeaponType);
 					setWeaponSlot(wepSlot, wep);
 					break;
-				default:
+				case ItemType.Accessory:
+					Part acc = toEquip as Part;
+					GameObject accSlot = findPartSlot(acc);
+					setPartSlot(accSlot, acc);
 					break;
+				case ItemType.Part:
+					Part part = toEquip as Part;
+					GameObject partSlot = findPartSlot(part);
+					setPartSlot(partSlot, part);
+					setUnderslots(part);
+					break;
+				default:
+					throw new ArgumentException("Not implemented yet");
 			}
+		}
+
+		private static void setUnderslots(Part part)
+		{
+			foreach (PartSlot slot in part.PartEquip)
+			{
+				GameObject sixSlot = EquippedPartsPanel.transform.Find(SIX_SLOT_PANNEL_NAME).gameObject;
+				GameObject fiveSlot = EquippedPartsPanel.transform.Find(FIVE_SLOT_PANNEL_NAME).gameObject;
+				foreach (Transform child in sixSlot.transform)
+				{
+					if (child.name.Contains(GameManager.partTypeNames[slot]) && slot != part.DominantElement)
+					{
+						setPartSlotToPredefined(child.gameObject, false);
+					}
+				}
+				foreach (Transform child in fiveSlot.transform)
+				{
+					if (child.name.Contains(GameManager.partTypeNames[slot]) && slot != part.DominantElement)
+					{
+						setPartSlotToPredefined(child.gameObject, false);
+					}
+				}
+			}
+		}
+		
+		private static void cleanUnusedPartSlots()
+		{
+			foreach (var pair in User.inventory.getEquippedParts())
+			{
+				if (pair.Value == null)
+				{
+					setPartSlotToPredefined(getPartSlot(pair.Key), true);
+				}
+			}   
+		}
+		
+		private static GameObject getPartSlot(PartSlot slot)
+		{
+			foreach (Transform child in PartsSixSlot.transform)
+			{
+				if (child.gameObject.name.Contains(GameManager.partTypeNames[slot]))
+				{
+					return child.gameObject;
+				}
+			}   
+			foreach (Transform child in PartsFiveSlot.transform)
+			{
+				if (child.gameObject.name.Contains(GameManager.partTypeNames[slot]))
+				{
+					return child.gameObject;
+				}
+			}
+
+			return null;
+		}
+		
+		public static void setPartSlotToPredefined(GameObject obj, bool isBasic)
+		{
+			Image icon = obj.transform.Find("ItemIcon").GetComponent<Image>();
+			GameObject basicPanel = obj.transform.Find("BasicPanel").gameObject;
+			string status = "";
+			if (isBasic)
+			{
+				status = "BASIC";
+				icon.sprite = InventoryHandler.basicPartIcons[obj];
+			}
+			else
+			{
+				status = "SET";
+				icon.sprite = InventoryPrefabs.BlankIcon;
+			}
+			basicPanel.GetComponentInChildren<TextMeshProUGUI>().text = status;
+			basicPanel.transform.gameObject.SetActive(true);
+		}
+
+		private static void setPartSlot(GameObject slot, Part part)
+		{
+			Image itemIcon = slot.transform.Find("ItemIcon").GetComponent<Image>();
+			GameObject levelIndicator = slot.transform.Find("LevelIndicator").gameObject;
+			GameObject basicPanel = slot.transform.Find("BasicPanel").gameObject;
+			GameManager.setIcon(itemIcon, part);
+			basicPanel.SetActive(false);
+			levelIndicator.SetActive(false);
+		}
+
+		private static void IdleSetSlots()
+		{
+			
+		}
+
+		private static GameObject findPartSlot(Part part)
+		{
+			GameObject sixSlotPanel = EquippedPartsPanel.transform.Find(SIX_SLOT_PANNEL_NAME).gameObject;
+			GameObject fiveSlotPanel = EquippedPartsPanel.transform.Find(FIVE_SLOT_PANNEL_NAME).gameObject;
+			foreach (Transform child in sixSlotPanel.transform)
+			{
+				GameObject childObj = child.gameObject;
+				if (childObj.name.Contains(GameManager.partTypeNames[part.DominantElement]))
+				{
+					return childObj;
+				} 
+			}
+
+			foreach (Transform child in fiveSlotPanel.transform)
+			{
+				GameObject childObj = child.gameObject;
+				if (childObj.name.Contains(GameManager.partTypeNames[part.DominantElement]))
+				{
+					return childObj;
+				} 
+			}
+
+			return null;
 		}
 
 		private static void setWeaponSlot(GameObject slot, ActualWeapon wep)
@@ -422,7 +606,12 @@ namespace Scripts.InventoryHandlers
 
 		private static List<Item> refreshList(ItemType itemType, Item toEquip)
 		{
-			List<Item> newList;
+	
+			Part part = new Part();
+			if (toEquip.GetType() == typeof(Part))
+			{
+				part = toEquip as Part;
+			}
 			switch (itemType)
 			{
 				case ItemType.Weapon:
@@ -437,12 +626,41 @@ namespace Scripts.InventoryHandlers
 							return w.WeaponType == wep.WeaponType && w != toEquip;
 						});
 					return toItemList(newWeps);
-				default:
-					break;
+				case ItemType.Accessory:
+					var newAccs = User.inventory.getParts()
+						.FindAll(p =>
+						{
+							if (p.isAcc())
+							{
+								if (tab == TabStatus.All)
+								{
+									return true;
+								}
+								return p.DominantElement == part.DominantElement;
+							}
+
+							return false;
+						});
+					return InventoryHandler.toItemList(newAccs);
+				case ItemType.Part:
+					var newParts = User.inventory.getParts()
+						.FindAll(p =>
+						{
+							// can be Parts/All or Set/All so need to make the difference
+							if (tab == TabStatus.All && (p.isSet() == part.isSet()))
+							{
+								
+								return true;
+							}
+
+							return p.DominantElement == part.DominantElement && (p.isSet() == part.isSet());
+						});
+					return InventoryHandler.toItemList(newParts);
 			}
 
 			return null;
 		}
+		
 
 		public static void setAllStatus()
 		{

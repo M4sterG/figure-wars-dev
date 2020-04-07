@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.UI;
 using Scripts;
 using Scripts.Classes.Inventory;
 using Scripts.Classes.Main;
+using Scripts.Classes.Parts;
 using Scripts.InventoryHandlers;
+using TMPro;
 using UnityEngine.EventSystems;
 
 public class ItemEquipHandler : MonoBehaviour
@@ -32,16 +35,18 @@ public class ItemEquipHandler : MonoBehaviour
     public Sprite hoverImg;
     public Sprite clickedImg;
 
-   
-    private GameManager.SlotStatus status;
-    
-    public void OnHover()
+
+    private GameManager.SlotStatus getStatus()
     {
-        if (status == GameManager.SlotStatus.Idle)
+        if (statusImg.sprite.name.Equals(clickedImg.name))
         {
-            statusImg.sprite = hoverImg;
+            return GameManager.SlotStatus.Clicked;
         }
+
+        return GameManager.SlotStatus.Idle;
     }
+    
+    
 
     private void Start()
     {
@@ -62,9 +67,17 @@ public class ItemEquipHandler : MonoBehaviour
         }
     }
 
+    public void OnHover()
+    {
+        if (getStatus() == GameManager.SlotStatus.Idle)
+        {
+            statusImg.sprite = hoverImg;
+        }
+    }
+
     public void OnUnhover()
     {
-        if (status == GameManager.SlotStatus.Idle && !IsBasic)
+        if (getStatus() == GameManager.SlotStatus.Idle)
         {
             statusImg.sprite = idleImg;
         }
@@ -72,10 +85,8 @@ public class ItemEquipHandler : MonoBehaviour
 
     public void OnClick()
     {
-       
-            statusImg.sprite = clickedImg;
-            status = GameManager.SlotStatus.Clicked;
-            setOthersToIdle();
+        statusImg.sprite = clickedImg;
+        setOthersToIdle();
         
     }
 
@@ -102,6 +113,7 @@ public class ItemEquipHandler : MonoBehaviour
     {
         iconImg.sprite = basicIcon;
         upgradesBar.SetActive(false);
+        basicPanel.GetComponentInChildren<TextMeshProUGUI>().text = "BASIC";
         basicPanel.SetActive(true);
         statusImg.sprite = idleImg;
         switch (InventoryHandler.activeClass)
@@ -109,10 +121,89 @@ public class ItemEquipHandler : MonoBehaviour
             case InventoryHandler.InventoryClass.Weapons:
                 addWeaponBackToInv();
                 break;
-            default:
+            case InventoryHandler.InventoryClass.Accessories:
+                addPartBackToInv();
                 break;
+            case InventoryHandler.InventoryClass.Parts:
+                addPartBackToInv();
+                break;
+            case InventoryHandler.InventoryClass.Set:
+                addPartBackToInv();
+                break;
+                throw new NotImplementedException("Cannot unequip this item");
         }
     }
+    
+    
+
+    private void addPartBackToInv()
+    {
+        
+        foreach (var pair in GameManager.partTypeNames)
+        {
+            PartSlot dominantPart;
+            if (this.name.Contains(pair.Value))
+            {
+                dominantPart = pair.Key;
+                Part toUnequip = User.inventory.getEquippedParts()[dominantPart];
+                setUnderslotsToBasic(toUnequip);
+                User.inventory.unequipPart(dominantPart);
+                break;
+            }
+        }
+    }
+
+    private void setUnderslotsToBasic(Part part)
+    {
+        // if the part is a set it sets the other slots it has to basic
+        if (part.PartEquip.Count <= 1)
+        {
+            return;
+        }
+        foreach (Transform child in thisPanel.transform)
+        {
+            foreach (PartSlot slot in part.PartEquip)
+            {
+                GameObject childObj = child.gameObject;
+                if (childObj.name.Contains(GameManager.partTypeNames[slot]))
+                {
+                    //set to basic
+                   InventoryHandler.setPartSlotToPredefined(childObj, true);
+                }
+            }   
+        }
+        foreach (Transform child in otherPanel.transform)
+        {
+            foreach (PartSlot slot in part.PartEquip)
+            {
+                GameObject childObj = child.gameObject;
+                if (childObj.name.Contains(GameManager.partTypeNames[slot]))
+                {
+                    // set to basic
+                   InventoryHandler.setPartSlotToPredefined(childObj, true);
+                }
+            }   
+        }
+    }
+
+   
+
+    
+
+    
+
+    private void setOtherSlotToBasic(GameObject slot)
+    {
+        Image icon = slot.transform.Find("ItemIcon").gameObject.GetComponent<Image>();
+        icon.sprite = basicIcon;
+        upgradesBar.SetActive(false);
+        GameObject otherBasicPanel = slot.transform.Find("BasicPanel").gameObject;
+        otherBasicPanel.GetComponent<TextMeshProUGUI>().text = "BASIC";
+        otherBasicPanel.SetActive(true);
+        slot.GetComponent<Image>().sprite = idleImg;
+    }
+    
+    
 
     private void addWeaponBackToInv()
     {
