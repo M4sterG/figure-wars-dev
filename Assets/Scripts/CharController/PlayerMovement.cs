@@ -187,8 +187,8 @@ public class PlayerMovement : MonoBehaviour
             swapped = false;
             swapCounter = 0f;
             GameObject rocket = Instantiate(rocketPrefab, rocketSpawnPoint
-                .TransformPoint(0, 0, 1f ), rocketSpawnPoint.rotation);
-            rocket.GetComponent<Rigidbody>().AddForce(rocketSpawnPoint.transform.parent.up * rocketSpeed, ForceMode.Impulse);
+                .TransformPoint(0, 0, -0.1f ), rocketSpawnPoint.rotation);
+            rocket.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * rocketSpeed, ForceMode.Impulse);
             Destroy(rocket, 3);
         }
 

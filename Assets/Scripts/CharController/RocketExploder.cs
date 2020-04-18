@@ -9,6 +9,6 @@ public class RocketExploder : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        throw new NotImplementedException();
+        Debug.Log(other.contacts[0].ToString());
     }
 }
