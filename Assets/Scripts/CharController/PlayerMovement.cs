@@ -10,6 +10,11 @@ using UnityEngine.Experimental.TerrainAPI;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public GameObject rocketPrefab;
+    public Transform rocketSpawnPoint;
+    private float rocketSpeed = 50f;
+    public Transform rocketLauncher;
+    
     private AudioSource[] audios;
     // Start is called before the first frame update
     public CharacterController controller;
@@ -165,10 +170,29 @@ public class PlayerMovement : MonoBehaviour
                         audios[2].Play(0);
                     }
                     break;
+                case WeaponType.Bazooka:
+                    shootBazooka();
+                    break;
                 default:
                     break;
             }
         }
+    }
+
+    private void shootBazooka()
+    {
+        if (swapCounter >= swapSpeeds[swapType] && swapped)
+        {
+            audios[1].Play(0);
+            swapped = false;
+            swapCounter = 0f;
+            GameObject rocket = Instantiate(rocketPrefab, rocketSpawnPoint
+                .TransformPoint(0, 0, 1f ), rocketSpawnPoint.rotation);
+            rocket.GetComponent<Rigidbody>().AddForce(rocketSpawnPoint.transform.parent.up * rocketSpeed, ForceMode.Impulse);
+            Destroy(rocket, 3);
+        }
+
+
     }
 
     private void checkSwap()
@@ -192,6 +216,13 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.Alpha2) && eq != WeaponType.Rifle)
         {
             eq = WeaponType.Rifle;
+            swapCounter = 0f;
+            return;
+        }
+
+        if (Input.GetKey(KeyCode.R) && eq != WeaponType.Bazooka)
+        {
+            eq = WeaponType.Bazooka;
             swapCounter = 0f;
             return;
         }
