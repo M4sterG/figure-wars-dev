@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using Scripts.Classes.Main;
+using Scripts.Weapons;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Experimental.TerrainAPI;
@@ -19,6 +21,9 @@ public class PlayerMovement : MonoBehaviour
     public const float groundDist = 0.4f;
     private const float jumpHeight = 3f;
 
+    private Vector3 jumpX, jumpZ;
+    
+
     public LayerMask groundMask;
 
     private Vector3 velocity;
@@ -28,12 +33,9 @@ public class PlayerMovement : MonoBehaviour
     private const int MAX_JUMPS = 2;
 
     private JumpDirection jumpDir = JumpDirection.None;
-    private Equipped eq = Equipped.Melee;
+    private WeaponType eq = WeaponType.Melee;
     
-    private enum Equipped
-    {
-        Melee, Rifle, Shotgun
-    }
+    
 
     private enum JumpDirection
     {
@@ -116,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         Vector3 move = getMoveByState();
-        controller.Move(move * moveSpeed * Time.deltaTime);
+        controller.Move( moveSpeed * Time.deltaTime * Vector3.ClampMagnitude(move, 1.0f));
         
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
@@ -128,9 +130,9 @@ public class PlayerMovement : MonoBehaviour
         {
             switch (eq)
             {
-                case Equipped.Melee:
+                case WeaponType.Melee:
                     break;
-                case Equipped.Shotgun:
+                case WeaponType.Shotgun:
                     // swapType to be set in unity debugger
                     // just so it's easier to switch between swap types
                     if (swapCounter >= swapSpeeds[swapType] && swapped)
@@ -145,9 +147,10 @@ public class PlayerMovement : MonoBehaviour
                         swapCounter = 0f;
                     }
                     break;
-                case Equipped.Rifle:
+                case WeaponType.Rifle:
                     if (swapped)
                     {
+                        // rifle swaps faster than KW 
                         if (swapCounter >= swapSpeeds[0] * 0.8f)
                         {
                             rifleFire = Time.time + 1f / rifleFireRate;
@@ -170,25 +173,25 @@ public class PlayerMovement : MonoBehaviour
 
     private void checkSwap()
     {
-        if (Input.GetKey(KeyCode.Alpha1) && eq != Equipped.Melee)
+        if (Input.GetKey(KeyCode.Alpha1) && eq != WeaponType.Melee)
         {
             audios[0].Play(0);
-            eq = Equipped.Melee;
+            eq = WeaponType.Melee;
             swapCounter = 0f;
             swapped = true;
             return;
         }
 
-        if (Input.GetKey(KeyCode.E) && eq != Equipped.Shotgun)
+        if (Input.GetKey(KeyCode.E) && eq != WeaponType.Shotgun)
         {
-            eq = Equipped.Shotgun;
+            eq = WeaponType.Shotgun;
             swapCounter = 0f;
             return;
         }
 
-        if (Input.GetKey(KeyCode.Alpha2) && eq != Equipped.Rifle)
+        if (Input.GetKey(KeyCode.Alpha2) && eq != WeaponType.Rifle)
         {
-            eq = Equipped.Rifle;
+            eq = WeaponType.Rifle;
             swapCounter = 0f;
             return;
         }
@@ -204,6 +207,12 @@ public class PlayerMovement : MonoBehaviour
         return Input.GetAxis("Vertical");
     }
 
+    private void setJumpXZ(Vector3 x, Vector3 z)
+    {
+        jumpX = x;
+        jumpZ = z;
+    }
+
     private Vector3 getMoveByState()
     {
         float xDir;
@@ -211,7 +220,10 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move;
         if (isGrounded)
         {
-            move = transform.right * getX() + transform.forward * getZ();
+            Vector3 transRight = transform.right;
+            Vector3 transForward = transform.forward;
+            move = transRight * getX() + transForward * getZ();
+            setJumpXZ(transRight, transForward);
             return move;
         }
         else
@@ -219,8 +231,8 @@ public class PlayerMovement : MonoBehaviour
             Tuple<float, float> dirs = getDirs();
             xDir = dirs.Item1;
             zDir = dirs.Item2;
+            return jumpX * xDir + jumpZ * zDir;
         }
-        return transform.right * xDir + transform.forward * zDir;
     }
 
     private Tuple<float, float> getDirs()
@@ -281,7 +293,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            if (jumpCount < MAX_JUMPS && eq == Equipped.Melee)
+            if (jumpCount < MAX_JUMPS && eq == WeaponType.Melee)
             {
                 jumpCount = 2;
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
