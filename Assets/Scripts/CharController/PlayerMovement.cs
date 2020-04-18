@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     
     private enum Equipped
     {
-        Melee, Shotgun
+        Melee, Rifle, Shotgun
     }
 
     private enum JumpDirection
@@ -48,7 +48,9 @@ public class PlayerMovement : MonoBehaviour
         {2, 0.48f} //0.45f or 0.48f - Driver
     };
 
-    private float firingRate = 0.8f;
+    private float sgFireRate = 0.8f;
+    private float rifleFireRate = 9.5f; // 1000 rifle fire rate (10 bullets per second)
+    private float rifleFire = 0f;
 
     public int swapType;
     private float swapCounter = 0f;
@@ -137,12 +139,28 @@ public class PlayerMovement : MonoBehaviour
                         swapped = false;
                         swapCounter = 0f;
                     }
-                    else if (swapCounter >= firingRate)
+                    else if (swapCounter >= sgFireRate)
                     {
                         audios[1].Play(0);
                         swapCounter = 0f;
                     }
-                    
+                    break;
+                case Equipped.Rifle:
+                    if (swapped)
+                    {
+                        if (swapCounter >= swapSpeeds[0] * 0.8f)
+                        {
+                            rifleFire = Time.time + 1f / rifleFireRate;
+                            swapped = false;
+                            audios[2].Play(0);
+                            swapCounter = 0f;
+                        }
+                    }
+                    else if (Time.time >= rifleFire)
+                    {
+                        rifleFire = Time.time + 1f / rifleFireRate;
+                        audios[2].Play(0);
+                    }
                     break;
                 default:
                     break;
@@ -164,6 +182,13 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.E) && eq != Equipped.Shotgun)
         {
             eq = Equipped.Shotgun;
+            swapCounter = 0f;
+            return;
+        }
+
+        if (Input.GetKey(KeyCode.Alpha2) && eq != Equipped.Rifle)
+        {
+            eq = Equipped.Rifle;
             swapCounter = 0f;
             return;
         }
