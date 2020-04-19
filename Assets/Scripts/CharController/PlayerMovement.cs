@@ -216,6 +216,7 @@ public class PlayerMovement : MonoBehaviour
         {
             eq = WeaponType.Shotgun;
             swapCounter = 0f;
+            swapped = true;
             rocketLauncher.SetActive(false);
             return;
         }
@@ -224,6 +225,7 @@ public class PlayerMovement : MonoBehaviour
         {
             eq = WeaponType.Rifle;
             swapCounter = 0f;
+            swapped = true;
             rocketLauncher.SetActive(false);
             return;
         }

@@ -10,5 +10,6 @@ public class RocketExploder : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         Debug.Log(other.contacts[0].ToString());
+        Destroy(this);
     }
 }
