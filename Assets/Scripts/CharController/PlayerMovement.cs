@@ -10,11 +10,13 @@ using UnityEngine.Experimental.TerrainAPI;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private Transform camera;
+    
     public GameObject rocketPrefab;
     public Transform rocketSpawnPoint;
     private float rocketSpeed = 50f;
-    public Transform rocketLauncher;
-    
+    public GameObject rocketLauncher;
+
     private AudioSource[] audios;
     // Start is called before the first frame update
     public CharacterController controller;
@@ -93,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        camera = Camera.main.transform;
         if (Input.GetKey(KeyCode.B))
         {
             swapType = 1;
@@ -183,13 +186,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (swapCounter >= swapSpeeds[swapType] && swapped)
         {
-            audios[1].Play(0);
+            audios[3].Play(0);
             swapped = false;
             swapCounter = 0f;
             GameObject rocket = Instantiate(rocketPrefab, rocketSpawnPoint
                 .TransformPoint(0, 0, -0.1f ), rocketSpawnPoint.rotation);
-            rocket.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * rocketSpeed, ForceMode.Impulse);
-            Destroy(rocket, 3);
+            // rocket gets shot in the direction you're looking at
+            rocket.GetComponent<Rigidbody>().AddForce(camera.forward * rocketSpeed, ForceMode.Impulse);
+            // rocket launcher looks in the direction the camera is looking at
+            Destroy(rocket, 10);
         }
 
 
@@ -203,6 +208,7 @@ public class PlayerMovement : MonoBehaviour
             eq = WeaponType.Melee;
             swapCounter = 0f;
             swapped = true;
+            rocketLauncher.SetActive(false);
             return;
         }
 
@@ -210,6 +216,7 @@ public class PlayerMovement : MonoBehaviour
         {
             eq = WeaponType.Shotgun;
             swapCounter = 0f;
+            rocketLauncher.SetActive(false);
             return;
         }
 
@@ -217,6 +224,7 @@ public class PlayerMovement : MonoBehaviour
         {
             eq = WeaponType.Rifle;
             swapCounter = 0f;
+            rocketLauncher.SetActive(false);
             return;
         }
 
@@ -224,6 +232,7 @@ public class PlayerMovement : MonoBehaviour
         {
             eq = WeaponType.Bazooka;
             swapCounter = 0f;
+            rocketLauncher.SetActive(true);
             return;
         }
     }
