@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using DefaultNamespace.CharController;
 using Scripts.Classes.Main;
 using Scripts.Weapons;
 using UnityEditor;
@@ -10,6 +11,17 @@ using UnityEngine.Experimental.TerrainAPI;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    private AnimationController animController;
+
+    public Animator headAnim;
+    public Animator topAnim;
+    public Animator legsAnim;
+    public Animator shoesAnim;
+    public Animator handsAnim;
+    
+    
+    
     private Transform camera;
     
     public GameObject rocketPrefab;
@@ -89,6 +101,7 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         audios = GetComponents<AudioSource>();
+        animController = new AnimationController(headAnim, topAnim, legsAnim, shoesAnim, handsAnim);
     }
 
     private int jumpCount = 0;
@@ -139,6 +152,7 @@ public class PlayerMovement : MonoBehaviour
             switch (eq)
             {
                 case WeaponType.Melee:
+                    animController.shootMelee();
                     break;
                 case WeaponType.Shotgun:
                     // swapType to be set in unity debugger
@@ -181,6 +195,8 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+
+    
 
     private void shootBazooka()
     {
