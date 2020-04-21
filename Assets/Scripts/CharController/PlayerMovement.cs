@@ -108,6 +108,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        checkMove();
         camera = Camera.main.transform;
         if (Input.GetKey(KeyCode.B))
         {
@@ -123,6 +124,8 @@ public class PlayerMovement : MonoBehaviour
         {
             swapType = 2;
         }
+
+        checkMove();
         checkSwap();
         checkShoot();
         swapCounter += Time.deltaTime;
@@ -143,6 +146,31 @@ public class PlayerMovement : MonoBehaviour
         
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    private void checkMove()
+    {
+        if (Input.GetKey(KeyCode.A))
+        {
+            return;
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            return;
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            return;
+        }
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            animController.fullRunForward();
+            return;
+        }
+        animController.goIdle();
     }
 
     private void checkShoot()
