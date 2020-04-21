@@ -8,17 +8,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: object0261_BOOTS_255
-    second: {fileID: 2100000, guid: eca51ae10a51a164c9e96ce54e982add, type: 2}
+    second: {fileID: 2100000, guid: 8825f46936b58ba47a170b36db97702b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: object0261_BOOTS_267
-    second: {fileID: 2100000, guid: 873b5193d2a95774a8f58b2d00784805, type: 2}
+    second: {fileID: 2100000, guid: fba2ecda72bf3d543835841223fed658, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: object0261_BOOTS_273
-    second: {fileID: 2100000, guid: 60c61c491d345594dbd875d0c1d56345, type: 2}
+    second: {fileID: 2100000, guid: b79a25df58babc143906bb842a4cd3b0, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
