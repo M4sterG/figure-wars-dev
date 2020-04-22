@@ -11,10 +11,16 @@ namespace DefaultNamespace.CharController
         public Animator legsAnim;
         public Animator shoesAnim;
         public Animator handsAnim;
+        private bool isGrounded;
 
         private List<Animator> AllAnims
         {
             get { return new List<Animator>{headAnim, topAnim, legsAnim, shoesAnim, handsAnim}; }
+        }
+
+        public void setGrounded(bool value)
+        {
+            isGrounded = value;
         }
 
         public bool jumping = false;
@@ -31,7 +37,7 @@ namespace DefaultNamespace.CharController
 
         public void goIdle()
         {
-            AllAnims.ForEach(anim => anim.Play("Idle"));
+            AllAnims.ForEach(anim => anim.Play("melee_idle"));
         }
 
         public void shootMelee()
@@ -43,9 +49,12 @@ namespace DefaultNamespace.CharController
 
         public void fullRunForward()
         {
-            foreach (var anim in AllAnims)
+            if (isGrounded)
             {
-                anim.Play("full_run_forward");
+                foreach (var anim in AllAnims)
+                {
+                    anim.Play("full_run_forward");
+                }
             }
         }
     }

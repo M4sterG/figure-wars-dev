@@ -108,6 +108,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDist, groundMask);
+        animController.setGrounded(isGrounded);
         checkMove();
         camera = Camera.main.transform;
         if (Input.GetKey(KeyCode.B))
@@ -129,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
         checkSwap();
         checkShoot();
         swapCounter += Time.deltaTime;
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDist, groundMask);
+        
         if (isGrounded && velocity.y < 0)
         {
             jumpCount = 0;
