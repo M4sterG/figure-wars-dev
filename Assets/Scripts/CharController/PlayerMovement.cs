@@ -11,25 +11,29 @@ using UnityEngine.Experimental.TerrainAPI;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     private AnimationController animController;
-
+    public Transform player;
     public Animator headAnim;
     public Animator topAnim;
     public Animator legsAnim;
     public Animator shoesAnim;
     public Animator handsAnim;
-    
-    
-    
+
+    private float MouseX
+    {
+        get => Input.GetAxis("Mouse X") * 60f * Time.deltaTime;
+    }
+
+
     private Transform camera;
-    
+
     public GameObject rocketPrefab;
     public Transform rocketSpawnPoint;
     private float rocketSpeed = 50f;
     public GameObject rocketLauncher;
 
     private AudioSource[] audios;
+
     // Start is called before the first frame update
     public CharacterController controller;
 
@@ -41,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
     private const float jumpHeight = 3f;
 
     private Vector3 jumpX, jumpZ;
-    
+
 
     public LayerMask groundMask;
 
@@ -53,12 +57,19 @@ public class PlayerMovement : MonoBehaviour
 
     private JumpDirection jumpDir = JumpDirection.None;
     private WeaponType eq = WeaponType.Melee;
-    
-    
+
 
     private enum JumpDirection
     {
-        Left, Right, Front, Back, FrontLeft, FrontRight, BackLeft, BackRight, None
+        Left,
+        Right,
+        Front,
+        Back,
+        FrontLeft,
+        FrontRight,
+        BackLeft,
+        BackRight,
+        None
     }
 
     // 1 is KW, 2 is Bombard, 3 is Driver
@@ -76,9 +87,8 @@ public class PlayerMovement : MonoBehaviour
     public int swapType;
     private float swapCounter = 0f;
     private bool swapped = false;
-    
-    
-    
+
+
     private static Dictionary<JumpDirection, Tuple<float, float>> airborneDirMultiplier
         = new Dictionary<JumpDirection, Tuple<float, float>>
         {
@@ -87,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
             {JumpDirection.Back, new Tuple<float, float>(0f, -1f)},
             {JumpDirection.Left, new Tuple<float, float>(-1f, 0f)},
             {JumpDirection.Right, new Tuple<float, float>(1f, 0f)},
-            {JumpDirection.None, new Tuple<float, float>(0f,0f)}
+            {JumpDirection.None, new Tuple<float, float>(0f, 0f)}
         };
 
     private static Dictionary<JumpDirection, KeyCode> basicDirKeys = new Dictionary<JumpDirection, KeyCode>()
@@ -105,6 +115,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private int jumpCount = 0;
+
     // Update is called once per frame
     void Update()
     {
@@ -131,12 +142,13 @@ public class PlayerMovement : MonoBehaviour
         checkSwap();
         checkShoot();
         swapCounter += Time.deltaTime;
-        
+
         if (isGrounded && velocity.y < 0)
         {
             jumpCount = 0;
             velocity.y = -4f;
         }
+
         if (Input.GetButtonDown("Jump"))
         {
             Jump();
@@ -144,35 +156,40 @@ public class PlayerMovement : MonoBehaviour
 
 
         Vector3 move = getMoveByState();
-        controller.Move( moveSpeed * Time.deltaTime * Vector3.ClampMagnitude(move, 1.0f));
-        
+        controller.Move(moveSpeed * Time.deltaTime * Vector3.ClampMagnitude(move, 1.0f));
+
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
 
     private void checkMove()
     {
+        bool moving = false;
         if (Input.GetKey(KeyCode.A))
         {
-            return;
+            moving = true;
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            return;
+            moving = true;
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            return;
+            moving = true;
         }
 
         if (Input.GetKey(KeyCode.W))
         {
+            moving = true;
             animController.fullRunForward();
-            return;
         }
-        animController.goIdle();
+
+        if (!moving)
+        {
+            animController.goIdle();
+        }
     }
 
     private void checkShoot()
@@ -198,6 +215,7 @@ public class PlayerMovement : MonoBehaviour
                         audios[1].Play(0);
                         swapCounter = 0f;
                     }
+
                     break;
                 case WeaponType.Rifle:
                     if (swapped)
@@ -216,6 +234,7 @@ public class PlayerMovement : MonoBehaviour
                         rifleFire = Time.time + 1f / rifleFireRate;
                         audios[2].Play(0);
                     }
+
                     break;
                 case WeaponType.Bazooka:
                     shootBazooka();
@@ -226,7 +245,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    
 
     private void shootBazooka()
     {
@@ -236,14 +254,12 @@ public class PlayerMovement : MonoBehaviour
             swapped = false;
             swapCounter = 0f;
             GameObject rocket = Instantiate(rocketPrefab, rocketSpawnPoint
-                .TransformPoint(0, 0, -0.1f ), rocketSpawnPoint.rotation);
+                .TransformPoint(0, 0, -0.1f), rocketSpawnPoint.rotation);
             // rocket gets shot in the direction you're looking at
             rocket.GetComponent<Rigidbody>().AddForce(camera.forward * rocketSpeed, ForceMode.Impulse);
             // rocket launcher looks in the direction the camera is looking at
             Destroy(rocket, 10);
         }
-
-
     }
 
     private void checkSwap()
@@ -337,33 +353,29 @@ public class PlayerMovement : MonoBehaviour
             float zDir = dirs.Item2 * 1.25f;
             return new Tuple<float, float>(xDir, zDir);
         }
+
         return dirs;
-        
     }
 
     private JumpDirection getJumpDir()
     {
         if (Input.GetKey(KeyCode.A))
         {
-            
             return JumpDirection.Left;
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-           
             return JumpDirection.Back;
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-           
             return JumpDirection.Right;
         }
 
         if (Input.GetKey(KeyCode.W))
         {
-            
             return JumpDirection.Front;
         }
 
@@ -372,7 +384,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        
         if (isGrounded)
         {
             jumpDir = getJumpDir();

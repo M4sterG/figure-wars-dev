@@ -6,8 +6,9 @@ using UnityEngine.Serialization;
 public class MouseLook : MonoBehaviour
 {
 
-    public float mouseSens = 100f;
+    public float mouseSens;
 
+    public Transform player;
     public Transform headTransform;
     public Transform rocketLauncher;
     public Transform camera;
@@ -29,9 +30,21 @@ public class MouseLook : MonoBehaviour
          
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         // rotates head if standing still with degree * 0.75 so it doesn't twist at 90 degrees
-        headTransform.Rotate(0.75f * mouseX * Vector3.up); 
-        // rotates camera
-        camera.Rotate(Vector3.up * mouseX);
+        //headTransform.Rotate(0.75f * mouseX * Vector3.up); 
+        if (moving())
+        {
+            player.Rotate(Vector3.up * mouseX);   
+        }
+        else
+        {
+            camera.Rotate(Vector3.up * mouseX);
+        }
+
         rocketLauncher.Rotate( Vector3.forward * mouseY);
+    }
+
+    private bool moving()
+    {
+        return Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D);
     }
 }
