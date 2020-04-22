@@ -28,10 +28,9 @@ public class MouseLook : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
          
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        // rotates head if standing still
-        headTransform.Rotate(Vector3.up * mouseX); 
+        // rotates head if standing still with degree * 0.75 so it doesn't twist at 90 degrees
+        headTransform.Rotate(0.75f * mouseX * Vector3.up); 
         // rotates camera
-        Debug.Log(mouseX);
         camera.Rotate(Vector3.up * mouseX);
         rocketLauncher.Rotate( Vector3.forward * mouseY);
     }
