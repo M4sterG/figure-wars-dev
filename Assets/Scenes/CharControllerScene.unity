@@ -258,9 +258,9 @@ Transform:
   m_LocalPosition: {x: 3.904, y: 0.989, z: 2.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 963194228}
   - {fileID: 705821087}
   - {fileID: 1471207442}
+  - {fileID: 1571768751}
   - {fileID: 1180693274}
   - {fileID: 1080455900}
   - {fileID: 1191320554}
@@ -906,7 +906,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 304923546}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &750254941
 GameObject:
@@ -1061,13 +1061,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.25375786, y: 0, z: 0, w: 0.9672678}
-  m_LocalPosition: {x: 0.05, y: 1.893, z: -1.788}
+  m_LocalRotation: {x: 0.2640414, y: -0, z: -0, w: 0.9645114}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 304923546}
+  m_Father: {fileID: 1571768751}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 29.4, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 30.62, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1081,8 +1081,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSens: 60
-  playerBody: {fileID: 304923546}
+  headTransform: {fileID: 1080455900}
   rocketLauncher: {fileID: 1471207442}
+  camera: {fileID: 304923546}
 --- !u!1001 &989785543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1224,7 +1225,7 @@ Transform:
   m_Children:
   - {fileID: 410531974}
   m_Father: {fileID: 304923546}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -91.185005, z: -261.56}
 --- !u!23 &1471207444
 MeshRenderer:
@@ -1285,6 +1286,37 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 607044915}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1571768750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1571768751}
+  m_Layer: 0
+  m_Name: Camera Holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1571768751
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571768750}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.893, z: -1.788}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 963194228}
+  m_Father: {fileID: 304923546}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1820316571
 PrefabInstance:
   m_ObjectHideFlags: 0

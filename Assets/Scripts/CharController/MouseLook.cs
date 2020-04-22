@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class MouseLook : MonoBehaviour
 {
 
     public float mouseSens = 100f;
 
-    public Transform playerBody;
+    public Transform headTransform;
     public Transform rocketLauncher;
-
+    public Transform camera;
     private float xRotation = 0f;
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,11 @@ public class MouseLook : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
          
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        playerBody.Rotate(Vector3.up * mouseX); 
+        // rotates head if standing still
+        headTransform.Rotate(Vector3.up * mouseX); 
+        // rotates camera
+        Debug.Log(mouseX);
+        camera.Rotate(Vector3.up * mouseX);
         rocketLauncher.Rotate( Vector3.forward * mouseY);
     }
 }
