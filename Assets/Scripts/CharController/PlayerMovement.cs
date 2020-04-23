@@ -20,6 +20,9 @@ public class PlayerMovement : MonoBehaviour
     public Animator shoesAnim;
     public Animator handsAnim;
 
+    private float lookX = 0f;
+    private float lookY = 0f;
+
     private float MouseX
     {
         get => Input.GetAxis("Mouse X") * 60f * Time.deltaTime;
@@ -125,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
+        camera = Camera.main.transform;
         audios = GetComponents<AudioSource>();
         animController = new AnimationController(headAnim, topAnim, legsAnim, shoesAnim, handsAnim);
     }
@@ -214,6 +218,11 @@ public class PlayerMovement : MonoBehaviour
             return;
            // animController.fullRunForward();
         }
+
+        lookX += MouseX;
+        lookY += MouseY;
+        Debug.Log(lookX + " " + lookY);
+        animController.goIdle(lookX / 90F, lookY / 90f);
         animController.setDir(-1);
     }
 

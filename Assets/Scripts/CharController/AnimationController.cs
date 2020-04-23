@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Scripts.Classes.Main;
 using Scripts.Weapons;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 namespace DefaultNamespace.CharController
 {
@@ -40,12 +42,10 @@ namespace DefaultNamespace.CharController
 
         public void goIdle(float mouseX, float mouseY)
         {
-            
             AllAnims.ForEach(anim =>
             {
                 anim.SetFloat("Horizontal", mouseX);
                 anim.SetFloat("Vertical", mouseY);
-                anim.Play("melee_look");
             });
         }
 

@@ -43,7 +43,7 @@ public class MouseLook : MonoBehaviour
         {
             camera.Rotate(Vector3.up * mouseX);
         }
-
+        
         rocketLauncher.Rotate( Vector3.forward * mouseY);
     }
 
