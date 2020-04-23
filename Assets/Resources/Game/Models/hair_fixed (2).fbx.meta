@@ -1,12 +1,24 @@
 fileFormatVersion: 2
-guid: e503adfde34f0ee46989e2219a78318d
+guid: 17960013b03c240478fc81edf3d481a8
 ModelImporter:
   serializedVersion: 19300
-  internalIDToNameTable:
+  internalIDToNameTable: []
+  externalObjects:
   - first:
-      74: -7493105369441006802
-    second: CIdle_Sword_002
-  externalObjects: {}
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: object0261_HAIR_255
+    second: {fileID: 2100000, guid: 15ff6287a5def184ca5806eca13b51b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: object0261_HAIR_267
+    second: {fileID: 2100000, guid: 111e6e25b6afdb944bc35b136a756db3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: object0261_HAIR_273
+    second: {fileID: 2100000, guid: dbb9a7fbd29bd734cb980d7733d46df1, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -26,7 +38,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -36,7 +48,10 @@ ModelImporter:
     clipAnimations: []
     isReadable: 0
   meshes:
-    lODScreenPercentages: []
+    lODScreenPercentages:
+    - 0.25
+    - 0.125
+    - 0.01
     globalScale: 1
     meshCompression: 0
     addColliders: 0
@@ -86,7 +101,7 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1

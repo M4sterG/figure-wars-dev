@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,9 @@ public class MouseLook : MonoBehaviour
     public Transform rocketLauncher;
     public Transform camera;
     private float xRotation = 0f;
+    private float mouseX;
+
+    private float headRotation = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +26,7 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSens * Time.deltaTime;
+        mouseX = Input.GetAxis("Mouse X") * mouseSens * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSens * Time.deltaTime;
 
         xRotation -= mouseY;
@@ -46,5 +50,17 @@ public class MouseLook : MonoBehaviour
     private bool moving()
     {
         return Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D);
+    }
+
+    private void LateUpdate()
+    {
+        if (moving())
+        {
+            headRotation = 0f;
+        }
+        else
+        {
+            headRotation += mouseX;
+        }
     }
 }

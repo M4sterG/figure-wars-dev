@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: e503adfde34f0ee46989e2219a78318d
+guid: 432cf5b30e5049b41a21f5b48a190a8a
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
-      74: -7493105369441006802
-    second: CIdle_Sword_002
+      74: 5633970812974528862
+    second: CIdleL_Sword_002
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -26,7 +26,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -86,7 +86,7 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
