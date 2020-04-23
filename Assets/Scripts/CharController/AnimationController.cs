@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Scripts.Classes.Main;
+using Scripts.Weapons;
 using UnityEngine;
 
 namespace DefaultNamespace.CharController
@@ -20,6 +22,7 @@ namespace DefaultNamespace.CharController
 
         public void setGrounded(bool value)
         {
+            AllAnims.ForEach(anim => anim.SetBool("isGrounded", value));
             isGrounded = value;
         }
 
@@ -35,9 +38,15 @@ namespace DefaultNamespace.CharController
             this.shoesAnim = shoesAnim;
         }
 
-        public void goIdle()
+        public void goIdle(float mouseX, float mouseY)
         {
-            AllAnims.ForEach(anim => anim.Play("melee_idle"));
+            
+            AllAnims.ForEach(anim =>
+            {
+                anim.SetFloat("Horizontal", mouseX);
+                anim.SetFloat("Vertical", mouseY);
+                anim.Play("melee_look");
+            });
         }
 
         public void shootMelee()
@@ -45,6 +54,17 @@ namespace DefaultNamespace.CharController
             // topAnim.Play("attack_sword");
             // handsAnim.Play("attack_sword");
             // headAnim.Play("attack_sword");
+        }
+
+        public void setWeapon(WeaponType weapon)
+        {
+            AllAnims.ForEach(anim => 
+                anim.SetInteger("EquippedWeapon", GameManager.weaponPositions[weapon]));
+        }
+
+        public void setDir(int dir)
+        {
+            AllAnims.ForEach(anim => anim.SetInteger("MoveDir", dir));
         }
 
         public void fullRunForward()

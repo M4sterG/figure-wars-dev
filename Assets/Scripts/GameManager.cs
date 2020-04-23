@@ -76,6 +76,17 @@ public class GameManager : MonoBehaviour
     public const string TAB_ACCESORIES_NAME = "Accessories";
     public const string TAB_MISC_NAME = "Items";
     
+    public static Dictionary<WeaponType, int> weaponPositions = new Dictionary<WeaponType, int>
+    {
+        {WeaponType.Melee, 1},
+        {WeaponType.Rifle, 2},
+        {WeaponType.Shotgun, 3},
+        {WeaponType.Sniper, 4},
+        {WeaponType.Minigun, 5},
+        {WeaponType.Bazooka, 6},
+        {WeaponType.Grenade, 7}
+    };
+    
     public enum SlotStatus {Idle, Clicked}
     void Start()
     {
