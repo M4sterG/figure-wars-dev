@@ -187,6 +187,12 @@ public class PlayerMovement : MonoBehaviour
         animController.setDir(direction);
     }
 
+    private void resetLook()
+    {
+        lookX = 0f;
+        lookY = 0f;
+    }
+
     private void checkMove()
     {
         bool moving = false;
@@ -194,6 +200,7 @@ public class PlayerMovement : MonoBehaviour
         {
             moving = true;
             setMoveDir(KeyCode.A);
+            resetLook();
             return;
         }
 
@@ -201,6 +208,7 @@ public class PlayerMovement : MonoBehaviour
         {
             moving = true;
             setMoveDir(KeyCode.D);
+            resetLook();
             return;
         }
 
@@ -208,6 +216,7 @@ public class PlayerMovement : MonoBehaviour
         {
             setMoveDir(KeyCode.S);
             moving = true;
+            resetLook();
             return;
         }
 
@@ -215,13 +224,13 @@ public class PlayerMovement : MonoBehaviour
         {
             setMoveDir(KeyCode.W);
             moving = true;
+            resetLook();
             return;
            // animController.fullRunForward();
         }
 
         lookX += MouseX;
         lookY += MouseY;
-        Debug.Log(lookX + " " + lookY);
         animController.goIdle(lookX / 90F, lookY / 90f);
         animController.setDir(-1);
     }
@@ -333,6 +342,7 @@ public class PlayerMovement : MonoBehaviour
             eq = WeaponType.Bazooka;
             animController.setWeapon(eq);
             swapCounter = 0f;
+            swapped = true;
             rocketLauncher.SetActive(true);
             return;
         }
