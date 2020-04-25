@@ -127,12 +127,12 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.16347995
-  m_TransitionOffset: 0.06158956
-  m_ExitTime: 0.06158953
+  m_TransitionDuration: 0.15
+  m_TransitionOffset: 0.12
+  m_ExitTime: 0.1116104
   m_HasExitTime: 0
   m_HasFixedDuration: 1
-  m_InterruptionSource: 4
+  m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
 --- !u!1101 &-7196156548762852614
@@ -197,7 +197,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: melee_full_run_L
-  m_Speed: 1
+  m_Speed: 0.9
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -6091375296407978050}
@@ -451,7 +451,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: melee_full_run_R
-  m_Speed: 1
+  m_Speed: 0.9
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 6150724672294582722}
@@ -472,7 +472,7 @@ AnimatorState:
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
-  m_TimeParameter: 
+  m_TimeParameter: Horizontal
 --- !u!1101 &-1676096209900818212
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -887,12 +887,12 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.16348001
-  m_TransitionOffset: 0.05704518
-  m_ExitTime: 0.0570452
+  m_TransitionDuration: 0.15
+  m_TransitionOffset: 0.12
+  m_ExitTime: 0.12052456
   m_HasExitTime: 0
   m_HasFixedDuration: 1
-  m_InterruptionSource: 4
+  m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
 --- !u!1101 &7499135833227410946
