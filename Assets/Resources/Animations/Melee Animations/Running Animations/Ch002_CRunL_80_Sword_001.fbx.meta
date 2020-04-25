@@ -1,14 +1,11 @@
 fileFormatVersion: 2
-guid: eb572cb31974a9a46aa51db8d509c966
+guid: 5ea108381eed4c640963484cb840fca2
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
-      74: -2307966264934570202
-    second: CRunF_Sword_001
-  - first:
-      74: 7789541082997865605
-    second: CRunF_Sword_001.fbx
+      74: -5669268360019707961
+    second: CRunL_Test_Sword_001.fbx
   externalObjects: {}
   materials:
     materialImportMode: 1
