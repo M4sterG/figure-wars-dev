@@ -176,11 +176,18 @@ public class PlayerMovement : MonoBehaviour
 
 
         Vector3 move = getMoveByState();
-        controller.Move(moveSpeed * Time.deltaTime * Vector3.ClampMagnitude(move, 1.0f));
+        controller.Move(moveSpeed * Time.deltaTime * clampedMove(move));
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
+
+    private Vector3 clampedMove(Vector3 move)
+    {
+        float max = isMovingBackwards() ? 0.5f : 1f;
+        return Vector3.ClampMagnitude(move, max);
+    }
+    
 
     private void setMoveDir(Direction dir)
     {
@@ -207,46 +214,62 @@ public class PlayerMovement : MonoBehaviour
         {
             moving = true;
             dir = Direction.BackLeft;
+            resetLook();
+            setMoveDir(dir);
+            return;
         }
-        else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
+
+        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
         {
             moving = true;
             dir = Direction.BackRight;
+            resetLook();
+            setMoveDir(dir);
+            return;
         }
-        else if (Input.GetKey(KeyCode.A))
+
+        if (Input.GetKey(KeyCode.A))
         {
             moving = true;
-           dir = Direction.Left;
+            dir = Direction.Left;
+            resetLook();
+            setMoveDir(dir);
+            return;
         }
-        else if (Input.GetKey(KeyCode.D))
+
+        if (Input.GetKey(KeyCode.D))
         {
             moving = true;
             dir = Direction.Right;
+            resetLook();
+            setMoveDir(dir);
+            return;
         }
-        else if (Input.GetKey(KeyCode.S))
+
+        if (Input.GetKey(KeyCode.S))
         {
             dir = Direction.Back;
             moving = true;
+            resetLook();
+            setMoveDir(dir);
+            return;
         }
-        else if (Input.GetKey(KeyCode.W))
+
+        if (Input.GetKey(KeyCode.W))
         {
             dir = Direction.Front;
             moving = true;
+            resetLook();
+            setMoveDir(dir);
+            return;
         }
 
-        if (moving)
-        {
-            setMoveDir(dir);
-            resetLook();
-        }
-        else
-        {
-            lookX += MouseX;
-            lookY += MouseY;
-            animController.goIdle(lookX / 90F, lookY / 90f);
-            animController.setDir(-1);
-        }
-    }
+        lookX += MouseX;
+        lookY += MouseY;
+        animController.goIdle(lookX / 90F, lookY / 90f);
+        animController.setDir(-1);
+    
+}
 
     private void checkShoot()
     {
