@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded = false;
     private const int MAX_JUMPS = 2;
 
-    private Direction _dir = Direction.None;
+    private Direction dir = Direction.None;
     private WeaponType eq = WeaponType.Melee;
 
 
@@ -97,12 +97,14 @@ public class PlayerMovement : MonoBehaviour
     private float swapCounter = 0f;
     private bool swapped = false;
     
-    private static Dictionary<KeyCode, int> animDir = new Dictionary<KeyCode, int>
+    private static Dictionary<Direction, int> animDir = new Dictionary<Direction, int>
     {
-        {KeyCode.A, 0},
-        {KeyCode.W, 1},
-        {KeyCode.D, 2},
-        {KeyCode.S, 3}
+        {Direction.Left, 0},
+        {Direction.Front, 1},
+        {Direction.Right, 2},
+        {Direction.Back, 3},
+        {Direction.BackLeft, 4},
+        {Direction.BackRight, 5}
     };
     
 
@@ -180,7 +182,7 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    private void setMoveDir(KeyCode dir)
+    private void setMoveDir(Direction dir)
     {
         int direction = -1;
         bool moving = animDir.TryGetValue(dir, out direction);
@@ -193,46 +195,57 @@ public class PlayerMovement : MonoBehaviour
         lookY = 0f;
     }
 
+    private bool isMovingBackwards()
+    {
+        return dir == Direction.Back || dir == Direction.BackLeft || dir == Direction.BackRight;
+    }
+
     private void checkMove()
     {
         bool moving = false;
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
         {
             moving = true;
-            setMoveDir(KeyCode.A);
-            resetLook();
-            return;
+            dir = Direction.BackLeft;
         }
-
-        if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
         {
             moving = true;
-            setMoveDir(KeyCode.D);
-            resetLook();
-            return;
+            dir = Direction.BackRight;
         }
-
-        if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.A))
         {
-            setMoveDir(KeyCode.S);
             moving = true;
-            resetLook();
-            return;
+           dir = Direction.Left;
         }
-
-        if (Input.GetKey(KeyCode.W))
+        else if (Input.GetKey(KeyCode.D))
         {
-            setMoveDir(KeyCode.W);
             moving = true;
-            resetLook();
-            return;
-           // animController.fullRunForward();
+            dir = Direction.Right;
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            dir = Direction.Back;
+            moving = true;
+        }
+        else if (Input.GetKey(KeyCode.W))
+        {
+            dir = Direction.Front;
+            moving = true;
         }
 
-        lookX += MouseX;
-        lookY += MouseY;
-        animController.goIdle(lookX / 90F, lookY / 90f);
-        animController.setDir(-1);
+        if (moving)
+        {
+            setMoveDir(dir);
+            resetLook();
+        }
+        else
+        {
+            lookX += MouseX;
+            lookY += MouseY;
+            animController.goIdle(lookX / 90F, lookY / 90f);
+            animController.setDir(-1);
+        }
     }
 
     private void checkShoot()
@@ -374,6 +387,10 @@ public class PlayerMovement : MonoBehaviour
             Vector3 transRight = transform.right;
             Vector3 transForward = transform.forward;
             move = transRight * getX() + transForward * getZ();
+            if (isMovingBackwards())
+            {
+                move *= 0.5f;
+            }
             setJumpXZ(transRight, transForward);
             return move;
         }
@@ -388,13 +405,13 @@ public class PlayerMovement : MonoBehaviour
 
     private Tuple<float, float> getDirs()
     {
-        if (_dir == Direction.None)
+        if (dir == Direction.None)
         {
             return new Tuple<float, float>(0f, 0f);
         }
 
-        Tuple<float, float> dirs = airborneDirMultiplier[_dir];
-        if (Input.GetKey(basicDirKeys[_dir]))
+        Tuple<float, float> dirs = airborneDirMultiplier[dir];
+        if (Input.GetKey(basicDirKeys[dir]))
         {
             float xDir = dirs.Item1 * 1.25f;
             float zDir = dirs.Item2 * 1.25f;
@@ -433,7 +450,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGrounded)
         {
-            _dir = getJumpDir();
+            dir = getJumpDir();
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             jumpCount = 1;
         }
