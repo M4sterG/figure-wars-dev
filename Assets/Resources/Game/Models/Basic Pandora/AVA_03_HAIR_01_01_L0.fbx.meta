@@ -3,7 +3,22 @@ guid: 7b51e58eaa3980a4fb8118da634c89b0
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: object0259_AVA_03_HAIR_01__255
+    second: {fileID: 2100000, guid: cfd2d35b73ec865409d63af85d8bc717, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: object0259_AVA_03_HAIR_01__265
+    second: {fileID: 2100000, guid: 9abc42a8bb9a25641bf68d4148f525c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: object0274_AVA_03_HAIR_01_271
+    second: {fileID: 2100000, guid: 99e60f4269437ae468cbedd09d971771, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -84,7 +99,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: 
+    rootMotionBoneName: SceneRoot
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
@@ -92,7 +107,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

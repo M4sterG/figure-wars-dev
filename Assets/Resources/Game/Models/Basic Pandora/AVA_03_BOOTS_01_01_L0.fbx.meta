@@ -3,7 +3,22 @@ guid: deb175927faf10243a94b5dae2544611
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: object0241_AVA_03_BOOTS_01__237
+    second: {fileID: 2100000, guid: 0b29915fe9905a040927d6131280c38c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: object0241_AVA_03_BOOTS_01__247
+    second: {fileID: 2100000, guid: c6e5552e965288545984994afe23f9af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: object0256_AVA_03_BOOTS_01_253
+    second: {fileID: 2100000, guid: 34eecee92c4053646aebcb6d937dbb2c, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -84,7 +99,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: 
+    rootMotionBoneName: SceneRoot
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
@@ -92,7 +107,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
