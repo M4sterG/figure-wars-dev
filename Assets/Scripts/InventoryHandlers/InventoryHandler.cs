@@ -4,7 +4,6 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Linq;
 using DefaultNamespace;
-using frame8.ScrollRectItemsAdapter.Classic.Examples.Common;
 using Scripts.Classes.Inventory;
 using Scripts.Classes.Main;
 using Scripts.Classes.Parts;
