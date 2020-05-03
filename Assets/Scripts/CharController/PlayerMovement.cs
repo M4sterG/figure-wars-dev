@@ -409,6 +409,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector3 transRight = transform.right;
             Vector3 transForward = transform.forward;
+            Debug.Log("Right " + transRight + " | Forward: " + transForward);
             move = transRight * getX() + transForward * getZ();
             if (isMovingBackwards())
             {
