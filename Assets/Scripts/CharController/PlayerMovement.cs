@@ -6,6 +6,7 @@ using DefaultNamespace.CharController;
 using Scripts.Classes.Main;
 using Scripts.Weapons;
 using UnityEditor;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.Experimental.TerrainAPI;
 using UnityEngine.Rendering.UI;
@@ -67,8 +68,7 @@ public class PlayerMovement : MonoBehaviour
     private Direction dir = Direction.None;
     private WeaponType eq = WeaponType.Melee;
 
-
-    private enum Direction
+    internal enum Direction
     {
         Left,
         Right,
@@ -228,7 +228,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S))
         {
             moving = true;
             dir = Direction.Left;
@@ -264,6 +264,8 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
+        dir = Direction.None;
+        dir = Direction.None;
         lookX += MouseX;
         lookY += MouseY;
         animController.goIdle(lookX / 90F, lookY / 90f);
@@ -409,8 +411,9 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector3 transRight = transform.right;
             Vector3 transForward = transform.forward;
-            Debug.Log("Right " + transRight + " | Forward: " + transForward);
-            move = transRight * getX() + transForward * getZ();
+            move =  Mathf.Abs(getX()) * DirectionMovement.getXMultiplier(dir) * transRight
+                    + DirectionMovement.getZMultiplier(dir)* Mathf.Abs(getZ()) * transForward;
+            Debug.Log(dir);
             if (isMovingBackwards())
             {
                 move *= 0.5f;
