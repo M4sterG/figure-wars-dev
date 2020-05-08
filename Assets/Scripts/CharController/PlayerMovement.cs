@@ -411,9 +411,9 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector3 transRight = transform.right;
             Vector3 transForward = transform.forward;
+            // moves towards the direction it's supposed to go in
             move =  Mathf.Abs(getX()) * DirectionMovement.getXMultiplier(dir) * transRight
                     + DirectionMovement.getZMultiplier(dir)* Mathf.Abs(getZ()) * transForward;
-            Debug.Log(dir);
             if (isMovingBackwards())
             {
                 move *= 0.5f;
