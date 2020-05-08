@@ -207,7 +207,13 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isMovingBackwards()
     {
-        return dir == Direction.Back || dir == Direction.BackLeft || dir == Direction.BackRight;
+        Direction comparison = dir;
+        if (!isGrounded)
+        {
+            comparison = jumpDirection;
+        }
+        return comparison == Direction.Back || comparison == Direction.BackLeft || comparison == Direction.BackRight;
+        
     }
 
     private void checkMove()
