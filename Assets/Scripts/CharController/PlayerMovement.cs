@@ -10,6 +10,7 @@ using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.Experimental.TerrainAPI;
 using UnityEngine.Rendering.UI;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -36,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
 
 
     private Transform camera;
+    private Vector3 transRight;
+    private Vector3 transForward;
 
     public GameObject rocketPrefab;
     public Transform rocketSpawnPoint;
@@ -65,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded = false;
     private const int MAX_JUMPS = 2;
 
+    private Direction jumpDirection = Direction.None;
     private Direction dir = Direction.None;
     private WeaponType eq = WeaponType.Melee;
 
@@ -117,7 +121,11 @@ public class PlayerMovement : MonoBehaviour
             {Direction.Back, new Tuple<float, float>(0f, -1f)},
             {Direction.Left, new Tuple<float, float>(-1f, 0f)},
             {Direction.Right, new Tuple<float, float>(1f, 0f)},
-            {Direction.None, new Tuple<float, float>(0f, 0f)}
+            {Direction.None, new Tuple<float, float>(0f, 0f)},
+            {Direction.BackLeft, new Tuple<float, float>(0f, -1f)},
+            {Direction.BackRight, new Tuple<float, float>(0f, -1f)},
+            {Direction.FrontRight, new Tuple<float, float>(0f, 1f)},
+            {Direction.FrontLeft, new Tuple<float, float>(0f, 1f)}
         };
 
     private static Dictionary<Direction, KeyCode> basicDirKeys = new Dictionary<Direction, KeyCode>()
@@ -126,6 +134,10 @@ public class PlayerMovement : MonoBehaviour
         {Direction.Back, KeyCode.S},
         {Direction.Left, KeyCode.A},
         {Direction.Right, KeyCode.D},
+        {Direction.BackLeft, KeyCode.A},
+        {Direction.BackRight, KeyCode.D},
+        {Direction.FrontLeft, KeyCode.A},
+        {Direction.FrontRight, KeyCode.D}
     };
 
     void Awake()
@@ -141,33 +153,24 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDist, groundMask);
+        transRight = transform.right;
+        transForward = transform.forward;
         animController.setGrounded(isGrounded);
         checkMove();
         camera = Camera.main.transform;
-        if (Input.GetKey(KeyCode.B))
+        if (isGrounded)
         {
-            swapType = 1;
+            if (velocity.y < 0)
+            {
+                jumpCount = 0;
+                velocity.y = -4f;
+            }
         }
 
-        if (Input.GetKey(KeyCode.K))
-        {
-            swapType = 0;
-        }
-
-        if (Input.GetKey(KeyCode.N))
-        {
-            swapType = 2;
-        }
-        
         checkSwap();
         checkShoot();
         swapCounter += Time.deltaTime;
-
-        if (isGrounded && velocity.y < 0)
-        {
-            jumpCount = 0;
-            velocity.y = -4f;
-        }
+        swapCounter += Time.deltaTime;
 
         if (Input.GetButtonDown("Jump"))
         {
@@ -409,8 +412,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move;
         if (isGrounded)
         {
-            Vector3 transRight = transform.right;
-            Vector3 transForward = transform.forward;
+            
             // moves towards the direction it's supposed to go in
             move =  Mathf.Abs(getX()) * DirectionMovement.getXMultiplier(dir) * transRight
                     + DirectionMovement.getZMultiplier(dir)* Mathf.Abs(getZ()) * transForward;
@@ -418,33 +420,37 @@ public class PlayerMovement : MonoBehaviour
             {
                 move *= 0.5f;
             }
-            setJumpXZ(transRight, transForward);
             return move;
         }
         else
         {
-            Tuple<float, float> dirs = getDirs();
+            if (jumpDirection == Direction.None)
+            {
+                Debug.Log("???");
+                return Vector3.zero;
+            }
+            Tuple<float, float> dirs = getJumpDirs();
             xDir = dirs.Item1;
             zDir = dirs.Item2;
             return jumpX * xDir + jumpZ * zDir;
         }
     }
 
-    private Tuple<float, float> getDirs()
+    private Tuple<float, float> getJumpDirs()
     {
-        if (dir == Direction.None)
+        if (jumpDirection == Direction.None)
         {
             return new Tuple<float, float>(0f, 0f);
         }
 
-        Tuple<float, float> dirs = airborneDirMultiplier[dir];
-        if (Input.GetKey(basicDirKeys[dir]))
+        Tuple<float, float> dirs = airborneDirMultiplier[jumpDirection];
+        
+        if (Input.GetKey(basicDirKeys[jumpDirection]))
         {
             float xDir = dirs.Item1 * 1.25f;
             float zDir = dirs.Item2 * 1.25f;
             return new Tuple<float, float>(xDir, zDir);
         }
-
         return dirs;
     }
 
@@ -477,7 +483,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGrounded)
         {
-            dir = getJumpDir();
+            setJumpXZ(transRight, transForward);
+            jumpDirection = dir;
+            
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             jumpCount = 1;
         }
