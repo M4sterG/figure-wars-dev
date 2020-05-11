@@ -40,6 +40,7 @@ namespace DefaultNamespace.CharController
         private static readonly int Vertical = Animator.StringToHash("Vertical");
         private static readonly int EquippedWeapon = Animator.StringToHash("EquippedWeapon");
         private static readonly int MoveDir = Animator.StringToHash("MoveDir");
+        private static readonly int SwapCounter = Animator.StringToHash("SwapCounter");
 
         public AnimationController(Animator headAnim, Animator topAnim
             , Animator legsAnim, Animator shoesAnim, Animator handsAnim)
@@ -58,6 +59,11 @@ namespace DefaultNamespace.CharController
                 anim.SetFloat(Horizontal, mouseX);
                 anim.SetFloat(Vertical, mouseY);
             });
+        }
+
+        public void setSwapCounter(float time)
+        {
+            AllAnims.ForEach(anim => anim.SetFloat(SwapCounter, time));
         }
 
         public void shootMelee()

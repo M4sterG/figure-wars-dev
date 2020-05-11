@@ -325,15 +325,18 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: EquippedWeapon
     m_EventTreshold: 1
+  - m_ConditionMode: 3
+    m_ConditionEvent: SwapCounter
+    m_EventTreshold: 0.1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8975281853354631988}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.099999994
-  m_TransitionOffset: 0.1372434
-  m_ExitTime: 0.13724346
+  m_TransitionDuration: 0.099999905
+  m_TransitionOffset: 0
+  m_ExitTime: 0
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 4
@@ -1059,7 +1062,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -49093091256263276, guid: 8c19e1cacee409e4c967ef23c01657d9, type: 3}
+  m_Motion: {fileID: -49093091256263276, guid: 349474acb3bff3d44bdeda32f694a076, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1906,6 +1909,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: SwapCounter
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -2100,7 +2109,7 @@ AnimatorStateMachine:
     m_Position: {x: 780, y: -80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3217807866386159070}
-    m_Position: {x: 1190, y: -220, z: 0}
+    m_Position: {x: 1170, y: -220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7562850782196878733}
     m_Position: {x: 580, y: -220, z: 0}
