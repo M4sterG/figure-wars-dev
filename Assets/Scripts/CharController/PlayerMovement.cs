@@ -160,6 +160,7 @@ public class PlayerMovement : MonoBehaviour
         camera = Camera.main.transform;
         if (isGrounded)
         {
+            animController.setSecondJumping(false);
             if (velocity.y < 0)
             {
                 jumpCount = 0;
@@ -432,7 +433,6 @@ public class PlayerMovement : MonoBehaviour
         {
             if (jumpDirection == Direction.None)
             {
-                Debug.Log("???");
                 return Vector3.zero;
             }
             Tuple<float, float> dirs = getJumpDirs();
@@ -499,6 +499,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (jumpCount < MAX_JUMPS && eq == WeaponType.Melee)
             {
+                animController.setSecondJumping(true);
                 jumpCount = 2;
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             }

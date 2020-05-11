@@ -24,11 +24,22 @@ namespace DefaultNamespace.CharController
 
         public void setGrounded(bool value)
         {
-            AllAnims.ForEach(anim => anim.SetBool("isGrounded", value));
+            AllAnims.ForEach(anim => anim.SetBool(IsGrounded, value));
             isGrounded = value;
         }
 
+        public void setSecondJumping(bool second)
+        {
+            AllAnims.ForEach(anim => anim.SetBool(SecondJump, second));
+        }
+
         public bool jumping = false;
+        private static readonly int IsGrounded = Animator.StringToHash($"isGrounded");
+        private static readonly int SecondJump = Animator.StringToHash("SecondJump");
+        private static readonly int Horizontal = Animator.StringToHash("Horizontal");
+        private static readonly int Vertical = Animator.StringToHash("Vertical");
+        private static readonly int EquippedWeapon = Animator.StringToHash("EquippedWeapon");
+        private static readonly int MoveDir = Animator.StringToHash("MoveDir");
 
         public AnimationController(Animator headAnim, Animator topAnim
             , Animator legsAnim, Animator shoesAnim, Animator handsAnim)
@@ -44,8 +55,8 @@ namespace DefaultNamespace.CharController
         {
             AllAnims.ForEach(anim =>
             {
-                anim.SetFloat("Horizontal", mouseX);
-                anim.SetFloat("Vertical", mouseY);
+                anim.SetFloat(Horizontal, mouseX);
+                anim.SetFloat(Vertical, mouseY);
             });
         }
 
@@ -59,23 +70,13 @@ namespace DefaultNamespace.CharController
         public void setWeapon(WeaponType weapon)
         {
             AllAnims.ForEach(anim => 
-                anim.SetInteger("EquippedWeapon", GameManager.weaponPositions[weapon]));
+                anim.SetInteger(EquippedWeapon, GameManager.weaponPositions[weapon]));
         }
 
         public void setDir(int dir)
         {
-            AllAnims.ForEach(anim => anim.SetInteger("MoveDir", dir));
+            AllAnims.ForEach(anim => anim.SetInteger(MoveDir, dir));
         }
-
-        public void fullRunForward()
-        {
-            if (isGrounded)
-            {
-                foreach (var anim in AllAnims)
-                {
-                    anim.Play("full_run_forward");
-                }
-            }
-        }
+        
     }
 }
