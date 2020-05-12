@@ -32,8 +32,7 @@ namespace DefaultNamespace.CharController
         {
             AllAnims.ForEach(anim => anim.SetBool(SecondJump, second));
         }
-
-        public bool jumping = false;
+        
         private static readonly int IsGrounded = Animator.StringToHash($"isGrounded");
         private static readonly int SecondJump = Animator.StringToHash("SecondJump");
         private static readonly int Horizontal = Animator.StringToHash("Horizontal");

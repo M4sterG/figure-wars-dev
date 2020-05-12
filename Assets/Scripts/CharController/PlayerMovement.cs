@@ -15,7 +15,7 @@ using UnityEngine.UIElements;
 public class PlayerMovement : MonoBehaviour
 {
     private AnimationController animController;
-    public Transform player;
+    public Transform playerBody;
     public Animator headAnim;
     public Animator topAnim;
     public Animator legsAnim;
@@ -223,66 +223,58 @@ public class PlayerMovement : MonoBehaviour
         bool moving = false;
         if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
         {
-            moving = true;
-            dir = Direction.BackLeft;
-            resetLook();
-            setMoveDir(dir);
+            setMovingParams(Direction.BackLeft, out moving);
             return;
         }
 
         if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
         {
-            moving = true;
-            dir = Direction.BackRight;
-            resetLook();
-            setMoveDir(dir);
+            setMovingParams(Direction.BackRight, out moving);
             return;
         }
 
         if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S))
         {
-            moving = true;
-            dir = Direction.Left;
-            resetLook();
-            setMoveDir(dir);
+            setMovingParams(Direction.Left, out moving);
             return;
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            moving = true;
-            dir = Direction.Right;
-            resetLook();
-            setMoveDir(dir);
+            setMovingParams(Direction.Right, out moving);
             return;
         }
-
         if (Input.GetKey(KeyCode.S))
         {
-            dir = Direction.Back;
-            moving = true;
-            resetLook();
-            setMoveDir(dir);
+            setMovingParams(Direction.Back, out moving);
             return;
         }
 
         if (Input.GetKey(KeyCode.W))
         {
-            dir = Direction.Front;
-            moving = true;
-            resetLook();
-            setMoveDir(dir);
+           setMovingParams(Direction.Front, out moving);
             return;
         }
 
         dir = Direction.None;
-        dir = Direction.None;
         lookX += MouseX;
         lookY += MouseY;
         animController.goIdle(lookX / 90F, lookY / 90f);
+        
         animController.setDir(-1);
-    
-}
+    }
+
+    private void setMovingParams(Direction newDir, out bool moving)
+    {
+        if (dir == Direction.None)
+        {
+            playerBody.Rotate(Vector3.up * lookX);
+        }
+        dir = newDir;
+        moving = true;
+        resetLook();
+        setMoveDir(dir);
+    }
 
     private void checkShoot()
     {

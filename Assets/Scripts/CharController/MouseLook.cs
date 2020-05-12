@@ -10,13 +10,11 @@ public class MouseLook : MonoBehaviour
     public float mouseSens;
 
     public Transform player;
-    public Transform headTransform;
     public Transform rocketLauncher;
     public Transform camera;
     private float xRotation = 0f;
     private float mouseX;
-
-    private float headRotation = 0f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -52,15 +50,5 @@ public class MouseLook : MonoBehaviour
         return Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D);
     }
 
-    private void LateUpdate()
-    {
-        if (moving())
-        {
-            headRotation = 0f;
-        }
-        else
-        {
-            headRotation += mouseX;
-        }
-    }
+   
 }
