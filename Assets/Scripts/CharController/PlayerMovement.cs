@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.Transactions;
 using DefaultNamespace.CharController;
 using Scripts.Classes.Main;
 using Scripts.Weapons;
@@ -24,6 +25,10 @@ public class PlayerMovement : MonoBehaviour
 
     private float lookX = 0f;
     private float lookY = 0f;
+    private bool rotatingInPlace = false;
+    private float lookRotationTime = 0f;
+    private float lookRotationSpeed = 0.5f;
+    private Direction lookRotationDirection = Direction.None;
 
     private float MouseX
     {
@@ -260,6 +265,37 @@ public class PlayerMovement : MonoBehaviour
         lookX += MouseX;
         lookY += MouseY;
         animController.goIdle(lookX / 90F, lookY / 90f);
+        Quaternion current = playerBody.rotation;
+        if (Mathf.Abs(lookX) >= 90f)
+        {
+            if (Mathf.Sign(lookX) > 0)
+            {
+                lookRotationDirection = Direction.Right;
+            }
+            else
+            {
+                lookRotationDirection = Direction.Left;
+            }
+
+            int directionSign = lookRotationDirection == Direction.Right ? 1 : -1;
+            rotatingInPlace = true;
+            lookRotationTime = 0f;
+            lookRotationTime += Time.deltaTime * lookRotationSpeed;
+            playerBody.rotation = Quaternion.Lerp(current, Quaternion.Euler(0,directionSign * 90,0), lookRotationTime);
+            lookX = 0;
+        }
+        else if (rotatingInPlace)
+        {
+            int directionSign = lookRotationDirection == Direction.Right ? 1 : -1;
+            lookRotationTime += Time.deltaTime * lookRotationSpeed;
+            playerBody.rotation = Quaternion.Lerp(current, Quaternion.Euler(0, directionSign * 90, 0), lookRotationTime);
+            if (lookRotationTime > 1)
+            {
+                lookRotationTime = 0f;
+                rotatingInPlace = false;
+            }
+        }
+        
         
         animController.setDir(-1);
     }
@@ -274,6 +310,8 @@ public class PlayerMovement : MonoBehaviour
         moving = true;
         resetLook();
         setMoveDir(dir);
+        //rotatingInPlace = false;
+        //lookRotationTime = 0f;
     }
 
     private void checkShoot()
