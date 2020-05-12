@@ -51,7 +51,7 @@ namespace DefaultNamespace.CharController
             this.shoesAnim = shoesAnim;
         }
 
-        public void goIdle(float mouseX, float mouseY)
+        public void setLookAngles(float mouseX, float mouseY)
         {
             AllAnims.ForEach(anim =>
             {

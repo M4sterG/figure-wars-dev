@@ -454,5 +454,10 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1176951767}
+    - target: {fileID: 512679216479325446, guid: 8c3faf1ad8c6e084381a8cf6c4b430a7,
+        type: 3}
+      propertyPath: mouseSens
+      value: 60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c3faf1ad8c6e084381a8cf6c4b430a7, type: 3}

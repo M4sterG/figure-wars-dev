@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     public Animator legsAnim;
     public Animator shoesAnim;
     public Animator handsAnim;
+    
+    private const float mouseSens = 60f;
 
     private float lookX = 0f;
     private float lookY = 0f;
@@ -29,15 +31,16 @@ public class PlayerMovement : MonoBehaviour
     private float lookRotationTime = 0f;
     private float lookRotationSpeed = 0.5f;
     private Direction lookRotationDirection = Direction.None;
+    private Quaternion lookRotationAngle = Quaternion.Euler(0, 0, 0);
 
     private float MouseX
     {
-        get => Input.GetAxis("Mouse X") * 60f * Time.deltaTime;
+        get => Input.GetAxis("Mouse X") * mouseSens * Time.deltaTime;
     }
 
     private float MouseY
     {
-        get => Input.GetAxis("Mouse Y") * 60f * Time.deltaTime;
+        get => Input.GetAxis("Mouse Y") * mouseSens * Time.deltaTime;
     }
 
 
@@ -260,11 +263,11 @@ public class PlayerMovement : MonoBehaviour
            setMovingParams(Direction.Front, out moving);
             return;
         }
-
+        
         dir = Direction.None;
         lookX += MouseX;
         lookY += MouseY;
-        animController.goIdle(lookX / 90F, lookY / 90f);
+        animController.setLookAngles(lookX / 90F, lookY / 90f);
         Quaternion current = playerBody.rotation;
         if (Mathf.Abs(lookX) >= 90f)
         {
@@ -281,14 +284,17 @@ public class PlayerMovement : MonoBehaviour
             rotatingInPlace = true;
             lookRotationTime = 0f;
             lookRotationTime += Time.deltaTime * lookRotationSpeed;
-            playerBody.rotation = Quaternion.Lerp(current, Quaternion.Euler(0,directionSign * 90,0), lookRotationTime);
-            lookX = 0;
+            lookRotationAngle = Quaternion.Euler(0, camera.eulerAngles.y, 0);
+            playerBody.rotation = Quaternion.Lerp(current, lookRotationAngle, lookRotationTime);
+            lookX = 0f;
+            animController.setLookAngles(0f, lookY);
         }
         else if (rotatingInPlace)
         {
             int directionSign = lookRotationDirection == Direction.Right ? 1 : -1;
             lookRotationTime += Time.deltaTime * lookRotationSpeed;
-            playerBody.rotation = Quaternion.Lerp(current, Quaternion.Euler(0, directionSign * 90, 0), lookRotationTime);
+            playerBody.rotation = Quaternion.Lerp
+                (current, lookRotationAngle, lookRotationTime);
             if (lookRotationTime > 1)
             {
                 lookRotationTime = 0f;
@@ -304,14 +310,23 @@ public class PlayerMovement : MonoBehaviour
     {
         if (dir == Direction.None)
         {
-            playerBody.Rotate(Vector3.up * lookX);
+            rotatePlayerTowardsCamera();
+            lookX = 0f;
+            lookY = 0f;
+            animController.setLookAngles(lookX, lookY);
+            lookRotationTime = 0f;
+            rotatingInPlace = false;
         }
         dir = newDir;
         moving = true;
         resetLook();
         setMoveDir(dir);
-        //rotatingInPlace = false;
-        //lookRotationTime = 0f;
+    }
+
+    private void rotatePlayerTowardsCamera()
+    {
+         Quaternion lookDirection = Quaternion.Euler(0f, camera.eulerAngles.y, 0f);
+         playerBody.rotation = lookDirection;
     }
 
     private void checkShoot()
