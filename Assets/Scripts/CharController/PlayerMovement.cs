@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator shoesAnim;
     public Animator handsAnim;
     
-    private const float mouseSens = 60f;
+    private const float mouseSens = 300f;
 
     private float lookX = 0f;
     private float lookY = 0f;
@@ -287,7 +287,7 @@ public class PlayerMovement : MonoBehaviour
             lookRotationAngle = Quaternion.Euler(0, camera.eulerAngles.y, 0);
             playerBody.rotation = Quaternion.Lerp(current, lookRotationAngle, lookRotationTime);
             lookX = 0f;
-            animController.setLookAngles(0f, lookY);
+            animController.setLookAngles(lookX, lookY);
         }
         else if (rotatingInPlace)
         {
