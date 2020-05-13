@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator shoesAnim;
     public Animator handsAnim;
     
-    private const float mouseSens = 300f;
+    private const float mouseSens = 60f;
 
     private float lookX = 0f;
     private float lookY = 0f;
@@ -265,22 +265,19 @@ public class PlayerMovement : MonoBehaviour
         }
         
         dir = Direction.None;
+        if (!isGrounded)
+        {
+            rotatePlayerTowardsCamera();
+            return;
+        }
+        // when idle with melee must set look parameter to look around
         lookX += MouseX;
         lookY += MouseY;
         animController.setLookAngles(lookX / 90F, lookY / 90f);
         Quaternion current = playerBody.rotation;
         if (Mathf.Abs(lookX) >= 90f)
         {
-            if (Mathf.Sign(lookX) > 0)
-            {
-                lookRotationDirection = Direction.Right;
-            }
-            else
-            {
-                lookRotationDirection = Direction.Left;
-            }
-
-            int directionSign = lookRotationDirection == Direction.Right ? 1 : -1;
+           
             rotatingInPlace = true;
             lookRotationTime = 0f;
             lookRotationTime += Time.deltaTime * lookRotationSpeed;
@@ -291,7 +288,6 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (rotatingInPlace)
         {
-            int directionSign = lookRotationDirection == Direction.Right ? 1 : -1;
             lookRotationTime += Time.deltaTime * lookRotationSpeed;
             playerBody.rotation = Quaternion.Lerp
                 (current, lookRotationAngle, lookRotationTime);
