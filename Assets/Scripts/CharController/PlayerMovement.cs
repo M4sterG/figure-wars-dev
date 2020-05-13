@@ -101,6 +101,7 @@ public class PlayerMovement : MonoBehaviour
         {2, 0.48f} //0.45f or 0.48f - Driver
     };
 
+    private float fireTime = 0f;
     private float sgFireRate = 0.8f;
     private float rifleFireRate = 9.5f; // 1000 rifle fire rate (10 bullets per second)
     private float rifleFire = 0f;
@@ -334,7 +335,12 @@ public class PlayerMovement : MonoBehaviour
             switch (eq)
             {
                 case WeaponType.Melee:
-                    animController.setFiring(true);
+                    if (Time.time - fireTime >= 0.15f)
+                    {
+                        // to prevent shooting twice if you click just for a couple of consecutive frames
+                        animController.triggerFire();
+                        fireTime = Time.time;
+                    }
                     break;
                 case WeaponType.Shotgun:
                     // swapType to be set in unity debugger
@@ -380,7 +386,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            animController.setFiring(false);
+            //animController.Fire();
         }
     }
 

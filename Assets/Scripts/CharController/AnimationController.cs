@@ -68,9 +68,9 @@ namespace DefaultNamespace.CharController
             AllAnims.ForEach(anim => anim.SetFloat(SwapCounter, time));
         }
 
-        public void setFiring(bool firing)
+        public void triggerFire()
         {
-            AllAnims.ForEach(anim => anim.SetBool(IsFiring, firing));
+            AllAnims.ForEach(anim => anim.SetTrigger(IsFiring));
         }
 
         public void shootMelee()
