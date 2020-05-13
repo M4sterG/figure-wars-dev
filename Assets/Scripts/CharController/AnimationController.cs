@@ -28,6 +28,8 @@ namespace DefaultNamespace.CharController
             isGrounded = value;
         }
 
+
+
         public void setSecondJumping(bool second)
         {
             AllAnims.ForEach(anim => anim.SetBool(SecondJump, second));
@@ -40,6 +42,7 @@ namespace DefaultNamespace.CharController
         private static readonly int EquippedWeapon = Animator.StringToHash("EquippedWeapon");
         private static readonly int MoveDir = Animator.StringToHash("MoveDir");
         private static readonly int SwapCounter = Animator.StringToHash("SwapCounter");
+        private static readonly int IsFiring = Animator.StringToHash("isFiring");
 
         public AnimationController(Animator headAnim, Animator topAnim
             , Animator legsAnim, Animator shoesAnim, Animator handsAnim)
@@ -63,6 +66,11 @@ namespace DefaultNamespace.CharController
         public void setSwapCounter(float time)
         {
             AllAnims.ForEach(anim => anim.SetFloat(SwapCounter, time));
+        }
+
+        public void setFiring(bool firing)
+        {
+            AllAnims.ForEach(anim => anim.SetBool(IsFiring, firing));
         }
 
         public void shootMelee()

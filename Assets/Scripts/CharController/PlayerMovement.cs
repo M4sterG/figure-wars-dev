@@ -313,11 +313,13 @@ public class PlayerMovement : MonoBehaviour
             lookRotationTime = 0f;
             rotatingInPlace = false;
         }
+        
         dir = newDir;
         moving = true;
         resetLook();
         setMoveDir(dir);
     }
+    
 
     private void rotatePlayerTowardsCamera()
     {
@@ -332,6 +334,7 @@ public class PlayerMovement : MonoBehaviour
             switch (eq)
             {
                 case WeaponType.Melee:
+                    animController.setFiring(true);
                     break;
                 case WeaponType.Shotgun:
                     // swapType to be set in unity debugger
@@ -374,6 +377,10 @@ public class PlayerMovement : MonoBehaviour
                 default:
                     break;
             }
+        }
+        else
+        {
+            animController.setFiring(false);
         }
     }
 
