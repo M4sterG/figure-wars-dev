@@ -213,6 +213,7 @@ public class PlayerMovement : MonoBehaviour
     {
         lookX = 0f;
         lookY = 0f;
+        animController.setLookAngles(0f, 0f);
     }
 
     private bool isMovingBackwards()
@@ -334,6 +335,7 @@ public class PlayerMovement : MonoBehaviour
             switch (eq)
             {
                 case WeaponType.Melee:
+                    Debug.Log(lookX + " | " + lookY);
                     if (Time.time - fireTime >= 0.15f)
                     {
                         // to prevent shooting twice if you click just for a couple of consecutive frames
