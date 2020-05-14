@@ -43,6 +43,7 @@ namespace DefaultNamespace.CharController
         private static readonly int MoveDir = Animator.StringToHash("MoveDir");
         private static readonly int SwapCounter = Animator.StringToHash("SwapCounter");
         private static readonly int IsFiring = Animator.StringToHash("isFiring");
+        private static readonly int SinceFire = Animator.StringToHash("SinceFire");
 
         public AnimationController(Animator headAnim, Animator topAnim
             , Animator legsAnim, Animator shoesAnim, Animator handsAnim)
@@ -52,6 +53,11 @@ namespace DefaultNamespace.CharController
             this.legsAnim = legsAnim;
             this.handsAnim = handsAnim;
             this.shoesAnim = shoesAnim;
+        }
+
+        public void setSinceFire(float timeSince)
+        {
+            AllAnims.ForEach(anim => anim.SetFloat(SinceFire, timeSince));
         }
 
         public void setLookAngles(float mouseX, float mouseY)

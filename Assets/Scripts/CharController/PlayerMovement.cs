@@ -161,6 +161,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animController.setSinceFire(Time.time - fireTime);
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDist, groundMask);
         transRight = transform.right;
         transForward = transform.forward;
@@ -335,7 +336,6 @@ public class PlayerMovement : MonoBehaviour
             switch (eq)
             {
                 case WeaponType.Melee:
-                    Debug.Log(lookX + " | " + lookY);
                     if (Time.time - fireTime >= 0.15f)
                     {
                         // to prevent shooting twice if you click just for a couple of consecutive frames
