@@ -180,7 +180,6 @@ public class PlayerMovement : MonoBehaviour
         checkSwap();
         checkShoot();
         swapCounter += Time.deltaTime;
-        swapCounter += Time.deltaTime;
         animController.setSwapCounter(swapCounter);
 
         if (Input.GetButtonDown("Jump"))
