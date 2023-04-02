@@ -129,7 +129,7 @@ TextureImporter:
       213: 1367066161725989953
     second: icon_weapon_SNIPER_03_21
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -149,6 +149,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -158,8 +160,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 1
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 0
     wrapV: 0
     wrapW: 0
@@ -180,10 +182,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -199,6 +205,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 1
     textureFormat: -1
@@ -228,7 +258,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: bf3b958aeaae4ec40800000000000000
-      internalID: 5540811477442212859
+      internalID: 8665190210258782990
       vertices: []
       indices: 
       edges: []
@@ -249,7 +279,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 1b92e43aa73c6dd20800000000000000
-      internalID: 3303042308216072625
+      internalID: -5305397710910557431
       vertices: []
       indices: 
       edges: []
@@ -270,7 +300,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: a8f0bdd20f1ae6e50800000000000000
-      internalID: 6804554139936952202
+      internalID: -8859728795221968120
       vertices: []
       indices: 
       edges: []
@@ -291,7 +321,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 25b400750ab278a30800000000000000
-      internalID: 4217387543710157650
+      internalID: 2180492804955378199
       vertices: []
       indices: 
       edges: []
@@ -312,7 +342,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 4a7afce98b125f500800000000000000
-      internalID: 429286416305858468
+      internalID: 3448177954167477669
       vertices: []
       indices: 
       edges: []
@@ -333,7 +363,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 9b99b48816bff3100800000000000000
-      internalID: 90066913887754681
+      internalID: 7574061826334546724
       vertices: []
       indices: 
       edges: []
@@ -354,7 +384,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: f7294fbb2d6ca7430800000000000000
-      internalID: 3781553445529752191
+      internalID: -3800104381434296503
       vertices: []
       indices: 
       edges: []
@@ -375,7 +405,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 697fe03670de434d0800000000000000
-      internalID: -3155636822897395818
+      internalID: 2521091067730277582
       vertices: []
       indices: 
       edges: []
@@ -396,7 +426,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 8c6285e521e953000800000000000000
-      internalID: 15091975495100104
+      internalID: 5847437030814589056
       vertices: []
       indices: 
       edges: []
@@ -417,7 +447,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: aae41a6c8ae86a5a0800000000000000
-      internalID: -6510359355779363158
+      internalID: -7676411924267361238
       vertices: []
       indices: 
       edges: []
@@ -438,7 +468,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: e0774921d273f9870800000000000000
-      internalID: 8691726472573122318
+      internalID: -1355808839297060851
       vertices: []
       indices: 
       edges: []
@@ -459,7 +489,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: e9d6e7897330b8cb0800000000000000
-      internalID: -4860787835499811426
+      internalID: 5533432411364484109
       vertices: []
       indices: 
       edges: []
@@ -480,7 +510,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 139546ad880560150800000000000000
-      internalID: 5838442515642210609
+      internalID: -4971050419900813886
       vertices: []
       indices: 
       edges: []
@@ -501,7 +531,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c84604a36b9a1c330800000000000000
-      internalID: 3729448566565921932
+      internalID: -2977324561440695409
       vertices: []
       indices: 
       edges: []
@@ -522,7 +552,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 735a1097e71a59320800000000000000
-      internalID: 2564133127425467703
+      internalID: 3221867421884971186
       vertices: []
       indices: 
       edges: []
@@ -543,7 +573,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 09450d3eba3597a90800000000000000
-      internalID: -7315724121960065904
+      internalID: -864644789071970675
       vertices: []
       indices: 
       edges: []
@@ -564,7 +594,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: a500b41f916564ba0800000000000000
-      internalID: -6105097575431733158
+      internalID: 3194025321347984964
       vertices: []
       indices: 
       edges: []
@@ -585,7 +615,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: e01d5e786f266a100800000000000000
-      internalID: 118891251153359118
+      internalID: 7681314712451392602
       vertices: []
       indices: 
       edges: []
@@ -606,7 +636,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 1f633c093a1151530800000000000000
-      internalID: 3824982852727158513
+      internalID: -5866663260717640769
       vertices: []
       indices: 
       edges: []
@@ -627,7 +657,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 3ba7ec7cf24c849e0800000000000000
-      internalID: -1636842755054470477
+      internalID: 5723077291057724921
       vertices: []
       indices: 
       edges: []
@@ -684,6 +714,29 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      icon_weapon_SNIPER_03_0: 8665190210258782990
+      icon_weapon_SNIPER_03_1: -5305397710910557431
+      icon_weapon_SNIPER_03_10: -1355808839297060851
+      icon_weapon_SNIPER_03_11: 5533432411364484109
+      icon_weapon_SNIPER_03_12: -4971050419900813886
+      icon_weapon_SNIPER_03_13: -2977324561440695409
+      icon_weapon_SNIPER_03_14: 3221867421884971186
+      icon_weapon_SNIPER_03_15: -864644789071970675
+      icon_weapon_SNIPER_03_16: 3194025321347984964
+      icon_weapon_SNIPER_03_17: 7681314712451392602
+      icon_weapon_SNIPER_03_18: -5866663260717640769
+      icon_weapon_SNIPER_03_19: 5723077291057724921
+      icon_weapon_SNIPER_03_2: -8859728795221968120
+      icon_weapon_SNIPER_03_20: -2355075133355898391
+      icon_weapon_SNIPER_03_21: 1367066161725989953
+      icon_weapon_SNIPER_03_3: 2180492804955378199
+      icon_weapon_SNIPER_03_4: 3448177954167477669
+      icon_weapon_SNIPER_03_5: 7574061826334546724
+      icon_weapon_SNIPER_03_6: -3800104381434296503
+      icon_weapon_SNIPER_03_7: 2521091067730277582
+      icon_weapon_SNIPER_03_8: 5847437030814589056
+      icon_weapon_SNIPER_03_9: -7676411924267361238
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

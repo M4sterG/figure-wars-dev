@@ -93,7 +93,7 @@ TextureImporter:
       213: 8072788326456870703
     second: icon_weapon_SNIPER_01_29
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -113,6 +113,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -122,8 +124,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 1
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 0
     wrapV: 0
     wrapW: 0
@@ -144,10 +146,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -163,6 +169,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 1
     textureFormat: -1
@@ -816,6 +846,37 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      icon_weapon_SNIPER_01_0: 8388220358228217093
+      icon_weapon_SNIPER_01_1: 8170006772607306239
+      icon_weapon_SNIPER_01_10: 8652619592501228281
+      icon_weapon_SNIPER_01_11: -3520478331510740584
+      icon_weapon_SNIPER_01_12: 3752069416703588287
+      icon_weapon_SNIPER_01_13: 1012324009445861619
+      icon_weapon_SNIPER_01_14: 363892786492762139
+      icon_weapon_SNIPER_01_15: 8445781396660425947
+      icon_weapon_SNIPER_01_16: 5956696766117497899
+      icon_weapon_SNIPER_01_17: -176398433820860848
+      icon_weapon_SNIPER_01_18: -6271459920298271451
+      icon_weapon_SNIPER_01_19: -2888672203359379886
+      icon_weapon_SNIPER_01_2: 2718347310425123443
+      icon_weapon_SNIPER_01_20: 1348581528151825802
+      icon_weapon_SNIPER_01_21: -6368449195999555886
+      icon_weapon_SNIPER_01_22: 429285458347283003
+      icon_weapon_SNIPER_01_23: 4517661767187747334
+      icon_weapon_SNIPER_01_24: -45020576253884715
+      icon_weapon_SNIPER_01_25: 7947008806157462529
+      icon_weapon_SNIPER_01_26: -5311571891332262944
+      icon_weapon_SNIPER_01_27: -843222376762847933
+      icon_weapon_SNIPER_01_28: -2161929115514818843
+      icon_weapon_SNIPER_01_29: 8072788326456870703
+      icon_weapon_SNIPER_01_3: 3059211497987428282
+      icon_weapon_SNIPER_01_4: -3760035754104620640
+      icon_weapon_SNIPER_01_5: 5263153089827260186
+      icon_weapon_SNIPER_01_6: 5222768600246668191
+      icon_weapon_SNIPER_01_7: -5400905387419827271
+      icon_weapon_SNIPER_01_8: 551696626037799715
+      icon_weapon_SNIPER_01_9: 4972921641273193880
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

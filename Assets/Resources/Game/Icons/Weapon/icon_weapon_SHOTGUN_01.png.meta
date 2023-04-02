@@ -93,7 +93,7 @@ TextureImporter:
       213: 5550123633891574258
     second: icon_weapon_SHOTGUN_01_29
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -113,6 +113,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -122,8 +124,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 1
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 0
     wrapV: 0
     wrapW: 0
@@ -144,10 +146,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -163,6 +169,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 1
     textureFormat: -1
@@ -816,6 +846,37 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      icon_weapon_SHOTGUN_01_0: 4463739512999462068
+      icon_weapon_SHOTGUN_01_1: -6199906918983197766
+      icon_weapon_SHOTGUN_01_10: -4877055364557916325
+      icon_weapon_SHOTGUN_01_11: 4331800676752711733
+      icon_weapon_SHOTGUN_01_12: 2920871380199540344
+      icon_weapon_SHOTGUN_01_13: -1889338344309049753
+      icon_weapon_SHOTGUN_01_14: -7720700391960995648
+      icon_weapon_SHOTGUN_01_15: -3850053802903681258
+      icon_weapon_SHOTGUN_01_16: -3460368389758454573
+      icon_weapon_SHOTGUN_01_17: -9027838066660305360
+      icon_weapon_SHOTGUN_01_18: 1366663837851550959
+      icon_weapon_SHOTGUN_01_19: -7017397503891554766
+      icon_weapon_SHOTGUN_01_2: 5317030636284979559
+      icon_weapon_SHOTGUN_01_20: 5248547905903584155
+      icon_weapon_SHOTGUN_01_21: 4757617757192703583
+      icon_weapon_SHOTGUN_01_22: -5213754173152092849
+      icon_weapon_SHOTGUN_01_23: 7681742586061984597
+      icon_weapon_SHOTGUN_01_24: -3654985100606699461
+      icon_weapon_SHOTGUN_01_25: -7540781111943673409
+      icon_weapon_SHOTGUN_01_26: -7889290680554754294
+      icon_weapon_SHOTGUN_01_27: -7797983053653211105
+      icon_weapon_SHOTGUN_01_28: -2283075289933569519
+      icon_weapon_SHOTGUN_01_29: 5550123633891574258
+      icon_weapon_SHOTGUN_01_3: -1778872813261823025
+      icon_weapon_SHOTGUN_01_4: 6446791857799195415
+      icon_weapon_SHOTGUN_01_5: 5906365364347910982
+      icon_weapon_SHOTGUN_01_6: -9223355306248040017
+      icon_weapon_SHOTGUN_01_7: 2209885835544724170
+      icon_weapon_SHOTGUN_01_8: 3729998094632026251
+      icon_weapon_SHOTGUN_01_9: -1902648105392873306
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

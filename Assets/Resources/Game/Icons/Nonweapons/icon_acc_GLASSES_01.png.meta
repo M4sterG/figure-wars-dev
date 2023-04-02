@@ -81,7 +81,7 @@ TextureImporter:
       213: -503916804671341262
     second: icon_acc_GLASSES_01_25
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -101,6 +101,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -110,11 +112,11 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 1
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -132,10 +134,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -151,6 +157,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 1
     textureFormat: -1
@@ -720,6 +750,33 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      icon_acc_GLASSES_01_0: -677136712215692811
+      icon_acc_GLASSES_01_1: -5872367866578873197
+      icon_acc_GLASSES_01_10: 6421473078377641729
+      icon_acc_GLASSES_01_11: -731518541726157858
+      icon_acc_GLASSES_01_12: -3587634090401013664
+      icon_acc_GLASSES_01_13: -7188054447389823923
+      icon_acc_GLASSES_01_14: 7505103035362126280
+      icon_acc_GLASSES_01_15: 2847555624822682598
+      icon_acc_GLASSES_01_16: -8614390826558839460
+      icon_acc_GLASSES_01_17: 7012006474099068351
+      icon_acc_GLASSES_01_18: -4820266039379499350
+      icon_acc_GLASSES_01_19: -1749877153819498063
+      icon_acc_GLASSES_01_2: -1888460668528087933
+      icon_acc_GLASSES_01_20: 1711680539588136668
+      icon_acc_GLASSES_01_21: 7907296073970130985
+      icon_acc_GLASSES_01_22: -7496163030152364962
+      icon_acc_GLASSES_01_23: -7451548026231220546
+      icon_acc_GLASSES_01_24: 3816146590354394386
+      icon_acc_GLASSES_01_25: -503916804671341262
+      icon_acc_GLASSES_01_3: -8083580357621804394
+      icon_acc_GLASSES_01_4: -315573737967529056
+      icon_acc_GLASSES_01_5: 23162032278504687
+      icon_acc_GLASSES_01_6: 2591226990044707678
+      icon_acc_GLASSES_01_7: 6706771067974641985
+      icon_acc_GLASSES_01_8: 5749455592261688380
+      icon_acc_GLASSES_01_9: -5138904650265455645
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

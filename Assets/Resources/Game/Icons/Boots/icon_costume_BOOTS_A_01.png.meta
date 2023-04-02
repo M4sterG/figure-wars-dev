@@ -75,7 +75,7 @@ TextureImporter:
       213: -154854525021058340
     second: icon_costume_BOOTS_A_01_23
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -95,6 +95,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -103,12 +105,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -126,10 +128,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -145,6 +151,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 1
     textureFormat: -1
@@ -672,6 +702,31 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      icon_costume_BOOTS_A_01_0: -4793971126545131956
+      icon_costume_BOOTS_A_01_1: -7727094762936322633
+      icon_costume_BOOTS_A_01_10: -5082358998617414068
+      icon_costume_BOOTS_A_01_11: 7637868870779457519
+      icon_costume_BOOTS_A_01_12: 9028150710217582018
+      icon_costume_BOOTS_A_01_13: 3978433584261635054
+      icon_costume_BOOTS_A_01_14: -4044719227009260291
+      icon_costume_BOOTS_A_01_15: -5448290922454132515
+      icon_costume_BOOTS_A_01_16: 5819466759195221737
+      icon_costume_BOOTS_A_01_17: -369619102316126430
+      icon_costume_BOOTS_A_01_18: 3151751380377805588
+      icon_costume_BOOTS_A_01_19: -4204498433100115212
+      icon_costume_BOOTS_A_01_2: -3788248826137768712
+      icon_costume_BOOTS_A_01_20: -5583393058494397987
+      icon_costume_BOOTS_A_01_21: -3650539655857617070
+      icon_costume_BOOTS_A_01_22: -550900894995798926
+      icon_costume_BOOTS_A_01_23: -154854525021058340
+      icon_costume_BOOTS_A_01_3: -3243005341513222343
+      icon_costume_BOOTS_A_01_4: 3754729734154165814
+      icon_costume_BOOTS_A_01_5: -7806249189893419753
+      icon_costume_BOOTS_A_01_6: -4569057229009040646
+      icon_costume_BOOTS_A_01_7: 2927957976991796360
+      icon_costume_BOOTS_A_01_8: -5647482955963256880
+      icon_costume_BOOTS_A_01_9: -6275943708589585945
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

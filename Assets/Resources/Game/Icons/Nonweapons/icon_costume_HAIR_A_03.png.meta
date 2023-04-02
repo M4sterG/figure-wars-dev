@@ -93,7 +93,7 @@ TextureImporter:
       213: -6310724334687777935
     second: icon_costume_HAIR_A_03_29
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -113,6 +113,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -121,12 +123,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -144,10 +146,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -163,6 +169,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 1
     textureFormat: -1
@@ -816,6 +846,37 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      icon_costume_HAIR_A_03_0: 5287664646143129505
+      icon_costume_HAIR_A_03_1: -4637589725904551958
+      icon_costume_HAIR_A_03_10: 6288698509982562109
+      icon_costume_HAIR_A_03_11: 3833933067511712942
+      icon_costume_HAIR_A_03_12: -6633873165993296994
+      icon_costume_HAIR_A_03_13: 4421865094534194700
+      icon_costume_HAIR_A_03_14: 3776503687963296416
+      icon_costume_HAIR_A_03_15: -5876530787211667105
+      icon_costume_HAIR_A_03_16: 6488181442208637791
+      icon_costume_HAIR_A_03_17: -79801380323178539
+      icon_costume_HAIR_A_03_18: -5854301478990688957
+      icon_costume_HAIR_A_03_19: -2132032019456780082
+      icon_costume_HAIR_A_03_2: -686569888465499254
+      icon_costume_HAIR_A_03_20: -7714989790825775779
+      icon_costume_HAIR_A_03_21: -3647703777085720744
+      icon_costume_HAIR_A_03_22: -1240716899348673272
+      icon_costume_HAIR_A_03_23: -2176651965409612297
+      icon_costume_HAIR_A_03_24: 7189059271361293199
+      icon_costume_HAIR_A_03_25: 1294950867544778037
+      icon_costume_HAIR_A_03_26: -2418219057720304923
+      icon_costume_HAIR_A_03_27: 2543350444986811216
+      icon_costume_HAIR_A_03_28: -1987707931233488479
+      icon_costume_HAIR_A_03_29: -6310724334687777935
+      icon_costume_HAIR_A_03_3: 8114517382012983791
+      icon_costume_HAIR_A_03_4: 6737262591505851777
+      icon_costume_HAIR_A_03_5: 1292973647701746388
+      icon_costume_HAIR_A_03_6: 7709549819648189005
+      icon_costume_HAIR_A_03_7: -71519558191443118
+      icon_costume_HAIR_A_03_8: -4169314018776923874
+      icon_costume_HAIR_A_03_9: -756782780601743095
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

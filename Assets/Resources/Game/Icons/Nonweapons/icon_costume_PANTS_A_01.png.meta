@@ -78,7 +78,7 @@ TextureImporter:
       213: -6596921737585944849
     second: icon_costume_PANTS_A_01_24
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -98,6 +98,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -106,12 +108,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -129,10 +131,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -148,6 +154,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -696,6 +726,32 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      icon_costume_PANTS_A_01_0: 6730637281899887652
+      icon_costume_PANTS_A_01_1: -6157974306178327426
+      icon_costume_PANTS_A_01_10: 4390014919943936918
+      icon_costume_PANTS_A_01_11: 2373852912265378008
+      icon_costume_PANTS_A_01_12: -6001438916037690801
+      icon_costume_PANTS_A_01_13: 3391030166795406022
+      icon_costume_PANTS_A_01_14: -1265621412125567247
+      icon_costume_PANTS_A_01_15: -2013184184758120570
+      icon_costume_PANTS_A_01_16: 8655146681215478447
+      icon_costume_PANTS_A_01_17: -7322177917492004841
+      icon_costume_PANTS_A_01_18: -4467196974743809830
+      icon_costume_PANTS_A_01_19: -5502651905397867170
+      icon_costume_PANTS_A_01_2: -1309005573936988832
+      icon_costume_PANTS_A_01_20: 5238127604611079415
+      icon_costume_PANTS_A_01_21: -7057262554535400102
+      icon_costume_PANTS_A_01_22: 1310329141930691690
+      icon_costume_PANTS_A_01_23: 2799010408391084686
+      icon_costume_PANTS_A_01_24: -6596921737585944849
+      icon_costume_PANTS_A_01_3: -8400248960198021662
+      icon_costume_PANTS_A_01_4: 8245515968186382216
+      icon_costume_PANTS_A_01_5: -1955074688639039175
+      icon_costume_PANTS_A_01_6: -4631343209523936447
+      icon_costume_PANTS_A_01_7: 6517954940608714678
+      icon_costume_PANTS_A_01_8: -8737262561053199954
+      icon_costume_PANTS_A_01_9: -1837237721776458011
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -93,7 +93,7 @@ TextureImporter:
       213: 1070407751072393420
     second: icon_weapon_GRENADE_02_29
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -113,6 +113,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -122,8 +124,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 1
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 0
     wrapV: 0
     wrapW: 0
@@ -144,10 +146,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -163,6 +169,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 1
     textureFormat: -1
@@ -816,6 +846,37 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      icon_weapon_GRENADE_02_0: 1111007891773170796
+      icon_weapon_GRENADE_02_1: 7015967119576298301
+      icon_weapon_GRENADE_02_10: -8629365519733641276
+      icon_weapon_GRENADE_02_11: -3397479691390774614
+      icon_weapon_GRENADE_02_12: 2400208962165278712
+      icon_weapon_GRENADE_02_13: 3136143377512971634
+      icon_weapon_GRENADE_02_14: 4051019565105749458
+      icon_weapon_GRENADE_02_15: -5413959389641208876
+      icon_weapon_GRENADE_02_16: -7489109917065565048
+      icon_weapon_GRENADE_02_17: 1136345365081677620
+      icon_weapon_GRENADE_02_18: -5020096783820219432
+      icon_weapon_GRENADE_02_19: -5757750686291596217
+      icon_weapon_GRENADE_02_2: 8114889612555985865
+      icon_weapon_GRENADE_02_20: -8128554937692691266
+      icon_weapon_GRENADE_02_21: -6765245502776512067
+      icon_weapon_GRENADE_02_22: 1992571210474993235
+      icon_weapon_GRENADE_02_23: -6672731631252815508
+      icon_weapon_GRENADE_02_24: -8640030533509963504
+      icon_weapon_GRENADE_02_25: -3743900015565348854
+      icon_weapon_GRENADE_02_26: -5015178685741857096
+      icon_weapon_GRENADE_02_27: 6831052629902030125
+      icon_weapon_GRENADE_02_28: 183419502615830041
+      icon_weapon_GRENADE_02_29: 1070407751072393420
+      icon_weapon_GRENADE_02_3: -1289797565664987503
+      icon_weapon_GRENADE_02_4: 8505179806399970694
+      icon_weapon_GRENADE_02_5: 2233396088208972605
+      icon_weapon_GRENADE_02_6: 958535453082900628
+      icon_weapon_GRENADE_02_7: 708119641143044064
+      icon_weapon_GRENADE_02_8: -5877688806258173471
+      icon_weapon_GRENADE_02_9: -8490058313242904224
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

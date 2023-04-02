@@ -7,8 +7,8 @@ using Scripts.Classes.Main;
 using Scripts.Weapons;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Experimental.TerrainAPI;
-using UnityEngine.Rendering.UI;
+using UnityEngine.TerrainTools;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {

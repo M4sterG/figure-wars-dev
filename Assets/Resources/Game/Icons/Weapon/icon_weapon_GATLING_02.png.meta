@@ -93,7 +93,7 @@ TextureImporter:
       213: -4664651668362177461
     second: icon_weapon_GATLING_02_29
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -113,6 +113,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -122,8 +124,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 1
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 0
     wrapV: 0
     wrapW: 0
@@ -144,10 +146,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -163,6 +169,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 1
     textureFormat: -1
@@ -816,6 +846,37 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      icon_weapon_GATLING_02_0: -7124938273692889416
+      icon_weapon_GATLING_02_1: 2897888392524410275
+      icon_weapon_GATLING_02_10: -493636891888753117
+      icon_weapon_GATLING_02_11: -8337454311149024485
+      icon_weapon_GATLING_02_12: -9174397400752380765
+      icon_weapon_GATLING_02_13: 5122865206985983441
+      icon_weapon_GATLING_02_14: -1486479767136385185
+      icon_weapon_GATLING_02_15: 4772716009330747133
+      icon_weapon_GATLING_02_16: -6171877950902309414
+      icon_weapon_GATLING_02_17: -3701891992504845164
+      icon_weapon_GATLING_02_18: 2730936464435634734
+      icon_weapon_GATLING_02_19: -631741771139179208
+      icon_weapon_GATLING_02_2: -5036184093470894705
+      icon_weapon_GATLING_02_20: 63236873541194797
+      icon_weapon_GATLING_02_21: 1695149569475852634
+      icon_weapon_GATLING_02_22: -7981219635096596419
+      icon_weapon_GATLING_02_23: -1839587452252304264
+      icon_weapon_GATLING_02_24: -6870903179274259564
+      icon_weapon_GATLING_02_25: 5967895146305924492
+      icon_weapon_GATLING_02_26: 7729979671987854850
+      icon_weapon_GATLING_02_27: -2854574385385580404
+      icon_weapon_GATLING_02_28: -8286714310247479992
+      icon_weapon_GATLING_02_29: -4664651668362177461
+      icon_weapon_GATLING_02_3: 8250221955334816066
+      icon_weapon_GATLING_02_4: 4762401637390105132
+      icon_weapon_GATLING_02_5: -3186921780607120731
+      icon_weapon_GATLING_02_6: 6581254559464232946
+      icon_weapon_GATLING_02_7: 8239054412408485633
+      icon_weapon_GATLING_02_8: -7107014120870864300
+      icon_weapon_GATLING_02_9: -5777430321096274295
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

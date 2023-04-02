@@ -69,7 +69,7 @@ TextureImporter:
       213: 7668558203244695455
     second: icon_weapon_KNIFE_06_21
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -89,6 +89,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -98,8 +100,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 1
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 0
     wrapV: 0
     wrapW: 0
@@ -120,10 +122,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -139,6 +145,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 1
     textureFormat: -1
@@ -624,6 +654,29 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      icon_weapon_KNIFE_06_0: 1761811712440037659
+      icon_weapon_KNIFE_06_1: -6455933433371019886
+      icon_weapon_KNIFE_06_10: -7542027968774828883
+      icon_weapon_KNIFE_06_11: 6444448667255412301
+      icon_weapon_KNIFE_06_12: -8230599282251107746
+      icon_weapon_KNIFE_06_13: 2968710554361438068
+      icon_weapon_KNIFE_06_14: 7176757504165848302
+      icon_weapon_KNIFE_06_15: 5151061673597128374
+      icon_weapon_KNIFE_06_16: 6228263618806909426
+      icon_weapon_KNIFE_06_17: -4655984907562387836
+      icon_weapon_KNIFE_06_18: 4141377596574592292
+      icon_weapon_KNIFE_06_19: 2824152742922681522
+      icon_weapon_KNIFE_06_2: 4883175137166617973
+      icon_weapon_KNIFE_06_20: 2949974076668150942
+      icon_weapon_KNIFE_06_21: 7668558203244695455
+      icon_weapon_KNIFE_06_3: 3227559481268308956
+      icon_weapon_KNIFE_06_4: 5845635717307296844
+      icon_weapon_KNIFE_06_5: 4313415537781767160
+      icon_weapon_KNIFE_06_6: 350781092595023101
+      icon_weapon_KNIFE_06_7: 8915299920353805308
+      icon_weapon_KNIFE_06_8: -1620070960857896500
+      icon_weapon_KNIFE_06_9: -3764934753985083991
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

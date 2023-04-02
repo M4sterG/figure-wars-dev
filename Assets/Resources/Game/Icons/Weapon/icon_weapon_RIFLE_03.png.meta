@@ -93,7 +93,7 @@ TextureImporter:
       213: -6769178580855682587
     second: icon_weapon_RIFLE_03_29
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -113,6 +113,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -122,8 +124,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 1
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 0
     wrapV: 0
     wrapW: 0
@@ -144,10 +146,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -163,6 +169,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 1
     textureFormat: -1
@@ -816,6 +846,37 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      icon_weapon_RIFLE_03_0: -1117429004903834691
+      icon_weapon_RIFLE_03_1: -7527277232800766070
+      icon_weapon_RIFLE_03_10: -9204489300810430704
+      icon_weapon_RIFLE_03_11: 7860796389003413461
+      icon_weapon_RIFLE_03_12: -4098730684464826862
+      icon_weapon_RIFLE_03_13: -2079837314444736263
+      icon_weapon_RIFLE_03_14: -7258759553889832889
+      icon_weapon_RIFLE_03_15: -2475980961745951285
+      icon_weapon_RIFLE_03_16: 5605510476808915856
+      icon_weapon_RIFLE_03_17: 3537997645852046686
+      icon_weapon_RIFLE_03_18: -7912911951796280808
+      icon_weapon_RIFLE_03_19: -4574452451033762002
+      icon_weapon_RIFLE_03_2: 1568852800829616860
+      icon_weapon_RIFLE_03_20: -6138671395444569580
+      icon_weapon_RIFLE_03_21: -93003681101357505
+      icon_weapon_RIFLE_03_22: -21400898630084617
+      icon_weapon_RIFLE_03_23: -3084088320624198245
+      icon_weapon_RIFLE_03_24: 50189684148819915
+      icon_weapon_RIFLE_03_25: -5911899308026350938
+      icon_weapon_RIFLE_03_26: 5619201926042971295
+      icon_weapon_RIFLE_03_27: -4423456040705978614
+      icon_weapon_RIFLE_03_28: 4098942057766259150
+      icon_weapon_RIFLE_03_29: -6769178580855682587
+      icon_weapon_RIFLE_03_3: -3236987860585389700
+      icon_weapon_RIFLE_03_4: -6638805533243846108
+      icon_weapon_RIFLE_03_5: 4513867530479071901
+      icon_weapon_RIFLE_03_6: 7511813796359837331
+      icon_weapon_RIFLE_03_7: -8431562284376743565
+      icon_weapon_RIFLE_03_8: 1520199026152133450
+      icon_weapon_RIFLE_03_9: -4247181630428885909
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

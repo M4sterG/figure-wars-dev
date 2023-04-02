@@ -93,7 +93,7 @@ TextureImporter:
       213: 75613918613839303
     second: icon_acc_BELT_05_29
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -113,6 +113,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -122,11 +124,11 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 1
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -144,10 +146,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -163,6 +169,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 1
     textureFormat: -1
@@ -816,6 +846,37 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      icon_acc_BELT_05_0: -6817116750624809011
+      icon_acc_BELT_05_1: 4287604649196706780
+      icon_acc_BELT_05_10: -4255759142798599983
+      icon_acc_BELT_05_11: 5483813640895900178
+      icon_acc_BELT_05_12: 8887730860910716319
+      icon_acc_BELT_05_13: -6543987602572569876
+      icon_acc_BELT_05_14: -5102566403864250920
+      icon_acc_BELT_05_15: 800035606419694798
+      icon_acc_BELT_05_16: -578090792445686414
+      icon_acc_BELT_05_17: -567062406887401215
+      icon_acc_BELT_05_18: -1456563862055680304
+      icon_acc_BELT_05_19: -8140654842478024457
+      icon_acc_BELT_05_2: 8882037870267512250
+      icon_acc_BELT_05_20: -5999717208765072165
+      icon_acc_BELT_05_21: 5693323595895107454
+      icon_acc_BELT_05_22: -3095378249038889055
+      icon_acc_BELT_05_23: 7583880388708168189
+      icon_acc_BELT_05_24: 3774322484025966369
+      icon_acc_BELT_05_25: -2954677027000379612
+      icon_acc_BELT_05_26: 3304430668777755551
+      icon_acc_BELT_05_27: 4592222361418698932
+      icon_acc_BELT_05_28: 6948573970920672828
+      icon_acc_BELT_05_29: 75613918613839303
+      icon_acc_BELT_05_3: 1017543312000464115
+      icon_acc_BELT_05_4: -8335332249092336465
+      icon_acc_BELT_05_5: -489821299156431607
+      icon_acc_BELT_05_6: 6869746308384343899
+      icon_acc_BELT_05_7: 4864773890883753953
+      icon_acc_BELT_05_8: 1025443373441949492
+      icon_acc_BELT_05_9: -1943901401457916475
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

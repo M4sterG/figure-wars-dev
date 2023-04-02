@@ -93,7 +93,7 @@ TextureImporter:
       213: -3278145403707122164
     second: icon_acc_BACK_04_29
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -113,6 +113,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -122,11 +124,11 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 1
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -144,10 +146,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -163,6 +169,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 1
     textureFormat: -1
@@ -816,6 +846,37 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      icon_acc_BACK_04_0: 3864379744915952479
+      icon_acc_BACK_04_1: -5948687592738708633
+      icon_acc_BACK_04_10: -5393941112213980077
+      icon_acc_BACK_04_11: -2334714106299086952
+      icon_acc_BACK_04_12: 4823527761163875144
+      icon_acc_BACK_04_13: -975359998605841780
+      icon_acc_BACK_04_14: -8953805605334871242
+      icon_acc_BACK_04_15: 3027539335407666357
+      icon_acc_BACK_04_16: -5606634307722585474
+      icon_acc_BACK_04_17: 3320087738742994837
+      icon_acc_BACK_04_18: 5127616488597116378
+      icon_acc_BACK_04_19: -2822306172932720479
+      icon_acc_BACK_04_2: 6644173919600150124
+      icon_acc_BACK_04_20: -2574289157994702107
+      icon_acc_BACK_04_21: 4347133744390691771
+      icon_acc_BACK_04_22: 4850418640453536801
+      icon_acc_BACK_04_23: -3580016051286403483
+      icon_acc_BACK_04_24: 5062830046822722395
+      icon_acc_BACK_04_25: 9138055975842843595
+      icon_acc_BACK_04_26: 7101058965576961092
+      icon_acc_BACK_04_27: -8443740788825280728
+      icon_acc_BACK_04_28: 3974668845827936144
+      icon_acc_BACK_04_29: -3278145403707122164
+      icon_acc_BACK_04_3: 2560077303032035566
+      icon_acc_BACK_04_4: 329158808616874244
+      icon_acc_BACK_04_5: 896359808194515576
+      icon_acc_BACK_04_6: 1880685372884040003
+      icon_acc_BACK_04_7: 1653188921660031012
+      icon_acc_BACK_04_8: 1829011186974116464
+      icon_acc_BACK_04_9: -9002340932245871014
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

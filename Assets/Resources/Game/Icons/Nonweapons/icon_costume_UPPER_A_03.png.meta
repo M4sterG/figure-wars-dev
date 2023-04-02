@@ -93,7 +93,7 @@ TextureImporter:
       213: 2715516175421142310
     second: icon_costume_UPPER_A_03_29
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -113,6 +113,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -121,12 +123,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -144,10 +146,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -163,6 +169,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 1
     textureFormat: -1
@@ -816,6 +846,37 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      icon_costume_UPPER_A_03_0: 4789843202936241978
+      icon_costume_UPPER_A_03_1: 8101443886432013958
+      icon_costume_UPPER_A_03_10: -563867125093841049
+      icon_costume_UPPER_A_03_11: -1689572786373078683
+      icon_costume_UPPER_A_03_12: 6454400588992514401
+      icon_costume_UPPER_A_03_13: -1140975685248255823
+      icon_costume_UPPER_A_03_14: 5990459661723746277
+      icon_costume_UPPER_A_03_15: -8078007690635438780
+      icon_costume_UPPER_A_03_16: -3972423213589470742
+      icon_costume_UPPER_A_03_17: 7965179372039283397
+      icon_costume_UPPER_A_03_18: 5321453822559555871
+      icon_costume_UPPER_A_03_19: 7918629180816140425
+      icon_costume_UPPER_A_03_2: 1025738210815534096
+      icon_costume_UPPER_A_03_20: 8298374754041233674
+      icon_costume_UPPER_A_03_21: -8968951822386293369
+      icon_costume_UPPER_A_03_22: -2687554125363377434
+      icon_costume_UPPER_A_03_23: 3630602127978950540
+      icon_costume_UPPER_A_03_24: -756991568627667781
+      icon_costume_UPPER_A_03_25: 668541733105742827
+      icon_costume_UPPER_A_03_26: 6918182619522485193
+      icon_costume_UPPER_A_03_27: -2148302881176853032
+      icon_costume_UPPER_A_03_28: -1444721836324843392
+      icon_costume_UPPER_A_03_29: 2715516175421142310
+      icon_costume_UPPER_A_03_3: 1210144688783512776
+      icon_costume_UPPER_A_03_4: 1192829561284497784
+      icon_costume_UPPER_A_03_5: -7475727421089956321
+      icon_costume_UPPER_A_03_6: 4084194304034957759
+      icon_costume_UPPER_A_03_7: -8796766265974825035
+      icon_costume_UPPER_A_03_8: 5648049962845708812
+      icon_costume_UPPER_A_03_9: 3441046933268488681
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
